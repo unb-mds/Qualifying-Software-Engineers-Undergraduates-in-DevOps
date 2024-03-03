@@ -8,7 +8,7 @@ title = "Qualifying Software Engineers Undergraduates in DevOps"
 renderer = ["html"]
 
 [output.html]
-default-theme = "rust"
+default-theme = "light"
 copy-fonts = true
 preferred-dark-theme = "navy"
 git-repository-url = "https://github.com/fga-eps-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/ebook"
