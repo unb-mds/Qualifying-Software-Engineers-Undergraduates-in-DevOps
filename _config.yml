@@ -1,14 +1,14 @@
 # Site settings
-course_name: ResidenciaTICBrisa
-course_description: "ResidenciaTICBrisa teste brisas."
-course_semester: "adac"
-pre_requisites: Basics of Multivariate Calculus and Linear Algebra.
+course_name: MDS
+course_description: "Métodos de Desenvolvimento de Software."
+course_semester: "4 semestre"
+pre_requisites: OO
 
 
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://residenciaticbrisa.github.io" # the base hostname & protocol for your site
+url: "https://unb-mds.github.io" # the base hostname & protocol for your site
 
-schoolname: "uNb"
+schoolname: "UnB"
 
 address: |
     UnB | Universidade de Brasília
@@ -20,7 +20,7 @@ emails: |
     caguiar@unb.br
    
 github_username: lappis-unb
-instagram_username: lappisunb
+instagram_username: ccsl_unb
 facebook_username: lappisunb5
 # Set your Google Analytics tracking ID (set up yours at http://www.google.com/analytics/)
 # google_analytics: UA-XXXXXXXX-X
