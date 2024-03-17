@@ -1,6 +1,6 @@
 ---
 type: post
-date: 2024-01-05
+date: 2024-01-05 10:00:00 +0000
 title: 'Trabalho em Equipe: Fomentando a Sinergia e a Produtividade'
 author: Rafael Bosi
 body: |

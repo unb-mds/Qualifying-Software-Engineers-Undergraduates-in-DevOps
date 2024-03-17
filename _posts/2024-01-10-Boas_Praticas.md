@@ -1,6 +1,6 @@
 ---
 type: post
-date: 2024-01-10
+date: 2024-01-10  10:00:00 +0000
 title: 'Elevando o Código ao Padrão: Boas Práticas de Programação Desvendadas'
 author: Amanda Campos
 body: |

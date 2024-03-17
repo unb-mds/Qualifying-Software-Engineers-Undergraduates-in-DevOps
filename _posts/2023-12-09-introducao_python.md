@@ -1,6 +1,6 @@
 ---
 type: post
-date: 2023-12-09
+date: 2023-12-09  10:00:00 +0000
 title: 'Introdução ao Python'
 author: Guilherme Oliveira
 body: |
