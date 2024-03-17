@@ -1,5 +1,5 @@
 ---
-type: post
+type: posts
 date: 2023-12-08  10:00:00 +0000
 title: 'Github Codespaces/Programação facilitada e acessível'
 author: Carol Fernandes
