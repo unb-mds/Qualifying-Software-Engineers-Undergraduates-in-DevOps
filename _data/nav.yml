@@ -1,0 +1,22 @@
+items:
+- url: /
+  name: Página Inicial
+  icon_class: fa fa-home fa-lg
+  
+- url: /planoensino/
+  name: Plano de ensino
+  icon_class: fas fa-list-alt
+
+- url: /posts/
+  name: Posts
+  icon_class: fas fa-user-graduate
+
+- url: /materials/
+  name: Materiais
+  icon_class: fas fa-book
+
+- url: /slides/
+  name: Slides
+  icon_class: fas fa-book-reader
+
+  

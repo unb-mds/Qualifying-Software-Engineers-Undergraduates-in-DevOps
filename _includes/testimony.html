@@ -1,0 +1,18 @@
+<ul class="testimony-wrapper">
+    <div class="testimony-title-wrapper">
+        <p class="testimony-title">Experiências Na disciplina <b>MDS</b></p>
+    </div>
+    <div class="testimony-cards-content">
+        {% for item in site.data.testimony.items %}
+            <li class="testimony-item">
+                <div class="testimony-card">
+                    <div class="testimony-content-wrapper">
+                        <p class="testimony-content">"{{item.body}}"</p>
+                    </div>
+                    <p class="testimony-author">{{item.author}}</p>
+                </div>
+                <img class="testimony-image" height="32" src={{item.photo}}>
+            </li>
+        {% endfor %}
+    </div>
+</ul>

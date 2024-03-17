@@ -1,0 +1,41 @@
+.last-editions-wrapper {
+    height: 90vh;
+
+    display: flex;
+
+    .editions-image-wrapper {
+        width: 70%;
+        height: 100%;
+
+        .image-editions-effect {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            filter: grayscale(100)
+        }
+    }
+
+    .editions-text-wrapper {
+        background-color: rgb(38, 38, 38);
+        width: 30%;
+        padding: 0px 30px 0px 60px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .editions-title {
+            font-size: 40px;
+            font-weight: 600;
+            color: white;
+            text-align: right;
+            margin-bottom: 60px;
+        }
+
+        .editions-text {
+            font-size: 14px;
+            color: white;
+            text-align: right;
+        }
+    }
+}

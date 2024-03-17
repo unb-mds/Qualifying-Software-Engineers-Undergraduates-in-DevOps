@@ -1,0 +1,57 @@
+.repository-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .image-wrapper {
+        border: 1px solid #ddd;
+        border-radius: 50%;
+
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        z-index: 36;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 70px;
+            height: 70px;
+
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+    }
+    
+}
+
+.repo {
+    position: relative;
+    z-index: 35;
+
+    width: 100%;
+
+    background-color: white;
+    border: 1px solid #ddd;
+
+    padding: 10px;
+    padding-left: 60px;
+    margin-left: 40px;
+}
+
+.repo h3 {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+}
+
+.repo p {
+    margin: 5px 0;
+}
+
+.repo a {
+    color: #2a5082;;
+    text-decoration: none;
+}

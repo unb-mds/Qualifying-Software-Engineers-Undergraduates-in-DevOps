@@ -1,0 +1,7 @@
+policies:
+  - You have free <b>4 late days over all</b>.
+  - You can use as many late days for assignments as you want. A late day extends the deadline 24 hours.
+  - If you are submitting your work after the deadline, <b>send the files to the instructor in an email titled "[CS3485 - LAB#x] Student Name 1 and Student Name 2 - Late Day#y"</b>, where x is the current lab number and y is the late day number (out of 4) if you are using any of your late days (it may also consist multiple late days).
+  - Once you have used all 4 late days, the penalty is 20% for each additional late day.
+  - In case of medical or other personal emergencies, further extensions can be approved. Contact the instructor in that case.
+  - Other accommodations may be accepted, but only if communicated directly to the instructor at least <b>2 in advance of the deadline</b>.

@@ -1,0 +1,10 @@
+items:
+- curse_name: Git tutorial | Introdução
+  url: https://github.com/giovanni1106/tutorial-git
+  description: Um tutorial introdutório de Git, que visa ensinar os fundamentos do Git, um sistema de controle de versão.
+  author: https://github.com/giovanni1106.png
+
+- curse_name: Introdução a python para análise de dados
+  url: https://github.com/StrangeUnit28/Tutoria_de_Python-BRISA
+  description: Repositório destinado a ser uma tutoria de Python para o projeto BRISA. O leitor será introduzido a linguagem e bibliotecas relevantes a análise de dados (Pandas, Numpy e MatPlotlib), além de tecnologias que aumentarão a eficiência na criação de um projeto.
+  author: https://github.com/StrangeUnit28.png

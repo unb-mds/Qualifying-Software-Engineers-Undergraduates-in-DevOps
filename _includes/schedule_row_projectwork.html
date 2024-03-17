@@ -1,0 +1,11 @@
+<div class="col col-1" data-label="Event">Project</div>
+<div class="col col-1-2" data-label="Date">
+    {{ event.date | date: site.dateformat }}
+    <br class="date-spliter"/>{{ event.date | date: "%A" }}
+</div>
+<div class="col col-2" data-label="Description">
+    {{ include.event.description }}
+</div>
+<div class="col col-4 markdown-content" data-label="Course Material">
+    {{ include.event.content}}
+</div>

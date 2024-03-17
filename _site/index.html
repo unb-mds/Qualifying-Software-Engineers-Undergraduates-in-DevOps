@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ResidenciaTICBrisa / adac - uNb</title>
+  <meta name="description" content=" - ResidenciaTICBrisa / adac">
+  
+  <link rel="stylesheet" href="/_css/main.css">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="ResidenciaTICBrisa / adac - uNb" href="http://localhost:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">uNb</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="ResidenciaTICBrisa / adac - uNb"><b>ResidenciaTICBrisa</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">adac</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Posts
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/slides/">
+                <i class="fas fa-book-reader"></i> Slides
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+    <div class="gradient-bg">
+  <div class="gradients-container">
+    <div class="g1"></div>
+    <div class="g2"></div>
+    <div class="g3"></div>
+    <div class="g4"></div>
+    <div class="g5"></div>
+    <div class="interactive"></div>
+  </div>
+</div>
+    <div class="home-message">
+    <h1 class="title">Métodos de Desenvolvimento de Software</h1>
+    <h4 class="subtitle">Disciplina do curso de Engenharia de Software da Universidade de Brasilia (UnB). Os métodos de desenvolvimento de software podem ser entendidos como conjuntos estruturados de boas práticas, repetíveis durante o processo de produção do software. </h4>
+    <div class="water-mark-content">
+        <h1 class="water-mark">Carla Rocha <b>LAPPIS | CCSL UnB</b></h1>
+    </div>
+</div>
+
+    <div class="last-editions-wrapper">
+    <div class="editions-image-wrapper">
+        <img class="image-editions-effect" src="/_images/mds.png">
+    </div>
+    <div class="editions-text-wrapper">
+        <h1 class="editions-title">Inovação, conhecimento e qualidade</h1>
+        <h4 class="editions-text">A disciplina utiliza aprendizagem por experiência, aprendizagem orientada a projetos, processo de Onboarding e práticas de comunidades Open source para que o aluno seja ativo no seu processo de aprendizagem. Mais de 300 alunos já fizeram a disciplina na metodologia, que é continuamente evoluida.</h4>
+    </div>
+</div>
+<div class="institutions-wrapper">
+    <div class="institutions-text-wrapper">
+        <h1 class="section-title">Parcerias</h1>
+    </div>
+    <div class="institutions-image-wrapper">
+        <div class="image-wrapper">
+            <img class="image-institutions-effect" height="30" src="/_images/unb.png">
+        </div>
+        <div class="image-wrapper">
+            <img class="image-institutions-effect" height="30" src="/_images/lappis.png">
+        </div>
+
+    </div>
+</div>  
+<ul class="testimony-wrapper">
+    <div class="testimony-title-wrapper">
+        <p class="testimony-title">Experiências Na disciplina <b>MDS</b></p>
+    </div>
+    <div class="testimony-cards-content">
+        
+            <li class="testimony-item">
+                <div class="testimony-card">
+                    <div class="testimony-content-wrapper">
+                        <p class="testimony-content">"Aprendemos a superar nossas limitações quando enfrentávamos problemas desconhecidos."</p>
+                    </div>
+                    <p class="testimony-author">Gustavo Macedo</p>
+                </div>
+                <img class="testimony-image" height="32" src=/_images/testimony/Gustavo_Macedo.jpg>
+            </li>
+        
+            <li class="testimony-item">
+                <div class="testimony-card">
+                    <div class="testimony-content-wrapper">
+                        <p class="testimony-content">"Enriquecendo meu conhecimento técnico e aprimorando minha capacidade de enfrentar futuros desafios com confiança e eficiência."</p>
+                    </div>
+                    <p class="testimony-author">Raquel Eucaria</p>
+                </div>
+                <img class="testimony-image" height="32" src=/_images/testimony/Raquel_Eucaria.png>
+            </li>
+        
+            <li class="testimony-item">
+                <div class="testimony-card">
+                    <div class="testimony-content-wrapper">
+                        <p class="testimony-content">"Aprofundei meus conhecimentos em desenvolvimento tanto no frontend quanto no backend, empregando tecnologias como React e Python de maneira conjunta."</p>
+                    </div>
+                    <p class="testimony-author">Fause Carlos</p>
+                </div>
+                <img class="testimony-image" height="32" src=/_images/testimony/Fause_Carlos.png>
+            </li>
+        
+    </div>
+</ul>
+<div class="method-wrapper">
+    <div class="method-title-wrapper">
+        <h1 class="method-title">Disciplina Orientada a Projetos</h1>
+    </div>
+
+    <div class="method-content-wrapper">
+        <div class="method-content">
+            <div class="method-content-container">
+                <img class="method-image" height="32" src="/_images/ead.png">
+                <h2 class="method-content-title">
+                      Release I
+                </h2>
+            </div>
+            <p class="method-content-text">
+                Os alunos se reunem em grupos de até 6 participantes para desenvolverem um projeto de software. Na Release I, são entregues a definição de escopo e tecnologia, além da implementação inicial
+            </p>
+        </div>
+        <div class="method-content">
+            <div class="method-content-container">
+                <img class="method-image" height="32" src="/_images/group.png"> 
+                <h2 class="method-content-title">
+                   Release II
+                </h2>
+            </div>
+            <p class="method-content-text">
+                Na release II cada grupo entrega uma Prova de Conceito (PoC) funcionando em ambiente de homologação 
+            </p>
+        </div>
+    </div>
+</div>
+<div id="partners-contribution" class="partners-content">
+    <div class="partners-wrapper">
+        <div class="partners-timeline">
+            <div class="timeline-content-wrapper">
+                <div class="icons-wrapper">
+                    <i class="fas fa-lightbulb" style="color:#262626; font-size:25px;"></i>
+                </div>
+                <p>Idealize um projeto</p>
+            </div>
+            <div class="line"></div>
+            <div class="timeline-content-wrapper content-shine">
+                <div class="icons-wrapper shine">
+                    <i class="fas fa-handshake" style="color:#262626; font-size:35px;"></i>
+                </div>
+                <p>Monte sua equipe</p>
+            </div>
+            <div class="line"></div>
+            <div class="timeline-content-wrapper">
+                <div class="icons-wrapper">
+                    <i class="fas fa-laptop-code" style="color:#262626; font-size:25px;"></i>
+                </div>
+                <p>Desenvolvimento do seu projeto</p>
+            </div>
+            <div class="line"></div>
+            <div class="timeline-content-wrapper">
+                <div class="icons-wrapper">
+                    <i class="fas fa-cube" style="color:#262626; font-size:25px;"></i>
+                </div>
+                <p>Sua ideia se torna realidade</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="about-lab-wrapper">
+    <div class="about-content">
+        <h1>Sobre o LAPPIS</h1>
+        <h4 class="about-text">O Laboratório Avançado de Produção, Pesquisa e Inovação em Software, foi projetado para atuar em diversas áreas tecnológicas, desde sistemas de informação até sistemas embarcados, objetivando as oportunidades de pesquisas teóricas e aplicadas.</h4> 
+        <h4 class="about-text">A profa. Carla Rocha é professora na Faculdade de Engenharia de Software da Universidade de Brasília (UnB), onde atua como uma das coordenadoras do laboratório LAPPIS. Em 2024, somos organização participante do programa Google Summer of Code. Participa também do grupo de pesquisa com IME-USP Sistemas de Software, Ciência e Engenharia de Dados e Computação de Alto Desempenho, e faz parte do mestrado acadêmico PPCA. Os interesses acadêmicos se concentram na área de Engenharia de Software, abrangendo tópicos como DevOps, Agile, aspectos humanos do desenvolvimento de software, Aprendizado de Máquina e Software Livre.</h4>    
+        <h4 class="about-text">Saiba mais em <a href="http://www.carlarocha.org">www.carlarocha.org</a></h4>   
+    </div>
+    <div class="imagens-grid-wrapper">
+        <div class="images-column big-image">
+            <img src="/_images/about_lab/carla_ahazando.jpg">
+        </div>
+        <div class="images-column">
+            <div class="grid-wrapper">
+                <img src="/_images/about_lab/conf.png">
+            </div>
+            <div class="grid-wrapper">
+                <img src="/_images/about_lab/lab_photo.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col  footer-col-1">
+
+        <h3><b>Redes:</b></h3>
+
+        <ul class="social-media-list" style="display:inline-flex">
+          
+            <li>
+              <a href="https://github.com/lappis-unb">
+                <i class="fab fa-github" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a href="https://instagram.com/lappisunb">
+                <i class="fab fa-instagram" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a href="https://facebook.com/lappisunb5">
+                <i class="fab fa-facebook" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+
+        <h3><b>Contato:</b></h3>
+        <p class="text">
+          caguiar@unb.br
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-col  footer-col-1">
+        <p class="text">
+        UnB | Universidade de Brasília<br />
+FGA | Faculdade do gama<br />
+LAPPIS | Laboratório Aplicado de Produção Pesquisa e Inovação em Software<br />
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>

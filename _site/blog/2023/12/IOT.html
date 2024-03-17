@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Internet das Coisas/Um mundo conectado - ResidenciaTICBrisa / adac </title>
+  <meta name="description" content="">
+  
+  <link rel="stylesheet" href="/_css/main.css">
+  <link rel="canonical" href="http://localhost:4000/blog/2023/12/IOT">
+  <link rel="alternate" type="application/rss+xml" title="ResidenciaTICBrisa / adac - uNb" href="http://localhost:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">uNb</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="ResidenciaTICBrisa / adac - uNb"><b>ResidenciaTICBrisa</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">adac</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Posts
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/slides/">
+                <i class="fas fa-book-reader"></i> Slides
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title" style="margin: 0px;">Internet das Coisas/Um mundo conectado</h1>
+    <h3 style="margin: 0px;">Carol Fernandes</h3> 
+    <p class="post-meta">Feito em 16/12/2023</p>
+  </header>
+
+  <div>
+    <p style="font-weight: bold">
+      
+      
+      
+    </p>
+    
+    
+      <div style="color: black;">
+        <b>Internet das Coisas</b> 
+</br>
+Um mundo conectado 
+</br>
+Neste momento da Residência em TIC, você já deve ter reparado que um dos conteúdos apresentados é a IOT (Internet Of Things, Internet das Coisas, em inglês). Você Dev, independentemente do nível de instrução, já deve ter ouvido essa sigla em diversos lugares, mas você já refletiu o porquê de esse tema ser tão importante para nós? Não somente isso, mas também o quanto a IOT influencia nosso mundo cada dia mais? Para além do conteúdo do curso, aqui vamos dar uma palinha do que é IOT, dos motivos para se aprofundar mais no assunto e como isso pode incrementar na sua formação em STEM (Ciências, Tecnologias, Engenharias e Matemática)!
+</br></br>
+
+<b>O que é IOT?</b> </br>
+Atualmente, muitos dispositivos dos mais variados – desde eletrodomésticos a equipamentos hospitalares – foram digitalizados (e.g. relógio, sistemas de segurança e aparelhos de ultrassonografia) e, à vista disso, um novo processo está sendo implementado sobre esses aparelhos: a conexão deles à rede de computadores (internet).</br>
+Basicamente, o termo IOT é dado a essa conexão à rede por esses dispositivos, e essa rede, juntamente a sensores e processadores implementados nestes dispositivos, possibilita a captação de dados que responda de forma inteligente aos usuários desses dispositivos. A partir disso, uma extensa área de pesquisa é desenvolvida e você pode conferir no material de estudos disponibilizado na plataforma!</br>
+<img src="/_images/posts/IOT.png"/>
+</br></br>
+<b>Por que estudar IOT?</b>
+</br>
+    Se você ainda está em busca de uma área de estudo para se aprofundar, então vale a pena conferir a Internet das Coisas! Sendo uma área em ascensão, diferentes setores da indústria, incluindo empresas de renome no mercado tecnológico (confira o material da AWS e da Oracle ao final do post). Além disso, bem como qualquer área que se utilize da computação, a IOT demanda de desenvolvedores de software, profissionais em nuvem e machine learning, engenheiros, analistas de dados… (e, obviamente, mais profissionais que deixariam esse texto muito extenso).   </br> 
+    Ademais, trabalhar com IOT é um excelente momento para conectar as aprendizagens de software com hardware, principalmente se você curte o ambiente industrial – com desenvolvimento de dispositivos inteligentes para uso na produção industrial –,  já que foi desenvolvida até mesmo uma subárea de IOT para essa categoria: a IOT Industrial.</br>
+    Por fim, até mesmo se você acredita que essa área não é para você, o aprendizado sobre IOT com certeza influenciará o seu uso desses dispositivos conectados à rede. No mundo de hoje, você com certeza utilizará pelo menos um dispositivo IOT e, como mencionado anteriormente, eles se utilizam de registros de uso e comportamento do usuário para responder com melhorias em seu uso e resultado. Ou seja, ao entender o funcionamento dessas tecnologias, você terá vantagens em seus usos!
+    </br></br>
+
+<b>Para saber mais:</b> </br>
+    https://aws.amazon.com/pt/what-is/iot/ </br>
+    https://www.oracle.com/br/internet-of-things/what-is-iot/ 
+    </br>
+    https://www.cnnbrasil.com.br/tecnologia/internet-das-coisas/
+    </br>
+    https://portal.fabad.edu.br/blog/iot/
+
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col  footer-col-1">
+
+        <h3><b>Redes:</b></h3>
+
+        <ul class="social-media-list" style="display:inline-flex">
+          
+            <li>
+              <a href="https://github.com/lappis-unb">
+                <i class="fab fa-github" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a href="https://instagram.com/lappisunb">
+                <i class="fab fa-instagram" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a href="https://facebook.com/lappisunb5">
+                <i class="fab fa-facebook" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+
+        <h3><b>Contato:</b></h3>
+        <p class="text">
+          caguiar@unb.br
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-col  footer-col-1">
+        <p class="text">
+        UnB | Universidade de Brasília<br />
+FGA | Faculdade do gama<br />
+LAPPIS | Laboratório Aplicado de Produção Pesquisa e Inovação em Software<br />
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>

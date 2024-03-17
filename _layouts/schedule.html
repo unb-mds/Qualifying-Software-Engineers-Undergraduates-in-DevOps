@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<header class="post-header">
+    <h1 class="post-title">Agenda</h1>
+</header>
+
+{{ content }}
+
+<div class="home" style="font-size: 0.8em;">
+    <ul class="responsive-table" style="margin-left: 0;">
+        <li class="table-header">
+            <div class="col col-1"></div>
+            <div class="col col-1-2">Data</div>
+            <div class="col col-4">Descrição</div>
+            <div class="col col-2">Material</div>
+        </li>
+        
+
+        {% assign all_events = site.events | concat: site.posts %}
+        {% assign all_events_sorted = all_events | sort: 'date' %}
+
+        {% for event in all_events_sorted reversed %}
+        <li class="table-row table-row-{{ event.type}}">
+            {% include schedule_row_{{ event.type }}.html event=event %}
+        </li>
+        {% endfor %}
+
+    </ul>
+</div>

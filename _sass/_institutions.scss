@@ -1,0 +1,61 @@
+$n:6;
+
+.institutions-wrapper {
+    padding: 30px 12%;
+    background-color: #1f285f;
+
+    display: flex;
+    align-items: center;
+}
+
+.institutions-text-wrapper {
+    width: 20%;
+    padding: 0px 40px;
+    margin-right: 40px;
+
+    .section-title {
+        color: white;
+        margin: 0;
+        font-size: 35px;
+        font-weight: 600;
+    }
+}
+
+.institutions-image-wrapper {
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(3, 300px);
+
+    -webkit-mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
+    overflow: hidden;
+
+    .image-institutions-effect {
+        filter: brightness(0) invert(1);
+    }
+}
+
+@for $i from 2 to ($n + 1) {
+    .institutions-image-wrapper  > .image-wrapper:nth-child(#{$i}) {animation-delay: calc(#{(1 - $i)/$n}*18s)}
+}
+
+@keyframes r {
+    #{100/$n}% {
+        transform: translate(-100%)
+    }
+    #{100/$n + .01}% {
+        transform: translate(($n - 1)*100%)
+    }
+}
+
+.institutions-image-wrapper  > .image-wrapper {
+    grid-area: 1/1;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: r 18s linear infinite;
+}
+
+

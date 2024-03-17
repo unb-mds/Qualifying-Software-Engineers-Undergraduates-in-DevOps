@@ -1,0 +1,49 @@
+.home-message {
+  z-index: 99;
+  height: 100vh;
+  width: 100%;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-message .title {
+    color: #1f285f;
+    cursor: default;
+    font-weight: 900;
+    font-size: 50px;
+    margin: 20px 30px;
+    text-align: center;
+}
+
+.home-message .subtitle {
+    margin-top: 20px;
+    max-width: 700px;
+    text-align: center;
+    margin: 0px 30px;
+}
+
+.water-mark-content {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.water-mark {
+  margin: 0;
+  padding: 20px 20px;
+
+  font-size: 16px;
+  word-spacing: 2px;
+  letter-spacing: 0.6px;
+  
+  color: white;
+
+  background-color: #262626;
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Projetos 2022/2 - ResidenciaTICBrisa / adac </title>
+  <meta name="description" content="Projetos 2022/2 - ResidenciaTICBrisa / adac">
+  
+  <link rel="stylesheet" href="/_css/main.css">
+  <link rel="canonical" href="http://localhost:4000/Temas2022-2">
+  <link rel="alternate" type="application/rss+xml" title="ResidenciaTICBrisa / adac - uNb" href="http://localhost:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">uNb</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="ResidenciaTICBrisa / adac - uNb"><b>ResidenciaTICBrisa</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">adac</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Posts
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/slides/">
+                <i class="fas fa-book-reader"></i> Slides
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Projetos 2022/2</h1>
+  </header>
+
+  <article class="post-content">
+    <h1 id="projetos-20222">Projetos 2022/2</h1>
+
+<p>A seguir está a lista de projetos,  que estarão sendo trabalhando na disciplina ao longo do 2º Semestre de 2022.</p>
+
+<h2 id="robô-de-monitoramento-dos-videos-assistidos-no-moodle-1">Robô de monitoramento dos videos assistidos no moodle 1</h2>
+
+<p><strong>Descrição</strong>: Desenvolver um bot que percorre todos os usuários de uma turma do moodle, fazendo o acompanhamento do aluno, salvando os dados diariamente em uma planilha excel (google drive api), para controle. Por exemplo, o aluno/usuário X já acessou 50% do material do curso, respondeu 15% dos questionarios propostos, fez 10 logins, e passou 56 min na plataforma.</p>
+
+<ul>
+  <li>
+    <p>Necessidades: ter acesso professor à sala. Pode ser feito como plugin no moodle, ou somente um executavel (rodar no terminal).</p>
+  </li>
+  <li>
+    <p>Funcionalidades: webscraping da pagina da aula no moodle ()</p>
+  </li>
+</ul>
+
+<h2 id="geração-automatizada-de-certificados">Geração automatizada de certificados</h2>
+
+<p><strong>Descrição</strong>: plataforma (plataforma offline instalada com pip install) que, a partir de um template de certificado (o usuário customiza o texto, a identidade visual/logo), lista dos usuarios (excel). A plataforma entao gera automaticamnte os certificados e exporta em formato pdf.</p>
+
+<h2 id="bot-para-enviar-conteudos-no-telegram">Bot para enviar conteudos no telegram</h2>
+
+<p><strong>Descrição</strong>: a partir de uma lista de conteúdos a serem consumidos em uma determinada sequencia como entrada (lista de links), fazer um bot que envie de forma customizada esse conteúdo pelo telegram. Por exemplo, para uma lista de aulas assincronas, o aluno recebe o link de cada aula somente quando afirma ter finalizado as atividades relacionados a aula anterior. Atualizar uma planilha excel (google drive api) com o acompanhamento do aluno.</p>
+
+<h2 id="bot-para-monitorar-um-projeto-de-software-livre">Bot para monitorar um projeto de software livre</h2>
+
+<p><strong>Descrição</strong>: uma ferramenta offline, que a partir do <em>git log</em> de um repositório, gere gráficos com estatiticas de um usuario especifico ou da equipe inteira.</p>
+
+<h2 id="pacote-python-para-detectar-keyboard-smashing-em-bancos-de-dados">Pacote python para detectar KEYBOARD smashing em bancos de dados</h2>
+<p><strong>Descrição</strong>: keyboard smashing (preenchimento desordenado e caotico de dados) atrapalha muito processamento de linguagem natural. Fazer um pacote python que treine um modelo de machine learning que identifique se uma string de entrada é ou não keyboardsmashing.</p>
+
+<p>Exemplos de keyboardsmahing</p>
+
+<p>jgaifoghiaur;gthqeruoihg;q
+kkkkkkkkkkk
+aaaaaaaa
+gfagagagagaga
+qrw3eew qewgt</p>
+
+<h2 id="tema-livre">Tema livre</h2>
+
+<p>Se o time tiver alguma proposta de tema, que seja com o objetivo de resolver algum problema social, deve-se fazer uma descricao e as principais funcionalidades da plataforma para ser avaliado a viabilidade</p>
+
+<h2 id="dados-abertos">Dados abertos</h2>
+
+<p><strong>Descrição</strong>: Escolher orgão federal de dados abertos e apresentar a evolução temporal dos dados.</p>
+
+<h1 id="dicas">Dicas</h1>
+
+<p>Como fazer boas apresentações
+Dicas de slides -  https://www.ime.usp.br/~kon/ResearchStudents/dicasSlides.html</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col  footer-col-1">
+
+        <h3><b>Redes:</b></h3>
+
+        <ul class="social-media-list" style="display:inline-flex">
+          
+            <li>
+              <a href="https://github.com/lappis-unb">
+                <i class="fab fa-github" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a href="https://instagram.com/lappisunb">
+                <i class="fab fa-instagram" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a href="https://facebook.com/lappisunb5">
+                <i class="fab fa-facebook" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+
+        <h3><b>Contato:</b></h3>
+        <p class="text">
+          caguiar@unb.br
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-col  footer-col-1">
+        <p class="text">
+        UnB | Universidade de Brasília<br />
+FGA | Faculdade do gama<br />
+LAPPIS | Laboratório Aplicado de Produção Pesquisa e Inovação em Software<br />
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>

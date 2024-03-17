@@ -1,0 +1,159 @@
+@media screen and (max-width: 800px) {
+    //temporrio
+
+    .site-nav .menu { 
+        display: none;
+    }
+
+    .site-nav .sidebar-content { 
+        display: flex;
+        justify-content: flex-end;
+        
+        
+        height: 100vh;
+        bottom: 0px;
+
+        position: fixed;
+
+        .sidebar {
+            height: 100vh;
+
+            background-color: white;
+        }
+    }
+
+    .last-editions-wrapper {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .last-editions-wrapper .editions-image-wrapper {
+        width: 100%;
+    }
+    
+    .last-editions-wrapper .editions-text-wrapper {
+        width: 100%;
+        height: 60vh;
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .last-editions-wrapper .editions-text-wrapper .editions-title {
+        text-align: center;
+        padding: 0px 30px;
+    }
+
+    .last-editions-wrapper .editions-text-wrapper .editions-text {
+        text-align: justify;
+        padding: 0px 30px;
+    }
+
+    .testimony-cards-content { 
+        flex-direction: column;
+    }
+
+    // Seção de Organizações
+    .institutions-text-wrapper {
+        display: none;
+    }
+
+    .institutions-image-wrapper {
+        width: 100%;
+    }
+    
+    .institutions-wrapper {
+        padding: 30px;
+    }
+
+    // Seção de Participantes
+    .testimony-title {
+        text-align: center;
+    }
+
+    .testimony-image {
+        width: 100px;
+        height: 100px;
+
+        bottom: 50px;
+    }
+
+    .testimony-card {
+        padding-bottom: 60px;
+
+        p {
+            font-size: 14px !important;  
+        }
+    } 
+    
+    // Seção Impulsione sua Carreira
+    .method-title {
+        text-align: center;
+    }
+
+    .method-image {
+        align-items: center;
+    }
+
+    .method-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .method-content {
+        &:first-of-type {
+            padding-bottom: 20px;
+        }
+
+        .method-content-text {
+            text-align: justify;
+        }
+    }
+
+    // Seção sobre o LAPPIS
+    .about-lab-wrapper {
+        flex-direction: column;
+    }
+
+    .imagens-grid-wrapper {
+        height: 300px;
+    }
+
+    .about-content {
+        width: auto;
+        margin: 60px 0px;
+    }
+
+    // Seção de parceiro
+    .partners-timeline {
+        display: none !important;
+    }
+    
+    .partners-content-text {
+        flex-direction: column;
+    }
+
+    .partners-wrapper {
+        padding: 60px 20px;
+        margin: 0px !important;
+    }
+
+    .partners-timeline {
+        max-width: -webkit-calc(#{$on-palm} - (#{$spacing-unit} * 2)) !important;
+        max-width: calc(#{$on-palm} - (#{$spacing-unit} * 2)) !important;
+    }
+
+    .partners-text-wrapper {
+        max-width: -webkit-calc(#{$on-palm} - (#{$spacing-unit} * 2)) !important;
+        max-width: calc(#{$on-palm} - (#{$spacing-unit} * 2)) !important;
+    }
+
+    .partners-text {
+        width: 100% !important;
+        padding: 0px !important;
+
+        button {
+            margin: 20px 0px;
+        }
+    }
+    
+}

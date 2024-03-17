@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Cronograma - ResidenciaTICBrisa / adac </title>
+  <meta name="description" content="Cronograma - ResidenciaTICBrisa / adac">
+  
+  <link rel="stylesheet" href="/_css/main.css">
+  <link rel="canonical" href="http://localhost:4000/MDS-cronograma">
+  <link rel="alternate" type="application/rss+xml" title="ResidenciaTICBrisa / adac - uNb" href="http://localhost:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">uNb</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="ResidenciaTICBrisa / adac - uNb"><b>ResidenciaTICBrisa</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">adac</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Posts
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/slides/">
+                <i class="fas fa-book-reader"></i> Slides
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Cronograma</h1>
+  </header>
+
+  <article class="post-content">
+    
+<h1 id="cronograma">Cronograma</h1>
+
+<p>Neste espaço serão atualizados o cronograma (datas das aulas), tipo de aula (síncrona/assíncrona), material de apoio e forma de avaliação do semestre.</p>
+
+<p>As aulas síncronas terão um limite de tempo de 40 minutos.</p>
+
+<h2 id="sprint-0">Sprint 0</h2>
+
+<ul>
+  <li>Apresentação do plano de ensino da disciplina + apresentação sobre o trabalho da disciplina - definição dos times (máximo de 6 membros - balanceados)</li>
+  <li>Apresentação do projeto (definição dos temas)</li>
+  <li>Material assíncrono: Vídeo sobre a metodologia da disciplina apresentada na Campus Party 2020 - <a href="https://youtu.be/MlGYHl3Iyyg">Vídeo Metodologia - Campus Party 2020</a> + Responder ao questionário <a href="https://forms.gle/qjiNRJPWSLnKFVz5A">Questionário</a></li>
+  <li>Material Assíncrono: Aula sobre git e gitflow do <a href="https://www.youtube.com/channel/UCQxKAvq-QLq57dqGYI_TuFw">Canal do BOSS</a></li>
+</ul>
+
+<h2 id="sprint-1">Sprint 1</h2>
+
+<ul>
+  <li>Projeto de software e Modelos de ciclo de vida e processos de desenvolvimento de software - disponíveis no canal do Youtube na playlist S1 <a href="https://www.youtube.com/channel/UC6VgsVODs17IAHuWF2HCfUQ?view_as=subscriber">Playlist S1 - Youtube</a></li>
+  <li>Roda de conversa sobre ciclo de desenvolvimento de software (fases) + divisão dos temas de projetos por time</li>
+  <li>Roda de conversa sobre modelo de processo (o que é processo) + stand-up com os times</li>
+</ul>
+
+<h2 id="sprint-2">Sprint 2</h2>
+
+<ul>
+  <li>Entendendo as práticas ágeis (artefatos, rituais, papéis) + planning poker + Documento de Visão - disponíveis no canal do Youtube na playlist S2 (Sprint 02) <a href="https://www.youtube.com/channel/UC6VgsVODs17IAHuWF2HCfUQ?view_as=subscriber">Playlist S2 - Youtube</a></li>
+</ul>
+
+<h2 id="sprint-3">Sprint 3</h2>
+
+<ul>
+  <li>Práticas ágeis: história de usuário, critérios de aceitação, burndown, dívida técnica - disponíveis no canal do Youtube na playlist S3 (Sprint 03)</li>
+  <li>Importância das Práticas ágeis para a gestão de projeto (história de usuário, burndown, critérios de aceitação)</li>
+  <li>Roda de conversa sobre a execução das Práticas ágeis para a gestão de projeto</li>
+</ul>
+
+<h2 id="sprint-4">Sprint 4</h2>
+
+<ul>
+  <li>Conteúdo assíncrono: Arquitetura de Software - disponíveis no canal do Youtube na playlist S4 (Sprint 04)</li>
+  <li>Hands-on - modelando uma arquitetura de software.</li>
+</ul>
+
+<h2 id="sprint-5">Sprint 5</h2>
+
+<ul>
+  <li>Práticas ágeis</li>
+</ul>
+
+<h2 id="sprint-6">Sprint 6</h2>
+
+<ul>
+  <li>Práticas Ágeis</li>
+</ul>
+
+<h2 id="sprint-7---entrega-release-1">Sprint 7 - Entrega Release 1</h2>
+
+<ul>
+  <li><strong>A Release 1:</strong> A ordem de apresentação é sorteada, mas os grupos podem trocar entre si a ordem.</li>
+  <li><strong>Peso da R1:</strong> 40% da nota de projeto</li>
+  <li><strong>Tempo de apresentação:</strong> 15 minutos</li>
+  <li><strong>Artefatos avaliados:</strong> (I) Especificação dos épicos, features e histórias de usuários (critérios de aceitação), (II) Configuração do repositório de acordo com os padrões de comunidade de software livre (Github), (III) Protótipo de alta fidelidade, (IV) Código</li>
+  <li><strong>Práticas ágeis avaliadas:</strong> pareamento, issues, Pull requests, produtividade, participação nos rituais, desempenho</li>
+  <li><strong>Detalhamento da avaliação:</strong> Código-Fonte/entregas (30%), (II) Práticas ágeis (25%), (III) Requisitos Especificados/issues (10%), Protótipo (15%), (IV) Padrões de software livre, (V) critério extra(10%)</li>
+</ul>
+
+<h3 id="entregáveis">Entregáveis</h3>
+
+<ul>
+  <li>Código Fonte</li>
+  <li>Documentação de comunidades de software livre: Readme, código de conduta, licença, issues, guia de contribuição, templates de issues e pull request.</li>
+  <li>StoryMap: mapeamento dos épicos, features, histórias de usuários a serem entregues.</li>
+  <li>Práticas ágeis (documentação das issues, prática de commits, pareamento, arquitetura de software)</li>
+  <li>Gitpage: o Gitpage é a propaganda do produto de software. Focado no usuário (ex: <a href="https://www.tensorflow.org">Exemplo de Gitpage</a>)</li>
+</ul>
+
+<h2 id="sprint-8">Sprint 8</h2>
+
+<ul>
+  <li>Práticas ágeis - testes unitários (automação)</li>
+  <li>Práticas ágeis - testes de aceitação</li>
+</ul>
+
+<h2 id="sprint-9">Sprint 9</h2>
+
+<ul>
+  <li>Métodos ágeis - práticas ágeis - XP: integração contínua</li>
+</ul>
+
+<h2 id="sprint-10">Sprint 10</h2>
+
+<ul>
+  <li>Métodos ágeis - práticas ágeis - Engenharia de Produto - full stack</li>
+  <li>Métodos ágeis - práticas ágeis - Engenharia de Produto - visão geral de pipeline full stack</li>
+</ul>
+
+<h2 id="sprint-11">Sprint 11</h2>
+
+<ul>
+  <li>Métodos ágeis - práticas ágeis - Engenharia de produto: entrega contínua (pipeline) + gitflow</li>
+  <li>Métodos ágeis - práticas ágeis - Engenharia de produto: entrega contínua</li>
+</ul>
+
+<h2 id="sprint-12">Sprint 12</h2>
+
+<ul>
+  <li>Métodos ágeis - práticas ágeis - XP: monitoramento e controle - retrospectiva + velocity + PR</li>
+  <li>Métodos ágeis - práticas ágeis - indicadores e métricas no contexto de desenvolvimento ágil</li>
+</ul>
+
+<h2 id="sprint-13">Sprint 13</h2>
+
+<ul>
+  <li>Métodos ágeis - práticas ágeis - Entrega Contínua - indicador e métricas ágeis</li>
+  <li>Métodos ágeis - práticas ágeis - Entrega Contínua - Qualidade de código-fonte</li>
+</ul>
+
+<h2 id="sprint-14">Sprint 14</h2>
+
+<ul>
+  <li>Entrega contínua - integração contínua vs deploy contínuo (papel do DevOps)</li>
+  <li>Entrega Contínua - Implantação (papel do DevOps)</li>
+</ul>
+
+<h2 id="sprint-15">Sprint 15</h2>
+
+<ul>
+  <li>Buffer de Contingência</li>
+</ul>
+
+<h2 id="sprint-16---release-2">Sprint 16 - Release 2</h2>
+
+<ul>
+  <li><strong>A Release 2:</strong> A ordem de apresentação é sorteada, mas os grupos podem trocar entre si a ordem.</li>
+  <li><strong>Peso da R2:</strong> 60% da nota de projeto</li>
+  <li><strong>Tempo de apresentação:</strong> 15 minutos</li>
+  <li><strong>Detalhe da avaliação:</strong> (I) Código-fonte entregue (60%): features, implantação, qualidade, cobertura de testes, testes de aceitação, (II) PRÁTICAS ÁGEIS (30%), (III) Tracking (</li>
+</ul>
+
+<p>ação é sorteada, mas os grupos podem trocar entre si a ordem.</p>
+<ul>
+  <li><strong>Peso da R1:</strong> 40% da nota de projeto</li>
+  <li><strong>Tempo de apresentação:</strong> 15 minutos</li>
+  <li><strong>Artefatos avaliados:</strong> (I) Especificação dos épicos, features e histórias de usuários (critérios de aceitação), (II) Configuração do repositório de acordo com os padrões de comunidade de software livre (Github), (III) Protótipo de alta fidelidade, (IV) Código</li>
+  <li><strong>Práticas ágeis avaliadas:</strong> pareamento, issues, Pull requests, produtividade, participação nos rituais, desempenho</li>
+  <li><strong>Detalhamento da avaliação:</strong> Código-Fonte/entregas (30%), (II) Práticas ágeis (25%), (III) Requisitos Especificados/issues (10%), Protótipo (15%), (IV) Padrões de software livre, (V) critério extra (10%)</li>
+  <li><strong>Entregáveis:</strong> Código Fonte, Documentação de comunidades de software livre (Readme, código de conduta, licença, issues, guia de contribuição, templates de issues e pull request), StoryMap, Práticas ágeis (documentação das issues, pratica de commits, pareamento, arquitetura de software), gitpage</li>
+</ul>
+
+<h2 id="sprint-8-1">Sprint 8</h2>
+
+<ul>
+  <li>Práticas ágeis - testes unitários (automação)</li>
+  <li>Práticas ágeis - testes de aceitação</li>
+</ul>
+
+<h2 id="sprint-9-1">Sprint 9</h2>
+
+<ul>
+  <li>Métodos ágeis - práticas ágeis - XP: integração contínua</li>
+</ul>
+
+<h2 id="sprint-10-1">Sprint 10</h2>
+
+<ul>
+  <li>Métodos ágeis - práticas ágeis - Engenharia de Produto - full stack</li>
+  <li>Métodos ágeis - práticas ágeis - Engenharia de Produto - visão geral de pipeline full stack</li>
+</ul>
+
+<h2 id="sprint-11-1">Sprint 11</h2>
+
+<ul>
+  <li>Métodos ágeis - práticas ágeis - Engenharia de produto: entrega contínua (pipeline) + gitflow</li>
+  <li>Métodos ágeis - práticas ágeis - Engenharia de produto: entrega contínua</li>
+</ul>
+
+<h2 id="sprint-12-1">Sprint 12</h2>
+
+<ul>
+  <li>Métodos ágeis - práticas ágeis - XP: monitoramento e controle - retrospectiva + velocity + PR</li>
+  <li>Métodos ágeis - práticas ágeis - indicadores e métricas no contexto de desenvolvimento ágil</li>
+</ul>
+
+<h2 id="sprint-13-1">Sprint 13</h2>
+
+<ul>
+  <li>Métodos ágeis - práticas ágeis - Entrega Contínua - indicador e métricas ágeis</li>
+  <li>Métodos ágeis - práticas ágeis - Entrega Contínua - Qualidade de código-fonte</li>
+</ul>
+
+<h2 id="sprint-14-1">Sprint 14</h2>
+
+<ul>
+  <li>Entrega contínua - integração contínua vs deploy contínuo (papel do DevOps)</li>
+  <li>Entrega Contínua - Implantação (papel do DevOps)</li>
+</ul>
+
+<h2 id="sprint-15-1">Sprint 15</h2>
+
+<ul>
+  <li>Buffer de Contingência</li>
+</ul>
+
+<h2 id="sprint-16---release-2-1">Sprint 16 - Release 2</h2>
+
+<ul>
+  <li><strong>A Release 2:</strong> A ordem de apresentação é sorteada, mas os grupos podem trocar entre si a ordem.</li>
+  <li><strong>Peso da R2:</strong> 60% da nota de projeto</li>
+  <li><strong>Tempo de apresentação:</strong> 15 minutos</li>
+  <li><strong>Detalhe da avaliação:</strong> (I) Código-fonte entregue (60%): features, implantação, qualidade, cobertura de testes, testes de aceitação, (II) PRÁTICAS AGEIS (30%), (III) Tracking (10%)</li>
+</ul>
+
+<h1 id="tutoriais">Tutoriais</h1>
+<ul>
+  <li><a href="https://github.com/kamranahmedse/developer-roadmap">Web Developer Roadmap</a></li>
+  <li><a href="https://github.com/dexteryy/spellbook-of-modern-webdev">Spellbook of Modern WebDev</a></li>
+  <li><a href="https://github.com/donnemartin/system-design-primer">System Design Primer</a></li>
+</ul>
+
+<h1 id="referências">Referências</h1>
+
+<h2 id="engenharia-de-software">Engenharia de Software</h2>
+<ul>
+  <li><a href="https://engsoftmoderna.info">Engenharia de Software Moderna</a></li>
+  <li><a href="https://www.goodreads.com/book/show/4845.Code_Complete">Code Complete [Steve McConnell]</a></li>
+  <li><a href="https://www.goodreads.com/book/show/3735293-clean-code">Clean Code: A Handbook of Agile Software Craftsmanship [Uncle Bob]</a></li>
+  <li><a href="https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer">The Pragmatic Programmer: From Journeyman to Master [Andy Hunt, Dave Thomas]</a></li>
+</ul>
+
+<h2 id="arquitetura-de-software">Arquitetura de Software</h2>
+<ul>
+  <li><a href="https://www.goodreads.com/book/show/18043011-clean-architecture">Clean Architecture [Uncle Bob]</a></li>
+  <li><a href="https://www.goodreads.com/book/show/35755822-building-evolutionary-architectures">Building Evolutionary Architectures: Support Constant Change [Neal Ford, Rebecca Parsons, Patrick Kua]</a></li>
+</ul>
+
+<h2 id="microsserviços">Microsserviços</h2>
+<ul>
+  <li><a href="https://www.goodreads.com/book/show/22512931-building-microservices">Building Microservices: Designing Fine-Grained Systems [Sam Newman]</a></li>
+</ul>
+
+<h2 id="design">Design</h2>
+<ul>
+  <li><a href="https://ebooks.webflow.com/ebook/the-modern-web-design-process">The Modern Web Design Process [Jeff Cardello, John M. Williams]</a></li>
+</ul>
+
+<h2 id="métodos-ágeis">Métodos Ágeis</h2>
+<ul>
+  <li><a href="http://blog.crisp.se/wp-content/uploads/2012/11/SpotifyScaling.pdf">Scaling Agile @ Spotify with Tribes, Squads, Chapters &amp; Guilds [Henrik Kniberg, Anders Ivarsson]</a></li>
+  <li><a href="https://www.goodreads.com/book/show/142783.Software_Engineering">Software Engineering: A Practitioner’s Approach</a></li>
+  <li><a href="https://www.goodreads.com/book/show/33870635-kanban-em-10-passos">Kanban em 10 passos [Jesper Boeg]</a></li>
+  <li><a href="https://www.goodreads.com/book/show/18174.Extreme_Programming_Applied">Extreme Programming Explained: Embrace Change [ Kent Beck, Cynthia Andres]</a></li>
+</ul>
+
+<h2 id="devops">DevOps</h2>
+<ul>
+  <li><a href="https://www.goodreads.com/book/show/26083308-the-devops-handbook">The DevOps Handbook [Gene Kim, Jez Humble, Patrick Debois, John Willis]</a></li>
+  <li><a href="https://www.goodreads.com/book/show/27968891-site-reliability-engineering">Site Reliability Engineering: How Google Runs Production Systems [Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Murphy]</a></li>
+  <li><a href="https://www.goodreads.com/book/show/39080433-accelerate">Accelerate: The Science of Lean Software and DevOps [Nicole Forsgren, Jez Humble, Gene Kim]</a></li>
+</ul>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col  footer-col-1">
+
+        <h3><b>Redes:</b></h3>
+
+        <ul class="social-media-list" style="display:inline-flex">
+          
+            <li>
+              <a href="https://github.com/lappis-unb">
+                <i class="fab fa-github" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a href="https://instagram.com/lappisunb">
+                <i class="fab fa-instagram" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a href="https://facebook.com/lappisunb5">
+                <i class="fab fa-facebook" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+
+        <h3><b>Contato:</b></h3>
+        <p class="text">
+          caguiar@unb.br
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-col  footer-col-1">
+        <p class="text">
+        UnB | Universidade de Brasília<br />
+FGA | Faculdade do gama<br />
+LAPPIS | Laboratório Aplicado de Produção Pesquisa e Inovação em Software<br />
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>

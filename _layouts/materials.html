@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="header">
+    <h1>Repositórios de Apoio ao Curso do Brisa</h1>
+</div>
+<div class=content-wrapper">
+    <p>Aqui você encontrará uma lista de repositórios do GitHub que oferecem recursos e materiais de apoio para o nosso curso do Brisa.</p>
+    {% for item in site.data.materials.items %}
+    <div class="repository-content">
+        <div class="image-wrapper">
+            <img src="{{ item.author }}" alt="author picture">
+        </div>
+        <div class="repo">
+            <h3><a href="{{ item.url | prepend: site.baseurl }}" target="_blank">{{item.curse_name}}</a></h3>
+            <p>{{item.description}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>

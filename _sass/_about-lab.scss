@@ -1,0 +1,62 @@
+.about-lab-wrapper {
+    display: flex;
+    width: 100%;
+
+    background-color: #14193d;
+}
+
+.imagens-grid-wrapper {
+    display: flex;
+    
+    img {
+        filter: grayscale(100%);
+        transition: all 0.4s ease-in-out;
+        
+        &:hover {
+            filter: grayscale(0%);
+        }
+    }
+}
+
+.images-column {
+    width: 50%;
+}
+
+.grid-wrapper {
+    height: 50%;
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.big-image {
+    img { 
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.about-content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 30px;
+
+    .about-text {
+        font-size: 14px;
+        color: white;
+        text-align: left;
+    }
+
+    h1 {
+        color: white;
+        margin: 0;
+        margin-bottom: 60px;
+        font-size: 40px;
+        font-weight: 600;
+    }
+}

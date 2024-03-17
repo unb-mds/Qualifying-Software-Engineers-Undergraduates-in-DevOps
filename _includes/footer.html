@@ -1,0 +1,63 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col  footer-col-1">
+
+        <h3><b>Redes:</b></h3>
+
+        <ul class="social-media-list" style="display:inline-flex">
+          {% if site.github_username %}
+            <li>
+              <a href="https://github.com/{{ site.github_username }}">
+                <i class="fab fa-github" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          {% endif %}
+
+          {% if site.twitter_username %}
+            <li>
+              <a href="https://twitter.com/{{ site.twitter_username }}">
+                <i class="fab fa-twitter" style="color:gray; font-size:30px; margin-right:20px;"></i> {{ site.twitter_username }}
+              </a>
+            </li>
+          {% endif %}
+
+          {% if site.instagram_username %}
+            <li>
+              <a href="https://instagram.com/{{ site.instagram_username }}">
+                <i class="fab fa-instagram" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          {% endif %}
+
+          {% if site.facebook_username %}
+            <li>
+              <a href="https://facebook.com/{{ site.facebook_username }}">
+                <i class="fab fa-facebook" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          {% endif %}
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+
+        <h3><b>Contato:</b></h3>
+        <p class="text">
+          {{ site.emails  }}
+        </p>
+
+      </div>
+
+
+      <div class="footer-col  footer-col-1">
+        <p class="text">
+        {{ site.address | newline_to_br  }}
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Introdução ao Python - ResidenciaTICBrisa / adac </title>
+  <meta name="description" content="">
+  
+  <link rel="stylesheet" href="/_css/main.css">
+  <link rel="canonical" href="http://localhost:4000/blog/2023/12/introducao_python">
+  <link rel="alternate" type="application/rss+xml" title="ResidenciaTICBrisa / adac - uNb" href="http://localhost:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">uNb</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="ResidenciaTICBrisa / adac - uNb"><b>ResidenciaTICBrisa</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">adac</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Posts
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/slides/">
+                <i class="fas fa-book-reader"></i> Slides
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title" style="margin: 0px;">Introdução ao Python</h1>
+    <h3 style="margin: 0px;">Guilherme Oliveira</h3> 
+    <p class="post-meta">Feito em 09/12/2023</p>
+  </header>
+
+  <div>
+    <p style="font-weight: bold">
+      
+      
+      
+    </p>
+    
+    
+      <div style="color: black;">
+        <b>Você já ouviu falar sobre Python?</b>  
+</br>
+
+O Python é uma linguagem de programação versátil, fácil de aprender, e poderosa o suficiente para lidar com uma variedade de tarefas, como o desenvolvimento web, análise de dados e programação de jogos. Foi criada na década de 90 por Guido van Rossum.
+É uma linguagem de multiparadigmas e se destaca por possuir uma sintaxe simplificada, o que pode ser um ponto positivo para quem está iniciando no mundo da programação.
+
+</br></br>
+
+<b>Dito isso, por onde começar?</b>
+</br>
+<b>Instalação:</b>
+Para começar a programar em Python, você deve fazer o download e sua instalação em seu sistema operacional através do site https://www.python.org/.  O Python está disponível para diversas plataformas, como Windows, MacOs e vem instalado por padrão em diversas distribuições Linux. É recomendado que você procure sempre a versão estável (stable). Durante a instalação, certifique-se de marcar a opção que adiciona o Python ao PATH, facilitando a execução de programas a partir do terminal ou prompt de comando. 
+</br></br>
+<img src="/_images/posts/intro_python_01.png"style="width: 100%; height: auto;"/>
+</br></br>
+
+
+<b>Ambiente de desenvolvimento:</b> </br>
+É possível programar em Python em diversos ambientes, inclusive pelo próprio terminal apenas digitando o comando python, que abrirá a linha de comando da linguagem. Para desenvolvimentos mais robustos, é recomendado o uso de IDE’s para melhor visualização e controle dos arquivos, como por exemplo o Visual Studio  Code ou o PyCharm (este último pode ser conseguido gratuitamente através do email institucional no site https://www.jetbrains.com/pt-br/pycharm/)
+</br>
+Seu primeiro “Olá, Mundo!”
+Qual o melhor jeito de começar em uma linguagem nova se não construindo o primeiro “Olá, Mundo!”? No Python isso pode ser feito através da simples linha de código a seguir: 
+</br></br>
+<img src="/_images/posts/Olá_mundo.png"/>
+</br></br>
+O comando “print” é responsável por imprimir uma mensagem no terminal, tal como “printf” em C e “System.out.print” em Java.
+</br></br>
+<b>Variáveis e tipos de dados </b> </br>
+Em Python, não é necessário declarar explicitamente o tipo da variável. A linguagem muda o tipo da variável dinamicamente baseado no dado que ela mantém.
+</br></br>
+<img src="/_images/posts/Variaveis.png"/>
+</br></br>
+Neste exemplo, temos três variáveis:
+“nome” recebeu o valor “João” que seria uma string, que deve ser passada entre aspas simples ou duplas.
+“idade” é uma variável do tipo inteiro e “altura” é do tipo float. Caso os números fossem passados dentro de aspas, eles também seriam considerados string.
+</br>
+Estrutura de controle
+Assim como em outras linguagens, no Python também podemos fazer com que nosso código tome decisões:
+</br></br>
+<img src="/_images/posts/Estrutura_controle.png"/>
+</br></br>
+No exemplo acima, temos uma declaração da variável “idade” que recebeu um valor 18 do tipo inteiro e logo abaixo temos a estrutura de decisão do tipo “if”que retorna duas mensagens diferentes, no caso da idade ser ou não maior ou igual à 18.
+</br>
+Loops
+O Python também possui loops que permitem repetir blocos de código baseado em condições:
+</br></br>
+<img src="/_images/posts/lool.png"/>
+</br></br>
+O código acima, imprime os números de 1 a 5 por exemplo.
+</br>
+Se você tem familiaridade com outra linguagem, pode ser que estranhe a sintaxe um pouco diferente no início, mas a lógica se aplica igualmente a todas elas.
+</br>
+
+Esta, foi apenas uma pequena introdução a esta vasta linguagem que pode te proporcionar projetos e resultados interessantes à medida que você aprimorar seus conhecimentos nela.
+Lembre-se de sempre praticar e consultar a documentação caso exista alguma dúvida.
+https://www.python.org/doc/
+</br></br>
+
+</br>
+
+<code>
+    Nome = “Aluno”</br>
+    Print(”Você gostou do conteúdo?”)</br>
+    if Nome = sim:</br>
+    &nbsp;&nbsp;Print(“TEREMOS NOSSO INCRÍVEL DOJO DE PYTHON EM BREVE”)</br>
+    else:</br>
+    &nbsp;&nbsp;Print(“LEIA DE NOVO”)
+</code>
+
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col  footer-col-1">
+
+        <h3><b>Redes:</b></h3>
+
+        <ul class="social-media-list" style="display:inline-flex">
+          
+            <li>
+              <a href="https://github.com/lappis-unb">
+                <i class="fab fa-github" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a href="https://instagram.com/lappisunb">
+                <i class="fab fa-instagram" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a href="https://facebook.com/lappisunb5">
+                <i class="fab fa-facebook" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+
+        <h3><b>Contato:</b></h3>
+        <p class="text">
+          caguiar@unb.br
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-col  footer-col-1">
+        <p class="text">
+        UnB | Universidade de Brasília<br />
+FGA | Faculdade do gama<br />
+LAPPIS | Laboratório Aplicado de Produção Pesquisa e Inovação em Software<br />
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>

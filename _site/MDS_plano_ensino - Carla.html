@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Metodologia de Desenvolvimento de Software - Plano de Ensino - ResidenciaTICBrisa / adac </title>
+  <meta name="description" content="Metodologia de Desenvolvimento de Software - Plano de Ensino - ResidenciaTICBrisa / adac">
+  
+  <link rel="stylesheet" href="/_css/main.css">
+  <link rel="canonical" href="http://localhost:4000/MDS_plano_ensino%20-%20Carla">
+  <link rel="alternate" type="application/rss+xml" title="ResidenciaTICBrisa / adac - uNb" href="http://localhost:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">uNb</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="ResidenciaTICBrisa / adac - uNb"><b>ResidenciaTICBrisa</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">adac</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Posts
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/slides/">
+                <i class="fas fa-book-reader"></i> Slides
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Metodologia de Desenvolvimento de Software - Plano de Ensino</h1>
+  </header>
+
+  <article class="post-content">
+    <h1 id="metodologia-de-desenvolvimento-de-software---plano-de-ensino">Metodologia de Desenvolvimento de Software - Plano de Ensino</h1>
+
+<p><strong>Disciplina:</strong> Metodologia de Desenvolvimento de Software</p>
+
+<p><strong>Carga Horária:</strong> 60 horas</p>
+
+<p><strong>Professor:</strong> Carla Rocha</p>
+
+<p><strong>Créditos:</strong> 04</p>
+
+<p><strong>Semestre/Ano:</strong> 01/2024</p>
+
+<h2 id="objetivos-da-disciplina">Objetivos da Disciplina</h2>
+
+<p>Os métodos de desenvolvimento de software são conjuntos estruturados de boas práticas que podem ser repetidos durante o processo de produção de software. A disciplina de Metodologia de Desenvolvimento de Software é importante para os futuros engenheiros de software, pois apresenta diferentes métodos de desenvolvimento, com foco nos diversos ciclos de vida e técnicas de desenvolvimento de software. Os principais objetivos são:</p>
+
+<ul>
+  <li>Capacitar os alunos a compreenderem os diferentes métodos, ferramentas, procedimentos e paradigmas de desenvolvimento de software.</li>
+  <li>Capacitar os alunos a aplicar/adaptar processos de desenvolvimento de software para a resolução de problemas.</li>
+  <li>Capacitar os estudantes a construírem sistemas complexos e distribuídos, utilizando metodologias de desenvolvimento e tecnologias web/móveis atuais.</li>
+</ul>
+
+<h2 id="ementa-do-programa">Ementa do Programa</h2>
+
+<ul>
+  <li>Modelos de ciclo de vida e de processos; Processo Unificado.</li>
+  <li>Métodos Ágeis de desenvolvimento de software.</li>
+  <li>Outras abordagens de desenvolvimento de software (orientado a dados, orientado a funções, orientado a objetos, orientado a aspectos).</li>
+  <li>Ferramentas.</li>
+</ul>
+
+<h2 id="formação-das-equipes">Formação das Equipes</h2>
+
+<ul>
+  <li>Planilha para definição dos grupos e temas <a href="https://docs.google.com/spreadsheets/d/1fRMzKqWOm9cWzEYJPDdl3-wLvvhfoE60wIrCY3PINW0/edit?usp=sharing">aqui</a></li>
+</ul>
+
+<h2 id="canais-de-comunicação">Canais de Comunicação</h2>
+
+<ul>
+  <li>Grupo do Telegram: <a href="https://t.me/+FvNorRH9kFUzODcx">https://t.me/+FvNorRH9kFUzODcx</a></li>
+</ul>
+
+<h2 id="aulas-assíncronas">Aulas Assíncronas</h2>
+
+<ul>
+  <li>Vídeos disponibilizados no YouTube: <a href="https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw/videos?view_as=subscriber">Canal YouTube</a></li>
+  <li>Leituras sugeridas na sprint: disponibilizadas no planejamento das aulas</li>
+</ul>
+
+<h2 id="planejamento-das-aulas">Planejamento das Aulas</h2>
+
+<ul>
+  <li>O planejamento das aulas semanais, discriminando se são assíncronas ou síncronas, e qual canal será atualizado, estará disponível no início da semana no <a href="https://docs.google.com/document/d/1CI8ty75dFyb9xw1olZELF7zkANb_POgEidcXgrMdviw/edit?usp=sharing">link</a></li>
+</ul>
+
+<h2 id="descrição-do-programa">Descrição do Programa</h2>
+
+<h3 id="processos-de-desenvolvimento-de-software">Processos de Desenvolvimento de Software</h3>
+
+<ul>
+  <li>Modelos de Processo de Desenvolvimento de Software (ciclo de vida)</li>
+  <li>Atividades de Processo</li>
+</ul>
+
+<h3 id="fundamentos-do-extreme-programming-xp">Fundamentos do Extreme Programming (XP)</h3>
+
+<ul>
+  <li>O manifesto Ágil</li>
+  <li>Os Quatro valores e as Quatro variáveis</li>
+  <li>Práticas ágeis</li>
+  <li>O jogo do planejamento</li>
+  <li>Releases Pequenas</li>
+  <li>A metáfora</li>
+  <li>Histórias do Usuário</li>
+  <li>Desenho simples</li>
+  <li>Testes (unitário, aceitação)</li>
+  <li>Refatoração</li>
+  <li>Programação em Pares</li>
+  <li>Desenvolvimento Coletivo</li>
+</ul>
+
+<h3 id="fundamentos-do-processo-unificado-de-desenvolvimento-de-software">Fundamentos do Processo Unificado de Desenvolvimento de Software</h3>
+
+<ul>
+  <li>Conceitos</li>
+  <li>Fases: Iniciação, Elaboração, Construção e Transição</li>
+  <li>Disciplinas (Modelagem de Negócio, Requisitos, Análise e Desenho, Implementação, Teste, Gerenciamento de Projeto, Gerência de Configuração e Mudanças, Implantação e Ambiente)</li>
+</ul>
+
+<h2 id="avaliações-e-critérios-de-avaliação">Avaliações e Critérios de Avaliação</h2>
+
+<p>A avaliação será feita por meio de:</p>
+
+<ul>
+  <li>EP1 a EPn: Entregas do Projeto.</li>
+  <li>MT1 a MTn: MiniTeste Individual e Presencial (Prova).</li>
+  <li>P1: Participação em sala de aula</li>
+</ul>
+
+<p>O objetivo do Projeto simula uma situação real de desenvolvimento e engenharia de Produto de Software. Os alunos de MDS irão se concentrar na execução metodologia de desenvolvimento através da especificação de requisitos, codificação e testes. Haverá duas avaliações formais das releases a serem desenvolvidas.</p>
+
+<p>Os pesos atribuídos aos diferentes eventos de avaliação são indicados abaixo.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Evento da Avaliação</th>
+      <th>Peso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Projeto (avaliação individual)</td>
+      <td>70%</td>
+    </tr>
+    <tr>
+      <td>Critério Extra de avaliação*</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>Avaliação Individual</td>
+      <td>20%</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="avisos">Avisos</h2>
+
+<ul>
+  <li>Também são considerados critérios de avaliação da participação: assiduidade; pontualidade; interesse; participação em sala.</li>
+  <li>Os documentos referentes à disciplina estarão disponíveis em: <a href="https://github.com/fga-eps-mds/A-Disciplina">https://github.com/fga-eps-mds/A-Disciplina</a></li>
+  <li>Os casos não previstos de perda de avaliação serão avaliados individualmente, de acordo com as circunstâncias.</li>
+  <li>Os projetos são avaliados continuamente.</li>
+  <li>A cobertura de código deverá ser 90%, excetuando a camada de apresentação.</li>
+  <li>O tamanho dos times deve respeitar o limite máximo de 6 membros.</li>
+  <li>As atividades do projeto deverão ser organizadas por meio de issues e milestones.</li>
+  <li>O código-fonte e demais</li>
+</ul>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col  footer-col-1">
+
+        <h3><b>Redes:</b></h3>
+
+        <ul class="social-media-list" style="display:inline-flex">
+          
+            <li>
+              <a href="https://github.com/lappis-unb">
+                <i class="fab fa-github" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a href="https://instagram.com/lappisunb">
+                <i class="fab fa-instagram" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a href="https://facebook.com/lappisunb5">
+                <i class="fab fa-facebook" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+
+        <h3><b>Contato:</b></h3>
+        <p class="text">
+          caguiar@unb.br
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-col  footer-col-1">
+        <p class="text">
+        UnB | Universidade de Brasília<br />
+FGA | Faculdade do gama<br />
+LAPPIS | Laboratório Aplicado de Produção Pesquisa e Inovação em Software<br />
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>

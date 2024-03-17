@@ -1,0 +1,33 @@
+---
+layout: default
+title: page.title
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title" style="margin: 0px;">{{ page.title }}</h1>
+    <h3 style="margin: 0px;">{{page.author}}</h3> 
+    <p class="post-meta">Feito em {{ page.date | date: site.dateformat }}</p>
+  </header>
+
+  <div>
+    <p style="font-weight: bold">
+      {% if page.pdf %}
+        [<a href="{{ page.pdf }}"> Instructions </a>]
+      {% endif %}
+      {% if page.attachment %}
+        [<a href="{{ page.attachment | prepend: site.baseurl }}">attachment</a>]
+      {% endif %}
+      {% if page.solutions %}
+        [<a href="{{ page.solutions | prepend: site.baseurl }}">solutions</a>]
+      {% endif %}
+    </p>
+    
+    {% if page.body %}
+      <div style="color: black;">
+        {{ page.body }}
+      </div>
+    {% endif %}
+
+  </div>
+</div>

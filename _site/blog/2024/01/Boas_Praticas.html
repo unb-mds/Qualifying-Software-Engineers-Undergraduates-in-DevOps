@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Elevando o Código ao Padrão: Boas Práticas de Programação Desvendadas - ResidenciaTICBrisa / adac </title>
+  <meta name="description" content="">
+  
+  <link rel="stylesheet" href="/_css/main.css">
+  <link rel="canonical" href="http://localhost:4000/blog/2024/01/Boas_Praticas">
+  <link rel="alternate" type="application/rss+xml" title="ResidenciaTICBrisa / adac - uNb" href="http://localhost:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">uNb</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="ResidenciaTICBrisa / adac - uNb"><b>ResidenciaTICBrisa</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">adac</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Posts
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/slides/">
+                <i class="fas fa-book-reader"></i> Slides
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title" style="margin: 0px;">Elevando o Código ao Padrão: Boas Práticas de Programação Desvendadas</h1>
+    <h3 style="margin: 0px;">Amanda Campos</h3> 
+    <p class="post-meta">Feito em 10/01/2024</p>
+  </header>
+
+  <div>
+    <p style="font-weight: bold">
+      
+      
+      
+    </p>
+    
+    
+      <div style="color: black;">
+        Em um mundo cada vez mais digital, as boas práticas de programação desempenham um papel crucial na construção de software robusto, eficiente e sustentável. Estas diretrizes, muitas vezes subestimadas, são alicerces que moldam a qualidade do código e contribuem para a experiência positiva do desenvolvedor. Vamos explorar por que essas práticas são tão essenciais e como elas impactam significativamente o ciclo de vida do desenvolvimento de software.
+</br></br>
+<b>A Importância das Boas Práticas:</b>
+As boas práticas não são meramente regras arbitrárias, mas sim princípios fundamentais que promovem a legibilidade, manutenibilidade e escalabilidade do código. Elas proporcionam uma base sólida para a colaboração eficaz entre os membros da equipe, facilitando a compreensão mútua e reduzindo erros. Ao aderir a essas práticas, não apenas elevamos a qualidade do nosso código, mas também agilizamos o processo de desenvolvimento, economizando tempo e recursos.
+</br></br>
+<b>Padrão de Commit como Pilar: Escrevendo Mensagens Claras e Descritivas</b>
+Dentre as diversas boas práticas, os padrões de commit destacam-se como pilares essenciais. Adotar uma abordagem consistente nos commits não apenas organiza o histórico do projeto, mas também simplifica a identificação e correção de problemas. Utilizar mensagens claras e descritivas em cada commit não apenas beneficia o desenvolvedor individualmente, mas também facilita a colaboração eficiente entre membros da equipe. Além disso, a consistência nos padrões de commit cria uma narrativa coerente do desenvolvimento do código ao longo do tempo.</br>
+Para melhor entendimento, vamos desmembrar o exemplo:</br>
+"🎉 commit inicial"
+</br></br>
+<b>Emoji:</b></br>
+O uso de emojis pode parecer uma escolha estilística, mas na verdade, adiciona uma camada visual que facilita a identificação rápida da natureza do commit. No exemplo, "🎉" sugere um marco significativo, como um commit inicial ou um lançamento importante.
+</br></br>
+<b>Título do Commit:</b></br>
+O título do commit, neste caso, "commit inicial", resume de forma concisa a principal alteração ou adição realizada. É crucial manter este título claro e informativo, permitindo que outros desenvolvedores entendam rapidamente a intenção do commit.
+</br></br>
+
+<b>Detalhamento Opcional:</b></br>
+Em alguns casos, um detalhamento mais extenso na mensagem de commit pode ser benéfico. Isso pode incluir informações sobre o porquê da mudança, a solução adotada ou qualquer impacto potencial. No entanto, é essencial manter esses detalhes de forma sucinta para não sobrecarregar o histórico.
+</br></br>
+
+Ao seguir um padrão como este, você cria um histórico de commit que não apenas registra as alterações, mas também conta a história do desenvolvimento do projeto. Futuramente, ao revisitar o histórico, desenvolvedores e colaboradores poderão entender não apenas o que foi alterado, mas também o contexto por trás dessas alterações.
+</br></br>
+
+<b>Exemplo de Uso:</b></br>
+Git commit -m ":bug: Corrige erro de validação de formulário"</br>
+
+Neste commit, o emoji ":bug:" indica a correção de um bug específico, enquanto o título "Corrige erro de validação de formulário" fornece uma descrição clara da natureza da correção realizada.
+</br></br>
+<b>Literaturas Recomendadas:</b></br>
+Para aprofundar seus conhecimentos sobre boas práticas de programação, recomendo algumas leituras fundamentais:</br>
+1-"Clean Code: A Handbook of Agile Software Craftsmanship" de Robert C. Martin - Este livro é um guia clássico que explora as práticas de programação limpa, oferecendo insights valiosos sobre como escrever código compreensível e eficiente.</br>
+2-"Refactoring: Improving the Design of Existing Code" de Martin Fowler - Fowler apresenta técnicas de refatoração que são essenciais para manter e aprimorar continuamente a qualidade do código.</br>
+3-"The Pragmatic Programmer: Your Journey to Mastery" de Dave Thomas e Andy Hunt - Este livro abrange uma variedade de tópicos, incluindo boas práticas de programação, e fornece conselhos práticos para os desenvolvedores.
+</br></br>
+Ao incorporar essas boas práticas em seu trabalho diário, você não apenas elevará a qualidade do seu código, mas também contribuirá para um ambiente de desenvolvimento mais eficiente e colaborativo. Este é o caminho para se destacar como um desenvolvedor exemplar. 
+
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col  footer-col-1">
+
+        <h3><b>Redes:</b></h3>
+
+        <ul class="social-media-list" style="display:inline-flex">
+          
+            <li>
+              <a href="https://github.com/lappis-unb">
+                <i class="fab fa-github" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+
+          
+            <li>
+              <a href="https://instagram.com/lappisunb">
+                <i class="fab fa-instagram" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a href="https://facebook.com/lappisunb5">
+                <i class="fab fa-facebook" style="color:gray; font-size:30px; margin-right:20px;"></i>
+              </a>
+            </li>
+          
+
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+
+        <h3><b>Contato:</b></h3>
+        <p class="text">
+          caguiar@unb.br
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-col  footer-col-1">
+        <p class="text">
+        UnB | Universidade de Brasília<br />
+FGA | Faculdade do gama<br />
+LAPPIS | Laboratório Aplicado de Produção Pesquisa e Inovação em Software<br />
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>

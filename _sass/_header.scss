@@ -1,0 +1,255 @@
+
+/**
+ * Site header
+ */
+html:not([data-scroll='0']) {
+    .site-header {
+        transition: background-color 0.5s;
+        background-color: $clemson-purple;
+    }
+}
+.site-header {
+    // border-top: 0px solid $grey-color-dark;
+	// border-bottom: 2px solid $clemson-orange;
+    background-color: #00000000;
+    // Positioning context for the mobile navigation icon
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+// .header-texture {
+//     opacity: $header-background-opacity;
+//     // filter: invert($header-background-invert);
+//     height:100%; 
+//     z-index: 0; 
+//     position: absolute; 
+//     top:0; 
+//     right: 0; 
+//     left: 0; 
+//     background-image: "url('{{ '/_images/pattern5.png' | prepend: site.baseurl }}')";
+//     color: #fff
+// }
+
+// .site-title, .site-title a {
+//     font-size: 26px;
+// /* 		margin-top: 15px;
+//     line-height: 40px; */
+//     letter-spacing: -1px;
+//     margin-bottom: 0;
+//     float: left;
+//     font-weight: 500;
+//     font-family: 'Titillium Web', sans-serif;
+//     color: $header-title-color;
+//     &,
+//     &:visited {
+//         color: $header-title-color;
+//     }
+//     &,
+//     &:hover {
+//         text-decoration: none;
+//     }
+// }
+
+.site-nav {
+    // Flex centrilization
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header .wrapper {
+	padding: 15px 20px;
+	position: relative;
+}
+
+.site-nav .menu {
+    // Flex centrilization
+    display: flex;
+    align-items: center;
+
+	text-align: right;
+	float: right;
+
+	margin: 0;
+	padding-top: 9px;
+	padding: 0;
+
+	font-size: 85%;
+	letter-spacing: 1px;
+	line-height: 1em;
+	font-weight: 600;
+	list-style-type: none;
+	text-transform: uppercase;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.site-nav .sidebar-content {
+    display: none;
+}
+
+.site-nav li {
+    &:not(:first-child) {
+        margin-left: 20px;
+    }
+	display: inline-block;
+	line-height: normal;
+	position: relative;
+	vertical-align: top;
+}
+
+.site-nav a {
+    display: block;
+    color: $header-text-color;
+}
+
+/* Sub Menu */
+
+// .site-nav .sub-menu a {
+// 	display: block;
+// 	font-weight: normal;
+// 	height: auto;
+// 	letter-spacing: 0;
+// 	line-height: 1.2em;
+// 	padding: 4px 10px;
+//     color: $title-color;
+// }
+
+// .site-nav .sub-menu a:hover {
+// 	color: $clemson-purple;
+// }
+// .site-nav  .sub-menu {
+// 	background: #ffffff;
+// 	border-color: $clemson-purple;
+// 	min-width: 265px;
+
+// 	z-index:2147483647;
+// }
+// .site-nav .sub-menu li.current-menu-item > a {
+// 	border-left-color: $clemson-purple;
+// 	border-right-color: $clemson-purple;
+// 	border-right: 0px;
+
+// }
+
+
+// .sub-menu {
+// 	border: 3px solid transparent;
+// 	border-top: 0;
+// 	/* bg and border colors set in header */
+// 	box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+// 	-moz-box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+// 	-webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+// 	display: none;
+// 	right: -10px;
+// 	padding: 4px 0 3px 0;
+// 	position: absolute;
+// 	text-align: left;
+// 	text-transform: none;
+// 	top: 28px;
+// 	min-width: 265px;
+
+//     z-index:999;
+// 	font-family: Helvetica, Arial, Verdana, sans-serif;
+
+// }
+
+// .sub-menu li {
+// 	border-bottom: 0;
+// 	display: block;
+// 	height: auto;
+// 	margin: 3px 0;
+// 	padding: 0;
+// 	text-align: left;
+// }
+
+// .site-nav li:hover > .sub-menu {
+// 	display: block;
+// }
+
+
+
+// .site-nav h1 {
+// 	position: absolute;
+// 	left: -999em;
+// }
+
+
+// .site-nav {
+//     float: initial;
+//     line-height: 40px;
+
+
+//     .menu-icon {
+//         display: none;
+//     }
+
+//     .page-link {
+//         color: $header-text-color;
+//     background: $clemson-purple;
+//         line-height: $base-line-height;
+
+//         // Gaps between nav items, but not on the first one
+//         &:not(:first-child) {
+//             margin-left: 20px;
+//         }
+//     }
+
+
+
+//     @include media-query($on-palm) {
+//         position: absolute;
+//         top: 9px;
+//         right: 30px;
+//         background-color: $background-color;
+//         border: 1px solid $grey-color-light;
+//         border-radius: 5px;
+//         text-align: right;
+
+//         .menu-icon {
+//             display: block;
+//             float: right;
+//             width: 36px;
+//             height: 26px;
+//             line-height: 0;
+//             padding-top: 100px;
+//             text-align: center;
+
+//             > svg {
+//                 width: 18px;
+//                 height: 15px;
+
+//                 path {
+//                     fill: $grey-color-dark;
+//                 }
+//             }
+//         }
+
+//         .trigger {
+//             clear: both;
+//             display: none;
+//         }
+
+//         &:hover .trigger {
+//             display: block;
+//             padding-bottom: 5px;
+//         }
+
+//         .page-link {
+//             display: block;
+//             padding: 5px 10px;
+//         }
+//     }
+// }
+
+// .schoolname {
+//     color: $header-text-color;
+// }
+
+// .coursesemeter {
+//     color: $header-text-color;
+//     opacity: 0.9;
+// }
+
+
