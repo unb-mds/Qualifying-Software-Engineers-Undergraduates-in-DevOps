@@ -1,5 +1,5 @@
 ---
-type: posts
+type: post
 date: 2023-11-28 10:00:00 +0000
 title: 'Versionamento de Código com GitHub Skills'
 author: Isaque Alvez
