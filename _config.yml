@@ -35,7 +35,7 @@ permalink: blog/:year/:month/:title
 excerpt_separator: "<!--more-->"
 
 include: ['_images', '_css']
-exclude: ['develop']
+exclude: ['develop', 'vendor']
 
 dateformat: "%d/%m/%Y"
 
