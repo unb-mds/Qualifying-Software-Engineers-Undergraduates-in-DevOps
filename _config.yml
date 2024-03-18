@@ -5,8 +5,8 @@ course_semester: "4 semestre"
 pre_requisites: OO
 
 
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://unb-mds.github.io" # the base hostname & protocol for your site
+baseurl: # the subpath of your site, e.g. /blog/
+url: "https://unb-mds.github.io/Qualifying-Software-Engineers-Undergraduates-in-DevOps/" # the base hostname & protocol for your site
 
 schoolname: "UnB"
 
