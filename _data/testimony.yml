@@ -1,10 +1,7 @@
 items:
-  - body: "Aprendemos a superar nossas limitações quando enfrentávamos problemas desconhecidos."
-    author: Gustavo Macedo 
-    photo: /_images/testimony/Gustavo_Macedo.jpg
-  - body: "Enriquecendo meu conhecimento técnico e aprimorando minha capacidade de enfrentar futuros desafios com confiança e eficiência."
-    author: Raquel Eucaria
-    photo: /_images/testimony/Raquel_Eucaria.png
-  - body: "Aprofundei meus conhecimentos em desenvolvimento tanto no frontend quanto no backend, empregando tecnologias como React e Python de maneira conjunta."
-    author: Fause Carlos 
-    photo: /_images/testimony/Fause_Carlos.png
+  - body: "Analisando e refletindo sobre tudo o que se passou até então no projeto, reconheço que foi uma experiência repleta de desafios e crescimento. Nunca havia trabalhado com software envolvendo tantas pessoas assim. No começo, a sensação era de que tudo ia dar errado, ninguém parecia se entender, nem mesmo com a professora (kkkkk)."
+    author: Carlos Eduardo 
+  - body: "Para mim, essa foi a primeira matéria que realmente proporcionou sentir o gostinho de como é o mercado na vida real. Eu não tive feedbacks de amigos antes de começar a matéria, então, inicialmente, fiquei meio receosa. As primeiras semanas foram um 'choque', pois tudo era novo: lidar com equipe, documentação, reuniões e GitHub."
+    author: Patrícia Helena
+  - body: "Fazer essa disciplina foi uma ótima experiência, tanto para faculdade quanto para minha vida profissional, aprendi a trabalhar em equipe e se organizar como uma, aprendi a desenvolver algo que traz resultado não só para mim, mas para as outras pessoas."
+    author: Giovana Silva
