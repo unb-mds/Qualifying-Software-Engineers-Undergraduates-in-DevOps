@@ -6,7 +6,7 @@ tldr: "Métodos Ágeis"
 thumbnail: /static_files/presentations/MDS.png
 hide_from_announcments: false
 links: 
-    - url: /static_files/presentations/[CTEDS] Metodos Ageis-Aula01.pdf
+    - url: /static_files/presentations/[CTEDS]Aula01.pdf
       name: slides
 ---
 
