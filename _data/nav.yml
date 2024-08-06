@@ -21,4 +21,4 @@ items:
   
 - url: https://github.com/orgs/unb-mds/repositories
   name: Repositórios
-  icon_class: fa fa-github
+  icon_class: fab fa-git-square
