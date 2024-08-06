@@ -19,3 +19,6 @@ items:
   name: Projetos Anteriores
   icon_class: fas fa-user-graduate
   
+- url: https://github.com/orgs/unb-mds/repositories
+  name: Repositórios
+  icon_class: fa fa-github
