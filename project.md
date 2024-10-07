@@ -38,15 +38,15 @@ A disciplina utiliza aprendizagem por experiência, aprendizagem orientada a pro
 
 A turma deve se dividir em equipes ágeis, de até 6 membros por time. Serão apresentados temas de projeto e cada grupo escolhe 3 temas na ordem de preferência. A professora negocia e aloca os temas para o grupo, dentro das preferências. 
 
-- A planilha para definição dos grupos e temas está [aqui](https://docs.google.com/spreadsheets/d/1YR7rbIzNur_oCPjcPuMSo31IjXYsGnerDHD5KvX4070/edit?usp=sharing)
-
+- Planilha para definição dos grupos e temas está[aqui](https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing)
+  
 # Canais de Comunicação
 
 A disciplina será realizada de forma presencial na sala Mocap. Serão disponibilizados tanto material assíncrono quanto aulas síncronas. 
 
 ## Dúvidas, conversas rápidas, avisos
 
-- Grupo do Telegram - [https://t.me/+VpA2iOUFfJk0YmJh](https://t.me/+VpA2iOUFfJk0YmJh)
+- Grupo do Telegram - [https://t.me/+-HBi7HDB42llMDEx](https://t.me/+-HBi7HDB42llMDEx)
 
 ## Aulas Assíncronas
 
@@ -90,7 +90,7 @@ A nota final do aluno é calculada da seguinte forma:
 
 Nota Final = (Critério de Avaliação Coletiva) * 0,20 + (Critério de Avaliação Individual) * 0,40 + (Nota individual Release 1) * 0,2  + (Nota individual Release 2) * 0,2
 
-Os critérios estão detalhados nesse [documento]([./Criterios.pdf](https://github.com/fga-eps-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/ebook/src/1_Introdução/Criterios.pdf))
+Os critérios estão detalhados nesse [documento]([./Criterios.pdf](https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf))
 
 Para o aluno satisfazer os seguintes requisitos para obter a aprovação na disciplina:
 
