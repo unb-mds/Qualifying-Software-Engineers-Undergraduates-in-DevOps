@@ -14,7 +14,7 @@ permalink: /planoensino/
 
 **Créditos:** 04 
 
-**Semestre/Ano:** 01/2024
+**Semestre/Ano:** 02/2024
 
 ## Objetivos da Disciplina
 
@@ -38,7 +38,7 @@ A disciplina utiliza aprendizagem por experiência, aprendizagem orientada a pro
 
 A turma deve se dividir em equipes ágeis, de até 6 membros por time. Serão apresentados temas de projeto e cada grupo escolhe 3 temas na ordem de preferência. A professora negocia e aloca os temas para o grupo, dentro das preferências. 
 
-- Planilha para definição dos grupos e temas está[aqui](https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing)
+- Planilha para definição dos grupos e temas está [aqui](https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing)
   
 # Canais de Comunicação
 
