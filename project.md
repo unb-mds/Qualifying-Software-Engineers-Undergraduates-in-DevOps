@@ -139,8 +139,8 @@ Os critérios avaliados individualmente no projeto estão destacados na tabela a
 
 ### Datas das Releases 1 e 2
 
-- Release 1 (major) - 26 abril de 2024
-- Release 2 (major) - 01 de julho de 2024
+- Release 1 (major) - 11 a 13 de dezembro de 2024.
+- Release 2 (major) - 04-06 de fevereiro de 2025.
 
 ## Bibliografia Básica
 
