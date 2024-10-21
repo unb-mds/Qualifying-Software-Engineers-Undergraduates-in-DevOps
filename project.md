@@ -88,7 +88,7 @@ A avaliação será feita por meio da avaliação individual do desempenho do al
 
 A nota final do aluno é calculada da seguinte forma:
 
-Nota Final = (Critério de Avaliação Coletiva) * 0,20 + (Critério de Avaliação Individual) * 0,40 + (Nota individual Release 1) * 0,2  + (Nota individual Release 2) * 0,2
+Nota Final = (Critério de Avaliação Coletiva) * 0,10 + (Provas) * 0,10 + (Critério de Avaliação Individual) * 0,40 + (Nota individual Release 1) * 0,2  + (Nota individual Release 2) * 0,2
 
 Os critérios estão detalhados nesse [documento]([./Criterios.pdf](https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf))
 
@@ -136,6 +136,7 @@ Os critérios avaliados individualmente no projeto estão destacados na tabela a
 - O tamanho dos times deve respeitar o limite máximo de 6 membros.
 - As atividades do projeto deverão ser organizadas por meio de issues e milestones.
 - O código-fonte e demais artefatos elaborados deverão ser revisados utilizando pull/merge requests e issues.
+- As provas não são pré agendadas.
 
 ### Datas das Releases 1 e 2
 
