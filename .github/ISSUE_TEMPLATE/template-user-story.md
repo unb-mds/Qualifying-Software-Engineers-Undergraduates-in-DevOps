@@ -1,4 +1,12 @@
-Template user story
+---
+name: Template user story
+about: Template user story
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 
 # Descrição
 
