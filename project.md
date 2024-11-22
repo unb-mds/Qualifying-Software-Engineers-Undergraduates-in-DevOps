@@ -90,7 +90,7 @@ A nota final do aluno é calculada da seguinte forma:
 
 Nota Final = (Provas) * 0,20 + (Critério de Avaliação Individual) * 0,40 + (Nota individual Release 1) * 0,2  + (Nota individual Release 2) * 0,2
 
-Os critérios estão detalhados nesse [documento]([./Criterios.pdf](https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf))
+Os critérios estão detalhados nesse [documento]([https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf])
 
 Para o aluno satisfazer os seguintes requisitos para obter a aprovação na disciplina:
 
@@ -139,7 +139,9 @@ Os critérios avaliados individualmente no projeto estão destacados na tabela a
 - As provas não são pré agendadas.
 
 ### Datas das Releases 1 e 2
+
 Entregáveis R1  e R2 [Nos slides](https://mds.lappis.rocks/static_files/presentations/MDS.pdf)
+
 - Release 1 (major) - 11 a 13 de dezembro de 2024.
 - Release 2 (major) - 04-06 de fevereiro de 2025.
 
