@@ -80,7 +80,7 @@ A avaliação será feita por meio de:
 
 O objetivo do Projeto simula uma situação real de desenvolvimento e engenharia de Produto de Software. Os alunos de MDS irão se concentrar na execução metodologia de desenvolvimento através da especificação de requisitos, codificação e testes. Haverá duas avaliações formais das releases a serem desenvolvidas.
 
-Os critérios estão detalhados nesse [documento]([./Criterios.pdf](https://github.com/fga-eps-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/ebook/src/1_Introdução/Criterios.pdf)). Apesar da avaliação ser feita do projeto, cada aluno recebe a nota individualizada de sua participação no projeto.
+Os critérios estão detalhados nesse [documento]([./Criterios.pdf](https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf)). Apesar da avaliação ser feita do projeto, cada aluno recebe a nota individualizada de sua participação no projeto.
 
 Os pesos atribuídos aos diferentes eventos de avaliação são indicados abaixo.
 

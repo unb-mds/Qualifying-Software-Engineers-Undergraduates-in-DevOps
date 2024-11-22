@@ -24,14 +24,14 @@ Os métodos de desenvolvimento de software são conjuntos estruturados de boas p
 - Métodos Ágeis de desenvolvimento de software.
 - Outras abordagens de desenvolvimento de software (orientado a dados, orientado a funções, orientado a objetos, orientado a aspectos).
 - Ferramentas.
-
+x`
 ## Formação das Equipes
 
-- Planilha para definição dos grupos e temas [aqui](https://docs.google.com/spreadsheets/d/1fRMzKqWOm9cWzEYJPDdl3-wLvvhfoE60wIrCY3PINW0/edit?usp=sharing)
+- Planilha para definição dos grupos e temas [aqui](https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing)
 
 ## Canais de Comunicação
 
-- Grupo do Telegram: [https://t.me/+FvNorRH9kFUzODcx](https://t.me/+FvNorRH9kFUzODcx)
+- Grupo do Telegram: [https://t.me/+-HBi7HDB42llMDEx](https://t.me/+-HBi7HDB42llMDEx)
 
 ## Aulas Assíncronas
 
