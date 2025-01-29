@@ -4,10 +4,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+import json
+import subprocess
 
 BASE_URL = "https://api.github.com"
-ORG_NAME = "nome_da_organizacao"  
-TOKEN = "seu_token_github"  
+ORG_NAME = "unb-mds"  
+TOKEN = "seu_token"  
 
 headers = {"Authorization": f"Bearer {TOKEN}"}
 
@@ -103,6 +105,9 @@ G.add_edges_from(relations)
 plt.figure(figsize=(28, 20))  
 pos = nx.spring_layout(G, k=12.0, seed=42, iterations=2000)
 
+with open("pos.json", "w") as f:
+    json.dump({node: pos[node].tolist() for node in pos}, f)
+
 def adjust_overlap(positions, threshold=0.1, max_iterations=100):
     for _ in range(max_iterations):
         adjusted = False
@@ -178,6 +183,11 @@ os.makedirs(downloads_folder, exist_ok=True)
 
 plt.axis("off")  
 plt.tight_layout()  
+downloads_folder = os.path.expanduser("~/Downloads")
+os.makedirs(downloads_folder, exist_ok=True)
+
 output_path = os.path.join(downloads_folder, "generate_graph.jpeg")
 plt.savefig(output_path, dpi=300) 
 print(f"Gráfico salvo em: {output_path}")
+
+subprocess.run(["code", output_path])
