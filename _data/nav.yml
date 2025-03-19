@@ -15,8 +15,8 @@ items:
   name: Slides
   icon_class: fas fa-book-reader
 
-- url: https://unb-mds.github.io/portfolio-MDS/
-  name: Projetos Anteriores
+- url: /post/
+  name: Projetos 
   icon_class: fas fa-user-graduate
   
 - url: https://github.com/unb-mds
