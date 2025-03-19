@@ -8,3 +8,20 @@ items:
   url: https://github.com/StrangeUnit28/Tutoria_de_Python-BRISA
   description: Repositório destinado a ser uma tutoria de Python para o projeto BRISA. O leitor será introduzido a linguagem e bibliotecas relevantes a análise de dados (Pandas, Numpy e MatPlotlib), além de tecnologias que aumentarão a eficiência na criação de um projeto.
   author: https://github.com/StrangeUnit28.png
+
+- course_name: GovHubbr - Análise de Gastos Públicos IPEA - Geração Automática de Relatórios Inteligentes
+  url: https://gitlab.com/lappis-unb/decidimbr
+  description: >
+    O projeto GovHubbr visa a geração automática de relatórios inteligentes para análise dos dados financeiros do IPEA.
+    A solução será construída com a plataforma Streamlit, utilizando HTML e CSS customizados, e aplicará modelos de Processamento 
+    de Linguagem Natural (NLP) para geração automatizada de textos e insights financeiros. O uso de tecnologias proprietárias, 
+    como ChatGPT, não será permitido, garantindo uma abordagem totalmente baseada em código aberto.
+  author: https://github.com/guilhermedfs14.png
+  skills: Python, Machine Learning, NLP, Visualização de Dados, Streamlit
+  estimated_hours: 350
+  complexity: Média
+  mentor:
+    name: Guilherme
+    telegram: https://t.me/guilhermedfs
+    github: https://github.com/guilhermedfs14
+    email: guilhermedfs11@gmail.com
