@@ -15,7 +15,7 @@ items:
   name: Slides
   icon_class: fas fa-book-reader
 
-- url: /post/
+- url: /posts/
   name: Projetos 
   icon_class: fas fa-user-graduate
   
