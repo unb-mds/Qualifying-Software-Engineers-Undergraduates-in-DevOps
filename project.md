@@ -166,6 +166,9 @@ Entregáveis R1  e R2 [Nos slides](https://mds.lappis.rocks/static_files/present
 - [OPEN ACCESS] Scrum e XP direto das Trincheiras. (http://www.infoq.com/br/minibooks/scrum-xp-from-the-trenches) 
 
 
+---
+---
+---
 
 
 # **Projetos 2025/1**  
@@ -182,6 +185,8 @@ Como fazer boas apresentações
 Dicas de slides -  https://www.ime.usp.br/~kon/ResearchStudents/dicasSlides.html
 
 
+---
+---
 ## **Desenvolvimento do Aplicativo MEPA – Monitoramento da Qualidade Energética**  
 
 📌 **Descrição:**  
@@ -209,6 +214,7 @@ Atualmente, a **solução web já está em produção** e conta com uma **API di
 - **E-mail:** guilhermedfs11@gmail.com  
 
 
+---
 
 ## **Análise de Sentimentos dos Comentários do Brasil Participativo**  
 
@@ -227,7 +233,6 @@ O projeto visa criar uma ferramenta para **análise de sentimentos** dos coment�
 
 🔗 **[Acesse a documentação do projeto](https://gitlab.com/lappis-unb/decidimbr)**  
 
----
 
 ### **Detalhes do Projeto**  
 
@@ -256,7 +261,6 @@ Para resolver esses problemas, o projeto desenvolve uma **solução tecnológica
 
 🌎 **Palavras-chave:** IPEA, Universidade de Brasília (UnB), Gestão de Dados, Open Source  
 
----
 
 ### **Objetivo do Projeto**  
 
@@ -274,7 +278,6 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 
 🔗 **[Acesse a documentação do projeto](https://gitlab.com/lappis-unb/decidimbr)**  
 
----
 
 ### **Detalhes do Projeto**  
 
@@ -288,7 +291,6 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 - **GitHub:** [guilhermedfs14](https://github.com/guilhermedfs14)  
 - **E-mail:** guilhermedfs11@gmail.com  
 
----
 
 🚀 **Diferenciais:**  
 ✅ **Automação inteligente** na análise de dados financeiros.  
@@ -296,7 +298,7 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 ✅ **Código aberto**, permitindo escalabilidade e reuso da solução por outras instituições.  
 
 
-
+---
 
 ## **Aplicativo de votação presencial com rede local**  
 
@@ -305,7 +307,7 @@ O objetivo desse aplicativo é permitir votações presenciais utilizando um apl
 
 🌎 **Palavras-chave:** IPEA, Universidade de Brasília (UnB), Gestão de Dados, Open Source  
 
----
+
 
 ### **Objetivo do Projeto**  
 
@@ -323,7 +325,7 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 
 🔗 **[Acesse a documentação do projeto](https://gitlab.com/lappis-unb/decidimbr)**  
 
----
+
 
 ### **Detalhes do Projeto**  
 
@@ -337,7 +339,7 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 - **GitHub:** [guilhermedfs14](https://github.com/guilhermedfs14)  
 - **E-mail:** guilhermedfs11@gmail.com  
 
----
+
 
 🚀 **Diferenciais:**  
 ✅ **Automação inteligente** na análise de dados financeiros.  
