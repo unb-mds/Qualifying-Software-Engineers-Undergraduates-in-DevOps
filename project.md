@@ -142,7 +142,7 @@ Os critérios avaliados individualmente no projeto estão destacados na tabela a
 
 Entregáveis R1  e R2 [Nos slides](https://mds.lappis.rocks/static_files/presentations/MDS.pdf)
 
-- Release 1 (major) - 07 a 09 de maioi de 2025.
+- Release 1 (major) - 07 a 09 de maio de 2025.
 - Release 2 (major) - 09-11 de julho de 2025.
 
 ## Bibliografia Básica
@@ -187,7 +187,7 @@ Dicas de slides -  https://www.ime.usp.br/~kon/ResearchStudents/dicasSlides.html
 
 ---
 ---
-## **Desenvolvimento do Aplicativo MEPA – Monitoramento da Qualidade Energética**  
+## 1. **Desenvolvimento do Aplicativo MEPA – Monitoramento da Qualidade Energética**  
 
 📌 **Descrição:**  
 O projeto MEPA tem como objetivo desenvolver um aplicativo para monitoramento da qualidade energética, permitindo que gestores acompanhem **em tempo real** os dados de energia.  
@@ -216,7 +216,7 @@ Atualmente, a **solução web já está em produção** e conta com uma **API di
 
 ---
 
-## **Análise de Sentimentos dos Comentários do Brasil Participativo**  
+## 2. **Análise de Sentimentos dos Comentários do Brasil Participativo**  
 
 📌 **Descrição:**  
 A **Plataforma Brasil Participativo** é a maior plataforma de participação social do governo federal do Brasil, reunindo mais de **1,5 milhão de usuários em apenas três meses**. Criada para permitir que a população contribua com a formulação e aprimoramento de políticas públicas, a plataforma foi desenvolvida com **software livre**, com apoio da **Dataprev, da comunidade Decidim-Brasil, do Ministério da Gestão e Inovação em Serviços Públicos (MGI) e do LAPPIS**.  
@@ -242,15 +242,12 @@ O projeto visa criar uma ferramenta para **análise de sentimentos** dos coment�
 - 🌎 **Tópicos relacionados:** Análise de Sentimentos, Opinião Pública, Participação Social  
 
 👨‍🏫 **Mentor:**  
-- **Nome:** Guilherme  
-- **Telegram:** [@guilhermedfs](https://t.me/guilhermedfs)  
-- **GitHub:** [guilhermedfs14](https://github.com/guilhermedfs14)  
-- **E-mail:** guilhermedfs11@gmail.com  
+- **Nome:** Bruna pinos  
+
 
 ---
 
-
-## **GovHubbr - Análise de Gastos Públicos IPEA - Geração Automática de Relatórios Inteligentes**  
+## 3.**GovHubbr - Análise de Gastos Públicos IPEA - Geração Automática de Relatórios Inteligentes**  
 
 📌 **Descrição:**  
 O projeto **GovHubbr** é uma iniciativa do **Laboratório de Software Livre (Lab Livre) da UnB** em parceria com o **Instituto de Pesquisa Econômica Aplicada (IPEA)**, com o objetivo de melhorar a **gestão e integração dos sistemas de dados estruturais do governo brasileiro**.  
@@ -261,7 +258,9 @@ Para resolver esses problemas, o projeto desenvolve uma **solução tecnológica
 
 🌎 **Palavras-chave:** IPEA, Universidade de Brasília (UnB), Gestão de Dados, Open Source  
 
+--
 
+## 4. **Relatórios do IPEA**
 ### **Objetivo do Projeto**  
 
 O foco deste projeto é a **geração automática de relatórios inteligentes** para análise dos **dados financeiros do IPEA**.  
@@ -274,7 +273,7 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 
 🛠 **Ferramentas e Tecnologias:**  
 - A plataforma será desenvolvida usando **Streamlit**, com **HTML e CSS customizados** para uma interface intuitiva e visualmente rica.  
-- Modelos de **Machine Learning e NLP** serão aplicados para extrair insights e gerar relatórios automatizados.  
+- Modelos de **Machine Learning e NLP** (generativa/bert topic) serão aplicados para extrair insights e gerar relatórios automatizados.  
 
 🔗 **[Acesse a documentação do projeto](https://gitlab.com/lappis-unb/decidimbr)**  
 
@@ -286,67 +285,141 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 - ⚙️ **Complexidade:** alta  
 
 👨‍🏫 **Mentor:**  
-- **Nome:** Guilherme  
-- **Telegram:** [@guilhermedfs](https://t.me/guilhermedfs)  
-- **GitHub:** [guilhermedfs14](https://github.com/guilhermedfs14)  
-- **E-mail:** guilhermedfs11@gmail.com  
+- **Nome:** Joao  
 
 
 🚀 **Diferenciais:**  
 ✅ **Automação inteligente** na análise de dados financeiros.  
 ✅ **Transparência e eficiência** na administração pública.  
 ✅ **Código aberto**, permitindo escalabilidade e reuso da solução por outras instituições.  
+
+---
+
+## 🗳️ 5.**Aplicativo de Votação Presencial com Rede Local**
+
+📌 **Descrição do Projeto**  
+Este aplicativo tem como objetivo **viabilizar votações presenciais** em ambientes com conexão à internet limitada ou inexistente. A proposta é utilizar uma **rede interna local via protocolo UDP**, onde um **usuário master** compartilha as questões a serem votadas, e os demais participantes da rede podem registrar seus votos (**a favor, contra ou abster-se**).
+
+A aplicação é ideal para **plenárias presenciais, assembleias ou reuniões**, garantindo **transparência**, **rapidez** e **visualização dos resultados em tempo real**, mesmo em ambientes isolados da internet.
+
+🔧 **Funcionalidades esperadas:**  
+- Comunicação local via UDP  
+- Interface simples para envio de questões e votação  
+- Registro de votos com três opções  
+- Visualização em tempo real dos resultados  
+
+🌎 **Palavras-chave:** Universidade de Brasília (UnB), Gestão de Dados, Plenária, Open Source  
+
+👨‍🏫 **Mentoria:**  
+- **Bruna Pinos**
 
 
 ---
 
-## **Aplicativo de votação presencial com rede local**  
+## 🗺️ 6. **Mapeamento com Acessibilidade para Atividade Comunitária**
 
-📌 **Descrição:**  
-O objetivo desse aplicativo é permitir votações presenciais utilizando um aplicativo. A ideia eh usar uma rede interna (UDP) com um usuario master que compartilha as questoes a serem votadas  e os usuários presentes conseguem votar (a favor, contra, abster). A importancia da rede interna, é permitir a votação e visualizacao dos resultados mesmo em ambientes com internet limitadas. 
+📌 **Descrição do Projeto**  
+Este projeto tem como objetivo **desenvolver uma plataforma colaborativa de mapeamento**, voltada para apoiar **atividades comunitárias** com foco em **acessibilidade**. A ideia é permitir que os usuários cadastrem e consultem locais que sejam acessíveis para pessoas com deficiência ou mobilidade reduzida — como espaços culturais, centros comunitários, feiras e eventos públicos.
 
-🌎 **Palavras-chave:** IPEA, Universidade de Brasília (UnB), Gestão de Dados, Open Source  
+A ferramenta pode ser usada tanto por **organizações sociais quanto por moradores locais**, fortalecendo a inclusão, a cidadania e a participação comunitária.
+
+🎯 **Objetivos principais:**  
+- Criar um mapa interativo de locais acessíveis  
+- Permitir que a comunidade colabore com informações e avaliações  
+- Incluir filtros de acessibilidade (rampa, piso tátil, banheiro adaptado etc.)  
+- Visualização geográfica e busca por tipo de atividade ou região  
+
+🌎 **Palavras-chave:** Acessibilidade, Cidadania, Mapeamento Colaborativo, Open Source, Comunidade  
+
+👨‍🏫 **Mentoria:**  
+- (Definir mentor/a)
+
+---
+## 🧠 7. **Cluster de Propostas**
+
+📌 **Descrição do Projeto**  
+A plataforma **Brasil Participativo** permite que cidadãos enviem propostas e participem ativamente de decisões do governo. Este projeto tem como objetivo **extrair todas as propostas da plataforma** e aplicar **técnicas de clusterização**, agrupando as ideias por similaridade temática.  
+
+A clusterização visa **identificar padrões, temas recorrentes** e ajudar na **sistematização das demandas da população**, oferecendo uma visão estruturada que pode apoiar análises qualitativas e tomadas de decisão mais embasadas.
+
+🔧 **Atividades-chave:**  
+- Exportar e organizar as propostas públicas da plataforma  
+- Aplicar modelos de NLP para pré-processamento textual  
+- Utilizar algoritmos de clusterização (como K-Means, HDBSCAN, etc.)  
+- Apresentar os resultados de forma acessível e interativa  
+
+🗂️ **TODO:**  
+- Automatizar a exportação de propostas do Brasil Participativo  
+- Gerar e entregar um dataset limpo e utilizável  
+
+🌎 **Palavras-chave:** Brasil Participativo, Clusterização, NLP, Participação Cidadã, Open Source  
+
+👨‍🏫 **Mentoria:**  
+- (Definir mentor/a)
+
+---
+
+## 🏗️ 8. **Obras BSB**
+
+📌 **Descrição do Projeto**  
+O projeto **Obras BSB** tem como objetivo evoluir a aplicação desenvolvida no semestre anterior, focada na transparência e monitoramento de obras públicas no Distrito Federal. Nesta nova fase, o foco estará em **melhorar a experiência do usuário**, **refinar a visualização das obras em atraso** e realizar uma **análise qualitativa dos tipos de obras** com o auxílio do modelo de linguagem **DeepSeek**.
+
+A ideia é tornar a plataforma ainda mais útil para cidadãos, jornalistas e gestores públicos que buscam acompanhar a execução de obras públicas com **mais clareza e inteligência**.
+
+🔍 **Melhorias previstas:**  
+- Interface mais intuitiva e responsiva  
+- Filtros e destaques para obras em atraso  
+- Análises textuais e categorização de obras com IA (DeepSeek)  
+- Reforço na acessibilidade e usabilidade  
+
+🌐 **Link do Projeto Anterior:**  
+[DFemObras – GitHub Pages](https://unb-mds.github.io/DFemObras/)
+
+🌎 **Palavras-chave:** Transparência, Gestão Pública, Obras Públicas, Visualização de Dados, Open Source  
+
+👨‍🏫 **Mentoria:**  
+- (Definir mentor/a)
+
+---
+## 📝 11. **Concurso**
+
+📌 **Descrição do Projeto**  
+Este projeto tem como objetivo **evoluir a aplicação Concursei_BR**, desenvolvida para facilitar o acesso a informações sobre concursos públicos no Brasil. Nesta nova fase, o foco estará em **melhorar o HTML/CSS da aplicação**, além de **enriquecer o conteúdo** com informações detalhadas sobre **vagas, carreiras e requisitos**.  
+
+O projeto também explorará o uso de **modelos de linguagem como o DeepSeek** para interpretar e classificar automaticamente os dados textuais das vagas, oferecendo uma experiência mais rica e personalizada para o usuário.
+
+🎯 **Objetivos principais:**  
+- Refatorar e melhorar o layout da aplicação (HTML/CSS)  
+- Adicionar descrições completas das vagas e carreiras públicas  
+- Aplicar NLP com DeepSeek para classificar e interpretar os textos das vagas  
+- Oferecer filtros mais inteligentes e uma navegação mais fluida  
+
+🔗 **Repositório do Projeto:**  
+[github.com/unb-mds/2024-2-Concursei_Br](https://github.com/unb-mds/2024-2-Concursei_Br)
+
+🌎 **Palavras-chave:** Concurso Público, Visualização de Dados, Governo Aberto, NLP, Open Source  
+
+👨‍🏫 **Mentoria:**  
+- (Definir mentor/a)
 
 
+---
 
-### **Objetivo do Projeto**  
+## 🔐 10. **Biometria por Voz**
 
-O foco deste projeto é a **geração automática de relatórios inteligentes** para análise dos **dados financeiros do IPEA**.  
+📌 **Descrição do Projeto**  
+Este projeto propõe o desenvolvimento de uma funcionalidade de **login por biometria de voz**, utilizando bibliotecas de reconhecimento de voz. A ideia é permitir que usuários possam se autenticar no sistema com base em **características únicas da sua voz**, oferecendo uma alternativa prática e segura às formas tradicionais de login (senha, PIN, etc.).
 
-📊 **Desafios a serem resolvidos:**  
-✅ Construção de **painéis interativos** para visualizar os dados financeiros em **tempo real**.  
-✅ Aplicação de **modelos de Processamento de Linguagem Natural (NLP)** para **geração automática de textos** com base na análise de dados financeiros.  
-✅ Implementação de **resumos automatizados** de tendências financeiras e **alertas** para gestores públicos.  
-✅ **Restrições:** Apenas **modelos de NLP de código aberto** podem ser utilizados, **sem dependência de tecnologias proprietárias como ChatGPT**.  
+Essa funcionalidade pode ser integrada a outros sistemas, aumentando a **acessibilidade**, a **usabilidade** e a **segurança** de aplicações que exigem autenticação de usuários.
 
-🛠 **Ferramentas e Tecnologias:**  
-- A plataforma será desenvolvida usando **Streamlit**, com **HTML e CSS customizados** para uma interface intuitiva e visualmente rica.  
-- Modelos de **Machine Learning e NLP** serão aplicados para extrair insights e gerar relatórios automatizados.  
+🎯 **Funcionalidades Esperadas:**  
+- Captura e registro da voz do usuário  
+- Autenticação por comparação com o padrão de voz previamente salvo  
+- Uso de bibliotecas open source de reconhecimento de voz  
+- Integração com sistemas de login já existentes  
 
-🔗 **[Acesse a documentação do projeto](https://gitlab.com/lappis-unb/decidimbr)**  
+🌎 **Palavras-chave:** Autenticação, Reconhecimento de Voz, Biometria, Open Source  
 
-
-
-### **Detalhes do Projeto**  
-
-- 🛠 **Habilidades necessárias:** Python, Machine Learning, NLP, Visualização de Dados, Streamlit  
-- ⏳ **Carga horária estimada:** 350 horas  
-- ⚙️ **Complexidade:** alta  
-
-👨‍🏫 **Mentor:**  
-- **Nome:** Guilherme  
-- **Telegram:** [@guilhermedfs](https://t.me/guilhermedfs)  
-- **GitHub:** [guilhermedfs14](https://github.com/guilhermedfs14)  
-- **E-mail:** guilhermedfs11@gmail.com  
-
-
-
-🚀 **Diferenciais:**  
-✅ **Automação inteligente** na análise de dados financeiros.  
-✅ **Transparência e eficiência** na administração pública.  
-✅ **Código aberto**, permitindo escalabilidade e reuso da solução por outras instituições.  
-
-
-
-
+👨‍🏫 **Mentoria:**  
+- (Definir mentor/a)
 
