@@ -1,8 +1,8 @@
 ---
 type: post
 date: 2023-11-28 10:00:00 +0000
-title: 'Versionamento de Código com GitHub Skills'
-author: Isaque Alvez
+title: 'Desenvolvimento do Aplicativo MEPA – Monitoramento da Qualidade Energética'
+author: Carla Rocha
 body: |
     <b>O que é Versionamento de Código?</b>
     </br>
