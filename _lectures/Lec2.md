@@ -1,12 +1,12 @@
 ---
 type: lecture
-date: 2024-03-23
-title: Ciclo de Projeto
-tldr: "Ciclo de Projeto"
-thumbnail: /static_files/presentations/MDS-aula-1.png
+date: 2025-08-09
+title: Fundamentos Sistemas de ML e dados 
+tldr: "Fundamentos Sistemas de ML e dados"
+thumbnail: /static_files/presentations/ML_Workflow.png
 hide_from_announcments: false
 links: 
-    - url: /static_files/presentations/MDS-aula-1.pdf
+    - url: /static_files/presentations/Design-de-Sistemas-ML.pdf
       name: slides
 ---
 
