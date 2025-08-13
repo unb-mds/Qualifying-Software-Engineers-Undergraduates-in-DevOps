@@ -31,7 +31,7 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 gem "webrick"
 
 source "https://rubygems.org"
-gem 'listen', '~> 3.2.0'
+# gem 'listen', '~> 3.7.0'
 gem 'github-pages', group: :jekyll_plugins
 
 

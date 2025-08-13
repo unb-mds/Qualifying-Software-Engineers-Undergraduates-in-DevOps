@@ -63,8 +63,8 @@
   <meta name="description" content="Materiais - MDS / 4 semestre">
   
   <link rel="stylesheet" href="/_css/main.css">
-  <link rel="canonical" href="http://localhost:4000/materials/">
-  <link rel="alternate" type="application/rss+xml" title="MDS / 4 semestre - UnB" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="http://0.0.0.0:4000/materials/">
+  <link rel="alternate" type="application/rss+xml" title="MDS / 4 semestre - UnB" href="http://0.0.0.0:4000/feed.xml" />
   <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
 
@@ -121,12 +121,6 @@
         </li>
     
         <li>
-            <a class="page-link" href="/posts/">
-                <i class="fas fa-user-graduate"></i> Posts
-            </a>
-        </li>
-    
-        <li>
             <a class="page-link" href="/materials/">
                 <i class="fas fa-book"></i> Materiais
             </a>
@@ -135,6 +129,18 @@
         <li>
             <a class="page-link" href="/slides/">
                 <i class="fas fa-book-reader"></i> Slides
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Projetos
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="https://github.com/unb-mds">
+                <i class="fab fa-github"></i> Repositórios
             </a>
         </li>
     
@@ -182,64 +188,181 @@
       </div>
     </div>
 
-    <footer class="site-footer">
+    <style>
+.enhanced-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
 
-  <div class="wrapper">
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-    <div class="footer-col-wrapper">
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
 
-      <div class="footer-col  footer-col-1">
+.footer-section h3 {
+    color: #3498db;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+}
 
-        <h3><b>Redes:</b></h3>
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-        <ul class="social-media-list" style="display:inline-flex">
-          
-            <li>
-              <a href="https://github.com/lappis-unb">
-                <i class="fab fa-github" style="color:gray; font-size:30px; margin-right:20px;"></i>
-              </a>
-            </li>
-          
+.footer-links li {
+    margin-bottom: 8px;
+}
 
-          
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
 
-          
-            <li>
-              <a href="https://instagram.com/ccsl_unb">
-                <i class="fab fa-instagram" style="color:gray; font-size:30px; margin-right:20px;"></i>
-              </a>
-            </li>
-          
+.footer-links a:hover {
+    color: #3498db;
+}
 
-          
-            <li>
-              <a href="https://facebook.com/lappisunb5">
-                <i class="fab fa-facebook" style="color:gray; font-size:30px; margin-right:20px;"></i>
-              </a>
-            </li>
-          
+.footer-links i {
+    margin-right: 8px;
+    width: 16px;
+}
 
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3498db;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #34495e;
+    padding-top: 20px;
+    text-align: center;
+    color: #95a5a6;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+</style>
+
+<footer class="enhanced-footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      
+      <!-- Navigation Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-sitemap"></i> Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="/"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="/schedule/"><i class="fas fa-calendar"></i> Cronograma</a></li>
+          <li><a href="/lectures/"><i class="fas fa-chalkboard-teacher"></i> Aulas</a></li>
+          <li><a href="/materials/"><i class="fas fa-book"></i> Materiais</a></li>
+          <li><a href="/posts/"><i class="fas fa-folder-open"></i> Repositórios</a></li>
         </ul>
       </div>
-
-      <div class="footer-col  footer-col-2">
-
-        <h3><b>Contato:</b></h3>
-        <p class="text">
-          caguiar@unb.br
-
-        </p>
-
+      
+      <!-- Projects Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-project-diagram"></i> Projetos</h3>
+        <ul class="footer-links">
+          <li><a href="/project.html"><i class="fas fa-tasks"></i> Projetos 2024</a></li>
+          <li><a href="/Temas2025-1.html"><i class="fas fa-rocket"></i> Projetos 2025/1</a></li>
+          <li><a href="/Temas2024-2.html"><i class="fas fa-code"></i> Temas 2024/2</a></li>
+          <li><a href="/Temas2022-2.html"><i class="fas fa-archive"></i> Temas 2022/2</a></li>
+          <li><a href="https://github.com/orgs/unb-mds/repositories" target="_blank"><i class="fab fa-github"></i> Todos os Repositórios</a></li>
+        </ul>
       </div>
-
-
-      <div class="footer-col  footer-col-1">
-        <p class="text">
-        UnB | Universidade de Brasília<br />
+      
+      <!-- Academic Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-graduation-cap"></i> Acadêmico</h3>
+        <ul class="footer-links">
+          <li><a href="/MDS_plano_ensino - Carla.html"><i class="fas fa-file-alt"></i> Plano de Ensino</a></li>
+          <li><a href="/MDS-cronograma.html"><i class="fas fa-calendar-alt"></i> Cronograma Detalhado</a></li>
+          <li><a href="/profile/"><i class="fas fa-user"></i> Perfil da Professora</a></li>
+          <li><a href="https://www.ime.usp.br/~kon/ResearchStudents/dicasSlides.html" target="_blank"><i class="fas fa-presentation"></i> Dicas de Apresentação</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact & Social Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-envelope"></i> Contato</h3>
+        <div class="footer-links">
+          <p style="color: #bdc3c7; margin-bottom: 15px;">caguiar@unb.br
+</p>
+          <p style="color: #bdc3c7; margin-bottom: 15px;">UnB | Universidade de Brasília<br />
 FGA | Faculdade do gama<br />
 LAPPIS | Laboratório Aplicado de Produção Pesquisa e Inovação em Software<br />
-
+</p>
+        </div>
+        
+        <div class="social-links">
+          
+            <a href="https://github.com/lappis-unb" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          
+          
+          
+            <a href="https://instagram.com/ccsl_unb" target="_blank" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          
+          
+            <a href="https://facebook.com/lappisunb5" target="_blank" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          
+        </div>
       </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p><strong>Métodos de Desenvolvimento de Software - UnB/FGA</strong></p>
+      <p>© 2025 Lab Livre - Laboratório Aplicado de Produção Pesquisa e Inovação em Software</p>
+      <p>Desenvolvido com ❤️ para a comunidade acadêmica</p>
     </div>
   </div>
 </footer>

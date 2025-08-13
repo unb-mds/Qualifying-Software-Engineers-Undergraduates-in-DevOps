@@ -8,7 +8,7 @@
 
 **Créditos:** 04
 
-**Semestre/Ano:** 01/2024
+**Semestre/Ano:** 02/2024
 
 ## Objetivos da Disciplina
 
@@ -24,7 +24,7 @@ Os métodos de desenvolvimento de software são conjuntos estruturados de boas p
 - Métodos Ágeis de desenvolvimento de software.
 - Outras abordagens de desenvolvimento de software (orientado a dados, orientado a funções, orientado a objetos, orientado a aspectos).
 - Ferramentas.
-x`
+
 ## Formação das Equipes
 
 - Planilha para definição dos grupos e temas [aqui](https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing)
@@ -79,6 +79,8 @@ A avaliação será feita por meio de:
 - P1: Participação em sala de aula
 
 O objetivo do Projeto simula uma situação real de desenvolvimento e engenharia de Produto de Software. Os alunos de MDS irão se concentrar na execução metodologia de desenvolvimento através da especificação de requisitos, codificação e testes. Haverá duas avaliações formais das releases a serem desenvolvidas.
+
+Os critérios estão detalhados nesse [documento]([./Criterios.pdf](https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf)). Apesar da avaliação ser feita do projeto, cada aluno recebe a nota individualizada de sua participação no projeto.
 
 Os pesos atribuídos aos diferentes eventos de avaliação são indicados abaixo.
 

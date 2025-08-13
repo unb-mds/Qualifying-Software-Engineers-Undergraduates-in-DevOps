@@ -3,6 +3,7 @@ course_name: MDS
 course_description: "Métodos de Desenvolvimento de Software."
 course_semester: "4 semestre"
 pre_requisites: OO
+repository: RochaCarla/carlarocha.github.com
 
 
 baseurl: # the subpath of your site, e.g. /blog/
@@ -13,14 +14,14 @@ schoolname: "UnB"
 
 address: |
     UnB | Universidade de Brasília
-    FGA | Faculdade do gama
-    LAPPIS | Laboratório Aplicado de Produção Pesquisa e Inovação em Software
+    FCTE | Faculdade do gama
+    Lab Livre
 
 
 emails: |
     caguiar@unb.br
    
-github_username: lappis-unb
+github_username: rocha.carla
 instagram_username: ccsl_unb
 facebook_username: lappisunb5
 # Set your Google Analytics tracking ID (set up yours at http://www.google.com/analytics/)

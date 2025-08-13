@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Projetos 2025/1 - MDS / 4 semestre </title>
+  <meta name="description" content="Projetos 2025/1 - MDS / 4 semestre">
+  
+  <link rel="stylesheet" href="/_css/main.css">
+  <link rel="canonical" href="http://0.0.0.0:4000/Temas2025-1">
+  <link rel="alternate" type="application/rss+xml" title="MDS / 4 semestre - UnB" href="http://0.0.0.0:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">UnB</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="MDS / 4 semestre - UnB"><b>MDS</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">4 semestre</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/slides/">
+                <i class="fas fa-book-reader"></i> Slides
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Projetos
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="https://github.com/unb-mds">
+                <i class="fab fa-github"></i> Repositórios
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Projetos 2025/1</h1>
+  </header>
+
+  <article class="post-content">
+    <style>
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.project-header {
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.project-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.project-details {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.mentor-card {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.mentor-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.mentor-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.mentor-contact {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 15px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.mentor-contact:hover {
+    background: rgba(255,255,255,0.3);
+    color: white;
+}
+
+.project-link {
+    display: inline-block;
+    background: #00b894;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 15px 0;
+    transition: all 0.3s;
+}
+
+.project-link:hover {
+    background: #00a085;
+    transform: translateY(-2px);
+    color: white;
+}
+
+.tips-section {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.tips-title {
+    color: #856404;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    .project-card { padding: 20px; }
+    .details-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="hero-section">
+    <h1 class="hero-title">🚀 Projetos 2025/1</h1>
+    <h2 class="hero-subtitle">📊 "Como posso usar dados para dar inteligência?"</h2>
+    <p class="hero-description">
+        Confira abaixo a lista de projetos que serão desenvolvidos ao longo do 1º semestre de 2025 na disciplina. 
+        Diferente de outros semestres, as equipes deverão selecionar três opções de projeto em ordem de preferência.
+    </p>
+</div>
+
+<div class="tips-section">
+    <div class="tips-title">💡 Dicas Importantes</div>
+    <p><strong>Como fazer boas apresentações:</strong></p>
+    <p>📖 <a href="https://www.ime.usp.br/~kon/ResearchStudents/dicasSlides.html" target="_blank">Dicas de slides - IME/USP</a></p>
+</div>
+
+<div class="project-card">
+    <div class="project-header">
+        <h2 class="project-title">⚡ Desenvolvimento do Aplicativo MEPA – Monitoramento da Qualidade Energética</h2>
+    </div>
+    
+    <div class="project-description">
+        <p>O projeto MEPA tem como objetivo desenvolver um aplicativo para monitoramento da qualidade energética, permitindo que gestores acompanhem <strong>em tempo real</strong> os dados de energia.</p>
+        
+        <p>Este projeto faz parte de uma iniciativa maior da <strong>Universidade de Brasília (UnB)</strong> para consolidá-la como a <strong>4ª universidade mais sustentável do Brasil</strong>. Além do monitoramento, será implementado um <strong>sistema de recomendação</strong> para sugerir os contratos mais adequados para os principais consumidores de energia da instituição.</p>
+        
+        <p>Atualmente, a <strong>solução web já está em produção</strong> e conta com uma <strong>API disponível</strong> para acesso aos dados. A UnB instalou equipamentos de medição em diversos pontos estratégicos do campus para coletar indicadores sobre a <strong>qualidade e disponibilidade da eletricidade</strong>.</p>
+    </div>
+    
+    <a href="https://documentacao-547f64.gitlab.io/land/#" class="project-link" target="_blank">📖 Acessar Documentação</a>
+    
+    <div class="project-details">
+        <div class="details-grid">
+            <div class="detail-item">🛠 <strong>Habilidades:</strong> Python, React, Front-end, Visualização de Dados</div>
+            <div class="detail-item">⏳ <strong>Carga horária:</strong> 350 horas</div>
+            <div class="detail-item">⚙️ <strong>Complexidade:</strong> Baixa</div>
+            <div class="detail-item">🌎 <strong>Tópicos:</strong> IoT, Sistemas Distribuídos, Monitoramento de Energia, DevOps, DataViz</div>
+        </div>
+        
+        <div class="mentor-card">
+            <div class="mentor-title">👨‍🏫 Mentor: Guilherme</div>
+            <div class="mentor-contacts">
+                <a href="https://t.me/guilhermedfs" class="mentor-contact" target="_blank">📱 Telegram</a>
+                <a href="https://github.com/guilhermedfs14" class="mentor-contact" target="_blank">💻 GitHub</a>
+                <a href="mailto:guilhermedfs11@gmail.com" class="mentor-contact">📧 Email</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="project-card">
+    <div class="project-header">
+        <h2 class="project-title">🧠 Análise de Sentimentos dos Comentários do Brasil Participativo</h2>
+    </div>
+    
+    <div class="project-description">
+        <p>A <strong>Plataforma Brasil Participativo</strong> é a maior plataforma de participação social do governo federal do Brasil, reunindo mais de <strong>1,5 milhão de usuários em apenas três meses</strong>. Criada para permitir que a população contribua com a formulação e aprimoramento de políticas públicas, a plataforma foi desenvolvida com <strong>software livre</strong>, com apoio da <strong>Dataprev, da comunidade Decidim-Brasil, do Ministério da Gestão e Inovação em Serviços Públicos (MGI) e do Lab Livre</strong>.</p>
+        
+        <p>O <strong>Brasil Participativo OSS</strong> adapta os processos participativos do <strong>framework Decidim</strong> para o contexto brasileiro. Atualmente, a comunidade <strong>Decidim Brasil</strong> conta com mais de <strong>200 participantes</strong>, enquanto a iniciativa <strong>OSS Brasil Participativo</strong> já mobilizou <strong>mais de 100 colaboradores diretos e indiretos</strong> em seu primeiro ano.</p>
+        
+        <h3>🎯 Objetivo do Projeto</h3>
+        <p>O projeto visa criar uma ferramenta para <strong>análise de sentimentos</strong> dos comentários postados na plataforma Brasil Participativo. A ideia é usar um <strong>modelo de machine learning de código aberto</strong>, sem depender de soluções proprietárias como o ChatGPT.</p>
+        
+        <h4>🚀 Características da solução:</h4>
+        <ul>
+            <li>✅ <strong>Sem back-end:</strong> Toda a interface será desenvolvida usando <strong>Jekyll</strong></li>
+            <li>✅ <strong>Captura de comentários via API:</strong> Os comentários serão extraídos da <strong>API GraphQL da plataforma</strong></li>
+            <li>✅ <strong>Automação por bots:</strong> Tanto a <strong>captura de dados</strong> quanto a <strong>análise de sentimentos</strong> serão realizadas por <strong>bots desenvolvidos para essa finalidade</strong></li>
+        </ul>
+    </div>
+    
+    <a href="https://gitlab.com/lappis-unb/decidimbr" class="project-link" target="_blank">📖 Acessar Documentação</a>
+    
+    <div class="project-details">
+        <div class="details-grid">
+            <div class="detail-item">🛠 <strong>Habilidades:</strong> Python, Machine Learning, Visualização de Dados</div>
+            <div class="detail-item">⏳ <strong>Carga horária:</strong> 350 horas</div>
+            <div class="detail-item">⚙️ <strong>Complexidade:</strong> Alta</div>
+            <div class="detail-item">🌎 <strong>Tópicos:</strong> Análise de Sentimentos, Opinião Pública, Participação Social</div>
+        </div>
+        
+        <div class="mentor-card">
+            <div class="mentor-title">👨‍🏫 Mentor: Guilherme</div>
+            <div class="mentor-contacts">
+                <a href="https://t.me/guilhermedfs" class="mentor-contact" target="_blank">📱 Telegram</a>
+                <a href="https://github.com/guilhermedfs14" class="mentor-contact" target="_blank">💻 GitHub</a>
+                <a href="mailto:guilhermedfs11@gmail.com" class="mentor-contact">📧 Email</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 id="govhubbr---análise-de-gastos-públicos-ipea---geração-automática-de-relatórios-inteligentes"><strong>GovHubbr - Análise de Gastos Públicos IPEA - Geração Automática de Relatórios Inteligentes</strong></h2>
+
+<p>📌 <strong>Descrição:</strong><br />
+O projeto <strong>GovHubbr</strong> é uma iniciativa do <strong>Laboratório de Software Livre (Lab Livre) da UnB</strong> em parceria com o <strong>Instituto de Pesquisa Econômica Aplicada (IPEA)</strong>, com o objetivo de melhorar a <strong>gestão e integração dos sistemas de dados estruturais do governo brasileiro</strong>.</p>
+
+<p>Os sistemas financeiros do governo armazenam informações essenciais sobre <strong>orçamentos, pessoal e estrutura organizacional</strong>, mas enfrentam desafios como <strong>redundância de dados, inconsistências e falta de interoperabilidade</strong>, dificultando a <strong>tomada de decisões baseada em evidências</strong>.</p>
+
+<p>Para resolver esses problemas, o projeto desenvolve uma <strong>solução tecnológica de código aberto</strong> que integra e qualifica dados, permitindo melhor <strong>acesso, confiabilidade e usabilidade</strong> para gestores públicos e sociedade. Com o uso de <strong>automação e tecnologias abertas</strong>, a iniciativa permite a <strong>extração, transformação e visualização eficiente</strong> dos dados governamentais, promovendo <strong>transparência e eficiência na administração pública</strong>.</p>
+
+<p>🌎 <strong>Palavras-chave:</strong> IPEA, Universidade de Brasília (UnB), Gestão de Dados, Open Source</p>
+
+<hr />
+
+<h3 id="objetivo-do-projeto"><strong>Objetivo do Projeto</strong></h3>
+
+<p>O foco deste projeto é a <strong>geração automática de relatórios inteligentes</strong> para análise dos <strong>dados financeiros do IPEA</strong>.</p>
+
+<p>📊 <strong>Desafios a serem resolvidos:</strong><br />
+✅ Construção de <strong>painéis interativos</strong> para visualizar os dados financeiros em <strong>tempo real</strong>.<br />
+✅ Aplicação de <strong>modelos de Processamento de Linguagem Natural (NLP)</strong> para <strong>geração automática de textos</strong> com base na análise de dados financeiros.<br />
+✅ Implementação de <strong>resumos automatizados</strong> de tendências financeiras e <strong>alertas</strong> para gestores públicos.<br />
+✅ <strong>Restrições:</strong> Apenas <strong>modelos de NLP de código aberto</strong> podem ser utilizados, <strong>sem dependência de tecnologias proprietárias como ChatGPT</strong>.</p>
+
+<p>🛠 <strong>Ferramentas e Tecnologias:</strong></p>
+<ul>
+  <li>A plataforma será desenvolvida usando <strong>Streamlit</strong>, com <strong>HTML e CSS customizados</strong> para uma interface intuitiva e visualmente rica.</li>
+  <li>Modelos de <strong>Machine Learning e NLP</strong> serão aplicados para extrair insights e gerar relatórios automatizados.</li>
+</ul>
+
+<p>🔗 <strong><a href="https://gitlab.com/lappis-unb/decidimbr">Acesse a documentação do projeto</a></strong></p>
+
+<hr />
+
+<h3 id="detalhes-do-projeto"><strong>Detalhes do Projeto</strong></h3>
+
+<ul>
+  <li>🛠 <strong>Habilidades necessárias:</strong> Python, Machine Learning, NLP, Visualização de Dados, Streamlit</li>
+  <li>⏳ <strong>Carga horária estimada:</strong> 350 horas</li>
+  <li>⚙️ <strong>Complexidade:</strong> alta</li>
+</ul>
+
+<p>👨‍🏫 <strong>Mentor:</strong></p>
+<ul>
+  <li><strong>Nome:</strong> Guilherme</li>
+  <li><strong>Telegram:</strong> <a href="https://t.me/guilhermedfs">@guilhermedfs</a></li>
+  <li><strong>GitHub:</strong> <a href="https://github.com/guilhermedfs14">guilhermedfs14</a></li>
+  <li><strong>E-mail:</strong> guilhermedfs11@gmail.com</li>
+</ul>
+
+<hr />
+
+<p>🚀 <strong>Diferenciais:</strong><br />
+✅ <strong>Automação inteligente</strong> na análise de dados financeiros.<br />
+✅ <strong>Transparência e eficiência</strong> na administração pública.<br />
+✅ <strong>Código aberto</strong>, permitindo escalabilidade e reuso da solução por outras instituições.</p>
+
+<h2 id="aplicativo-de-votação-presencial-com-rede-local"><strong>Aplicativo de votação presencial com rede local</strong></h2>
+
+<p>📌 <strong>Descrição:</strong><br />
+O objetivo desse aplicativo é permitir votações presenciais utilizando um aplicativo. A ideia eh usar uma rede interna (UDP) com um usuario master que compartilha as questoes a serem votadas  e os usuários presentes conseguem votar (a favor, contra, abster). A importancia da rede interna, é permitir a votação e visualizacao dos resultados mesmo em ambientes com internet limitadas.</p>
+
+<p>🌎 <strong>Palavras-chave:</strong> IPEA, Universidade de Brasília (UnB), Gestão de Dados, Open Source</p>
+
+<hr />
+
+<h3 id="objetivo-do-projeto-1"><strong>Objetivo do Projeto</strong></h3>
+
+<p>O foco deste projeto é a <strong>geração automática de relatórios inteligentes</strong> para análise dos <strong>dados financeiros do IPEA</strong>.</p>
+
+<p>📊 <strong>Desafios a serem resolvidos:</strong><br />
+✅ Construção de <strong>painéis interativos</strong> para visualizar os dados financeiros em <strong>tempo real</strong>.<br />
+✅ Aplicação de <strong>modelos de Processamento de Linguagem Natural (NLP)</strong> para <strong>geração automática de textos</strong> com base na análise de dados financeiros.<br />
+✅ Implementação de <strong>resumos automatizados</strong> de tendências financeiras e <strong>alertas</strong> para gestores públicos.<br />
+✅ <strong>Restrições:</strong> Apenas <strong>modelos de NLP de código aberto</strong> podem ser utilizados, <strong>sem dependência de tecnologias proprietárias como ChatGPT</strong>.</p>
+
+<p>🛠 <strong>Ferramentas e Tecnologias:</strong></p>
+<ul>
+  <li>A plataforma será desenvolvida usando <strong>Streamlit</strong>, com <strong>HTML e CSS customizados</strong> para uma interface intuitiva e visualmente rica.</li>
+  <li>Modelos de <strong>Machine Learning e NLP</strong> serão aplicados para extrair insights e gerar relatórios automatizados.</li>
+</ul>
+
+<p>🔗 <strong><a href="https://gitlab.com/lappis-unb/decidimbr">Acesse a documentação do projeto</a></strong></p>
+
+<hr />
+
+<h3 id="detalhes-do-projeto-1"><strong>Detalhes do Projeto</strong></h3>
+
+<ul>
+  <li>🛠 <strong>Habilidades necessárias:</strong> Python, Machine Learning, NLP, Visualização de Dados, Streamlit</li>
+  <li>⏳ <strong>Carga horária estimada:</strong> 350 horas</li>
+  <li>⚙️ <strong>Complexidade:</strong> alta</li>
+</ul>
+
+<p>👨‍🏫 <strong>Mentor:</strong></p>
+<ul>
+  <li><strong>Nome:</strong> Guilherme</li>
+  <li><strong>Telegram:</strong> <a href="https://t.me/guilhermedfs">@guilhermedfs</a></li>
+  <li><strong>GitHub:</strong> <a href="https://github.com/guilhermedfs14">guilhermedfs14</a></li>
+  <li><strong>E-mail:</strong> guilhermedfs11@gmail.com</li>
+</ul>
+
+<hr />
+
+<p>🚀 <strong>Diferenciais:</strong><br />
+✅ <strong>Automação inteligente</strong> na análise de dados financeiros.<br />
+✅ <strong>Transparência e eficiência</strong> na administração pública.<br />
+✅ <strong>Código aberto</strong>, permitindo escalabilidade e reuso da solução por outras instituições.</p>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <style>
+.enhanced-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    color: #3498db;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links a:hover {
+    color: #3498db;
+}
+
+.footer-links i {
+    margin-right: 8px;
+    width: 16px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3498db;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #34495e;
+    padding-top: 20px;
+    text-align: center;
+    color: #95a5a6;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+</style>
+
+<footer class="enhanced-footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      
+      <!-- Navigation Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-sitemap"></i> Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="/"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="/schedule/"><i class="fas fa-calendar"></i> Cronograma</a></li>
+          <li><a href="/lectures/"><i class="fas fa-chalkboard-teacher"></i> Aulas</a></li>
+          <li><a href="/materials/"><i class="fas fa-book"></i> Materiais</a></li>
+          <li><a href="/posts/"><i class="fas fa-folder-open"></i> Repositórios</a></li>
+        </ul>
+      </div>
+      
+      <!-- Projects Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-project-diagram"></i> Projetos</h3>
+        <ul class="footer-links">
+          <li><a href="/project.html"><i class="fas fa-tasks"></i> Projetos 2024</a></li>
+          <li><a href="/Temas2025-1.html"><i class="fas fa-rocket"></i> Projetos 2025/1</a></li>
+          <li><a href="/Temas2024-2.html"><i class="fas fa-code"></i> Temas 2024/2</a></li>
+          <li><a href="/Temas2022-2.html"><i class="fas fa-archive"></i> Temas 2022/2</a></li>
+          <li><a href="https://github.com/orgs/unb-mds/repositories" target="_blank"><i class="fab fa-github"></i> Todos os Repositórios</a></li>
+        </ul>
+      </div>
+      
+      <!-- Academic Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-graduation-cap"></i> Acadêmico</h3>
+        <ul class="footer-links">
+          <li><a href="/MDS_plano_ensino - Carla.html"><i class="fas fa-file-alt"></i> Plano de Ensino</a></li>
+          <li><a href="/MDS-cronograma.html"><i class="fas fa-calendar-alt"></i> Cronograma Detalhado</a></li>
+          <li><a href="/profile/"><i class="fas fa-user"></i> Perfil da Professora</a></li>
+          <li><a href="https://www.ime.usp.br/~kon/ResearchStudents/dicasSlides.html" target="_blank"><i class="fas fa-presentation"></i> Dicas de Apresentação</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact & Social Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-envelope"></i> Contato</h3>
+        <div class="footer-links">
+          <p style="color: #bdc3c7; margin-bottom: 15px;">caguiar@unb.br
+</p>
+          <p style="color: #bdc3c7; margin-bottom: 15px;">UnB | Universidade de Brasília<br />
+FGA | Faculdade do gama<br />
+LAPPIS | Laboratório Aplicado de Produção Pesquisa e Inovação em Software<br />
+</p>
+        </div>
+        
+        <div class="social-links">
+          
+            <a href="https://github.com/lappis-unb" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          
+          
+          
+            <a href="https://instagram.com/ccsl_unb" target="_blank" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          
+          
+            <a href="https://facebook.com/lappisunb5" target="_blank" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p><strong>Métodos de Desenvolvimento de Software - UnB/FGA</strong></p>
+      <p>© 2025 Lab Livre - Laboratório Aplicado de Produção Pesquisa e Inovação em Software</p>
+      <p>Desenvolvido com ❤️ para a comunidade acadêmica</p>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>

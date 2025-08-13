@@ -16,7 +16,7 @@ items:
   icon_class: fas fa-book-reader
 
 - url: /posts/
-  name: Projetos 
+  name: Projetos
   icon_class: fas fa-user-graduate
   
 - url: https://github.com/unb-mds

@@ -219,7 +219,7 @@ Atualmente, a **solução web já está em produção** e conta com uma **API di
 ## 2. **Análise de Sentimentos dos Comentários do Brasil Participativo**  
 
 📌 **Descrição:**  
-A **Plataforma Brasil Participativo** é a maior plataforma de participação social do governo federal do Brasil, reunindo mais de **1,5 milhão de usuários em apenas três meses**. Criada para permitir que a população contribua com a formulação e aprimoramento de políticas públicas, a plataforma foi desenvolvida com **software livre**, com apoio da **Dataprev, da comunidade Decidim-Brasil, do Ministério da Gestão e Inovação em Serviços Públicos (MGI) e do LAPPIS**.  
+A **Plataforma Brasil Participativo** é a maior plataforma de participação social do governo federal do Brasil, reunindo mais de **1,5 milhão de usuários em apenas três meses**. Criada para permitir que a população contribua com a formulação e aprimoramento de políticas públicas, a plataforma foi desenvolvida com **software livre**, com apoio da **Dataprev, da comunidade Decidim-Brasil, do Ministério da Gestão e Inovação em Serviços Públicos (MGI) e do Lab Livre**.  
 
 O **Brasil Participativo OSS** adapta os processos participativos do **framework Decidim** para o contexto brasileiro. Atualmente, a comunidade **Decidim Brasil** conta com mais de **200 participantes**, enquanto a iniciativa **OSS Brasil Participativo** já mobilizou **mais de 100 colaboradores diretos e indiretos** em seu primeiro ano. O Brasil se destaca como um dos principais usuários dessa ferramenta **em nível nacional**, devido às suas funcionalidades robustas, adaptabilidade, custo reduzido e forte compromisso com a **transparência**.  
 
@@ -258,7 +258,7 @@ Para resolver esses problemas, o projeto desenvolve uma **solução tecnológica
 
 🌎 **Palavras-chave:** IPEA, Universidade de Brasília (UnB), Gestão de Dados, Open Source  
 
---
+---
 
 ## 4. **Relatórios do IPEA**
 ### **Objetivo do Projeto**  
