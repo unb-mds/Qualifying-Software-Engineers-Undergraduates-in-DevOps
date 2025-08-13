@@ -56,7 +56,7 @@
 
   .g1 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(165, 201, 245, 0.8) 0, rgba(165, 201, 245, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(254, 241, 246, 0.8) 0, rgba(254, 241, 246, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
 
     width: $circle-size;
@@ -72,7 +72,7 @@
 
   .g2 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(204, 213, 255, 0.8) 0, rgba(204, 213, 255, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(253, 230, 240, 0.8) 0, rgba(253, 230, 240, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
 
     width: $circle-size;
@@ -88,7 +88,7 @@
 
   .g3 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(0, 193, 252, 0.8) 0, rgba(0, 193, 252, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(253, 164, 225, 0.8) 0, rgba(253, 164, 225, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
 
     width: $circle-size;
@@ -104,7 +104,7 @@
 
   .g4 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(113, 153, 198, 0.8) 0, rgba(113, 153, 198, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(253, 230, 240, 0.8) 0, rgba(253, 230, 240, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
 
     width: $circle-size;
@@ -120,7 +120,7 @@
 
   .g5 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(10, 129, 209, 0.8) 0, rgba(10, 129, 209, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(243, 65, 129, 0.8) 0, rgba(10, 129, 209, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
 
     width: $circle-size * 2;
@@ -136,7 +136,7 @@
 
   .interactive {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(49, 133, 252, 0.8) 0, rgba(49, 133, 252, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(243, 65, 129, 0.8) 0, rgba(49, 133, 252, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
     transform: 0;
     
