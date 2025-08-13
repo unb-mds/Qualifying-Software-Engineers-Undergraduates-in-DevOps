@@ -1,12 +1,12 @@
 ---
 type: lecture
 date: 2025-08-10
-title: 	Dados de Treinamento
-tldr: "Dados de Treinamento"
-thumbnail: /static_files/presentations/ML_Workflow.png
+title: 	Metodos Ágeis
+tldr: "Metodos Ágeis"
+thumbnail: /static_files/presentations/agil.jpg
 hide_from_announcments: false
 links: 
-    - url: /static_files/presentations/Design-de-Sistemas-ML.pdf
+    - url: /static_files/presentations/Metodos-Ageis.pdf
       name: slides
 ---
 

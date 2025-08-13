@@ -1,12 +1,12 @@
 ---
 type: lecture
 date: 2025-08-09
-title: Fundamentos Sistemas de ML e dados 
-tldr: "Fundamentos Sistemas de ML e dados"
-thumbnail: /static_files/presentations/ML_Workflow.png
+title: Visão Geral de Métodos de Desenvolvimento de Software
+tldr: "Visão Geral de Métodos de Desenvolvimento de Software"
+thumbnail: /static_files/presentations/gpp_mds.png
 hide_from_announcments: false
 links: 
-    - url: /static_files/presentations/Design-de-Sistemas-ML.pdf
+    - url: /static_files/presentations/MDS-AULA-01.pdf
       name: slides
 ---
 

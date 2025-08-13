@@ -4,49 +4,127 @@ title: Plano de Ensino
 permalink: /planoensino/
 ---
 
-# Métodos de Desenvolvimento de Software - Plano de Ensino
+<div class="plano-ensino-header">
+  <h1 class="course-title">Métodos de Desenvolvimento de Software</h1>
+  <p class="course-subtitle">Plano de Ensino - 2025/2</p>
+</div>
 
-**Disciplina:** Métodos de Desenvolvimento de Software
+<div class="course-info-grid">
+  <div class="info-card">
+    <h3><i class="fas fa-book"></i> Disciplina</h3>
+    <p>Métodos de Desenvolvimento de Software</p>
+  </div>
+  <div class="info-card">
+    <h3><i class="fas fa-clock"></i> Carga Horária</h3>
+    <p>60 horas</p>
+  </div>
+  <div class="info-card">
+    <h3><i class="fas fa-user-tie"></i> Professor</h3>
+    <p>Carla Rocha</p>
+  </div>
+  <div class="info-card">
+    <h3><i class="fas fa-graduation-cap"></i> Créditos</h3>
+    <p>04</p>
+  </div>
+</div>
 
-**Carga Horária:** 60 horas
+<div class="section-card">
+  <h2><i class="fas fa-bullseye"></i> Objetivos da Disciplina</h2>
+  <div class="objectives-intro">
+    <p>Os métodos de desenvolvimento de software podem ser entendidos como conjuntos estruturados de boas práticas, repetíveis durante o processo de produção do software.</p>
+  </div>
+  <div class="objectives-list">
+    <h3>Principais objetivos:</h3>
+    <ul class="enhanced-list">
+      <li><i class="fas fa-check-circle"></i> Capacitar o aluno a compreender os diferentes métodos, ferramentas, procedimentos e complexidades do desenvolvimento de software.</li>
+      <li><i class="fas fa-check-circle"></i> Capacitar o aluno a aplicar/adaptar processos de desenvolvimento de software à resolução de problemas de software.</li>
+      <li><i class="fas fa-check-circle"></i> Capacitar os estudantes a construírem sistemas complexos, apresentando as habilidades técnicas e não técnicas necessárias para a construção de software no contexto atual da Indústria.</li>
+    </ul>
+  </div>
+</div>
 
-**Professor:** Carla Rocha
+<div class="section-card">
+  <h2><i class="fas fa-list-ul"></i> Ementa do Programa</h2>
+  <div class="ementa-content">
+    <ul class="enhanced-list">
+      <li><i class="fas fa-cogs"></i> Modelos de ciclo de vida e de processos</li>
+      <li><i class="fas fa-sync-alt"></i> Processo Unificado</li>
+      <li><i class="fas fa-rocket"></i> Métodos Ágeis de desenvolvimento de software</li>
+      <li><i class="fas fa-tools"></i> Outras abordagens de desenvolvimento de software</li>
+      <li><i class="fas fa-wrench"></i> Ferramentas</li>
+    </ul>
+  </div>
+</div>
 
-**Créditos:** 04 
+<div class="section-card">
+  <h2><i class="fas fa-chalkboard-teacher"></i> Metodologia de Ensino</h2>
+  <div class="methodology-content">
+    <div class="methodology-principle">
+      <h3><i class="fas fa-lightbulb"></i> Princípio Fundamental</h3>
+      <p>Uma estratégia eficaz de aprendizagem deve integrar conceitos teóricos com sua aplicação prática, seguindo o princípio de <strong>"aprender fazendo"</strong>. Sem prática, não há aprendizado significativo.</p>
+    </div>
+    <div class="methodology-approaches">
+      <h3><i class="fas fa-puzzle-piece"></i> Abordagens Utilizadas</h3>
+      <div class="approaches-grid">
+        <div class="approach-item">
+          <i class="fas fa-hands-helping"></i>
+          <span>Aprendizagem por experiência</span>
+        </div>
+        <div class="approach-item">
+          <i class="fas fa-project-diagram"></i>
+          <span>Aprendizagem orientada a projetos</span>
+        </div>
+        <div class="approach-item">
+          <i class="fas fa-user-plus"></i>
+          <span>Processo de Onboarding</span>
+        </div>
+        <div class="approach-item">
+          <i class="fas fa-code-branch"></i>
+          <span>Práticas de comunidades Open Source</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-**Semestre/Ano:** 01/2025
-
-## Objetivos da Disciplina
-
-Os métodos de desenvolvimento de software podem ser entendidos como conjuntos estruturados de boas práticas, repetíveis durante o processo de produção do software. Os principais objetivos da disciplina são:
-
-- Capacitar o aluno a compreender os diferentes métodos, ferramentas, procedimentos e complexidades do desenvolvimento de software.
-- Capacitar o aluno a aplicar/adaptar processos de desenvolvimento de software à resolução de problemas de software.
-- Capacitar os estudantes a construírem sistemas complexos, apresentando as habilidades técnicas e não técnicas necessárias para a construção de software no contexto atual da Indústria.
-
-## Ementa do Programa
-
-- Modelos de ciclo de vida e de processos; Processo Unificado. Métodos Ágeis de desenvolvimento de software. Outras abordagens de desenvolvimento de software. Ferramentas.
-
-## Metodologia de Ensino
-
-Uma estratégia eficaz de aprendizagem deve integrar conceitos teóricos com sua aplicação prática, seguindo o princípio de "aprender fazendo". Sem prática, não há aprendizado significativo. Portanto, o processo de ensino-aprendizagem deve incluir duas etapas fundamentais: sessões de assimilação de conceitos teóricos e sessões de prática.
-
-A disciplina utiliza aprendizagem por experiência, aprendizagem orientada a projetos, processo de Onboarding e práticas de comunidades Open source para que o aluno seja ativo no seu processo de aprendizagem.
-
-# Formação das Equipes
-
-A turma deve se dividir em equipes ágeis, de até 6 membros por time. Serão apresentados temas de projeto e cada grupo escolhe 3 temas na ordem de preferência. A professora negocia e aloca os temas para o grupo, dentro das preferências. 
-
-- Planilha para definição dos grupos e temas está [aqui](https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing)
+<div class="section-card highlight-section">
+  <h2><i class="fas fa-users"></i> Formação das Equipes</h2>
+  <div class="teams-info">
+    <div class="team-rules">
+      <h3><i class="fas fa-clipboard-list"></i> Regras de Formação</h3>
+      <ul class="enhanced-list">
+        <li><i class="fas fa-user-friends"></i> Equipes ágeis de <strong>até 6 membros</strong> por time</li>
+        <li><i class="fas fa-list-ol"></i> Cada grupo escolhe <strong>3 temas</strong> na ordem de preferência</li>
+        <li><i class="fas fa-handshake"></i> A professora negocia e aloca os temas dentro das preferências</li>
+      </ul>
+    </div>
+    <div class="team-link">
+      <a href="https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing" class="btn-primary" target="_blank">
+        <i class="fas fa-external-link-alt"></i> Planilha de Grupos e Temas
+      </a>
+    </div>
+  </div>
+</div>
   
-# Canais de Comunicação
-
-A disciplina será realizada de forma presencial na sala Mocap. Serão disponibilizados tanto material assíncrono quanto aulas síncronas. 
-
-## Dúvidas, conversas rápidas, avisos
-
-- Grupo do Telegram - [https://t.me/+jWL3HlkAKgw5YmQx](https://t.me/+jWL3HlkAKgw5YmQx)
+<div class="section-card">
+  <h2><i class="fas fa-comments"></i> Canais de Comunicação</h2>
+  <div class="communication-info">
+    <div class="class-format">
+      <h3><i class="fas fa-map-marker-alt"></i> Formato das Aulas</h3>
+      <p>A disciplina será realizada de forma <strong>presencial na sala Mocap</strong>. Serão disponibilizados tanto material assíncrono quanto aulas síncronas.</p>
+    </div>
+    <div class="communication-channels">
+      <h3><i class="fas fa-phone"></i> Dúvidas e Avisos</h3>
+      <div class="channel-item">
+        <a href="https://t.me/+jWL3HlkAKgw5YmQx" class="telegram-link" target="_blank">
+          <i class="fab fa-telegram"></i>
+          <span>Grupo do Telegram</span>
+          <small>Para dúvidas, conversas rápidas e avisos</small>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Aulas Assíncronas
 
@@ -90,7 +168,15 @@ A nota final do aluno é calculada da seguinte forma:
 
 Nota Final = (Provas) * 0,20 + (Critério de Avaliação Individual) * 0,40 + (Nota individual Release 1) * 0,2  + (Nota individual Release 2) * 0,2
 
-Os critérios estão detalhados nesse [documento](https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf)
+Os critérios estão detalhados nesse **documento**:
+
+<div class="document-highlight">
+  <a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf" class="document-link" target="_blank">
+    <i class="fas fa-file-pdf"></i>
+    <span>📋 Critérios de Avaliação (PDF)</span>
+    <i class="fas fa-external-link-alt"></i>
+  </a>
+</div>
 
 Para o aluno satisfazer os seguintes requisitos para obter a aprovação na disciplina:
 

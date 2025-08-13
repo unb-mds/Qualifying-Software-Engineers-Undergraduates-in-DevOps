@@ -1,0 +1,122 @@
+/**
+ * Site footer
+ */
+.site-footer {
+    background: darken($background-color, 8%);
+    color: $text-color;
+    padding: $spacing-unit * 1.5 0 $spacing-unit;
+    margin-top: $spacing-unit * 1.5;
+    border-top: 2px solid $primary-color;
+    font-family: $base-font-family;
+}
+
+.footer-content {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: 0 $spacing-unit / 2;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-unit;
+    margin-bottom: $spacing-unit;
+}
+
+.footer-section h3 {
+    color: $primary-color;
+    font-size: $base-font-size * 1.25;
+    margin-bottom: $spacing-unit / 2;
+    font-weight: 600;
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: $spacing-unit / 4;
+    font-family: $base-font-family;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: $spacing-unit / 4;
+}
+
+.footer-links a {
+    color: $grey-color-dark;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: $base-font-size * 0.95;
+    
+    &:hover {
+        color: $primary-color;
+        text-decoration: none;
+    }
+}
+
+.footer-links i {
+    margin-right: $spacing-unit / 4;
+    width: 16px;
+    color: $primary-color;
+}
+
+.social-links {
+    display: flex;
+    gap: $spacing-unit / 2;
+    margin-top: $spacing-unit / 2;
+}
+
+.social-links a {
+    color: $grey-color-dark;
+    font-size: $base-font-size * 1.5;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        color: $primary-color;
+        transform: translateY(-2px);
+    }
+}
+
+.footer-bottom {
+    border-top: 1px solid $grey-color-light;
+    padding-top: $spacing-unit / 1.5;
+    text-align: center;
+    color: $grey-color;
+    font-size: $small-font-size;
+}
+
+.footer-bottom p {
+    margin: $spacing-unit / 6 0;
+    font-family: $base-font-family;
+}
+
+.footer-bottom strong {
+    color: $primary-color;
+    font-weight: 600;
+}
+
+.contact-info {
+    color: $grey-color-dark;
+    margin-bottom: $spacing-unit / 2;
+    font-size: $base-font-size * 0.95;
+    line-height: $base-line-height;
+}
+
+// Responsive design
+@media screen and (max-width: $on-palm) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-unit * 0.8;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .site-footer {
+        padding: $spacing-unit 0 $spacing-unit * 0.8;
+    }
+}
