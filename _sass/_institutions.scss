@@ -2,7 +2,7 @@ $n:6;
 
 .institutions-wrapper {
     padding: 30px 12%;
-    background-color: #1f285f;
+    background: linear-gradient(135deg, $tropical-coral 0%, $tropical-sunset 50%, $tropical-sunshine 100%);
 
     display: flex;
     align-items: center;
@@ -14,10 +14,11 @@ $n:6;
     margin-right: 40px;
 
     .section-title {
-        color: white;
+        color: $tropical-ocean;
         margin: 0;
         font-size: 35px;
         font-weight: 600;
+        text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
     }
 }
 
@@ -27,6 +28,7 @@ $n:6;
     grid-template-columns: repeat(3, 300px);
 
     -webkit-mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
+    mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
     overflow: hidden;
 
     .image-institutions-effect {
@@ -40,10 +42,10 @@ $n:6;
 
 @keyframes r {
     #{100/$n}% {
-        transform: translate(-100%)
+        transform: translate(-100%);
     }
     #{100/$n + .01}% {
-        transform: translate(($n - 1)*100%)
+        transform: translate(($n - 1)*100%);
     }
 }
 

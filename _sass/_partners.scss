@@ -1,18 +1,16 @@
 .partners-content {
-    width: 100%;
-    background-color: #262626;
-    
+    background: linear-gradient(135deg, $tropical-mint 0%, $tropical-turquoise 50%, $tropical-sunshine 100%);
+    padding: 50px 0;  
     display: flex;
 }
 
 .partners-wrapper {
     width: 100%;
-
+    background: transparent;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
     margin: 60px;
 }
 
@@ -35,18 +33,17 @@
 }
 
 .icons-wrapper {
+    background: linear-gradient(135deg, $tropical-white 0%, #fff 100%);
+    border: 3px solid $tropical-coral;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    border-radius: 50%;
-
-    background-color: white;
-
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
     opacity: 60%;
-
-    width: 60px;
-    height: 60px;
 }
 
 .shine {

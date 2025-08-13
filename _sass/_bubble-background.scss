@@ -39,7 +39,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(40deg, $color-bg1, $color-bg2);
+  background: linear-gradient(135deg, #FFE66D 0%, #FF6B6B 25%, #4ECDC4 50%, #95E1D3 75%, #FF8E53 100%);
   top: 0;
   left: 0;
 
@@ -56,8 +56,8 @@
 
   .g1 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(254, 241, 246, 0.8) 0, rgba(254, 241, 246, 0) 50%) no-repeat;
-    mix-blend-mode: $blending;
+    background: radial-gradient(circle at center, rgba(255, 107, 107, 0.7) 0, rgba(255, 107, 107, 0) 50%) no-repeat;
+    mix-blend-mode: screen;
 
     width: $circle-size;
     height: $circle-size;
@@ -72,8 +72,8 @@
 
   .g2 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(253, 230, 240, 0.8) 0, rgba(253, 230, 240, 0) 50%) no-repeat;
-    mix-blend-mode: $blending;
+    background: radial-gradient(circle at center, rgba(78, 205, 196, 0.6) 0, rgba(78, 205, 196, 0) 50%) no-repeat;
+    mix-blend-mode: screen;
 
     width: $circle-size;
     height: $circle-size;
@@ -88,8 +88,8 @@
 
   .g3 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(253, 164, 225, 0.8) 0, rgba(253, 164, 225, 0) 50%) no-repeat;
-    mix-blend-mode: $blending;
+    background: radial-gradient(circle at center, rgba(255, 230, 109, 0.8) 0, rgba(255, 230, 109, 0) 50%) no-repeat;
+    mix-blend-mode: screen;
 
     width: $circle-size;
     height: $circle-size;
@@ -104,8 +104,8 @@
 
   .g4 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(253, 230, 240, 0.8) 0, rgba(253, 230, 240, 0) 50%) no-repeat;
-    mix-blend-mode: $blending;
+    background: radial-gradient(circle at center, rgba(149, 225, 211, 0.7) 0, rgba(149, 225, 211, 0) 50%) no-repeat;
+    mix-blend-mode: screen;
 
     width: $circle-size;
     height: $circle-size;

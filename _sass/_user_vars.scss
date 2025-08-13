@@ -1,21 +1,31 @@
-$my-blue: #2a5082;
-$my-green: #88deaa;
-$my-red: #ff8080;
-$my-gray: #5A5A5A;
-$my-black: #000000;
+// Tropical Splash Color Palette
+$tropical-coral: #FF6B6B;      // Bright coral red
+$tropical-turquoise: #4ECDC4;  // Vibrant turquoise
+$tropical-sunshine: #FFE66D;   // Sunny yellow
+$tropical-mint: #95E1D3;       // Fresh mint green
+$tropical-ocean: #3D5A80;      // Deep ocean blue
+$tropical-sunset: #FF8E53;     // Warm sunset orange
+$tropical-white: #FFEAA7;      // Warm white with yellow tint
+$my-black: #2D3436;            // Softer black
 
-$primary-color:  $my-blue; 
-$accent-color: $my-blue;
-$title-color: $my-blue; 
+$primary-color: $tropical-coral; 
+$accent-color: $tropical-turquoise;
+$title-color: $tropical-ocean; 
 $header-text-color: $my-black;
-$header-title-color: $my-blue;
-$header-color: #fff; 
-$header-background-opacity: .3;
+$header-title-color: $tropical-coral;
+$header-color: $tropical-white; 
+$header-background-opacity: .4;
 
 
 
 
-// // theme #2
+// Background gradient colors for tropical theme
+$color-bg1: linear-gradient(135deg, $tropical-sunshine 0%, $tropical-coral 100%);
+$color-bg2: linear-gradient(135deg, $tropical-turquoise 0%, $tropical-mint 100%);
+$blending: multiply;
+$circle-size: 80vw;
+
+// // theme #2 - Original
 // $primary-color:  #c3073f;
 // $accent-color: #c3073f;
 // $title-color: #6f2232;
