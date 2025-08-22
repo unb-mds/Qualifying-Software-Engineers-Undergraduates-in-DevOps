@@ -116,7 +116,7 @@ permalink: /planoensino/
     <div class="communication-channels">
       <h3><i class="fas fa-phone"></i> Dúvidas e Avisos</h3>
       <div class="channel-item">
-        <a href="https://t.me/+jWL3HlkAKgw5YmQx" class="telegram-link" target="_blank">
+        <a href="https://t.me/c/2677031160/1" class="telegram-link" target="_blank">
           <i class="fab fa-telegram"></i>
           <span>Grupo do Telegram</span>
           <small>Para dúvidas, conversas rápidas e avisos</small>
@@ -257,7 +257,7 @@ Entregáveis R1  e R2 [Nos slides](https://mds.lappis.rocks/static_files/present
 ---
 
 
-# **Projetos 2025/1**  
+# **Projetos 2025/2**  
 
 Confira abaixo a lista de projetos que serão desenvolvidos ao longo do 1º semestre de 2025 na disciplina.  
 
@@ -273,239 +273,99 @@ Dicas de slides -  https://www.ime.usp.br/~kon/ResearchStudents/dicasSlides.html
 
 ---
 ---
-## 1. **Desenvolvimento do Aplicativo MEPA – Monitoramento da Qualidade Energética**  
+1.  Querido diário - Radar das tecnologias na educação nos municípios
 
-📌 **Descrição:**  
-O projeto MEPA tem como objetivo desenvolver um aplicativo para monitoramento da qualidade energética, permitindo que gestores acompanhem **em tempo real** os dados de energia.  
+O Querido Diário inaugura uma gigantesca (e em constante expansão!) fonte de dados integrada sobre os diários oficiais municipais. Uma empreitada monumental tendo em vista não apenas a grande quantidade de municípios e de sites governamentais, mas também a variedade de formatos de diários oficiais, já que não existe nenhuma regulamentação que os padronize.
 
-Este projeto faz parte de uma iniciativa maior da **Universidade de Brasília (UnB)** para consolidá-la como a **4ª universidade mais sustentável do Brasil**. Além do monitoramento, será implementado um **sistema de recomendação** para sugerir os contratos mais adequados para os principais consumidores de energia da instituição.  
+Quase metade das matrículas na educação básica pública no Brasil está nos municípios, mas é muito difícil encontrar informações sobre o dia a dia da gestão dessas redes. Por isso, os diários oficiais se tornam uma fonte preciosa de informação — quando não são as únicas.
 
-Atualmente, a **solução web já está em produção** e conta com uma **API disponível** para acesso aos dados. A UnB instalou equipamentos de medição em diversos pontos estratégicos do campus para coletar indicadores sobre a **qualidade e disponibilidade da eletricidade**. Esses dados são transmitidos por meio da rede para um sistema centralizado, permitindo **armazenamento, monitoramento contínuo e uso em pesquisas**.  
+O problema é ter uma plataforma que faça uma análise de atos públicos relacionados à adoção de tecnologias no contexto educacional. Eles fizeram um relatório sobre o tema, mas os dados são estáticos. E a ideia é fazer uma plataforma que mostre esses dados de forma dinâmica. 
 
+Restrição arquitetura: a solução deve ser composta só de frontend (gitpage) e os dados são atualizados periodicamente por meio de robôs que serão executados por meio de github actions. A análise qualitativa deve ser feita por meio de agentes de IA. 
 
-🔗 **[Acesse a documentação do projeto](https://documentacao-547f64.gitlab.io/land/#)**  
 
+https://queridodiario.ok.org.br/educacao/relatorio/3
 
-### **Detalhes do Projeto**  
+https://github.com/okfn-brasil/querido-diario-nas-universidades
 
-- 🛠 **Habilidades necessárias:** Python, React, Front-end, Visualização de Dados  
-- ⏳ **Carga horária estimada:** 350 horas  
-- ⚙️ **Complexidade:** Baixa  
-- 🌎 **Tópicos relacionados:** IoT, Sistemas Distribuídos, Monitoramento de Energia, DevOps, DataViz  
+2.  Querido diário - Radar das tecnologias de investimento de IA  nos municípios
 
-👨‍🏫 **Mentor:**  
-- **Nome:** Guilherme  
-- **Telegram:** [@guilhermedfs](https://t.me/guilhermedfs)  
-- **GitHub:** [guilhermedfs14](https://github.com/guilhermedfs14)  
-- **E-mail:** guilhermedfs11@gmail.com  
+O Querido Diário inaugura uma gigantesca (e em constante expansão!) fonte de dados integrada sobre os diários oficiais municipais. Uma empreitada monumental tendo em vista não apenas a grande quantidade de municípios e de sites governamentais, mas também a variedade de formatos de diários oficiais, já que não existe nenhuma regulamentação que os padronize.
 
+Quase metade das matrículas na educação básica pública no Brasil está nos municípios, mas é muito difícil encontrar informações sobre o dia a dia da gestão dessas redes. Por isso, os diários oficiais se tornam uma fonte preciosa de informação — quando não são as únicas.
 
----
+O problema das Temáticas integram uma série de análises sobre tecnologias na Educação municipal, a partir dos atos publicados nos diários oficiais coletados pelo Querido Diário. Elas jogam luz sobre temas que foram identificados nos Panoramas, que, por sua vez, são análises periódicas que captam tendências, inovações e práticas recorrentes nas redes.
 
-## 2. **Análise de Sentimentos dos Comentários do Brasil Participativo**  
+A Temática #2 trata sobre inteligência artificial (IA) nas escolas municipais, especialmente sobre o uso dessa tecnologia na gestão e ambiente escolar.
 
-📌 **Descrição:**  
-A **Plataforma Brasil Participativo** é a maior plataforma de participação social do governo federal do Brasil, reunindo mais de **1,5 milhão de usuários em apenas três meses**. Criada para permitir que a população contribua com a formulação e aprimoramento de políticas públicas, a plataforma foi desenvolvida com **software livre**, com apoio da **Dataprev, da comunidade Decidim-Brasil, do Ministério da Gestão e Inovação em Serviços Públicos (MGI) e do Lab Livre**.  
+Restrição arquitetura: a solução deve ser composta só de frontend (gitpage) e os dados são atualizados periodicamente por meio de robôs que serão executados por meio de github actions. A análise qualitativa deve ser feita por meio de agentes de IA. 
 
-O **Brasil Participativo OSS** adapta os processos participativos do **framework Decidim** para o contexto brasileiro. Atualmente, a comunidade **Decidim Brasil** conta com mais de **200 participantes**, enquanto a iniciativa **OSS Brasil Participativo** já mobilizou **mais de 100 colaboradores diretos e indiretos** em seu primeiro ano. O Brasil se destaca como um dos principais usuários dessa ferramenta **em nível nacional**, devido às suas funcionalidades robustas, adaptabilidade, custo reduzido e forte compromisso com a **transparência**.  
+https://queridodiario.ok.org.br/educacao/relatorio/4
 
-### **Objetivo do Projeto**  
-O projeto visa criar uma ferramenta para **análise de sentimentos** dos comentários postados na plataforma Brasil Participativo. A ideia é usar um **modelo de machine learning de código aberto**, sem depender de soluções proprietárias como o ChatGPT.  
+https://github.com/okfn-brasil/querido-diario-nas-universidades
 
-🚀 **Características da solução:**  
-✅ **Sem back-end:** Toda a interface será desenvolvida usando **Jekyll**  
-✅ **Captura de comentários via API:** Os comentários serão extraídos da **API GraphQL da plataforma**  
-✅ **Automação por bots:** Tanto a **captura de dados** quanto a **análise de sentimentos** serão realizadas por **bots desenvolvidos para essa finalidade**  
+3. Querido diário - Radar de investimento de saúde oncológico nos municípios
 
-🔗 **[Acesse a documentação do projeto](https://gitlab.com/lappis-unb/decidimbr)**  
+O Querido Diário inaugura uma gigantesca (e em constante expansão!) fonte de dados integrada sobre os diários oficiais municipais. Uma empreitada monumental tendo em vista não apenas a grande quantidade de municípios e de sites governamentais, mas também a variedade de formatos de diários oficiais, já que não existe nenhuma regulamentação que os padronize.
 
+O problema a ser resolvido é o investimento de saúde oncológico nos municipios a partir dos dados do querido diario.
 
-### **Detalhes do Projeto**  
+https://queridodiario.ok.org.br
 
-- 🛠 **Habilidades necessárias:** Python, Machine Learning, Visualização de Dados  
-- ⏳ **Carga horária estimada:** 350 horas  
-- ⚙️ **Complexidade:** Alta  
-- 🌎 **Tópicos relacionados:** Análise de Sentimentos, Opinião Pública, Participação Social  
+4. Censo escolar
 
-👨‍🏫 **Mentor:**  
-- **Nome:** Bruna pinos  
+A partir dos microdados relacionados ao censo escolar que são disponibilizados anualmente, fazer um portal de dados do censo escola, da educação basica. Enriquecer os metadados da base dado e implementar um RAG (Retrieval-augmented generation), para que possa encontrar informações a partir de uma interface conversacional, além de um dashboard com as principais visualizações de dados do censo.
 
+Fonte de dados
 
----
+https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar
 
-## 3.**GovHubbr - Análise de Gastos Públicos IPEA - Geração Automática de Relatórios Inteligentes**  
+5. É fake - minerador de notícias
+o projeto é fake minera reportagem de mais de 90 jornais para detecação automatizada de fake news. O objetivo desse projeto é implementar a mineracao de pelo menos mais 2 jornais e fazer uma aplicação que use esses dados e permita que o usuário explore as noticias. 
 
-📌 **Descrição:**  
-O projeto **GovHubbr** é uma iniciativa do **Laboratório de Software Livre (Lab Livre) da UnB** em parceria com o **Instituto de Pesquisa Econômica Aplicada (IPEA)**, com o objetivo de melhorar a **gestão e integração dos sistemas de dados estruturais do governo brasileiro**.  
+https://github.com/aosfatos/check-up
 
-Os sistemas financeiros do governo armazenam informações essenciais sobre **orçamentos, pessoal e estrutura organizacional**, mas enfrentam desafios como **redundância de dados, inconsistências e falta de interoperabilidade**, dificultando a **tomada de decisões baseada em evidências**.  
 
-Para resolver esses problemas, o projeto desenvolve uma **solução tecnológica de código aberto** que integra e qualifica dados, permitindo melhor **acesso, confiabilidade e usabilidade** para gestores públicos e sociedade. Com o uso de **automação e tecnologias abertas**, a iniciativa permite a **extração, transformação e visualização eficiente** dos dados governamentais, promovendo **transparência e eficiência na administração pública**.  
 
-🌎 **Palavras-chave:** IPEA, Universidade de Brasília (UnB), Gestão de Dados, Open Source  
+6. Colaboração no github
 
----
+A partir dos dados dos usuários de um determinado conjunto de organizações no github, fazer uma plataforma para visualizar a colaboração entre os membros e o tipo de colaboração. 
 
-## 4. **Relatórios do IPEA**
-### **Objetivo do Projeto**  
+Similar ao projeto abaixo, mas focado nas pessoas:
+https://githubnext.com/projects/repo-visualization/
 
-O foco deste projeto é a **geração automática de relatórios inteligentes** para análise dos **dados financeiros do IPEA**.  
+https://www.inf.usi.ch/lanza/Downloads/Lung2022a.pdf
 
-📊 **Desafios a serem resolvidos:**  
-✅ Construção de **painéis interativos** para visualizar os dados financeiros em **tempo real**.  
-✅ Aplicação de **modelos de Processamento de Linguagem Natural (NLP)** para **geração automática de textos** com base na análise de dados financeiros.  
-✅ Implementação de **resumos automatizados** de tendências financeiras e **alertas** para gestores públicos.  
-✅ **Restrições:** Apenas **modelos de NLP de código aberto** podem ser utilizados, **sem dependência de tecnologias proprietárias como ChatGPT**.  
 
-🛠 **Ferramentas e Tecnologias:**  
-- A plataforma será desenvolvida usando **Streamlit**, com **HTML e CSS customizados** para uma interface intuitiva e visualmente rica.  
-- Modelos de **Machine Learning e NLP** (generativa/bert topic) serão aplicados para extrair insights e gerar relatórios automatizados.  
 
-🔗 **[Acesse a documentação do projeto](https://gitlab.com/lappis-unb/decidimbr)**  
+7. Colaboração github - metricas
 
+Evoluir esse projeto para organizações no github, além de repositórios. Usar agentes de ia para explicar caracteristicas de colaboração e o que significam as métricas. Tipos de métricas: qte de issues abertas/fechadas, qte commits, tecnologias, qte PR, qualidade de código. 
 
-### **Detalhes do Projeto**  
+https://githubnext.com/projects/repo-visualization/#explore-for-yourself
 
-- 🛠 **Habilidades necessárias:** Python, Machine Learning, NLP, Visualização de Dados, Streamlit  
-- ⏳ **Carga horária estimada:** 350 horas  
-- ⚙️ **Complexidade:** alta  
 
-👨‍🏫 **Mentor:**  
-- **Nome:** Joao  
+8. Dados abertos UnB
 
+ por incrivel que pareça, não há um portal para visualição dos dados abertos da unb. é sua vez (ate pode filtrar pela fcte). Objetivo é organizar os dados abertos da unb e fazer um portal para visualizacao dos dados. Vamos ver com o que é gasto na fcte?
 
-🚀 **Diferenciais:**  
-✅ **Automação inteligente** na análise de dados financeiros.  
-✅ **Transparência e eficiência** na administração pública.  
-✅ **Código aberto**, permitindo escalabilidade e reuso da solução por outras instituições.  
+ Restricao arquitetural: o portal soh deve ter front (githpage), o banco vai ser em json, e toda a mineração e processamento dos dados é feito por meio de bots executados no pipeline action do github. 
 
----
+ projeto maravilhoso!
 
-## 🗳️ 5.**Aplicativo de Votação Presencial com Rede Local**
 
-📌 **Descrição do Projeto**  
-Este aplicativo tem como objetivo **viabilizar votações presenciais** em ambientes com conexão à internet limitada ou inexistente. A proposta é utilizar uma **rede interna local via protocolo UDP**, onde um **usuário master** compartilha as questões a serem votadas, e os demais participantes da rede podem registrar seus votos (**a favor, contra ou abster-se**).
+ https://dados.gov.br/dados/organizacoes/visualizar/fundacao-universidade-de-brasilia-unb
 
-A aplicação é ideal para **plenárias presenciais, assembleias ou reuniões**, garantindo **transparência**, **rapidez** e **visualização dos resultados em tempo real**, mesmo em ambientes isolados da internet.
 
-🔧 **Funcionalidades esperadas:**  
-- Comunicação local via UDP  
-- Interface simples para envio de questões e votação  
-- Registro de votos com três opções  
-- Visualização em tempo real dos resultados  
+9. Portal dos professores
 
-🌎 **Palavras-chave:** Universidade de Brasília (UnB), Gestão de Dados, Plenária, Open Source  
+Minerar dados dos professores (lattes, google scholar, sigaa), e gerar resumos do portfolio e atuação de cada professor. Visualização facil ;) não é um ambiente para avaliar professores, mas sim ter uma visão geral do que fazem, se fazem pesquisa (ultimo artigo publicado), que matérias dão ao longo do tempo (dao as mesmas materias ou variam). Agente de ia para fazer analise qualitativa e resumo dos dados dos profs
 
-👨‍🏫 **Mentoria:**  
-- **Bruna Pinos**
+ Restricao arquitetural: o portal soh deve ter front (githpage), o banco vai ser em json, e toda a mineração e processamento dos dados é feito por meio de bots executados no pipeline action do github. 
 
 
----
+10. Portal com guia para escrita tecnica em software
 
-## 🗺️ 6. **Mapeamento com Acessibilidade para Atividade Comunitária**
+Um dos principais problemas em um projeto de software é a falta de documentação. A ideia é varrer um repositório e fazer recomendacoes de documentos necessarios para garantir a qualidade do produto de software. Usar agente de ia para classificar a documentacao de acordo com o checklist de escrita técnica. Também deve haver uma area com material guiado (com animacoes) do passo a passo para fazer uma boa documentacao tecnica
 
-📌 **Descrição do Projeto**  
-Este projeto tem como objetivo **desenvolver uma plataforma colaborativa de mapeamento**, voltada para apoiar **atividades comunitárias** com foco em **acessibilidade**. A ideia é permitir que os usuários cadastrem e consultem locais que sejam acessíveis para pessoas com deficiência ou mobilidade reduzida — como espaços culturais, centros comunitários, feiras e eventos públicos.
-
-A ferramenta pode ser usada tanto por **organizações sociais quanto por moradores locais**, fortalecendo a inclusão, a cidadania e a participação comunitária.
-
-🎯 **Objetivos principais:**  
-- Criar um mapa interativo de locais acessíveis  
-- Permitir que a comunidade colabore com informações e avaliações  
-- Incluir filtros de acessibilidade (rampa, piso tátil, banheiro adaptado etc.)  
-- Visualização geográfica e busca por tipo de atividade ou região  
-
-🌎 **Palavras-chave:** Acessibilidade, Cidadania, Mapeamento Colaborativo, Open Source, Comunidade  
-
-👨‍🏫 **Mentoria:**  
-- (Definir mentor/a)
-
----
-## 🧠 7. **Cluster de Propostas**
-
-📌 **Descrição do Projeto**  
-A plataforma **Brasil Participativo** permite que cidadãos enviem propostas e participem ativamente de decisões do governo. Este projeto tem como objetivo **extrair todas as propostas da plataforma** e aplicar **técnicas de clusterização**, agrupando as ideias por similaridade temática.  
-
-A clusterização visa **identificar padrões, temas recorrentes** e ajudar na **sistematização das demandas da população**, oferecendo uma visão estruturada que pode apoiar análises qualitativas e tomadas de decisão mais embasadas.
-
-🔧 **Atividades-chave:**  
-- Exportar e organizar as propostas públicas da plataforma  
-- Aplicar modelos de NLP para pré-processamento textual  
-- Utilizar algoritmos de clusterização (como K-Means, HDBSCAN, etc.)  
-- Apresentar os resultados de forma acessível e interativa  
-
-🗂️ **TODO:**  
-- Automatizar a exportação de propostas do Brasil Participativo  
-- Gerar e entregar um dataset limpo e utilizável  
-
-🌎 **Palavras-chave:** Brasil Participativo, Clusterização, NLP, Participação Cidadã, Open Source  
-
-👨‍🏫 **Mentoria:**  
-- (Definir mentor/a)
-
----
-
-## 🏗️ 8. **Obras BSB**
-
-📌 **Descrição do Projeto**  
-O projeto **Obras BSB** tem como objetivo evoluir a aplicação desenvolvida no semestre anterior, focada na transparência e monitoramento de obras públicas no Distrito Federal. Nesta nova fase, o foco estará em **melhorar a experiência do usuário**, **refinar a visualização das obras em atraso** e realizar uma **análise qualitativa dos tipos de obras** com o auxílio do modelo de linguagem **DeepSeek**.
-
-A ideia é tornar a plataforma ainda mais útil para cidadãos, jornalistas e gestores públicos que buscam acompanhar a execução de obras públicas com **mais clareza e inteligência**.
-
-🔍 **Melhorias previstas:**  
-- Interface mais intuitiva e responsiva  
-- Filtros e destaques para obras em atraso  
-- Análises textuais e categorização de obras com IA (DeepSeek)  
-- Reforço na acessibilidade e usabilidade  
-
-🌐 **Link do Projeto Anterior:**  
-[DFemObras – GitHub Pages](https://unb-mds.github.io/DFemObras/)
-
-🌎 **Palavras-chave:** Transparência, Gestão Pública, Obras Públicas, Visualização de Dados, Open Source  
-
-👨‍🏫 **Mentoria:**  
-- (Definir mentor/a)
-
----
-## 📝 11. **Concurso**
-
-📌 **Descrição do Projeto**  
-Este projeto tem como objetivo **evoluir a aplicação Concursei_BR**, desenvolvida para facilitar o acesso a informações sobre concursos públicos no Brasil. Nesta nova fase, o foco estará em **melhorar o HTML/CSS da aplicação**, além de **enriquecer o conteúdo** com informações detalhadas sobre **vagas, carreiras e requisitos**.  
-
-O projeto também explorará o uso de **modelos de linguagem como o DeepSeek** para interpretar e classificar automaticamente os dados textuais das vagas, oferecendo uma experiência mais rica e personalizada para o usuário.
-
-🎯 **Objetivos principais:**  
-- Refatorar e melhorar o layout da aplicação (HTML/CSS)  
-- Adicionar descrições completas das vagas e carreiras públicas  
-- Aplicar NLP com DeepSeek para classificar e interpretar os textos das vagas  
-- Oferecer filtros mais inteligentes e uma navegação mais fluida  
-
-🔗 **Repositório do Projeto:**  
-[github.com/unb-mds/2024-2-Concursei_Br](https://github.com/unb-mds/2024-2-Concursei_Br)
-
-🌎 **Palavras-chave:** Concurso Público, Visualização de Dados, Governo Aberto, NLP, Open Source  
-
-👨‍🏫 **Mentoria:**  
-- (Definir mentor/a)
-
-
----
-
-## 🔐 10. **Biometria por Voz**
-
-📌 **Descrição do Projeto**  
-Este projeto propõe o desenvolvimento de uma funcionalidade de **login por biometria de voz**, utilizando bibliotecas de reconhecimento de voz. A ideia é permitir que usuários possam se autenticar no sistema com base em **características únicas da sua voz**, oferecendo uma alternativa prática e segura às formas tradicionais de login (senha, PIN, etc.).
-
-Essa funcionalidade pode ser integrada a outros sistemas, aumentando a **acessibilidade**, a **usabilidade** e a **segurança** de aplicações que exigem autenticação de usuários.
-
-🎯 **Funcionalidades Esperadas:**  
-- Captura e registro da voz do usuário  
-- Autenticação por comparação com o padrão de voz previamente salvo  
-- Uso de bibliotecas open source de reconhecimento de voz  
-- Integração com sistemas de login já existentes  
-
-🌎 **Palavras-chave:** Autenticação, Reconhecimento de Voz, Biometria, Open Source  
-
-👨‍🏫 **Mentoria:**  
-- (Definir mentor/a)
-
+ Restricao arquitetural: o portal soh deve ter front (githpage), o banco vai ser em json, e toda a mineração e processamento dos dados é feito por meio de bots executados no pipeline action do github. 
