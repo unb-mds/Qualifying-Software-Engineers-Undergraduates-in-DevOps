@@ -228,8 +228,8 @@ Os critérios avaliados individualmente no projeto estão destacados na tabela a
 
 Entregáveis R1  e R2 [Nos slides](https://mds.lappis.rocks/static_files/presentations/MDS.pdf)
 
-- Release 1 (major) - 07 a 09 de maio de 2025.
-- Release 2 (major) - 09-11 de julho de 2025.
+- Release 1 (major) - 01 a 03 de Outubro de 2025.
+- Release 2 (major) - 03-05 de Dezembro de 2025.
 
 ## Bibliografia Básica
 
