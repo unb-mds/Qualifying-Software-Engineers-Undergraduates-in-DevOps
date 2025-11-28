@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Roteiro de Apresentação – Release 1 - MDS / 4 semestre </title>
+  <meta name="description" content="Roteiro de Apresentação – Release 1 - MDS / 4 semestre">
+  
+  <link rel="stylesheet" href="/_css/main.css">
+  <link rel="canonical" href="http://0.0.0.0:4000/RoteiroEntrega">
+  <link rel="alternate" type="application/rss+xml" title="MDS / 4 semestre - UnB" href="http://0.0.0.0:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">UnB</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="MDS / 4 semestre - UnB"><b>MDS</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">4 semestre</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/slides/">
+                <i class="fas fa-book-reader"></i> Slides
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Projetos
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="https://github.com/unb-mds">
+                <i class="fab fa-github"></i> Repositórios
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Roteiro de Apresentação – Release 1</h1>
+  </header>
+
+  <article class="post-content">
+    <h1 id="roteiro-de-apresentação--release-1">Roteiro de Apresentação – Release 1</h1>
+<p><strong>Duração total:</strong> 5 minutos<br />
+ <strong>Objetivo:</strong> Mostrar como a equipe enfrentou o <strong>desafio proposto</strong> e entregou implementação inicial, comprovando a viabilidade do escopo, arquitetura e tecnologias em 2 meses.</p>
+
+<hr />
+
+<h2 id="1-abertura-30-segundos">1. Abertura (30 segundos)</h2>
+<ul>
+  <li><strong>Quem fala:</strong> 1 pessoa</li>
+  <li>Apresentar a equipe.</li>
+  <li>Explicar objetivo da Release 1:
+    <blockquote>
+      <p>“Nesta Release, nosso foco foi validar se o escopo, a arquitetura e as tecnologias escolhidas eram viáveis, começando pela implementação inicial.”</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="2-desafio-proposto-40-segundos">2. Desafio Proposto (40 segundos)</h2>
+<ul>
+  <li><strong>Quem fala:</strong> 1 pessoa</li>
+  <li>Explicar o desafio do time no início:
+    <ul>
+      <li><strong>Explorar o problema</strong> e entender os temas.</li>
+      <li><strong>Definir escopo</strong> de forma clara e aprová-lo.</li>
+      <li><strong>Estruturar a arquitetura</strong> para sustentar a solução.</li>
+      <li><strong>Escolher e validar tecnologias</strong> que realmente funcionem.</li>
+    </ul>
+  </li>
+  <li>Concluir:
+    <blockquote>
+      <p>“Nosso desafio foi transformar essas incertezas em entregas concretas.”</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="3-implementação-realizada-2-minutos">3. Implementação Realizada (2 minutos)</h2>
+<ul>
+  <li><strong>Quem fala:</strong> 2 pessoas (cada uma cobre um ponto).</li>
+  <li>Mostrar <strong>o que foi de fato implementado</strong>:
+    <ul>
+      <li>Protótipo inicial aprovado (escopo validado).</li>
+      <li>Documento de arquitetura + primeiras decisões.</li>
+      <li>Tecnologias testadas com código funcional.</li>
+      <li>Implementação inicial (ex.: endpoints, banco, integração, pipeline, ou outra parte já rodando).</li>
+    </ul>
+  </li>
+  <li>Exibir prints, trechos de código ou tela do protótipo.</li>
+</ul>
+
+<hr />
+
+<h2 id="4-evidências-de-viabilidade-1-minuto">4. Evidências de Viabilidade (1 minuto)</h2>
+<ul>
+  <li><strong>Quem fala:</strong> 1 pessoa</li>
+  <li>Relacionar implementação com o desafio:
+    <ul>
+      <li>Story Map + issues concluídas mostram processo funcionando.</li>
+      <li>Documentação OSS publicada e Release Notes registram a entrega.</li>
+      <li>Protótipo rodando comprova que a arquitetura e tecnologias escolhidas são viáveis.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="5-encerramento-30-segundos">5. Encerramento (30 segundos)</h2>
+<ul>
+  <li><strong>Quem fala:</strong> mesma pessoa da abertura</li>
+  <li>Conclusão:
+    <blockquote>
+      <p>“Com a Release 1, transformamos o desafio inicial em entregas concretas. Agora seguimos para evoluir a solução e consolidar a Release 2.”</p>
+    </blockquote>
+  </li>
+  <li>Agradecer.</li>
+</ul>
+
+<hr />
+
+<h1 id="checklist-de-apresentação--release-1-5-minutos">Checklist de Apresentação – Release 1 (5 minutos)</h1>
+
+<h2 id="1-abertura-30s">1. Abertura (30s)</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Apresentar a equipe (nome do time + integrantes).</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Explicar objetivo da release: validar escopo, arquitetura e tecnologias.</li>
+</ul>
+
+<h2 id="2-desafio-proposto-40s">2. Desafio Proposto (40s)</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mostrar o desafio inicial:
+    <ul>
+      <li>Explorar o problema.</li>
+      <li>Definir e aprovar escopo.</li>
+      <li>Estruturar arquitetura.</li>
+      <li>Escolher e validar tecnologias.</li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Frase de transição: “O desafio era transformar incertezas em entregas concretas.”</li>
+</ul>
+
+<h2 id="3-implementação-realizada-2min">3. Implementação Realizada (2min)</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Protótipo inicial aprovado.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Documento de arquitetura criado.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Tecnologias testadas com código funcional.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Implementação inicial (ex.: endpoints, banco, pipeline etc).</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mostrar prints / repositório / protótipo.</li>
+</ul>
+
+<h2 id="4-evidências-de-viabilidade-1min">4. Evidências de Viabilidade (1min)</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Story Map + issues entregues.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Documentação OSS publicada.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Release Notes registrados.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Protótipo funcionando = viabilidade comprovada.</li>
+</ul>
+
+<h2 id="5-encerramento-30s">5. Encerramento (30s)</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Concluir: “Transformamos o desafio inicial em entregas concretas.”</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Próximos passos: evoluir funcionalidades e preparar Release 2.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Agradecer.</li>
+</ul>
+
+<hr />
+
+<h1 id="dicas-rápidas">Dicas Rápidas</h1>
+<ul class="task-list">
+  <li>Falem do <strong>desafio inicial</strong> como motivação.</li>
+  <li>Mostrem a <strong>implementação feita</strong> (mesmo se pequena).</li>
+  <li>Usem prints ou exemplos reais do repositório.</li>
+  <li>Dividam o tempo para caber nos <strong>5 minutos</strong>.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cada pessoa fala uma parte → mostra colaboração.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Usar prints e exemplos reais.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Ser objetivo, sem ler os slides.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Treinar para não passar de 5 minutos.</li>
+</ul>
+
+<h1 id="roteiro-de-apresentação--release-2">Roteiro de Apresentação – Release 2</h1>
+
+<p>ROTEIRO DE APRESENTAÇÃO (7 MINUTOS)</p>
+
+<p>Tempo total: 7 minutos
+Abertura
+“Boa tarde, somos o grupo X e vamos apresentar o resultado final do nosso projeto.Vamos mostrar nossa solução, o que foi entregue, aprendizados e impactos.”</p>
+
+<p>Contexto e Problema</p>
+<ul>
+  <li>Qual problema o projeto resolve</li>
+  <li>Para quem</li>
+  <li>Por que é relevante
+“O problema identificado foi […]. Nosso objetivo foi desenvolver uma solução que […] para atender […].”</li>
+</ul>
+
+<p>A Solução Desenvolvida</p>
+<ul>
+  <li>Demonstração conceitual do produto</li>
+  <li>Arquitetura geral (alto nível)</li>
+  <li>Principais funcionalidades
+Fala exemplo:
+“Construímos uma aplicação composta por […]As principais features entregues foram: […].”
+( 10–15 segundos de demonstração.)</li>
+</ul>
+
+<p>Qualidade, Testes e DevOps</p>
+<ul>
+  <li>Pipeline CI/CD</li>
+  <li>Linter e análise estática</li>
+  <li>Testes unitários e de integração</li>
+  <li>Qualidade das PRs
+Fala exemplo:
+“Implementamos práticas de XP e DevOps, incluindo pipeline de integração contínua, linter automático e testes com cobertura de X%. Isso garantiu maior estabilidade e rapidez nas entregas.”</li>
+</ul>
+
+<p>Gestão, Agile e Produção</p>
+<ul>
+  <li>Sprints, retros, planning</li>
+  <li>Quantidade de issues, ritmo e rastreabilidade</li>
+  <li>GitPage e release notes
+“Seguimos práticas ágeis com sprints semanais, retrospectivas e planning. Mantivemos rastreabilidade de épicos → features → US → issues, além de documentação no GitPage.”</li>
+</ul>
+
+<p>Lições Aprendidas</p>
+<ul>
+  <li>Técnicas</li>
+  <li>Trabalho em equipe</li>
+  <li>Processos</li>
+  <li>Ferramentas
+Fala exemplo:
+“Entre as principais lições aprendidas estão: melhor divisão de tarefas, commits mais atômicos, uso eficiente de pipelines e importância dos testes automatizados.”</li>
+</ul>
+
+<p>Conclusão e Encerramento</p>
+<ul>
+  <li>Impacto final do projeto</li>
+  <li>O que foi alcançado</li>
+  <li>Possíveis evoluções futuras
+“O projeto cumpriu o escopo planejado e entregamos um produto funcional que […]. Como próximos passos, recomendamos […]. Obrigada!”</li>
+</ul>
+
+<p>Checklist</p>
+<ol>
+  <li>Preparação do Conteúdo
+✔ Problema e Contexto
+    <ul>
+      <li>Explica claramente o problema que o projeto resolve</li>
+      <li>Mostra para quem a solução foi desenvolvida</li>
+      <li>Justifica a relevância do projeto
+✔ Solução Desenvolvida</li>
+      <li>Resumo da solução em 2–3 frases</li>
+      <li>Arquitetura geral apresentada (alto nível)</li>
+      <li>Principais funcionalidades destacadas</li>
+      <li>Demonstração rápida preparada (se houver)
+✔ Implementação e Qualidade</li>
+      <li>Apresentar o pipeline de CI/CD</li>
+      <li>Mostrar uso de linter e análise estática</li>
+      <li>Destacar testes unitários (cobertura, exemplos)</li>
+      <li>Mostrar testes de integração</li>
+      <li>Evidenciar qualidade dos PRs e rastreabilidade
+✔ Práticas Ágeis / XP</li>
+      <li>Commits atômicos exemplificados</li>
+      <li>Issues bem documentadas com critérios de aceitação</li>
+      <li>Sprints documentadas</li>
+      <li>Retros com melhorias reais entre sprints</li>
+      <li>Velocity estável ou justificativa para variação</li>
+      <li>Fluxo épico → feature → US → issue → PR mostrado
+✔ GitPage / Release Notes</li>
+      <li>Página do produto atualizada</li>
+      <li>Explicação centrada no usuário</li>
+      <li>Release notes claras e organizadas
+✔ Lições Aprendidas</li>
+      <li>Pelo menos 3 aprendizados técnicos</li>
+      <li>Pelo menos 2 aprendizados de equipe/processo</li>
+      <li>Algo que o time faria diferente numa próxima entrega
+✔ Conclusão</li>
+      <li>O que foi alcançado</li>
+      <li>Impacto do projeto</li>
+      <li>Próximos passos sugeridos</li>
+    </ul>
+  </li>
+  <li>Preparação dos Slides
+    <ul>
+      <li>Slides limpos, pouco texto</li>
+      <li>Fonte legível</li>
+      <li>Títulos claros e numerados</li>
+      <li>Tempo de cada slide definido (média 35–45 segundos)</li>
+      <li>Prints ou GIFs do sistema funcionando</li>
+      <li>Diagramas simples (arquitetura, fluxo)</li>
+      <li>Cores consistentes</li>
+      <li>Nenhum slide cheio demais</li>
+    </ul>
+  </li>
+  <li>Preparação Técnica
+    <ul>
+      <li>Links de demo/teste funcionando</li>
+      <li>Repositórios públicos/visíveis</li>
+      <li>Página GitPage acessível</li>
+      <li>Pipeline CI funcionando (print de backup no slide)</li>
+      <li>Código está rodando localmente</li>
+      <li>Internet testada</li>
+      <li>Cabo HDMI/adaptador pronto (caso presencial)</li>
+    </ul>
+  </li>
+  <li>Preparação da Equipe
+    <ul>
+      <li>Quem fala cada parte definido</li>
+      <li>Falas ensaiadas</li>
+      <li>Tempo total cronometrado (6:45 a 7:00)</li>
+      <li>Backup: caso alguém falte, outro sabe falar a parte</li>
+      <li>Entradas entre falas suaves (“Agora passo para…”)</li>
+    </ul>
+  </li>
+  <li>Preparação Pessoal
+    <ul>
+      <li>Apresentação começa com uma frase forte (ex: “Nosso projeto resolve…”)</li>
+      <li>Linguagem clara, voz firme</li>
+      <li>Postura profissional</li>
+      <li>Slide de abertura ensaiado (sempre o mais importante)</li>
+      <li>Agradecimento final preparado</li>
+    </ul>
+  </li>
+  <li>Itens de Risco (Mitigação)
+    <ul>
+      <li>Se demo falhar → print/gif nos slides</li>
+      <li>Se internet cair → vídeo offline</li>
+      <li>Se faltar tempo → cortar detalhes técnicos e focar solução</li>
+      <li>Se alguém esquecer a fala → ter bullets visíveis nos slides</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="release-ii">Release II</h1>
+
+<h2 id="checklist-para-apresentação-final-7-minutos"><strong>CHECKLIST PARA APRESENTAÇÃO FINAL (7 minutos)</strong></h2>
+
+<h3 id="-problema-e-contexto"><strong>✔ Problema e Contexto</strong></h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Explica claramente o problema que o projeto resolve</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mostra para quem a solução foi desenvolvida</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Justifica a relevância do projeto</li>
+</ul>
+
+<h3 id="-solução-desenvolvida"><strong>✔ Solução Desenvolvida</strong></h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Resumo da solução em 2–3 frases</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Arquitetura geral apresentada (alto nível)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Principais funcionalidades destacadas</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Demonstração rápida preparada (se houver)</li>
+</ul>
+
+<h3 id="-implementação-e-qualidade"><strong>✔ Implementação e Qualidade</strong></h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Apresentar o pipeline de CI/CD</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mostrar uso de linter e análise estática</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Destacar testes unitários (cobertura, exemplos)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mostrar testes de integração</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Evidenciar qualidade dos PRs e rastreabilidade</li>
+</ul>
+
+<h3 id="-práticas-ágeis--xp"><strong>✔ Práticas Ágeis / XP</strong></h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Commits atômicos exemplificados</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Issues bem documentadas com critérios de aceitação</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sprints documentadas</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Retros com melhorias reais entre sprints</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Velocity estável ou justificativa para variação</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Fluxo épico → feature → US → issue → PR mostrado</li>
+</ul>
+
+<h3 id="-gitpage--release-notes"><strong>✔ GitPage / Release Notes</strong></h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Página do produto atualizada</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Explicação centrada no usuário</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Release notes claras e organizadas</li>
+</ul>
+
+<h3 id="-lições-aprendidas"><strong>✔ Lições Aprendidas</strong></h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Pelo menos 3 aprendizados técnicos</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Pelo menos 2 aprendizados de equipe/processo</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Algo que o time faria diferente numa próxima entrega</li>
+</ul>
+
+<h3 id="-conclusão"><strong>✔ Conclusão</strong></h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />O que foi alcançado</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Impacto do projeto</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Próximos passos sugeridos</li>
+</ul>
+
+<hr />
+
+<h2 id="2-preparação-dos-slides"><strong>2. Preparação dos Slides</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Slides limpos, pouco texto</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Fonte legível</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Títulos claros e numerados</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Tempo de cada slide definido (média 35–45 segundos)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Prints ou GIFs do sistema funcionando</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Diagramas simples (arquitetura, fluxo)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cores consistentes</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Nenhum slide cheio demais</li>
+</ul>
+
+<hr />
+
+<h2 id="3-preparação-técnica"><strong>3. Preparação Técnica</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Links de demo/teste funcionando</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Repositórios públicos/visíveis</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Página GitPage acessível</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Pipeline CI funcionando (print de backup no slide)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Código está rodando localmente</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Internet testada</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cabo HDMI/adaptador pronto (caso presencial)</li>
+</ul>
+
+<hr />
+
+<h2 id="4-preparação-da-equipe"><strong>4. Preparação da Equipe</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Quem fala cada parte definido</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Falas ensaiadas</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Tempo total cronometrado (6:45 a 7:00)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Backup: caso alguém falte, outro sabe falar a parte</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Entradas entre falas suaves (“Agora passo para…”)</li>
+</ul>
+
+<hr />
+
+<h2 id="5-preparação-pessoal"><strong>5. Preparação Pessoal</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Apresentação começa com uma frase forte (ex: “Nosso projeto resolve…”)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Linguagem clara, voz firme</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Postura profissional</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Slide de abertura ensaiado (sempre o mais importante)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Agradecimento final preparado</li>
+</ul>
+
+<hr />
+
+<h2 id="6-itens-de-risco-mitigação"><strong>6. Itens de Risco (Mitigação)</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Se demo falhar → print/gif nos slides</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Se internet cair → vídeo offline</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Se faltar tempo → cortar detalhes técnicos e focar solução</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Se alguém esquecer a fala → ter bullets visíveis nos slides</li>
+</ul>
+
+<hr />
+
+<h1 id="versão-super-rápida-cola-final"><strong>Versão super rápida (cola final)</strong></h1>
+
+<p><strong>Antes de apresentar, confirme:</strong></p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Problema explicado</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Solução demonstrada</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Arquitetura citada</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />CI/Linter/Testes mostrados</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Práticas ágeis provadas</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Lições aprendidas</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Conclusão forte</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Tudo dentro de 7 minutos</li>
+</ul>
+
+<h1 id="checklist-de-documentação-do-projeto"><strong>CHECKLIST DE DOCUMENTAÇÃO DO PROJETO</strong></h1>
+
+<hr />
+
+<h2 id="1-documentação-de-visão-e-produto"><strong>1. Documentação de Visão e Produto</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>README principal completo</strong>, contendo:</p>
+
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />O que é o projeto</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Problema que resolve / motivação</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Público-alvo</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Arquitetura geral (alto nível)</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Tecnologias utilizadas</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Como rodar o projeto (passo a passo)</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Como contribuir</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Licença</li>
+    </ul>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Visão de Produto (GitPage)</strong>:</p>
+
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Explicação centrada no usuário</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Prints ou GIFs da aplicação</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Fluxo de navegação</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Releases visíveis</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="2-documentação-de-arquitetura"><strong>2. Documentação de Arquitetura</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Diagrama de arquitetura</strong> (alto nível)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Descrição dos componentes</strong> / módulos</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Fluxo de dados</strong> (sequência ou dataflow)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Decisões Arquiteturais (ADRs)</strong></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Justificativa das tecnologias</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Estrutura de pastas explicada</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Dependências principais listadas</li>
+</ul>
+
+<hr />
+
+<h2 id="3-documentação-de-desenvolvimento"><strong>3. Documentação de Desenvolvimento</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Guia de instalação</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Guia de configuração do ambiente</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Dependências e versões (ex: Node, Python, Docker etc.)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Scripts disponíveis (run, test, lint…)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Explicação do pipeline CI/CD</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Documentação de integrações externas (APIs, serviços)</li>
+</ul>
+
+<hr />
+
+<h2 id="4-documentação-de-qualidade"><strong>4. Documentação de Qualidade</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Linter configurado (arquivo <code class="language-plaintext highlighter-rouge">.eslintrc</code>, <code class="language-plaintext highlighter-rouge">.flake8</code> etc.)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Documentação das regras de estilo</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Critérios de qualidade estática aplicados</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cobertura de testes relatada</li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Relatório dos testes:</p>
+
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Testes unitários</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Testes de integração</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Testes de aceitação (se houver)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="5-documentação-de-projeto-e-gestão-ágil"><strong>5. Documentação de Projeto e Gestão Ágil</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Story Map</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Épicos → Features → User Stories (com critérios de aceitação)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Rastreabilidade entre histórias → issues → PRs</li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Documentação das sprints:</p>
+
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Planning</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Review</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Retrospectivas</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Métricas analisadas pelo time</li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Velocity e curva de commits</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Políticas de branch (Git Flow / trunk-based)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Checklist de PR (Pull Request Template)</li>
+</ul>
+
+<hr />
+
+<h2 id="6-documentação-devops"><strong>6. Documentação DevOps</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Arquivo de ambiente exemplo (<code class="language-plaintext highlighter-rouge">.env.example</code>)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Configuração de CI/CD documentada</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Estratégia de deploy</li>
+</ul>
+
+<hr />
+
+<h2 id="7-documentação-de-release"><strong>7. Documentação de Release</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Release Notes completas contendo:
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Novas funcionalidades</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Melhorias</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Bugs corrigidos</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Quebras de compatibilidade (breaking changes)</li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Histórico de versões (CHANGELOG.md)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Versão estável marcada como release</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Link para demo ou deploy</li>
+</ul>
+
+<hr />
+
+<h2 id="9-documentação-de-contribuição"><strong>9. Documentação de Contribuição</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Guia do Contribuidor (CONTRIBUTING.md):
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Como abrir issues</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Como enviar PR</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Padrões de commit (ex: Conventional Commits)</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Estilo de código</li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Código de Conduta (CODE_OF_CONDUCT.md)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Templates:
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Template de issue</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Template de PR</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="10-documentação-final-para-entrega"><strong>10. Documentação Final para Entrega</strong></h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Relatório Final do Projeto</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Slides da apresentação</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Repositórios organizados e acessíveis</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />GitPage publicado e atualizado</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Links diretos para tudo</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Versão final do produto ou protótipo</li>
+</ul>
+
+<hr />
+
+<h1 id="checklist-ultrarrápido-de-bolso-para-revisar-antes-de-entregar"><strong>Checklist ultrarrápido de bolso (para revisar antes de entregar)</strong></h1>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />README completo</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Arquitetura documentada</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Manual de instalação</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Pipeline CI/CD documentado</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Testes + cobertura</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Story map + rastreabilidade</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Release notes</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />GitPage atualizado</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Relatório final anexado</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Links funcionando</li>
+</ul>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      
+      <!-- Navigation Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-sitemap"></i> Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="/"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="/schedule/"><i class="fas fa-calendar"></i> Cronograma</a></li>
+          <li><a href="/lectures/"><i class="fas fa-chalkboard-teacher"></i> Aulas</a></li>
+          <li><a href="/materials/"><i class="fas fa-book"></i> Materiais</a></li>
+          <li><a href="/posts/"><i class="fas fa-folder-open"></i> Repositórios</a></li>
+        </ul>
+      </div>
+      
+      <!-- Projects Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-project-diagram"></i> Projetos</h3>
+        <ul class="footer-links">
+          <li><a href="/project.html"><i class="fas fa-tasks"></i> Projetos 2024</a></li>
+          <li><a href="/Temas2025-1.html"><i class="fas fa-rocket"></i> Projetos 2025/1</a></li>
+          <li><a href="/Temas2024-2.html"><i class="fas fa-code"></i> Temas 2024/2</a></li>
+          <li><a href="/Temas2022-2.html"><i class="fas fa-archive"></i> Temas 2022/2</a></li>
+          <li><a href="https://github.com/orgs/unb-mds/repositories" target="_blank"><i class="fab fa-github"></i> Todos os Repositórios</a></li>
+        </ul>
+      </div>
+      
+      <!-- Academic Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-graduation-cap"></i> Acadêmico</h3>
+        <ul class="footer-links">
+          <li><a href="/MDS_plano_ensino - Carla.html"><i class="fas fa-file-alt"></i> Plano de Ensino</a></li>
+          <li><a href="/MDS-cronograma.html"><i class="fas fa-calendar-alt"></i> Cronograma Detalhado</a></li>
+          <li><a href="/profile/"><i class="fas fa-user"></i> Perfil da Professora</a></li>
+          <li><a href="https://www.ime.usp.br/~kon/ResearchStudents/dicasSlides.html" target="_blank"><i class="fas fa-presentation"></i> Dicas de Apresentação</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact & Social Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-envelope"></i> Contato</h3>
+        <div class="footer-links">
+          <p class="contact-info">caguiar@unb.br
+</p>
+          <p class="contact-info">UnB | Universidade de Brasília<br />
+FCTE | Faculdade do gama<br />
+Lab Livre<br />
+</p>
+        </div>
+        
+        <div class="social-links">
+          
+            <a href="https://github.com/rocha.carla" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          
+          
+          
+            <a href="https://instagram.com/ccsl_unb" target="_blank" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          
+          
+            <a href="https://facebook.com/lappisunb5" target="_blank" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p><strong>Métodos de Desenvolvimento de Software - UnB/FGA</strong></p>
+      <p>© 2025 Lab Livre - Laboratório Aplicado de Produção Pesquisa e Inovação em Software</p>
+      <p>Desenvolvido com ❤️ para a comunidade acadêmica</p>
+    </div>
+  </div>
+</footer>
+
+  </body>
+
+</html>

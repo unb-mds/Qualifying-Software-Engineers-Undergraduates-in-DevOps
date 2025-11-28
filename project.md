@@ -231,6 +231,12 @@ Entregáveis R1  e R2 [Nos slides](https://mds.lappis.rocks/static_files/present
 - Release 1 (major) - 01 a 03 de Outubro de 2025.
 - Release 2 (major) - 03-05 de Dezembro de 2025.
 
+### Guias para as Entregas da Release 1 e 2
+
+Os detalhes sobre o roteiro das apresentações, checklist e documentação esperada para as Releases 1 e 2 estão descritos no seguinte documento:
+
+- [Guias para as entregas da Release 1 e 2](https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md)
+
 ## Bibliografia Básica
 
 - (OPENACCESS) Rocha, Carla. Como Acelerar o Aprendizado e Disseminar a Cultura de Inovação Ágil - [https://rochacarla.github.io/Onboarding/](https://rochacarla.github.io/Onboarding/)
