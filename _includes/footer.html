@@ -7,33 +7,33 @@
         <h3><i class="fas fa-sitemap"></i> Navegação</h3>
         <ul class="footer-links">
           <li><a href="{{ site.baseurl }}/"><i class="fas fa-home"></i> Início</a></li>
-          <li><a href="{{ site.baseurl }}/schedule/"><i class="fas fa-calendar"></i> Cronograma</a></li>
-          <li><a href="{{ site.baseurl }}/lectures/"><i class="fas fa-chalkboard-teacher"></i> Aulas</a></li>
+          <li><a href="{{ site.baseurl }}/planoensino/"><i class="fas fa-file-alt"></i> Plano de Ensino</a></li>
           <li><a href="{{ site.baseurl }}/materials/"><i class="fas fa-book"></i> Materiais</a></li>
-          <li><a href="{{ site.baseurl }}/posts/"><i class="fas fa-folder-open"></i> Repositórios</a></li>
+          <li><a href="{{ site.baseurl }}/slides/"><i class="fas fa-chalkboard-teacher"></i> Slides</a></li>
+          <li><a href="{{ site.baseurl }}/posts/"><i class="fas fa-folder-open"></i> Projetos</a></li>
         </ul>
       </div>
       
-      <!-- Projects Section -->
+      <!-- Resources Section -->
       <div class="footer-section">
-        <h3><i class="fas fa-project-diagram"></i> Projetos</h3>
+        <h3><i class="fas fa-link"></i> Recursos</h3>
         <ul class="footer-links">
-          <li><a href="{{ site.baseurl }}/project.html"><i class="fas fa-tasks"></i> Projetos 2024</a></li>
-          <li><a href="{{ site.baseurl }}/Temas2025-1.html"><i class="fas fa-rocket"></i> Projetos 2025/1</a></li>
-          <li><a href="{{ site.baseurl }}/Temas2024-2.html"><i class="fas fa-code"></i> Temas 2024/2</a></li>
-          <li><a href="{{ site.baseurl }}/Temas2022-2.html"><i class="fas fa-archive"></i> Temas 2022/2</a></li>
-          <li><a href="https://github.com/orgs/unb-mds/repositories" target="_blank"><i class="fab fa-github"></i> Todos os Repositórios</a></li>
+          <li><a href="https://github.com/unb-mds" target="_blank"><i class="fab fa-github"></i> GitHub MDS</a></li>
+          <li><a href="https://t.me/c/2677031160/1" target="_blank"><i class="fab fa-telegram"></i> Telegram</a></li>
+          <li><a href="https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw/videos" target="_blank"><i class="fab fa-youtube"></i> Canal YouTube</a></li>
+          <li><a href="https://scrumguides.org" target="_blank"><i class="fas fa-book-open"></i> Scrum Guide</a></li>
+          <li><a href="https://engsoftmoderna.info" target="_blank"><i class="fas fa-graduation-cap"></i> Eng. Software Moderna</a></li>
         </ul>
       </div>
       
       <!-- Academic Section -->
       <div class="footer-section">
-        <h3><i class="fas fa-graduation-cap"></i> Acadêmico</h3>
+        <h3><i class="fas fa-university"></i> Acadêmico</h3>
         <ul class="footer-links">
-          <li><a href="{{ site.baseurl }}/MDS_plano_ensino - Carla.html"><i class="fas fa-file-alt"></i> Plano de Ensino</a></li>
-          <li><a href="{{ site.baseurl }}/MDS-cronograma.html"><i class="fas fa-calendar-alt"></i> Cronograma Detalhado</a></li>
-          <li><a href="{{ site.baseurl }}/profile/"><i class="fas fa-user"></i> Perfil da Professora</a></li>
-          <li><a href="https://www.ime.usp.br/~kon/ResearchStudents/dicasSlides.html" target="_blank"><i class="fas fa-presentation"></i> Dicas de Apresentação</a></li>
+          <li><a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Critérios de Avaliação</a></li>
+          <li><a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md" target="_blank"><i class="fas fa-tasks"></i> Roteiro de Entregas</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing" target="_blank"><i class="fas fa-users"></i> Grupos e Temas</a></li>
+          <li><a href="http://www.carlarocha.org" target="_blank"><i class="fas fa-user"></i> Profa. Carla Rocha</a></li>
         </ul>
       </div>
       
@@ -41,39 +41,33 @@
       <div class="footer-section">
         <h3><i class="fas fa-envelope"></i> Contato</h3>
         <div class="footer-links">
-          <p class="contact-info">{{ site.emails }}</p>
-          <p class="contact-info">{{ site.address | newline_to_br }}</p>
+          <p class="contact-info"><i class="fas fa-envelope"></i> caguiar@unb.br</p>
+          <p class="contact-info"><i class="fas fa-map-marker-alt"></i> UnB - FCTE - Lab Livre</p>
+          <p class="contact-info"><a href="https://lablivre.unb.br/" target="_blank"><i class="fas fa-globe"></i> lablivre.unb.br</a></p>
+          <p class="contact-info"><a href="https://carlarocha.org" target="_blank"><i class="fas fa-user"></i> carlarocha.org</a></p>
         </div>
         
         <div class="social-links">
-          {% if site.github_username %}
-            <a href="https://github.com/{{ site.github_username }}" target="_blank" title="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-          {% endif %}
-          {% if site.twitter_username %}
-            <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" title="Twitter">
-              <i class="fab fa-twitter"></i>
-            </a>
-          {% endif %}
-          {% if site.instagram_username %}
-            <a href="https://instagram.com/{{ site.instagram_username }}" target="_blank" title="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-          {% endif %}
-          {% if site.facebook_username %}
-            <a href="https://facebook.com/{{ site.facebook_username }}" target="_blank" title="Facebook">
-              <i class="fab fa-facebook"></i>
-            </a>
-          {% endif %}
+          <a href="https://github.com/unb-mds" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/lab.livre/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://t.me/c/2677031160/1" target="_blank" title="Telegram">
+            <i class="fab fa-telegram"></i>
+          </a>
         </div>
       </div>
       
     </div>
     
     <div class="footer-bottom">
-      <p><strong>Métodos de Desenvolvimento de Software - UnB/FGA</strong></p>
-      <p>© {{ 'now' | date: "%Y" }} Lab Livre - Laboratório Aplicado de Produção Pesquisa e Inovação em Software</p>
+      <p><strong>Métodos de Desenvolvimento de Software - UnB/FCTE</strong></p>
+      <p>© {{ 'now' | date: "%Y" }} Lab Livre - Laboratório de Competência em Software Livre</p>
       <p>Desenvolvido com ❤️ para a comunidade acadêmica</p>
     </div>
   </div>

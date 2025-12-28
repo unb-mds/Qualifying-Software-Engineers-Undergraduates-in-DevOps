@@ -11,9 +11,9 @@ items:
   name: Materiais
   icon_class: fas fa-book
 
-- url: /slides/
-  name: Slides
-  icon_class: fas fa-book-reader
+- url: /aulas/
+  name: Aulas
+  icon_class: fas fa-chalkboard-teacher
 
 - url: /posts/
   name: Projetos

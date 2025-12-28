@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="plano-ensino-page">
+  {{ content }}
+</div>
+
+<script>
+(function() {
+  document.querySelectorAll('.module-header').forEach(function(header) {
+    header.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.parentElement.classList.toggle('expanded');
+    });
+  });
+})();
+</script>

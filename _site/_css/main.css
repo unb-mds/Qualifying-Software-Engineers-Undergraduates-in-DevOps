@@ -617,6 +617,13 @@ ul#archive li span a:hover { border-bottom: #bdbdbd 1px solid;
   .plano-ensino-header { padding: 1.5rem 1rem; margin-bottom: 2rem; }
   .document-highlight .document-link { padding: 1rem 1.5rem; font-size: 1rem; }
   .document-highlight .document-link span { font-size: 0.95rem; } }
+.plano-ensino-page { max-width: 100%; margin: 0; padding: 0; }
+
+.page-content:has(.plano-ensino-page) .wrapper { max-width: 100%; padding: 0; }
+
+.plano-ensino-page { margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); padding-left: calc(50vw - 50%); padding-right: calc(50vw - 50%); }
+.plano-ensino-page .course-hero { margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); padding-left: calc(50vw - 50% + 2rem); padding-right: calc(50vw - 50% + 2rem); }
+
 .course-hero { background: linear-gradient(135deg, #FF8E53 0%, #FF6B6B 100%); color: white; padding: 3rem 2rem; border-radius: 0; margin: -2rem -2rem 2rem -2rem; }
 @media (min-width: 768px) { .course-hero { padding: 4rem 3rem; } }
 .course-hero .course-hero-content { max-width: 800px; }
@@ -662,14 +669,13 @@ ul#archive li span a:hover { border-bottom: #bdbdbd 1px solid;
 .modules-section .module-card .module-header .module-info .module-title { font-weight: 600; color: #1F1F1F; font-size: 1.05rem; margin-bottom: 0.25rem; }
 .modules-section .module-card .module-header .module-info .module-duration { font-size: 0.85rem; color: #636363; }
 .modules-section .module-card .module-header .module-toggle { color: #636363; transition: transform 0.3s ease; }
-.modules-section .module-card .module-content { padding: 0 1.5rem 1.5rem 4.5rem; background: white; display: none; }
-.modules-section .module-card .module-content.active { display: block; }
+.modules-section .module-card .module-content { max-height: 0; overflow: hidden; padding: 0 1.5rem 0 4.5rem; background: white; transition: max-height 0.3s ease, padding 0.3s ease; }
 .modules-section .module-card .module-content p { color: #636363; line-height: 1.7; margin-bottom: 1rem; font-size: 0.95rem; }
 .modules-section .module-card .module-content .module-topics { list-style: none; padding: 0; margin: 0; }
 .modules-section .module-card .module-content .module-topics li { padding: 0.5rem 0; color: #1F1F1F; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
 .modules-section .module-card .module-content .module-topics li i { color: #FF6B6B; font-size: 0.8rem; }
 .modules-section .module-card.expanded .module-toggle { transform: rotate(180deg); }
-.modules-section .module-card.expanded .module-content { display: block; }
+.modules-section .module-card.expanded .module-content { max-height: 500px; padding: 0 1.5rem 1.5rem 4.5rem; }
 
 .details-section { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem; }
 @media (min-width: 768px) { .details-section { grid-template-columns: repeat(3, 1fr); } }
@@ -723,3 +729,73 @@ ul#archive li span a:hover { border-bottom: #bdbdbd 1px solid;
 .projects-section .project-card .project-links a:hover { text-decoration: underline; }
 .projects-section .project-card .project-constraint { background: rgba(255, 107, 107, 0.1); color: #FF6B6B; padding: 0.75rem 1rem; border-radius: 6px; font-size: 0.85rem; margin-top: 1rem; }
 .projects-section .project-card .project-constraint strong { display: block; margin-bottom: 0.25rem; }
+
+@media (max-width: 576px) { .plano-ensino-page { padding: 0 0.5rem; }
+  .course-hero { padding: 1.5rem 1rem; margin: 0 -0.5rem 1.5rem -0.5rem; }
+  .course-hero .course-hero-title { font-size: 1.5rem; }
+  .course-hero .course-hero-subtitle { font-size: 0.95rem; }
+  .course-hero .course-badge { font-size: 0.75rem; padding: 0.3rem 0.75rem; }
+  .course-hero .course-meta { flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+  .course-hero .course-meta .meta-item { font-size: 0.85rem; }
+  .course-stats { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; padding: 1rem 0; }
+  .course-stats .stat-item { padding: 0.75rem 0.5rem; }
+  .course-stats .stat-item .stat-value { font-size: 1.25rem; }
+  .course-stats .stat-item .stat-label { font-size: 0.75rem; }
+  .learn-section { padding: 1.25rem; }
+  .learn-section .section-title { font-size: 1.25rem; }
+  .learn-section .learn-grid { grid-template-columns: 1fr; }
+  .learn-section .learn-grid .learn-item span { font-size: 0.9rem; }
+  .skills-section .section-title { font-size: 1.1rem; }
+  .skills-section .skills-grid { gap: 0.5rem; }
+  .skills-section .skills-grid .skill-tag { font-size: 0.8rem; padding: 0.4rem 0.75rem; }
+  .modules-section .section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .modules-section .section-header .section-title { font-size: 1.25rem; }
+  .modules-section .module-intro { padding: 1rem; font-size: 0.9rem; }
+  .modules-section .module-card .module-header { padding: 1rem; gap: 0.75rem; }
+  .modules-section .module-card .module-header .module-number { width: 32px; height: 32px; font-size: 0.85rem; }
+  .modules-section .module-card .module-header .module-info .module-title { font-size: 0.95rem; }
+  .modules-section .module-card .module-header .module-info .module-duration { font-size: 0.8rem; }
+  .modules-section .module-card .module-content { padding-left: 1rem; padding-right: 1rem; }
+  .modules-section .module-card .module-content p { font-size: 0.9rem; }
+  .modules-section .module-card .module-content .module-topics li { font-size: 0.85rem; }
+  .modules-section .module-card.expanded .module-content { padding: 0 1rem 1rem 1rem; }
+  .details-section { grid-template-columns: 1fr; gap: 1rem; }
+  .details-section .detail-card { padding: 1.25rem; }
+  .details-section .detail-card .detail-icon { width: 40px; height: 40px; }
+  .details-section .detail-card .detail-icon i { font-size: 1rem; }
+  .details-section .detail-card .detail-title { font-size: 0.95rem; }
+  .details-section .detail-card .detail-value { font-size: 0.85rem; }
+  .cta-section { padding: 1.5rem 1rem; }
+  .cta-section .cta-title { font-size: 1.25rem; }
+  .cta-section .cta-subtitle { font-size: 0.9rem; }
+  .cta-section .cta-button { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+  .content-section .section-title { font-size: 1.25rem; }
+  .content-section .section-content { font-size: 0.9rem; }
+  .content-section .section-content ul { padding-left: 1.25rem; }
+  .info-grid-coursera { grid-template-columns: 1fr; }
+  .info-grid-coursera .info-item { padding: 0.875rem; }
+  .info-grid-coursera .info-item .info-text .info-label { font-size: 0.7rem; }
+  .info-grid-coursera .info-item .info-text .info-value { font-size: 0.9rem; }
+  .bibliography-section .bib-item { padding: 0.875rem; font-size: 0.85rem; }
+  .projects-section .project-theme { padding: 1.25rem 1rem; }
+  .projects-section .project-theme h3 { font-size: 1rem; }
+  .projects-section .project-card { padding: 1.25rem; }
+  .projects-section .project-card .project-title { font-size: 1rem; }
+  .projects-section .project-card .project-description { font-size: 0.9rem; }
+  .projects-section .project-card .project-constraint { font-size: 0.8rem; padding: 0.625rem 0.875rem; }
+  .evaluation-table { font-size: 0.85rem; }
+  .evaluation-table th, .evaluation-table td { padding: 0.75rem 0.5rem; } }
+@media (min-width: 577px) and (max-width: 768px) { .course-hero { padding: 2rem 1.5rem; }
+  .course-hero .course-hero-title { font-size: 2rem; }
+  .course-hero .course-meta { gap: 1rem; }
+  .course-stats { grid-template-columns: repeat(4, 1fr); }
+  .learn-section .learn-grid { grid-template-columns: 1fr; }
+  .details-section { grid-template-columns: repeat(2, 1fr); }
+  .info-grid-coursera { grid-template-columns: repeat(2, 1fr); }
+  .modules-section .module-card .module-content { padding-left: 3rem; }
+  .modules-section .module-card.expanded .module-content { padding: 0 1.5rem 1.5rem 3rem; } }
+@media (min-width: 769px) { .course-hero { padding: 3rem 2rem; }
+  .course-hero .course-hero-title { font-size: 2.5rem; }
+  .learn-section .learn-grid { grid-template-columns: 1fr 1fr; }
+  .details-section { grid-template-columns: repeat(3, 1fr); }
+  .info-grid-coursera { grid-template-columns: repeat(3, 1fr); } }

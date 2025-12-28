@@ -1,44 +1,151 @@
-
-# Qualifying-software-oi-Engineers-Undergraduates-in-DevOps
+# Métodos de Desenvolvimento de Software (MDS)
 
 Qualifying Software Engineers Undergraduates in DevOps - Challenges of introducing technical and non-technical concepts in a project-oriented course
 
+🌐 **Site da disciplina:** [https://unb-mds.github.io/Qualifying-Software-Engineers-Undergraduates-in-DevOps/](https://unb-mds.github.io/Qualifying-Software-Engineers-Undergraduates-in-DevOps/)
 
+## 📚 Publicações
 
-### Publications
+- [Publication at ICSE - International Conference on Software Engineering (2021)](https://conf.researchr.org/details/icse-2021/icse-2021-Software-Engineering-and-Education-Track/15/Qualifying-Software-Engineers-Undergraduates-in-DevOps-Challenges-of-introducing-te)
+- [Link to Preprint](https://arxiv.org/pdf/2102.06662.pdf)
 
-[Publication at ICSE - International Conference on Software Engineering (2021)](https://conf.researchr.org/details/icse-2021/icse-2021-Software-Engineering-and-Education-Track/15/Qualifying-Software-Engineers-Undergraduates-in-DevOps-Challenges-of-introducing-te)
+## 📖 Material da Disciplina
 
-[Link to Preprint](https://arxiv.org/pdf/2102.06662.pdf) 
+Neste repositório você encontra material complementar para a disciplina MDS, incluindo artigos, livros, vídeos e apresentações. O objetivo é fornecer um ambiente de aprendizado aberto e colaborativo.
 
+---
 
-## Course Material
+## 🚀 Como Rodar Localmente
 
-- 2022.1 - [Here](Turmas/2022-1.md)
-- 2021.2 - [Here](Turmas/2021-2.md)
+### Opção 1: Usando Docker (Recomendado)
 
-# Material Complementar da disciplina MDS
+A forma mais fácil de rodar o projeto é usando Docker:
 
-Nesse Repositório você encontra material complementar para a disciplina MDS. Se você está estudando Métodos de Desenvolvimento de Software, este repositório pode ser uma ferramenta valiosa para ajudá-lo a aprimorar seus conhecimentos e aprofundar seu aprendizado.
+```bash
+# Clone o repositório
+git clone https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps.git
+cd Qualifying-Software-Engineers-Undergraduates-in-DevOps
 
-O repositório contém diversos materiais complementares, incluindo artigos, livros, vídeos e apresentações. Esses materiais podem ajudá-lo a entender melhor os conceitos e práticas relacionados a MDS, bem como fornecer exemplos de como aplicá-los na prática.
+# Inicie o container
+docker-compose up
+```
 
-O objetivo deste repositório é fornecer um ambiente de aprendizado aberto e colaborativo, onde os alunos possam se ajudar mutuamente e compartilhar suas experiências de aprendizado. Portanto, sinta-se à vontade para explorar o repositório, fazer perguntas e compartilhar seus próprios materiais e ideias.
+O site estará disponível em **http://localhost:4000**
 
-Lembre-se de que a disciplina MDS é uma área em constante evolução, e novas técnicas e ferramentas estão surgindo o tempo todo. Portanto, manter-se atualizado com as últimas tendências e práticas é fundamental para se tornar um desenvolvedor de software bem-sucedido e competente.
+#### Comandos úteis do Docker:
 
-Esperamos que este repositório ajude você a alcançar seus objetivos de aprendizado em MDS e a se tornar um profissional de software excepcional. Boa sorte em seus estudos!
+| Comando | Descrição |
+|---------|-----------|
+| `docker-compose up` | Inicia o servidor |
+| `docker-compose up --build` | Rebuild e inicia (após mudanças no Dockerfile) |
+| `docker-compose down` | Para o container |
+| `docker-compose up -d` | Inicia em background |
 
+### Opção 2: Instalação Manual com Jekyll
 
-# NOSSA PÁGINA:
-Nossa página foi feita com muito amor para acesso a mais imormações sobre o projeto do BRISA.</br>
+```bash
+# Instale o Ruby e o Bundler
+gem install bundler
+
+# Clone o repositório
+git clone https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps.git
+cd Qualifying-Software-Engineers-Undergraduates-in-DevOps
+
+# Instale as dependências
+bundle install
+
+# Inicie o servidor
+bundle exec jekyll serve
+```
+
+O site estará disponível em **http://localhost:4000**
+
+---
+
+## 📝 Como Adicionar Novos Conteúdos
+
+### Adicionar Material na aba "Materiais"
+
+Os materiais são gerenciados pelo arquivo `_data/materials.yml`. Para adicionar um novo material:
+
+1. Abra o arquivo `_data/materials.yml`
+2. Adicione uma nova entrada seguindo o formato:
+
+```yaml
+items:
+- curse_name: Nome do Material
+  url: https://link-para-o-material.com
+  description: Descrição breve do material e seu conteúdo.
+  author: https://github.com/seu-usuario.png
+```
+
+#### Exemplo completo:
+
+```yaml
+items:
+- curse_name: Git tutorial | Introdução
+  url: https://github.com/giovanni1106/tutorial-git
+  description: Um tutorial introdutório de Git, que visa ensinar os fundamentos do Git.
+  author: https://github.com/giovanni1106.png
+
+- curse_name: Introdução ao Docker
+  url: https://github.com/seu-usuario/tutorial-docker
+  description: Tutorial prático sobre containerização com Docker e Docker Compose.
+  author: https://github.com/seu-usuario.png
+```
+
+### Adicionar Slides/Apresentações
+
+Os slides ficam na pasta `static_files/presentations/`. Para adicionar:
+
+1. Coloque o arquivo PDF em `static_files/presentations/`
+2. O arquivo estará disponível em `/static_files/presentations/nome-do-arquivo.pdf`
+
+### Adicionar Eventos/Aulas
+
+Os eventos ficam na pasta `_events/`. Crie um arquivo `.md` com o formato:
+
+```markdown
+---
+title: "Título da Aula"
+date: 2025-03-15
+---
+
+Descrição do conteúdo da aula.
+```
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+├── _config.yml          # Configurações do Jekyll
+├── _data/
+│   ├── materials.yml    # Lista de materiais
+│   ├── nav.yml          # Menu de navegação
+│   └── ...
+├── _events/             # Eventos e aulas
+├── _includes/           # Componentes HTML reutilizáveis
+├── _layouts/            # Templates de página
+├── _sass/               # Estilos SCSS
+├── static_files/        # Arquivos estáticos (PDFs, imagens)
+├── project.md           # Página do Plano de Ensino
+└── index.md             # Página inicial
+```
+
+---
+
+## 🖼️ Screenshots
+
 <img src="_images/screenshots/TelaInicial.png" width="300">
-<img src="_images/screenshots/Equipe.png" width="300"></br>
+<img src="_images/screenshots/Equipe.png" width="300"><br>
 <img src="_images/screenshots/SobreLappis.png" width="300">
 <img src="_images/screenshots/Participantes.png" width="300">
 
-# Como rodar localmente:
+---
 
-    Install Jekyll (Guia de instalação)
-    Clone seu repositório
-    Assista seu site enquanto edita: bundle exec jekyll serve
+## 📧 Contato
+
+- **Professora:** Carla Rocha - caguiar@unb.br
+- **Local:** UnB - FCTE - Lab Livre
+- **GitHub:** [github.com/unb-mds](https://github.com/unb-mds)

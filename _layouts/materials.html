@@ -1,20 +1,151 @@
 ---
 layout: default
 ---
-<div class="header">
-    <h1>Repositórios de Apoio ao Curso do Brisa</h1>
-</div>
-<div class=content-wrapper">
-    <p>Aqui você encontrará uma lista de repositórios do GitHub que oferecem recursos e materiais de apoio para o nosso curso do Brisa.</p>
+<div class="coursera-page">
+  <div class="page-header">
+    <h1><i class="fas fa-book"></i> Materiais de Apoio</h1>
+    <p>Recursos e tutoriais para complementar seu aprendizado em MDS.</p>
+  </div>
+
+  <div class="materials-grid">
     {% for item in site.data.materials.items %}
-    <div class="repository-content">
-        <div class="image-wrapper">
-            <img src="{{ item.author }}" alt="author picture">
-        </div>
-        <div class="repo">
-            <h3><a href="{{ item.url | prepend: site.baseurl }}" target="_blank">{{item.curse_name}}</a></h3>
-            <p>{{item.description}}</p>
-        </div>
+    <div class="material-card">
+      <div class="material-icon">
+        <img src="{{ item.author }}" alt="author">
+      </div>
+      <div class="material-content">
+        <h3 class="material-title">
+          <a href="{{ item.url | prepend: site.baseurl }}" target="_blank">{{ item.curse_name }}</a>
+        </h3>
+        <p class="material-description">{{ item.description }}</p>
+        <a href="{{ item.url | prepend: site.baseurl }}" target="_blank" class="material-link">
+          <i class="fas fa-external-link-alt"></i> Acessar material
+        </a>
+      </div>
     </div>
     {% endfor %}
+  </div>
 </div>
+
+<style>
+.coursera-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #FF8E53 0%, #FF6B6B 100%);
+  color: white;
+  border-radius: 12px;
+}
+
+.page-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+}
+
+.page-header p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.materials-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.material-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.material-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #FF6B6B;
+}
+
+.material-icon {
+  flex-shrink: 0;
+}
+
+.material-icon img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.material-content {
+  flex: 1;
+}
+
+.material-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.material-title a {
+  color: #1f1f1f;
+  text-decoration: none;
+}
+
+.material-title a:hover {
+  color: #FF6B6B;
+}
+
+.material-description {
+  margin: 0 0 1rem 0;
+  color: #636363;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.material-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #FF6B6B;
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.material-link:hover {
+  background: #FF6B6B;
+  color: white;
+}
+
+@media (max-width: 576px) {
+  .page-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .material-card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .material-icon img {
+    width: 50px;
+    height: 50px;
+  }
+}
+</style>

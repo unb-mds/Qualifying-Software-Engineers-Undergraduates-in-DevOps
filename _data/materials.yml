@@ -1,4 +1,9 @@
 items:
+- curse_name: Roteiro de Entregas | Release 1 e 2
+  url: /roteiro/
+  description: Guia completo para as entregas das Releases 1 e 2, incluindo checklist de documentação, roteiro de apresentação e critérios de avaliação do projeto.
+  author: https://github.com/unb-mds.png
+
 - curse_name: Git tutorial | Introdução
   url: https://github.com/giovanni1106/tutorial-git
   description: Um tutorial introdutório de Git, que visa ensinar os fundamentos do Git, um sistema de controle de versão.

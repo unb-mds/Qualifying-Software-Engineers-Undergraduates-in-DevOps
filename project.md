@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: plano-ensino
 title: Plano de Ensino
 permalink: /planoensino/
 ---
@@ -20,7 +20,7 @@ permalink: /planoensino/
       </div>
       <div class="meta-item">
         <i class="fas fa-calendar"></i>
-        <span>Semestre <strong>2025/2</strong></span>
+        <span>Semestre <strong>2026/1</strong></span>
       </div>
     </div>
   </div>
@@ -72,6 +72,19 @@ permalink: /planoensino/
       <i class="fas fa-check"></i>
       <span>Desenvolver uma Prova de Conceito completa trabalhando em equipe ágil</span>
     </div>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2 class="section-title"><i class="fas fa-list-ul"></i> Ementa do Programa</h2>
+  <div class="section-content">
+    <ul>
+      <li>Modelos de ciclo de vida e de processos</li>
+      <li>Processo Unificado</li>
+      <li>Métodos Ágeis de desenvolvimento de software</li>
+      <li>Outras abordagens de desenvolvimento de software</li>
+      <li>Ferramentas</li>
+    </ul>
   </div>
 </div>
 
@@ -351,7 +364,7 @@ permalink: /planoensino/
 ---
 
 <div class="projects-section">
-  <h2 class="section-title">Projetos 2025/2</h2>
+  <h2 class="section-title">Projetos 2026/1</h2>
   
   <div class="project-theme">
     <h3>📊 Tema do semestre: "Como posso usar dados para dar inteligência?"</h3>

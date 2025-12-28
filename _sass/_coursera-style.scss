@@ -1,5 +1,35 @@
 // Coursera-inspired Course Page Styles
 
+// Page container
+.plano-ensino-page {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// Override wrapper constraints for this page
+.page-content:has(.plano-ensino-page) {
+  .wrapper {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+// Fallback for browsers without :has()
+.plano-ensino-page {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  
+  .course-hero {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding-left: calc(50vw - 50% + 2rem);
+    padding-right: calc(50vw - 50% + 2rem);
+  }
+}
+
 // Variables
 $coursera-blue: #0056D2;
 $coursera-dark: #1F1F1F;
@@ -282,13 +312,11 @@ $coursera-success: #1E8E3E;
     }
 
     .module-content {
-      padding: 0 1.5rem 1.5rem 4.5rem;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1.5rem 0 4.5rem;
       background: white;
-      display: none;
-
-      &.active {
-        display: block;
-      }
+      transition: max-height 0.3s ease, padding 0.3s ease;
 
       p {
         color: $coursera-gray;
@@ -324,7 +352,8 @@ $coursera-success: #1E8E3E;
       }
 
       .module-content {
-        display: block;
+        max-height: 500px;
+        padding: 0 1.5rem 1.5rem 4.5rem;
       }
     }
   }
@@ -641,5 +670,336 @@ $coursera-success: #1E8E3E;
         margin-bottom: 0.25rem;
       }
     }
+  }
+}
+
+// ==========================================
+// RESPONSIVE STYLES
+// ==========================================
+
+// Mobile First - Base styles are for mobile
+// Then we add complexity for larger screens
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .plano-ensino-page {
+    padding: 0 0.5rem;
+  }
+
+  .course-hero {
+    padding: 1.5rem 1rem;
+    margin: 0 -0.5rem 1.5rem -0.5rem;
+
+    .course-hero-title {
+      font-size: 1.5rem;
+    }
+
+    .course-hero-subtitle {
+      font-size: 0.95rem;
+    }
+
+    .course-badge {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.75rem;
+    }
+
+    .course-meta {
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+
+      .meta-item {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .course-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 1rem 0;
+
+    .stat-item {
+      padding: 0.75rem 0.5rem;
+
+      .stat-value {
+        font-size: 1.25rem;
+      }
+
+      .stat-label {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .learn-section {
+    padding: 1.25rem;
+
+    .section-title {
+      font-size: 1.25rem;
+    }
+
+    .learn-grid {
+      grid-template-columns: 1fr;
+
+      .learn-item {
+        span {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .skills-section {
+    .section-title {
+      font-size: 1.1rem;
+    }
+
+    .skills-grid {
+      gap: 0.5rem;
+
+      .skill-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem;
+      }
+    }
+  }
+
+  .modules-section {
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+
+      .section-title {
+        font-size: 1.25rem;
+      }
+    }
+
+    .module-intro {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .module-card {
+      .module-header {
+        padding: 1rem;
+        gap: 0.75rem;
+
+        .module-number {
+          width: 32px;
+          height: 32px;
+          font-size: 0.85rem;
+        }
+
+        .module-info {
+          .module-title {
+            font-size: 0.95rem;
+          }
+
+          .module-duration {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .module-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        p {
+          font-size: 0.9rem;
+        }
+
+        .module-topics li {
+          font-size: 0.85rem;
+        }
+      }
+
+      &.expanded .module-content {
+        padding: 0 1rem 1rem 1rem;
+      }
+    }
+  }
+
+  .details-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    .detail-card {
+      padding: 1.25rem;
+
+      .detail-icon {
+        width: 40px;
+        height: 40px;
+
+        i {
+          font-size: 1rem;
+        }
+      }
+
+      .detail-title {
+        font-size: 0.95rem;
+      }
+
+      .detail-value {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .cta-section {
+    padding: 1.5rem 1rem;
+
+    .cta-title {
+      font-size: 1.25rem;
+    }
+
+    .cta-subtitle {
+      font-size: 0.9rem;
+    }
+
+    .cta-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .content-section {
+    .section-title {
+      font-size: 1.25rem;
+    }
+
+    .section-content {
+      font-size: 0.9rem;
+
+      ul {
+        padding-left: 1.25rem;
+      }
+    }
+  }
+
+  .info-grid-coursera {
+    grid-template-columns: 1fr;
+
+    .info-item {
+      padding: 0.875rem;
+
+      .info-text {
+        .info-label {
+          font-size: 0.7rem;
+        }
+
+        .info-value {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .bibliography-section {
+    .bib-item {
+      padding: 0.875rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  .projects-section {
+    .project-theme {
+      padding: 1.25rem 1rem;
+
+      h3 {
+        font-size: 1rem;
+      }
+    }
+
+    .project-card {
+      padding: 1.25rem;
+
+      .project-title {
+        font-size: 1rem;
+      }
+
+      .project-description {
+        font-size: 0.9rem;
+      }
+
+      .project-constraint {
+        font-size: 0.8rem;
+        padding: 0.625rem 0.875rem;
+      }
+    }
+  }
+
+  .evaluation-table {
+    font-size: 0.85rem;
+
+    th, td {
+      padding: 0.75rem 0.5rem;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 577px) and (max-width: 768px) {
+  .course-hero {
+    padding: 2rem 1.5rem;
+
+    .course-hero-title {
+      font-size: 2rem;
+    }
+
+    .course-meta {
+      gap: 1rem;
+    }
+  }
+
+  .course-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .learn-section .learn-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-grid-coursera {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modules-section .module-card {
+    .module-content {
+      padding-left: 3rem;
+    }
+
+    &.expanded .module-content {
+      padding: 0 1.5rem 1.5rem 3rem;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 769px) {
+  .course-hero {
+    padding: 3rem 2rem;
+
+    .course-hero-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .learn-section .learn-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .details-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .info-grid-coursera {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

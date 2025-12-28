@@ -1,3 +1,9 @@
+---
+layout: page
+title: Roteiro de Entregas
+permalink: /roteiro/
+---
+
 # Roteiro de Apresentação – Release 1 
  **Duração total:** 5 minutos  
  **Objetivo:** Mostrar como a equipe enfrentou o **desafio proposto** e entregou implementação inicial, comprovando a viabilidade do escopo, arquitetura e tecnologias em 2 meses.  
