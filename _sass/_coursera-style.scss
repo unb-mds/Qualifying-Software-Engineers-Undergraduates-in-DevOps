@@ -1,0 +1,645 @@
+// Coursera-inspired Course Page Styles
+
+// Variables
+$coursera-blue: #0056D2;
+$coursera-dark: #1F1F1F;
+$coursera-gray: #636363;
+$coursera-light-gray: #F5F5F5;
+$coursera-border: #E1E1E1;
+$coursera-success: #1E8E3E;
+
+// Hero Section
+.course-hero {
+  background: linear-gradient(135deg, $tropical-sunset 0%, $tropical-coral 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 0;
+  margin: -2rem -2rem 2rem -2rem;
+  
+  @media (min-width: 768px) {
+    padding: 4rem 3rem;
+  }
+
+  .course-hero-content {
+    max-width: 800px;
+  }
+
+  .course-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .course-hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    
+    @media (min-width: 768px) {
+      font-size: 2.8rem;
+    }
+  }
+
+  .course-hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  .course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+
+      i {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// Stats Bar
+.course-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $coursera-border;
+
+  .stat-item {
+    text-align: center;
+    padding: 1rem;
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $coursera-dark;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: $coursera-gray;
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+// What You'll Learn Section
+.learn-section {
+  background: white;
+  border: 1px solid $coursera-border;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $coursera-dark;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    i {
+      color: $tropical-coral;
+    }
+  }
+
+  .learn-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .learn-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+
+      i {
+        color: $coursera-success;
+        font-size: 1.1rem;
+        margin-top: 0.2rem;
+        flex-shrink: 0;
+      }
+
+      span {
+        color: $coursera-dark;
+        line-height: 1.5;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+// Skills Section
+.skills-section {
+  margin-bottom: 2rem;
+
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $coursera-dark;
+    margin-bottom: 1rem;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    .skill-tag {
+      background: $coursera-light-gray;
+      color: $coursera-dark;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid $coursera-border;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: $tropical-coral;
+        color: white;
+        border-color: $tropical-coral;
+      }
+    }
+  }
+}
+
+// Modules Section (Accordion Style)
+.modules-section {
+  margin-bottom: 2rem;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $coursera-dark;
+      margin: 0;
+    }
+
+    .modules-count {
+      color: $coursera-gray;
+      font-size: 0.95rem;
+    }
+  }
+
+  .module-intro {
+    background: $coursera-light-gray;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: $coursera-dark;
+  }
+
+  .module-card {
+    border: 1px solid $coursera-border;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    transition: all 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .module-header {
+      display: flex;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      background: white;
+      cursor: pointer;
+      gap: 1rem;
+
+      .module-number {
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, $tropical-sunset 0%, $tropical-coral 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+      }
+
+      .module-info {
+        flex: 1;
+
+        .module-title {
+          font-weight: 600;
+          color: $coursera-dark;
+          font-size: 1.05rem;
+          margin-bottom: 0.25rem;
+        }
+
+        .module-duration {
+          font-size: 0.85rem;
+          color: $coursera-gray;
+        }
+      }
+
+      .module-toggle {
+        color: $coursera-gray;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .module-content {
+      padding: 0 1.5rem 1.5rem 4.5rem;
+      background: white;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      p {
+        color: $coursera-gray;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .module-topics {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          padding: 0.5rem 0;
+          color: $coursera-dark;
+          font-size: 0.9rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          i {
+            color: $tropical-coral;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    &.expanded {
+      .module-toggle {
+        transform: rotate(180deg);
+      }
+
+      .module-content {
+        display: block;
+      }
+    }
+  }
+}
+
+// Details Section
+.details-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .detail-card {
+    background: white;
+    border: 1px solid $coursera-border;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+
+    .detail-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba($tropical-sunset, 0.1) 0%, rgba($tropical-coral, 0.1) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+
+      i {
+        font-size: 1.25rem;
+        color: $tropical-coral;
+      }
+    }
+
+    .detail-title {
+      font-weight: 600;
+      color: $coursera-dark;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-value {
+      color: $coursera-gray;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Info Cards Grid (Coursera style)
+.info-grid-coursera {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border: 1px solid $coursera-border;
+    border-radius: 8px;
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      background: $coursera-light-gray;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        color: $tropical-coral;
+      }
+    }
+
+    .info-text {
+      .info-label {
+        font-size: 0.8rem;
+        color: $coursera-gray;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .info-value {
+        font-weight: 600;
+        color: $coursera-dark;
+      }
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  background: linear-gradient(135deg, $tropical-sunset 0%, $tropical-coral 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 2rem 0;
+
+  .cta-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-subtitle {
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: $tropical-coral;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+    }
+  }
+}
+
+// Content Sections
+.content-section {
+  margin-bottom: 2.5rem;
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $coursera-dark;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid $coursera-border;
+  }
+
+  .section-content {
+    color: $coursera-gray;
+    line-height: 1.7;
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    a {
+      color: $tropical-coral;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Evaluation Table
+.evaluation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid $coursera-border;
+  }
+
+  th {
+    background: $coursera-light-gray;
+    font-weight: 600;
+    color: $coursera-dark;
+  }
+
+  td {
+    color: $coursera-gray;
+  }
+
+  tr:hover td {
+    background: rgba($coursera-light-gray, 0.5);
+  }
+}
+
+// Bibliography
+.bibliography-section {
+  .bib-item {
+    padding: 1rem;
+    border-left: 3px solid $tropical-coral;
+    background: $coursera-light-gray;
+    margin-bottom: 0.75rem;
+    border-radius: 0 8px 8px 0;
+
+    a {
+      color: $tropical-coral;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Projects Section
+.projects-section {
+  .project-theme {
+    background: linear-gradient(135deg, $tropical-sunset 0%, $tropical-coral 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+  }
+
+  .project-card {
+    border: 1px solid $coursera-border;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    background: white;
+    transition: all 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-color: $tropical-coral;
+    }
+
+    .project-number {
+      display: inline-block;
+      background: $tropical-coral;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-right: 0.75rem;
+    }
+
+    .project-title {
+      font-weight: 600;
+      color: $coursera-dark;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-description {
+      color: $coursera-gray;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        color: $tropical-coral;
+        font-size: 0.85rem;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .project-constraint {
+      background: rgba($tropical-coral, 0.1);
+      color: $tropical-coral;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+
+      strong {
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+}

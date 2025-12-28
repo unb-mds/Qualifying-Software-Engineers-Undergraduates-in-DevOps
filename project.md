@@ -4,374 +4,461 @@ title: Plano de Ensino
 permalink: /planoensino/
 ---
 
-<div class="plano-ensino-header">
-  <h1 class="course-title">Métodos de Desenvolvimento de Software</h1>
-  <p class="course-subtitle">Plano de Ensino - 2025/2</p>
-</div>
-
-<div class="course-info-grid">
-  <div class="info-card">
-    <h3><i class="fas fa-book"></i> Disciplina</h3>
-    <p>Métodos de Desenvolvimento de Software</p>
-  </div>
-  <div class="info-card">
-    <h3><i class="fas fa-clock"></i> Carga Horária</h3>
-    <p>60 horas</p>
-  </div>
-  <div class="info-card">
-    <h3><i class="fas fa-user-tie"></i> Professor</h3>
-    <p>Carla Rocha</p>
-  </div>
-  <div class="info-card">
-    <h3><i class="fas fa-graduation-cap"></i> Créditos</h3>
-    <p>04</p>
-  </div>
-</div>
-
-<div class="section-card">
-  <h2><i class="fas fa-bullseye"></i> Objetivos da Disciplina</h2>
-  <div class="objectives-intro">
-    <p>Os métodos de desenvolvimento de software podem ser entendidos como conjuntos estruturados de boas práticas, repetíveis durante o processo de produção do software.</p>
-  </div>
-  <div class="objectives-list">
-    <h3>Principais objetivos:</h3>
-    <ul class="enhanced-list">
-      <li><i class="fas fa-check-circle"></i> Capacitar o aluno a compreender os diferentes métodos, ferramentas, procedimentos e complexidades do desenvolvimento de software.</li>
-      <li><i class="fas fa-check-circle"></i> Capacitar o aluno a aplicar/adaptar processos de desenvolvimento de software à resolução de problemas de software.</li>
-      <li><i class="fas fa-check-circle"></i> Capacitar os estudantes a construírem sistemas complexos, apresentando as habilidades técnicas e não técnicas necessárias para a construção de software no contexto atual da Indústria.</li>
-    </ul>
-  </div>
-</div>
-
-<div class="section-card">
-  <h2><i class="fas fa-list-ul"></i> Ementa do Programa</h2>
-  <div class="ementa-content">
-    <ul class="enhanced-list">
-      <li><i class="fas fa-cogs"></i> Modelos de ciclo de vida e de processos</li>
-      <li><i class="fas fa-sync-alt"></i> Processo Unificado</li>
-      <li><i class="fas fa-rocket"></i> Métodos Ágeis de desenvolvimento de software</li>
-      <li><i class="fas fa-tools"></i> Outras abordagens de desenvolvimento de software</li>
-      <li><i class="fas fa-wrench"></i> Ferramentas</li>
-    </ul>
-  </div>
-</div>
-
-<div class="section-card">
-  <h2><i class="fas fa-chalkboard-teacher"></i> Metodologia de Ensino</h2>
-  <div class="methodology-content">
-    <div class="methodology-principle">
-      <h3><i class="fas fa-lightbulb"></i> Princípio Fundamental</h3>
-      <p>Uma estratégia eficaz de aprendizagem deve integrar conceitos teóricos com sua aplicação prática, seguindo o princípio de <strong>"aprender fazendo"</strong>. Sem prática, não há aprendizado significativo.</p>
-    </div>
-    <div class="methodology-approaches">
-      <h3><i class="fas fa-puzzle-piece"></i> Abordagens Utilizadas</h3>
-      <div class="approaches-grid">
-        <div class="approach-item">
-          <i class="fas fa-hands-helping"></i>
-          <span>Aprendizagem por experiência</span>
-        </div>
-        <div class="approach-item">
-          <i class="fas fa-project-diagram"></i>
-          <span>Aprendizagem orientada a projetos</span>
-        </div>
-        <div class="approach-item">
-          <i class="fas fa-user-plus"></i>
-          <span>Processo de Onboarding</span>
-        </div>
-        <div class="approach-item">
-          <i class="fas fa-code-branch"></i>
-          <span>Práticas de comunidades Open Source</span>
-        </div>
+<div class="course-hero">
+  <div class="course-hero-content">
+    <span class="course-badge"><i class="fas fa-university"></i> UnB - Universidade de Brasília</span>
+    <h1 class="course-hero-title">Métodos de Desenvolvimento de Software</h1>
+    <p class="course-hero-subtitle">Domine metodologias ágeis, Scrum, XP e DevOps através de projetos práticos. Aprenda a desenvolver software de qualidade trabalhando em equipes ágeis.</p>
+    <div class="course-meta">
+      <div class="meta-item">
+        <i class="fas fa-user-tie"></i>
+        <span>Profa. <strong>Carla Rocha</strong></span>
+      </div>
+      <div class="meta-item">
+        <i class="fas fa-clock"></i>
+        <span><strong>60 horas</strong> (4 créditos)</span>
+      </div>
+      <div class="meta-item">
+        <i class="fas fa-calendar"></i>
+        <span>Semestre <strong>2025/2</strong></span>
       </div>
     </div>
   </div>
 </div>
 
-<div class="section-card highlight-section">
-  <h2><i class="fas fa-users"></i> Formação das Equipes</h2>
-  <div class="teams-info">
-    <div class="team-rules">
-      <h3><i class="fas fa-clipboard-list"></i> Regras de Formação</h3>
-      <ul class="enhanced-list">
-        <li><i class="fas fa-user-friends"></i> Equipes ágeis de <strong>até 6 membros</strong> por time</li>
-        <li><i class="fas fa-list-ol"></i> Cada grupo escolhe <strong>3 temas</strong> na ordem de preferência</li>
-        <li><i class="fas fa-handshake"></i> A professora negocia e aloca os temas dentro das preferências</li>
+<div class="course-stats">
+  <div class="stat-item">
+    <span class="stat-value">5</span>
+    <span class="stat-label">Módulos</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">2</span>
+    <span class="stat-label">Releases</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">6</span>
+    <span class="stat-label">Membros por equipe</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">90%</span>
+    <span class="stat-label">Cobertura de código</span>
+  </div>
+</div>
+
+<div class="learn-section">
+  <h2 class="section-title"><i class="fas fa-graduation-cap"></i> O que você vai aprender</h2>
+  <div class="learn-grid">
+    <div class="learn-item">
+      <i class="fas fa-check"></i>
+      <span>Dominar os princípios fundamentais do Agile, Scrum, Extreme Programming (XP) e Kanban</span>
+    </div>
+    <div class="learn-item">
+      <i class="fas fa-check"></i>
+      <span>Criar e priorizar Product Backlogs, elaborar histórias de usuário e estimar story points</span>
+    </div>
+    <div class="learn-item">
+      <i class="fas fa-check"></i>
+      <span>Aplicar programação em pares, TDD, integração contínua e entrega contínua</span>
+    </div>
+    <div class="learn-item">
+      <i class="fas fa-check"></i>
+      <span>Executar todas as fases do ciclo de vida: Requisitos, Arquitetura, Desenvolvimento, Testes e Deploy</span>
+    </div>
+    <div class="learn-item">
+      <i class="fas fa-check"></i>
+      <span>Conteinerizar aplicações com Docker e configurar pipelines de CI/CD automatizados</span>
+    </div>
+    <div class="learn-item">
+      <i class="fas fa-check"></i>
+      <span>Desenvolver uma Prova de Conceito completa trabalhando em equipe ágil</span>
+    </div>
+  </div>
+</div>
+
+<div class="skills-section">
+  <h3 class="section-title">Habilidades que você vai desenvolver</h3>
+  <div class="skills-grid">
+    <span class="skill-tag">Scrum</span>
+    <span class="skill-tag">Kanban</span>
+    <span class="skill-tag">Extreme Programming</span>
+    <span class="skill-tag">User Stories</span>
+    <span class="skill-tag">Sprint Planning</span>
+    <span class="skill-tag">Git & GitHub</span>
+    <span class="skill-tag">Docker</span>
+    <span class="skill-tag">CI/CD</span>
+    <span class="skill-tag">TDD</span>
+    <span class="skill-tag">Code Review</span>
+    <span class="skill-tag">Pair Programming</span>
+    <span class="skill-tag">DevOps</span>
+  </div>
+</div>
+
+<div class="modules-section">
+  <div class="section-header">
+    <h2 class="section-title">Conteúdo do Curso</h2>
+    <span class="modules-count">5 módulos</span>
+  </div>
+  
+  <div class="module-intro">
+    Inicie sua jornada no desenvolvimento ágil e no framework Scrum e XP! Ao concluir este curso, você estará preparado para desenvolver projetos de Software aplicando os princípios fundamentais do Agile, incluindo planejamento adaptativo, desenvolvimento iterativo e melhoria contínua.
+  </div>
+
+  <div class="module-card expanded">
+    <div class="module-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="module-number">1</span>
+      <div class="module-info">
+        <div class="module-title">Ciclo de Vida de Software e Scrum</div>
+        <div class="module-duration">Fundamentos do Agile e framework Scrum</div>
+      </div>
+      <i class="fas fa-chevron-down module-toggle"></i>
+    </div>
+    <div class="module-content">
+      <p>Conheça a filosofia e as características fundamentais do Agile. Aprenda sobre diferentes metodologias de desenvolvimento de software, incluindo Waterfall, Extreme Programming (XP) e Kanban.</p>
+      <ul class="module-topics">
+        <li><i class="fas fa-play-circle"></i> Princípios do Manifesto Ágil</li>
+        <li><i class="fas fa-play-circle"></i> Papéis, eventos e artefatos do Scrum</li>
+        <li><i class="fas fa-play-circle"></i> Engenharia de Requisitos</li>
+        <li><i class="fas fa-play-circle"></i> Arquitetura de Software</li>
+        <li><i class="fas fa-play-circle"></i> Desenvolvimento, Testes e Implantação</li>
       </ul>
     </div>
-    <div class="team-link">
-      <a href="https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing" class="btn-primary" target="_blank">
-        <i class="fas fa-external-link-alt"></i> Planilha de Grupos e Temas
+  </div>
+
+  <div class="module-card">
+    <div class="module-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="module-number">2</span>
+      <div class="module-info">
+        <div class="module-title">Planejamento Ágil</div>
+        <div class="module-duration">User Stories, Story Points e Sprint Planning</div>
+      </div>
+      <i class="fas fa-chevron-down module-toggle"></i>
+    </div>
+    <div class="module-content">
+      <p>Aprofunde seus conhecimentos sobre o planejamento iterativo no Agile. Aprenda a criar histórias de usuário eficazes, estimar e atribuir story points, construir e refinar o Product Backlog.</p>
+      <ul class="module-topics">
+        <li><i class="fas fa-play-circle"></i> Criação de User Stories eficazes</li>
+        <li><i class="fas fa-play-circle"></i> Estimativa com Story Points</li>
+        <li><i class="fas fa-play-circle"></i> Product Backlog e refinamento</li>
+        <li><i class="fas fa-play-circle"></i> Sprint Planning com GitHub Projects</li>
+        <li><i class="fas fa-play-circle"></i> Práticas de comunidades Open Source</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="module-card">
+    <div class="module-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="module-number">3</span>
+      <div class="module-info">
+        <div class="module-title">Produtividade Ágil</div>
+        <div class="module-duration">Métricas, Dailies e gestão de riscos</div>
+      </div>
+      <i class="fas fa-chevron-down module-toggle"></i>
+    </div>
+    <div class="module-content">
+      <p>Aprenda a monitorar a produtividade da equipe, identificar gargalos, organizar sprints viáveis e compreender o papel do Scrum Master e das dailies na gestão de riscos.</p>
+      <ul class="module-topics">
+        <li><i class="fas fa-play-circle"></i> Métricas ágeis e burndown charts</li>
+        <li><i class="fas fa-play-circle"></i> Papel do Scrum Master</li>
+        <li><i class="fas fa-play-circle"></i> Daily Standups eficientes</li>
+        <li><i class="fas fa-play-circle"></i> Gestão de riscos em sprints</li>
+        <li><i class="fas fa-play-circle"></i> Timeboxing e roadmap</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="module-card">
+    <div class="module-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="module-number">4</span>
+      <div class="module-info">
+        <div class="module-title">Programação Extrema (XP)</div>
+        <div class="module-duration">Pair Programming, TDD e qualidade de código</div>
+      </div>
+      <i class="fas fa-chevron-down module-toggle"></i>
+    </div>
+    <div class="module-content">
+      <p>Aprenda sobre as práticas de Extreme Programming (XP). A filosofia do XP consiste em identificar boas práticas que geram produtividade e levá-las ao extremo.</p>
+      <ul class="module-topics">
+        <li><i class="fas fa-play-circle"></i> Programação em Pares</li>
+        <li><i class="fas fa-play-circle"></i> Test-Driven Development (TDD)</li>
+        <li><i class="fas fa-play-circle"></i> Integração Contínua</li>
+        <li><i class="fas fa-play-circle"></i> Qualidade estática de código</li>
+        <li><i class="fas fa-play-circle"></i> Documentação técnica</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="module-card">
+    <div class="module-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="module-number">5</span>
+      <div class="module-info">
+        <div class="module-title">DevOps</div>
+        <div class="module-duration">Docker, CI/CD e Deploy automatizado</div>
+      </div>
+      <i class="fas fa-chevron-down module-toggle"></i>
+    </div>
+    <div class="module-content">
+      <p>Aprenda sobre automação de processos de desenvolvimento e operações. Módulo técnico-prático desde conteinerização até automação completa de pipelines de CI/CD.</p>
+      <ul class="module-topics">
+        <li><i class="fas fa-play-circle"></i> Conteinerização com Docker</li>
+        <li><i class="fas fa-play-circle"></i> Dockerfiles e Docker Hub</li>
+        <li><i class="fas fa-play-circle"></i> Pipelines de CI/CD automatizados</li>
+        <li><i class="fas fa-play-circle"></i> Deploy contínuo</li>
+        <li><i class="fas fa-play-circle"></i> Monitoramento e rollback</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="details-section">
+  <div class="detail-card">
+    <div class="detail-icon">
+      <i class="fas fa-chalkboard-teacher"></i>
+    </div>
+    <div class="detail-title">Formato</div>
+    <div class="detail-value">Presencial + Material assíncrono</div>
+  </div>
+  <div class="detail-card">
+    <div class="detail-icon">
+      <i class="fas fa-users"></i>
+    </div>
+    <div class="detail-title">Equipes</div>
+    <div class="detail-value">Até 6 membros por time</div>
+  </div>
+  <div class="detail-card">
+    <div class="detail-icon">
+      <i class="fas fa-project-diagram"></i>
+    </div>
+    <div class="detail-title">Metodologia</div>
+    <div class="detail-value">Aprendizagem por projetos</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h3 class="cta-title">Formação das Equipes</h3>
+  <p class="cta-subtitle">Cada grupo escolhe 3 temas na ordem de preferência. A professora negocia e aloca os temas.</p>
+  <a href="https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing" class="cta-button" target="_blank">
+    <i class="fas fa-external-link-alt"></i> Planilha de Grupos e Temas
+  </a>
+</div>
+
+<div class="content-section">
+  <h2 class="section-title">Canais de Comunicação</h2>
+  <div class="section-content">
+    <div class="info-grid-coursera">
+      <a href="https://t.me/c/2677031160/1" class="info-item" target="_blank" style="text-decoration: none;">
+        <div class="info-icon">
+          <i class="fab fa-telegram"></i>
+        </div>
+        <div class="info-text">
+          <span class="info-label">Dúvidas e Avisos</span>
+          <span class="info-value">Grupo do Telegram</span>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw/videos" class="info-item" target="_blank" style="text-decoration: none;">
+        <div class="info-icon">
+          <i class="fab fa-youtube"></i>
+        </div>
+        <div class="info-text">
+          <span class="info-label">Aulas Assíncronas</span>
+          <span class="info-value">Canal YouTube</span>
+        </div>
+      </a>
+      <a href="https://docs.google.com/document/d/1CI8ty75dFyb9xw1olZELF7zkANb_POgEidcXgrMdviw/edit?usp=sharing" class="info-item" target="_blank" style="text-decoration: none;">
+        <div class="info-icon">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="info-text">
+          <span class="info-label">Planejamento</span>
+          <span class="info-value">Cronograma Semanal</span>
+        </div>
       </a>
     </div>
   </div>
 </div>
-  
-<div class="section-card">
-  <h2><i class="fas fa-comments"></i> Canais de Comunicação</h2>
-  <div class="communication-info">
-    <div class="class-format">
-      <h3><i class="fas fa-map-marker-alt"></i> Formato das Aulas</h3>
-      <p>A disciplina será realizada de forma <strong>presencial na sala Mocap</strong>. Serão disponibilizados tanto material assíncrono quanto aulas síncronas.</p>
-    </div>
-    <div class="communication-channels">
-      <h3><i class="fas fa-phone"></i> Dúvidas e Avisos</h3>
-      <div class="channel-item">
-        <a href="https://t.me/c/2677031160/1" class="telegram-link" target="_blank">
-          <i class="fab fa-telegram"></i>
-          <span>Grupo do Telegram</span>
-          <small>Para dúvidas, conversas rápidas e avisos</small>
-        </a>
-      </div>
+
+<div class="content-section">
+  <h2 class="section-title">Avaliação</h2>
+  <div class="section-content">
+    <p>A avaliação será feita por meio da avaliação individual do desempenho do aluno no ciclo de projeto, simulando uma situação real de desenvolvimento.</p>
+    
+    <p><strong>Fórmula da Nota Final:</strong></p>
+    <p><code>Nota Final = (Provas) × 0,20 + (Avaliação Individual) × 0,40 + (Release 1) × 0,20 + (Release 2) × 0,20</code></p>
+    
+    <p><strong>Critérios de Aprovação:</strong></p>
+    <ul>
+      <li>Média Final (MF) ≥ 5,0</li>
+      <li>Frequência ≥ 75% das aulas</li>
+    </ul>
+
+    <div style="margin: 1.5rem 0;">
+      <a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf" class="cta-button" target="_blank" style="background: #e74c3c;">
+        <i class="fas fa-file-pdf"></i> Critérios de Avaliação (PDF)
+      </a>
     </div>
   </div>
 </div>
 
-## Aulas Assíncronas
-
-- Vídeos disponibilizados no YouTube - [Canal YouTube](https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw/videos?view_as=subscriber)
-- Leituras sugeridas na sprint - disponibilizadas no planejamento das aulas
-
-# Planejamento das Aulas
-
-- O planejamento das aulas semanais, discriminando se são assíncronas ou síncronas, e qual canal será atualizado, estará disponível no início da semana no [link](https://docs.google.com/document/d/1CI8ty75dFyb9xw1olZELF7zkANb_POgEidcXgrMdviw/edit?usp=sharing)
-
-## Descrição do Programa
-
-### Processos de Desenvolvimento de Software
-- Modelos de Processo de Desenvolvimento de Software (ciclo de vida)
-- Atividades de Processo
-
-### Fundamentos do Extreme Programming
-- O manifesto Ágil
-- Os Quatro valores e as Quatro variáveis
-- Práticas ágeis
-- O jogo do planejamento 	
-- Releases Pequenas
-- A metáfora
-- Histórias do Usuário
-- Desenho simples
-- Testes (unitário, aceitação)
-- Refatoração
-- Programação em Pares
-- Desenvolvimento Coletivo
-
-### Fundamentos do Processo Unificado de Desenvolvimento de Software
-- Conceitos
-- Fases: Iniciação, Elaboração, Construção e Transição
-- Disciplinas (Modelagem de Negócio, Requisitos, Análise e Desenho, Implementação, Teste, Gerenciamento de Projeto, Gerência de Configuração e Mudanças, Implantação e Ambiente)
-
-## Avaliações e Critérios de Avaliação
-
-A avaliação será feita por meio da avaliação individual do desempenho do aluno no ciclo de projeto. O objetivo do Projeto simula uma situação real de desenvolvimento. Os alunos de MDS irão se concentrar na execução metodologia de desenvolvimento através da especificação de requisitos, codificação e testes. Haverá duas avaliações formais das releases a serem desenvolvidas.
-
-A nota final do aluno é calculada da seguinte forma:
-
-Nota Final = (Provas) * 0,20 + (Critério de Avaliação Individual) * 0,40 + (Nota individual Release 1) * 0,2  + (Nota individual Release 2) * 0,2
-
-Os critérios estão detalhados nesse **documento**:
-
-<div class="document-highlight">
-  <a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf" class="document-link" target="_blank">
-    <i class="fas fa-file-pdf"></i>
-    <span>📋 Critérios de Avaliação (PDF)</span>
-    <i class="fas fa-external-link-alt"></i>
-  </a>
+<div class="content-section">
+  <h2 class="section-title">Critérios Avaliados no Projeto</h2>
+  <div class="section-content">
+    <div class="skills-grid">
+      <span class="skill-tag">Código/Entrega</span>
+      <span class="skill-tag">Documentação</span>
+      <span class="skill-tag">Coerência Docs-Código</span>
+      <span class="skill-tag">Histórias e Planejamento</span>
+      <span class="skill-tag">Testes > 90%</span>
+      <span class="skill-tag">Tracking</span>
+      <span class="skill-tag">Wiki Atualizada</span>
+      <span class="skill-tag">Software Implantado</span>
+      <span class="skill-tag">Pareamento</span>
+      <span class="skill-tag">Sprint Planning</span>
+      <span class="skill-tag">Planning Poker</span>
+      <span class="skill-tag">Dailies</span>
+      <span class="skill-tag">Sprint Review</span>
+      <span class="skill-tag">Retrospectiva</span>
+      <span class="skill-tag">User Stories</span>
+      <span class="skill-tag">Código Padronizado</span>
+      <span class="skill-tag">Pull Requests</span>
+      <span class="skill-tag">Práticas Open Source</span>
+    </div>
+  </div>
 </div>
 
-Para o aluno satisfazer os seguintes requisitos para obter a aprovação na disciplina:
+<div class="content-section">
+  <h2 class="section-title">Datas das Releases</h2>
+  <div class="section-content">
+    <p>Entregáveis R1 e R2 disponíveis nos <a href="https://mds.lappis.rocks/static_files/presentations/MDS.pdf">slides</a>.</p>
+    <ul>
+      <li><strong>Release 1 (major)</strong> - A definir</li>
+      <li><strong>Release 2 (major)</strong> - A definir</li>
+    </ul>
+    <p>Detalhes sobre o roteiro das apresentações: <a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md">Guias para as entregas</a></p>
+  </div>
+</div>
 
- - Aprovação se MF >= 5,0 e se Percentual de faltas (PF) for
-
- PF <= 25%. Onde PF é dado pelo número de aulas com faltas registradas dividido pelo número de aulas ministradas.
-- Reprovação se MF < 5,0 ou se PF > 25%. Nessa situação, o aluno será considerado reprovado por nota ou por falta.
-
-Os critérios avaliados individualmente no projeto estão destacados na tabela abaixo:
-
-| Evento da Avaliação Individual no Projeto  |
-| ------ |
-| Código/Entrega    |
-| Documentação |
-| Coerência - Documentos e Código |
-| Critério Extra |
-| Histórias e Planejamento da Release |
-| Testes Automatizados e Cobertura de Código > 90% |
-| Tracking |
-| Wiki Atualizada |
-| Software Implantado e Disponível para Uso |
-| PA - pareamento |
-| PA - reunião de planejamento da sprint |
-| PA - planning poker |
-| PA - sprint time box |
-| PA - participação nas dailies |
-| PA - review com o cliente |
-| PA - retrospectiva na sprint |
-| PA - user stories |
-| PA - risco sustentável de trabalho |
-| PA - código escrito com padrões |
-| PA - plano de comunicação |
-| PA - comunicação técnica nas issues |
-| PA - pull requests educativos |
-| PA - práticas de comunidades de software livre|
-
-## Avisos
-
-- Também são considerados critérios de avaliação da participação: assiduidade; pontualidade; interesse; participação em sala.
-- Os documentos referentes à disciplina estarão disponíveis em: [https://github.com/fga-eps-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps](https://github.com/fga-eps-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps)
-- Os projetos são avaliados continuamente.
-- A cobertura de código deverá ser 90%, excetuando a camada de apresentação.
-- O tamanho dos times deve respeitar o limite máximo de 6 membros.
-- As atividades do projeto deverão ser organizadas por meio de issues e milestones.
-- O código-fonte e demais artefatos elaborados deverão ser revisados utilizando pull/merge requests e issues.
-- As provas não são pré agendadas.
-
-### Datas das Releases 1 e 2
-
-Entregáveis R1  e R2 [Nos slides](https://mds.lappis.rocks/static_files/presentations/MDS.pdf)
-
-- Release 1 (major) - 01 a 03 de Outubro de 2025.
-- Release 2 (major) - 03-05 de Dezembro de 2025.
-
-### Guias para as Entregas da Release 1 e 2
-
-Os detalhes sobre o roteiro das apresentações, checklist e documentação esperada para as Releases 1 e 2 estão descritos no seguinte documento:
-
-- [Guias para as entregas da Release 1 e 2](https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md)
-
-## Bibliografia Básica
-
-- (OPENACCESS) Rocha, Carla. Como Acelerar o Aprendizado e Disseminar a Cultura de Inovação Ágil - [https://rochacarla.github.io/Onboarding/](https://rochacarla.github.io/Onboarding/)
-- Beck, K., Programação Extrema (XP) Explicada, 1st ed. Bookman, 2004
-- Ken Schwaber e Jeff Sutherland - O Guia Definitivo para o Scrum: As Regras do Jogo - Disponível em português em [https://scrumguides.org](https://scrumguides.org)
-- Sommerville, I., Engenharia de Software. 8th ed., Pearson Addison Wesley, 2007. 
-- [Engenharia de Software Moderna](https://engsoftmoderna.info)
-- Alves, Isaque, Rocha, Carla. Qualifying Software Engineers Undergraduates in DevOps - Challenges of introducing technical and non-technical concepts in a project-oriented course - [http://arxiv.org/abs/2102.06662](http://arxiv.org/abs/2102.06662)
-- Jacobson, I., Booch G., Rumbaugh J., The Unified Software Development Process, 1st ed., Addison-Wesley, 1999. 
-- [EBRARY] Lano, K., UML 2 Semantics and Applications, 1st ed., Wiley, 2009. 
-- OPENACCESS [Scrum e XP direto da sTrincheiras](http://www.infoq.com/br/minibooks/scrum-xp-from-the-trenches)
-
-## Bibliografia Complementar
-
-- Pfleeger, S. L., Engenharia de Software: Teoria e Prática. 2nd ed., Prentice Hall, 2004. 
-- Pressman, R. S., Engenharia de Software. 6th ed., McGraw-Hill, 2006. 
-- Ambler, S., Agile Modeling: Effective Practices for eXtreme Programming and the Unified Process, 1st ed., Wiley, 2002 
-- Jacobson, I., Booch G., Rumbaugh J., UML: Guia do Usuário, 2nd ed., Elsevier, 2005. 
-- [OPEN ACCESS] Scrum e XP direto das Trincheiras. (http://www.infoq.com/br/minibooks/scrum-xp-from-the-trenches) 
-
+<div class="content-section bibliography-section">
+  <h2 class="section-title">Bibliografia</h2>
+  <div class="section-content">
+    <div class="bib-item">Beck, K. <strong>Programação Extrema (XP) Explicada</strong>, 1st ed. Bookman, 2004</div>
+    <div class="bib-item">Ken Schwaber e Jeff Sutherland - <strong>O Guia Definitivo para o Scrum</strong> - <a href="https://scrumguides.org">scrumguides.org</a></div>
+    <div class="bib-item">Sommerville, I. <strong>Engenharia de Software</strong>. 8th ed., Pearson Addison Wesley, 2007</div>
+    <div class="bib-item"><a href="https://engsoftmoderna.info">Engenharia de Software Moderna</a></div>
+    <div class="bib-item">Alves, Isaque; Rocha, Carla. <strong>Qualifying Software Engineers Undergraduates in DevOps</strong> - <a href="http://arxiv.org/abs/2102.06662">arxiv.org</a></div>
+    <div class="bib-item"><a href="http://www.infoq.com/br/minibooks/scrum-xp-from-the-trenches">Scrum e XP direto das Trincheiras</a> (Open Access)</div>
+  </div>
+</div>
 
 ---
----
----
 
+<div class="projects-section">
+  <h2 class="section-title">Projetos 2025/2</h2>
+  
+  <div class="project-theme">
+    <h3>📊 Tema do semestre: "Como posso usar dados para dar inteligência?"</h3>
+  </div>
 
-# **Projetos 2025/2**  
+  <p style="margin-bottom: 1.5rem; color: #636363;">Cada equipe deverá selecionar <strong>3 opções de projeto</strong> em ordem de preferência. A alocação será feita com base nessas escolhas.</p>
 
-Confira abaixo a lista de projetos que serão desenvolvidos ao longo do 1º semestre de 2025 na disciplina.  
+  <div class="project-card">
+    <h4 class="project-title"><span class="project-number">1</span> Querido Diário - Radar das tecnologias na educação</h4>
+    <p class="project-description">Plataforma que faz análise de atos públicos relacionados à adoção de tecnologias no contexto educacional nos municípios, usando dados do Querido Diário.</p>
+    <div class="project-constraint">
+      <strong>Restrição arquitetural:</strong> Frontend only (GitPage) + dados atualizados via GitHub Actions + análise qualitativa com agentes de IA.
+    </div>
+    <div class="project-links">
+      <a href="https://queridodiario.ok.org.br/educacao/relatorio/3"><i class="fas fa-external-link-alt"></i> Relatório</a>
+      <a href="https://github.com/okfn-brasil/querido-diario-nas-universidades"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </div>
 
-### **Tema do semestre:**  
-📊 **"Como posso usar dados para dar inteligência?"**  
+  <div class="project-card">
+    <h4 class="project-title"><span class="project-number">2</span> Querido Diário - Radar de investimento em IA</h4>
+    <p class="project-description">Análise sobre inteligência artificial (IA) nas escolas municipais, especialmente sobre o uso dessa tecnologia na gestão e ambiente escolar.</p>
+    <div class="project-constraint">
+      <strong>Restrição arquitetural:</strong> Frontend only (GitPage) + dados atualizados via GitHub Actions + análise qualitativa com agentes de IA.
+    </div>
+    <div class="project-links">
+      <a href="https://queridodiario.ok.org.br/educacao/relatorio/4"><i class="fas fa-external-link-alt"></i> Relatório</a>
+      <a href="https://github.com/okfn-brasil/querido-diario-nas-universidades"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </div>
 
-Diferente de outros semestres, **as equipes não poderão propor temas próprios**. Em vez disso, cada equipe deverá selecionar **três opções de projeto** em ordem de preferência. A alocação será feita com base nessas escolhas.  
+  <div class="project-card">
+    <h4 class="project-title"><span class="project-number">3</span> Querido Diário - Radar de saúde oncológico</h4>
+    <p class="project-description">Análise do investimento de saúde oncológico nos municípios a partir dos dados do Querido Diário.</p>
+    <div class="project-links">
+      <a href="https://queridodiario.ok.org.br"><i class="fas fa-external-link-alt"></i> Querido Diário</a>
+    </div>
+  </div>
 
+  <div class="project-card">
+    <h4 class="project-title"><span class="project-number">4</span> Censo Escolar</h4>
+    <p class="project-description">Portal de dados do censo escolar da educação básica com RAG (Retrieval-augmented generation) para interface conversacional e dashboard com visualizações.</p>
+    <div class="project-links">
+      <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar"><i class="fas fa-external-link-alt"></i> Microdados</a>
+    </div>
+  </div>
 
-Como fazer boas apresentações
-Dicas de slides -  https://www.ime.usp.br/~kon/ResearchStudents/dicasSlides.html
+  <div class="project-card">
+    <h4 class="project-title"><span class="project-number">5</span> É Fake - Minerador de notícias</h4>
+    <p class="project-description">Implementar mineração de pelo menos mais 2 jornais e criar aplicação para explorar notícias com detecção automatizada de fake news.</p>
+    <div class="project-links">
+      <a href="https://github.com/aosfatos/check-up"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </div>
 
+  <div class="project-card">
+    <h4 class="project-title"><span class="project-number">6</span> Colaboração no GitHub - Pessoas</h4>
+    <p class="project-description">Plataforma para visualizar a colaboração entre membros de organizações no GitHub e o tipo de colaboração.</p>
+    <div class="project-links">
+      <a href="https://githubnext.com/projects/repo-visualization/"><i class="fas fa-external-link-alt"></i> Referência</a>
+      <a href="https://www.inf.usi.ch/lanza/Downloads/Lung2022a.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+    </div>
+  </div>
 
----
----
-1.  Querido diário - Radar das tecnologias na educação nos municípios
+  <div class="project-card">
+    <h4 class="project-title"><span class="project-number">7</span> Colaboração GitHub - Métricas</h4>
+    <p class="project-description">Evoluir projeto de visualização para organizações com agentes de IA para explicar métricas: issues, commits, tecnologias, PRs, qualidade de código.</p>
+    <div class="project-links">
+      <a href="https://githubnext.com/projects/repo-visualization/#explore-for-yourself"><i class="fas fa-external-link-alt"></i> Referência</a>
+    </div>
+  </div>
 
-O Querido Diário inaugura uma gigantesca (e em constante expansão!) fonte de dados integrada sobre os diários oficiais municipais. Uma empreitada monumental tendo em vista não apenas a grande quantidade de municípios e de sites governamentais, mas também a variedade de formatos de diários oficiais, já que não existe nenhuma regulamentação que os padronize.
+  <div class="project-card">
+    <h4 class="project-title"><span class="project-number">8</span> Dados Abertos UnB</h4>
+    <p class="project-description">Portal para visualização dos dados abertos da UnB. Vamos ver com o que é gasto na FCTE?</p>
+    <div class="project-constraint">
+      <strong>Restrição arquitetural:</strong> Frontend only (GitPage) + banco em JSON + mineração via GitHub Actions.
+    </div>
+    <div class="project-links">
+      <a href="https://dados.gov.br/dados/organizacoes/visualizar/fundacao-universidade-de-brasilia-unb"><i class="fas fa-external-link-alt"></i> Dados.gov.br</a>
+    </div>
+  </div>
 
-Quase metade das matrículas na educação básica pública no Brasil está nos municípios, mas é muito difícil encontrar informações sobre o dia a dia da gestão dessas redes. Por isso, os diários oficiais se tornam uma fonte preciosa de informação — quando não são as únicas.
+  <div class="project-card">
+    <h4 class="project-title"><span class="project-number">9</span> Portal dos Professores</h4>
+    <p class="project-description">Minerar dados dos professores (Lattes, Google Scholar, SIGAA) e gerar resumos do portfólio e atuação de cada professor com agente de IA.</p>
+    <div class="project-constraint">
+      <strong>Restrição arquitetural:</strong> Frontend only (GitPage) + banco em JSON + mineração via GitHub Actions.
+    </div>
+  </div>
 
-O problema é ter uma plataforma que faça uma análise de atos públicos relacionados à adoção de tecnologias no contexto educacional. Eles fizeram um relatório sobre o tema, mas os dados são estáticos. E a ideia é fazer uma plataforma que mostre esses dados de forma dinâmica. 
+  <div class="project-card">
+    <h4 class="project-title"><span class="project-number">10</span> Portal de Escrita Técnica em Software</h4>
+    <p class="project-description">Varrer repositórios e fazer recomendações de documentos necessários para qualidade do software. Área com material guiado para boa documentação técnica.</p>
+    <div class="project-constraint">
+      <strong>Restrição arquitetural:</strong> Frontend only (GitPage) + banco em JSON + mineração via GitHub Actions.
+    </div>
+  </div>
+</div>
 
-Restrição arquitetura: a solução deve ser composta só de frontend (gitpage) e os dados são atualizados periodicamente por meio de robôs que serão executados por meio de github actions. A análise qualitativa deve ser feita por meio de agentes de IA. 
-
-
-https://queridodiario.ok.org.br/educacao/relatorio/3
-
-https://github.com/okfn-brasil/querido-diario-nas-universidades
-
-2.  Querido diário - Radar das tecnologias de investimento de IA  nos municípios
-
-O Querido Diário inaugura uma gigantesca (e em constante expansão!) fonte de dados integrada sobre os diários oficiais municipais. Uma empreitada monumental tendo em vista não apenas a grande quantidade de municípios e de sites governamentais, mas também a variedade de formatos de diários oficiais, já que não existe nenhuma regulamentação que os padronize.
-
-Quase metade das matrículas na educação básica pública no Brasil está nos municípios, mas é muito difícil encontrar informações sobre o dia a dia da gestão dessas redes. Por isso, os diários oficiais se tornam uma fonte preciosa de informação — quando não são as únicas.
-
-O problema das Temáticas integram uma série de análises sobre tecnologias na Educação municipal, a partir dos atos publicados nos diários oficiais coletados pelo Querido Diário. Elas jogam luz sobre temas que foram identificados nos Panoramas, que, por sua vez, são análises periódicas que captam tendências, inovações e práticas recorrentes nas redes.
-
-A Temática #2 trata sobre inteligência artificial (IA) nas escolas municipais, especialmente sobre o uso dessa tecnologia na gestão e ambiente escolar.
-
-Restrição arquitetura: a solução deve ser composta só de frontend (gitpage) e os dados são atualizados periodicamente por meio de robôs que serão executados por meio de github actions. A análise qualitativa deve ser feita por meio de agentes de IA. 
-
-https://queridodiario.ok.org.br/educacao/relatorio/4
-
-https://github.com/okfn-brasil/querido-diario-nas-universidades
-
-3. Querido diário - Radar de investimento de saúde oncológico nos municípios
-
-O Querido Diário inaugura uma gigantesca (e em constante expansão!) fonte de dados integrada sobre os diários oficiais municipais. Uma empreitada monumental tendo em vista não apenas a grande quantidade de municípios e de sites governamentais, mas também a variedade de formatos de diários oficiais, já que não existe nenhuma regulamentação que os padronize.
-
-O problema a ser resolvido é o investimento de saúde oncológico nos municipios a partir dos dados do querido diario.
-
-https://queridodiario.ok.org.br
-
-4. Censo escolar
-
-A partir dos microdados relacionados ao censo escolar que são disponibilizados anualmente, fazer um portal de dados do censo escola, da educação basica. Enriquecer os metadados da base dado e implementar um RAG (Retrieval-augmented generation), para que possa encontrar informações a partir de uma interface conversacional, além de um dashboard com as principais visualizações de dados do censo.
-
-Fonte de dados
-
-https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar
-
-5. É fake - minerador de notícias
-o projeto é fake minera reportagem de mais de 90 jornais para detecação automatizada de fake news. O objetivo desse projeto é implementar a mineracao de pelo menos mais 2 jornais e fazer uma aplicação que use esses dados e permita que o usuário explore as noticias. 
-
-https://github.com/aosfatos/check-up
-
-
-
-6. Colaboração no github
-
-A partir dos dados dos usuários de um determinado conjunto de organizações no github, fazer uma plataforma para visualizar a colaboração entre os membros e o tipo de colaboração. 
-
-Similar ao projeto abaixo, mas focado nas pessoas:
-https://githubnext.com/projects/repo-visualization/
-
-https://www.inf.usi.ch/lanza/Downloads/Lung2022a.pdf
-
-
-
-7. Colaboração github - metricas
-
-Evoluir esse projeto para organizações no github, além de repositórios. Usar agentes de ia para explicar caracteristicas de colaboração e o que significam as métricas. Tipos de métricas: qte de issues abertas/fechadas, qte commits, tecnologias, qte PR, qualidade de código. 
-
-https://githubnext.com/projects/repo-visualization/#explore-for-yourself
-
-
-8. Dados abertos UnB
-
- por incrivel que pareça, não há um portal para visualição dos dados abertos da unb. é sua vez (ate pode filtrar pela fcte). Objetivo é organizar os dados abertos da unb e fazer um portal para visualizacao dos dados. Vamos ver com o que é gasto na fcte?
-
- Restricao arquitetural: o portal soh deve ter front (githpage), o banco vai ser em json, e toda a mineração e processamento dos dados é feito por meio de bots executados no pipeline action do github. 
-
- projeto maravilhoso!
-
-
- https://dados.gov.br/dados/organizacoes/visualizar/fundacao-universidade-de-brasilia-unb
-
-
-9. Portal dos professores
-
-Minerar dados dos professores (lattes, google scholar, sigaa), e gerar resumos do portfolio e atuação de cada professor. Visualização facil ;) não é um ambiente para avaliar professores, mas sim ter uma visão geral do que fazem, se fazem pesquisa (ultimo artigo publicado), que matérias dão ao longo do tempo (dao as mesmas materias ou variam). Agente de ia para fazer analise qualitativa e resumo dos dados dos profs
-
- Restricao arquitetural: o portal soh deve ter front (githpage), o banco vai ser em json, e toda a mineração e processamento dos dados é feito por meio de bots executados no pipeline action do github. 
-
-
-10. Portal com guia para escrita tecnica em software
-
-Um dos principais problemas em um projeto de software é a falta de documentação. A ideia é varrer um repositório e fazer recomendacoes de documentos necessarios para garantir a qualidade do produto de software. Usar agente de ia para classificar a documentacao de acordo com o checklist de escrita técnica. Também deve haver uma area com material guiado (com animacoes) do passo a passo para fazer uma boa documentacao tecnica
-
- Restricao arquitetural: o portal soh deve ter front (githpage), o banco vai ser em json, e toda a mineração e processamento dos dados é feito por meio de bots executados no pipeline action do github. 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const moduleHeaders = document.querySelectorAll('.module-header');
+  moduleHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      this.parentElement.classList.toggle('expanded');
+    });
+  });
+});
+</script>
