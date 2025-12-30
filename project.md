@@ -117,7 +117,7 @@ permalink: /planoensino/
   </div>
 
   <div class="module-card expanded">
-    <div class="module-header" onclick="this.parentElement.classList.toggle('expanded')">
+    <div class="module-header">
       <span class="module-number">1</span>
       <div class="module-info">
         <div class="module-title">Ciclo de Vida de Software e Scrum</div>
@@ -138,7 +138,7 @@ permalink: /planoensino/
   </div>
 
   <div class="module-card">
-    <div class="module-header" onclick="this.parentElement.classList.toggle('expanded')">
+    <div class="module-header">
       <span class="module-number">2</span>
       <div class="module-info">
         <div class="module-title">Planejamento Ágil</div>
@@ -159,7 +159,7 @@ permalink: /planoensino/
   </div>
 
   <div class="module-card">
-    <div class="module-header" onclick="this.parentElement.classList.toggle('expanded')">
+    <div class="module-header">
       <span class="module-number">3</span>
       <div class="module-info">
         <div class="module-title">Produtividade Ágil</div>
@@ -180,7 +180,7 @@ permalink: /planoensino/
   </div>
 
   <div class="module-card">
-    <div class="module-header" onclick="this.parentElement.classList.toggle('expanded')">
+    <div class="module-header">
       <span class="module-number">4</span>
       <div class="module-info">
         <div class="module-title">Programação Extrema (XP)</div>
@@ -201,7 +201,7 @@ permalink: /planoensino/
   </div>
 
   <div class="module-card">
-    <div class="module-header" onclick="this.parentElement.classList.toggle('expanded')">
+    <div class="module-header">
       <span class="module-number">5</span>
       <div class="module-info">
         <div class="module-title">DevOps</div>
@@ -465,13 +465,3 @@ permalink: /planoensino/
   </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const moduleHeaders = document.querySelectorAll('.module-header');
-  moduleHeaders.forEach(header => {
-    header.addEventListener('click', function() {
-      this.parentElement.classList.toggle('expanded');
-    });
-  });
-});
-</script>

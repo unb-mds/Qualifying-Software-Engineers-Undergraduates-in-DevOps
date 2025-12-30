@@ -5,7 +5,7 @@ order: 104
 name: Sprint 3 - Apresentação Final
 description: Apresentação final dos projetos - Entrega e avaliação dos resultados
 links:
-    - url: /static_files/presentations/Sprint3-ApresentacaoFinal.pdf
+    - url: /static_files/presentations/MDS.pdf
       name: slides
     - url: /project/
       name: projeto
