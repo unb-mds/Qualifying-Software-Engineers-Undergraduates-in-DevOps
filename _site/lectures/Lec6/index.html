@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Instalação do Ubuntu - MDS / 4 semestre </title>
+  <meta name="description" content="Guia de Instalação do UbuntuEste tutorial vai te guiar pelo processo de instalação do Ubuntu, seja em dual boot com Windows ou em uma máquina virtual.Tempo e...">
+  
+  <link rel="stylesheet" href="/_css/main.css?v=1767119684">
+  <link rel="canonical" href="http://0.0.0.0:4000/lectures/Lec6/">
+  <link rel="alternate" type="application/rss+xml" title="MDS / 4 semestre - UnB" href="http://0.0.0.0:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">UnB</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="MDS / 4 semestre - UnB"><b>MDS</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">4 semestre</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/aulas/">
+                <i class="fas fa-chalkboard-teacher"></i> Aulas
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Projetos
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="https://github.com/unb-mds">
+                <i class="fab fa-github"></i> Repositórios
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="lecture-page">
+  <div class="lecture-hero">
+    <div class="lecture-hero-content">
+      <a href="/materials/" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Materiais</a>
+      <h1 class="lecture-title">Instalação do Ubuntu</h1>
+      <p class="lecture-tldr">Guia completo para instalar Ubuntu no seu computador, dual boot ou máquina virtual.</p>
+      <div class="lecture-meta">
+        
+        <span class="meta-item"><i class="fas fa-calendar"></i> 12/08/2025</span>
+        
+        
+        <div class="lecture-links">
+          
+          <a href="https://ubuntu.com/download/desktop" target="_blank" class="lecture-link-btn">
+            <i class="fas fa-external-link-alt"></i> Download Ubuntu
+          </a>
+          
+          <a href="https://ubuntu.com/tutorials/install-ubuntu-desktop" target="_blank" class="lecture-link-btn">
+            <i class="fas fa-external-link-alt"></i> Tutorial Oficial
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="lecture-thumbnail">
+      <img src="/static_files/presentations/gpp_mds.png" alt="Instalação do Ubuntu">
+    </div>
+    
+  </div>
+
+  <div class="lecture-content">
+    <h1 id="guia-de-instalação-do-ubuntu">Guia de Instalação do Ubuntu</h1>
+
+<p>Este tutorial vai te guiar pelo processo de instalação do Ubuntu, seja em dual boot com Windows ou em uma máquina virtual.</p>
+
+<p><strong>Tempo estimado:</strong> 30-60 minutos</p>
+
+<hr />
+
+<h2 id="opção-1-máquina-virtual-recomendado-para-iniciantes">Opção 1: Máquina Virtual (Recomendado para iniciantes)</h2>
+
+<p>A máquina virtual permite rodar o Ubuntu dentro do seu sistema atual, sem risco de perder dados.</p>
+
+<h3 id="passo-1-baixar-o-virtualbox">Passo 1: Baixar o VirtualBox</h3>
+
+<ol>
+  <li>Acesse <a href="https://www.virtualbox.org/wiki/Downloads">virtualbox.org</a></li>
+  <li>Baixe a versão para seu sistema operacional (Windows, macOS ou Linux)</li>
+  <li>Execute o instalador e siga as instruções</li>
+</ol>
+
+<h3 id="passo-2-baixar-a-iso-do-ubuntu">Passo 2: Baixar a ISO do Ubuntu</h3>
+
+<ol>
+  <li>Acesse <a href="https://ubuntu.com/download/desktop">ubuntu.com/download/desktop</a></li>
+  <li>Baixe a versão LTS mais recente (ex: Ubuntu 24.04 LTS)</li>
+  <li>Aguarde o download do arquivo <code class="language-plaintext highlighter-rouge">.iso</code> (~5GB)</li>
+</ol>
+
+<h3 id="passo-3-criar-a-máquina-virtual">Passo 3: Criar a Máquina Virtual</h3>
+
+<ol>
+  <li>Abra o VirtualBox</li>
+  <li>Clique em <strong>“Novo”</strong></li>
+  <li>Configure:
+    <ul>
+      <li><strong>Nome:</strong> Ubuntu</li>
+      <li><strong>Tipo:</strong> Linux</li>
+      <li><strong>Versão:</strong> Ubuntu (64-bit)</li>
+    </ul>
+  </li>
+  <li>Clique em <strong>Próximo</strong></li>
+</ol>
+
+<h3 id="passo-4-configurar-memória-ram">Passo 4: Configurar Memória RAM</h3>
+
+<ul>
+  <li><strong>Mínimo recomendado:</strong> 4096 MB (4GB)</li>
+  <li><strong>Ideal:</strong> 8192 MB (8GB) se você tiver 16GB+ de RAM total</li>
+</ul>
+
+<h3 id="passo-5-criar-disco-virtual">Passo 5: Criar Disco Virtual</h3>
+
+<ol>
+  <li>Selecione <strong>“Criar um disco rígido virtual agora”</strong></li>
+  <li>Escolha <strong>VDI (VirtualBox Disk Image)</strong></li>
+  <li>Selecione <strong>“Dinamicamente alocado”</strong></li>
+  <li>Defina o tamanho: <strong>mínimo 25GB</strong>, recomendado <strong>50GB</strong></li>
+</ol>
+
+<h3 id="passo-6-configurar-a-máquina-virtual">Passo 6: Configurar a Máquina Virtual</h3>
+
+<p>Antes de iniciar, ajuste algumas configurações:</p>
+
+<ol>
+  <li>Selecione a VM criada e clique em <strong>“Configurações”</strong></li>
+  <li><strong>Sistema &gt; Processador:</strong> Aumente para 2-4 CPUs</li>
+  <li><strong>Vídeo &gt; Tela:</strong> Aumente memória de vídeo para 128MB</li>
+  <li><strong>Armazenamento:</strong> Clique no ícone de CD vazio, depois no ícone de CD à direita e selecione a ISO do Ubuntu</li>
+</ol>
+
+<h3 id="passo-7-instalar-o-ubuntu">Passo 7: Instalar o Ubuntu</h3>
+
+<ol>
+  <li>Clique em <strong>“Iniciar”</strong> para ligar a VM</li>
+  <li>Selecione <strong>“Try or Install Ubuntu”</strong></li>
+  <li>Escolha o idioma <strong>Português do Brasil</strong></li>
+  <li>Clique em <strong>“Instalar Ubuntu”</strong></li>
+  <li>Selecione o layout de teclado</li>
+  <li>Escolha <strong>“Instalação normal”</strong></li>
+  <li>Selecione <strong>“Apagar disco e instalar Ubuntu”</strong> (é seguro, só afeta o disco virtual!)</li>
+  <li>Configure seu fuso horário</li>
+  <li>Crie seu usuário e senha</li>
+  <li>Aguarde a instalação (~15-20 minutos)</li>
+  <li>Reinicie quando solicitado</li>
+</ol>
+
+<h3 id="passo-8-instalar-guest-additions-opcional-mas-recomendado">Passo 8: Instalar Guest Additions (Opcional mas recomendado)</h3>
+
+<p>Após iniciar o Ubuntu instalado:</p>
+
+<ol>
+  <li>No menu do VirtualBox: <strong>Dispositivos &gt; Inserir imagem de CD dos Adicionais para Convidado</strong></li>
+  <li>Abra o terminal no Ubuntu (<code class="language-plaintext highlighter-rouge">Ctrl + Alt + T</code>)</li>
+  <li>Execute:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>build-essential dkms linux-headers-<span class="si">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="si">)</span>
+<span class="nb">sudo</span> /media/<span class="nv">$USER</span>/VBox_GAs_<span class="k">*</span>/VBoxLinuxAdditions.run
+</code></pre></div></div>
+
+<ol>
+  <li>Reinicie a VM</li>
+</ol>
+
+<p>Agora você terá tela redimensionável e área de transferência compartilhada!</p>
+
+<hr />
+
+<h2 id="opção-2-instalando-ubuntu-em-dual-boot-com-windows">Opção 2: Instalando Ubuntu em Dual Boot com Windows</h2>
+
+<p>Bem-vindo! Neste tutorial, você vai aprender a instalar o Ubuntu no seu computador mantendo o Windows. Ao final, você terá os dois sistemas operacionais funcionando e poderá escolher qual usar cada vez que ligar o computador.</p>
+
+<p><strong>O que você vai conseguir:</strong> Um computador com Windows e Ubuntu instalados, podendo escolher qual sistema usar na inicialização.</p>
+
+<p><strong>Tempo estimado:</strong> 1-2 horas</p>
+
+<p><strong>O que você vai precisar:</strong></p>
+<ul>
+  <li>Um computador com Windows 10 ou 11</li>
+  <li>Um pendrive vazio de pelo menos 8GB</li>
+  <li>Conexão com a internet</li>
+  <li>Paciência e atenção aos detalhes</li>
+</ul>
+
+<hr />
+
+<h2 id="️-importante-leia-antes-de-começar">⚠️ IMPORTANTE: Leia Antes de Começar</h2>
+
+<p><strong>Faça backup dos seus dados importantes!</strong> Embora a instalação em dual boot seja segura quando feita corretamente, sempre existe um pequeno risco. Copie seus documentos, fotos e arquivos importantes para um HD externo ou nuvem.</p>
+
+<p><strong>Este tutorial é para computadores com BIOS UEFI</strong> (a maioria dos computadores modernos). Se seu computador for muito antigo (anterior a 2011), o processo pode ser diferente.</p>
+
+<hr />
+
+<h2 id="parte-1-preparando-o-espaço-no-disco">Parte 1: Preparando o Espaço no Disco</h2>
+
+<p>Antes de instalar o Ubuntu, precisamos criar espaço livre no disco rígido.</p>
+
+<h3 id="passo-1-abrir-o-gerenciamento-de-disco-do-windows">Passo 1: Abrir o Gerenciamento de Disco do Windows</h3>
+
+<ol>
+  <li>Pressione <code class="language-plaintext highlighter-rouge">Windows + X</code> no teclado</li>
+  <li>Clique em “Gerenciamento de Disco”</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> Uma janela mostrando todos os discos e partições do seu computador.</p>
+
+<h3 id="passo-2-identificar-a-partição-principal">Passo 2: Identificar a partição principal</h3>
+
+<p>Procure a maior partição, geralmente chamada “C:” ou com o rótulo “Windows”.</p>
+
+<p><strong>O que você deve ver:</strong> Uma barra azul mostrando quanto espaço está usado e quanto está livre.</p>
+
+<h3 id="passo-3-reduzir-o-volume-do-windows">Passo 3: Reduzir o volume do Windows</h3>
+
+<ol>
+  <li>Clique com o botão direito na partição C:</li>
+  <li>Selecione “Reduzir Volume”</li>
+  <li>Aguarde enquanto o Windows calcula o espaço disponível</li>
+</ol>
+
+<h3 id="passo-4-definir-quanto-espaço-alocar-para-o-ubuntu">Passo 4: Definir quanto espaço alocar para o Ubuntu</h3>
+
+<p>Quando a janela aparecer, você verá “Quantidade de espaço a ser reduzida em MB”.</p>
+
+<p><strong>Quanto espaço reservar?</strong></p>
+<ul>
+  <li>Mínimo: 30.000 MB (30 GB) - básico</li>
+  <li>Recomendado: 50.000 MB (50 GB) - confortável</li>
+  <li>Ideal: 100.000 MB (100 GB) - para quem vai usar bastante</li>
+</ul>
+
+<p>Digite o valor escolhido e clique em “Reduzir”.</p>
+
+<p><strong>O que você deve ver:</strong> Um espaço preto com o rótulo “Não Alocado” aparece no gráfico.</p>
+
+<p>Perfeito! Você criou espaço para o Ubuntu. ✓</p>
+
+<hr />
+
+<h2 id="parte-2-baixando-o-ubuntu">Parte 2: Baixando o Ubuntu</h2>
+
+<h3 id="passo-5-acessar-o-site-oficial-do-ubuntu">Passo 5: Acessar o site oficial do Ubuntu</h3>
+
+<ol>
+  <li>Abra seu navegador</li>
+  <li>Vá para: <a href="https://ubuntu.com/download/desktop">ubuntu.com/download/desktop</a></li>
+</ol>
+
+<h3 id="passo-6-baixar-a-versão-lts">Passo 6: Baixar a versão LTS</h3>
+
+<ol>
+  <li>Clique no botão verde “Download Ubuntu” (versão LTS)</li>
+  <li>O download começará automaticamente (arquivo de cerca de 4-5 GB)</li>
+  <li>Aguarde o download completar</li>
+</ol>
+
+<p><strong>Observação:</strong> A versão LTS (Long Term Support) é a mais estável e recomendada para iniciantes.</p>
+
+<p><strong>O que você baixou:</strong> Um arquivo .iso, que é uma imagem do sistema operacional.</p>
+
+<hr />
+
+<h2 id="parte-3-criando-o-pendrive-de-instalação">Parte 3: Criando o Pendrive de Instalação</h2>
+
+<h3 id="passo-7-baixar-o-rufus">Passo 7: Baixar o Rufus</h3>
+
+<ol>
+  <li>Vá para: <a href="https://rufus.ie">rufus.ie</a></li>
+  <li>Role a página até “Download”</li>
+  <li>Clique em “Rufus 4.x” (versão portátil está ok)</li>
+  <li>Salve o arquivo</li>
+</ol>
+
+<h3 id="passo-8-inserir-o-pendrive">Passo 8: Inserir o pendrive</h3>
+
+<ol>
+  <li>Conecte seu pendrive USB no computador</li>
+  <li><strong>IMPORTANTE:</strong> Certifique-se de que não há nada importante nele, pois será apagado</li>
+</ol>
+
+<h3 id="passo-9-executar-o-rufus">Passo 9: Executar o Rufus</h3>
+
+<ol>
+  <li>Abra o arquivo do Rufus que você baixou</li>
+  <li>Clique em “Sim” se o Windows pedir permissão</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> Uma janela pequena com várias opções.</p>
+
+<h3 id="passo-10-configurar-o-rufus">Passo 10: Configurar o Rufus</h3>
+
+<ol>
+  <li><strong>Dispositivo:</strong> Deve mostrar seu pendrive automaticamente</li>
+  <li><strong>Seleção de boot:</strong> Clique em “SELECIONAR” e escolha o arquivo .iso do Ubuntu que você baixou</li>
+  <li><strong>Esquema de partição:</strong> Deixe em “GPT”</li>
+  <li><strong>Sistema de destino:</strong> Deixe em “UEFI (não CSM)”</li>
+</ol>
+
+<p><strong>Deixe todas as outras opções como estão.</strong></p>
+
+<h3 id="passo-11-criar-o-pendrive-bootável">Passo 11: Criar o pendrive bootável</h3>
+
+<ol>
+  <li>Clique no botão “INICIAR”</li>
+  <li>Se aparecer uma janela sobre “modo de escrita de imagem”, deixe como “Escrever no modo Imagem ISO” e clique OK</li>
+  <li>Uma mensagem avisará que todos os dados do pendrive serão destruídos - clique OK</li>
+  <li>Aguarde o processo completar (5-10 minutos)</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> Uma barra de progresso que vai até 100%, depois uma mensagem “PRONTO” em verde.</p>
+
+<p>Clique em “FECHAR”. Seu pendrive está pronto! ✓</p>
+
+<hr />
+
+<h2 id="parte-4-desativando-o-fast-boot-e-secure-boot">Parte 4: Desativando o Fast Boot e Secure Boot</h2>
+
+<p>Para instalar o Ubuntu, precisamos ajustar algumas configurações do Windows.</p>
+
+<h3 id="passo-12-desativar-o-fast-boot-inicialização-rápida">Passo 12: Desativar o Fast Boot (Inicialização Rápida)</h3>
+
+<ol>
+  <li>Pressione <code class="language-plaintext highlighter-rouge">Windows + X</code></li>
+  <li>Clique em “Opções de Energia”</li>
+  <li>Clique em “Configurações de energia adicionais” (lado direito)</li>
+  <li>Clique em “Escolher a função dos botões de energia” (lado esquerdo)</li>
+  <li>Clique em “Alterar configurações não disponíveis no momento”</li>
+  <li><strong>Desmarque</strong> a caixa “Ativar inicialização rápida”</li>
+  <li>Clique em “Salvar alterações”</li>
+</ol>
+
+<h3 id="passo-13-acessar-a-biosuefi">Passo 13: Acessar a BIOS/UEFI</h3>
+
+<p>Agora vamos reiniciar o computador e entrar na BIOS. O método varia por fabricante:</p>
+
+<p><strong>Como entrar na BIOS:</strong></p>
+<ol>
+  <li>Clique em Iniciar → Energia → Reiniciar</li>
+  <li><strong>Durante a reinicialização</strong>, pressione repetidamente uma destas teclas (depende do fabricante):
+    <ul>
+      <li><strong>Dell:</strong> F2 ou F12</li>
+      <li><strong>HP:</strong> F10 ou Esc</li>
+      <li><strong>Lenovo:</strong> F2 ou F1</li>
+      <li><strong>Asus:</strong> F2 ou Delete</li>
+      <li><strong>Acer:</strong> F2 ou Delete</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Dica:</strong> Se não conseguir, pesquise no Google: “como entrar na BIOS [marca do seu computador]”</p>
+
+<h3 id="passo-14-desativar-o-secure-boot">Passo 14: Desativar o Secure Boot</h3>
+
+<p><strong>IMPORTANTE:</strong> A aparência da BIOS varia muito entre fabricantes. Procure por estas opções:</p>
+
+<ol>
+  <li>Procure uma aba ou menu chamado “Security” ou “Boot”</li>
+  <li>Encontre a opção “Secure Boot”</li>
+  <li>Mude de “Enabled” para “Disabled”</li>
+  <li>Pressione F10 para salvar e sair (ou procure a opção “Save and Exit”)</li>
+  <li>O computador vai reiniciar normalmente</li>
+</ol>
+
+<p><strong>O que você fez:</strong> Permitiu que o computador inicialize com outros sistemas operacionais além do Windows. ✓</p>
+
+<hr />
+
+<h2 id="parte-5-iniciando-pelo-pendrive">Parte 5: Iniciando pelo Pendrive</h2>
+
+<h3 id="passo-15-reiniciar-e-acessar-o-menu-de-boot">Passo 15: Reiniciar e acessar o menu de boot</h3>
+
+<ol>
+  <li>Com o pendrive ainda conectado, reinicie o computador</li>
+  <li>Durante a inicialização, pressione a tecla de Boot Menu:
+    <ul>
+      <li><strong>Dell:</strong> F12</li>
+      <li><strong>HP:</strong> F9 ou Esc</li>
+      <li><strong>Lenovo:</strong> F12</li>
+      <li><strong>Asus:</strong> F8 ou Esc</li>
+      <li><strong>Acer:</strong> F12</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> Um menu com opções de dispositivos para inicializar.</p>
+
+<h3 id="passo-16-selecionar-o-pendrive">Passo 16: Selecionar o pendrive</h3>
+
+<ol>
+  <li>Use as setas do teclado para selecionar seu pendrive USB</li>
+  <li>Pressione Enter</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> O logo do Ubuntu e uma tela de carregamento.</p>
+
+<p>Aguarde cerca de 1-2 minutos. Seja paciente, é normal demorar um pouco.</p>
+
+<hr />
+
+<h2 id="parte-6-experimentando-o-ubuntu-modo-live">Parte 6: Experimentando o Ubuntu (Modo Live)</h2>
+
+<h3 id="passo-17-escolher-o-idioma">Passo 17: Escolher o idioma</h3>
+
+<p><strong>O que você deve ver:</strong> Uma tela perguntando “Try Ubuntu” ou “Install Ubuntu”.</p>
+
+<ol>
+  <li>No lado esquerdo, selecione “Português do Brasil”</li>
+  <li>Clique em “Experimentar o Ubuntu”</li>
+</ol>
+
+<p><strong>O que acontece:</strong> O Ubuntu vai carregar sem instalar nada. Você pode testá-lo sem medo!</p>
+
+<h3 id="passo-18-explorar-o-ubuntu-opcional-mas-recomendado">Passo 18: Explorar o Ubuntu (opcional mas recomendado)</h3>
+
+<p>Parabéns! Você está usando o Ubuntu sem ter instalado nada. Aproveite para:</p>
+<ul>
+  <li>Abrir o navegador Firefox</li>
+  <li>Testar se o Wi-Fi funciona</li>
+  <li>Verificar se o som funciona</li>
+  <li>Explorar a interface</li>
+</ul>
+
+<p><strong>Tudo funcionando bem?</strong> Ótimo! Vamos prosseguir com a instalação.</p>
+
+<hr />
+
+<h2 id="parte-7-instalando-o-ubuntu">Parte 7: Instalando o Ubuntu</h2>
+
+<h3 id="passo-19-iniciar-o-instalador">Passo 19: Iniciar o instalador</h3>
+
+<p>Na área de trabalho do Ubuntu, clique duas vezes no ícone “Instalar Ubuntu”.</p>
+
+<h3 id="passo-20-selecionar-o-idioma">Passo 20: Selecionar o idioma</h3>
+
+<ol>
+  <li>Confirme “Português do Brasil”</li>
+  <li>Clique em “Continuar”</li>
+</ol>
+
+<h3 id="passo-21-escolher-o-layout-do-teclado">Passo 21: Escolher o layout do teclado</h3>
+
+<ol>
+  <li>Selecione “Portuguese (Brazil)”</li>
+  <li>Teste digitando na caixa de texto: <code class="language-plaintext highlighter-rouge">ç á ã é</code></li>
+  <li>Clique em “Continuar”</li>
+</ol>
+
+<h3 id="passo-22-configurar-atualizações-e-software">Passo 22: Configurar atualizações e software</h3>
+
+<p><strong>O que você deve ver:</strong> Duas opções de instalação.</p>
+
+<p>Recomendado para iniciantes:</p>
+<ul>
+  <li>Selecione “Instalação normal”</li>
+  <li><strong>Marque</strong> as caixas:
+    <ul>
+      <li>✓ Baixar atualizações enquanto instala</li>
+      <li>✓ Instalar software de terceiros (drivers Wi-Fi, placas gráficas)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Clique em “Continuar”.</p>
+
+<h3 id="passo-23-tipo-de-instalação-passo-crítico-️">Passo 23: Tipo de instalação (PASSO CRÍTICO ⚠️)</h3>
+
+<p><strong>Esta é a parte mais importante do tutorial. Leia com atenção!</strong></p>
+
+<p><strong>O que você deve ver:</strong> Opções sobre como instalar o Ubuntu.</p>
+
+<p><strong>ESCOLHA:</strong> “Instalar o Ubuntu ao lado do Windows Boot Manager”</p>
+
+<p><strong>NÃO ESCOLHA:</strong></p>
+<ul>
+  <li>❌ “Apagar disco e instalar o Ubuntu” (isso apaga o Windows!)</li>
+  <li>❌ “Outra opção” (apenas para usuários avançados)</li>
+</ul>
+
+<p><strong>O que você deve ver:</strong> Um gráfico mostrando Windows e um espaço para o Ubuntu.</p>
+
+<h3 id="passo-24-ajustar-o-tamanho-das-partições">Passo 24: Ajustar o tamanho das partições</h3>
+
+<ol>
+  <li>Você verá uma divisória que pode arrastar</li>
+  <li>Arraste para definir quanto espaço quer dar para cada sistema</li>
+  <li>O espaço que você liberou na Parte 1 deve estar disponível</li>
+</ol>
+
+<p>Clique em “Instalar Agora”.</p>
+
+<h3 id="passo-25-confirmar-as-alterações">Passo 25: Confirmar as alterações</h3>
+
+<p><strong>O que você deve ver:</strong> Uma janela mostrando as mudanças que serão feitas no disco.</p>
+
+<p>Revise cuidadosamente. Deve mostrar:</p>
+<ul>
+  <li>Partições do Windows intactas</li>
+  <li>Novas partições sendo criadas para o Ubuntu</li>
+</ul>
+
+<p>Clique em “Continuar”.</p>
+
+<hr />
+
+<h2 id="parte-8-configurações-finais">Parte 8: Configurações Finais</h2>
+
+<h3 id="passo-26-selecionar-fuso-horário">Passo 26: Selecionar fuso horário</h3>
+
+<ol>
+  <li>Clique no mapa próximo à sua localização ou digite “Sao Paulo”</li>
+  <li>Clique em “Continuar”</li>
+</ol>
+
+<h3 id="passo-27-criar-sua-conta">Passo 27: Criar sua conta</h3>
+
+<p>Preencha os campos:</p>
+
+<ol>
+  <li><strong>Seu nome:</strong> Digite seu nome completo</li>
+  <li><strong>Nome do computador:</strong> Um nome para identificar seu PC (ex: ubuntu-seunome)</li>
+  <li><strong>Nome de usuário:</strong> Seu login (ex: joao)</li>
+  <li><strong>Senha:</strong> Crie uma senha forte</li>
+  <li><strong>Confirmar senha:</strong> Digite a senha novamente</li>
+</ol>
+
+<p><strong>Escolha:</strong> “Solicitar minha senha para entrar”</p>
+
+<p>Clique em “Continuar”.</p>
+
+<h3 id="passo-28-aguardar-a-instalação">Passo 28: Aguardar a instalação</h3>
+
+<p><strong>O que você deve ver:</strong> Uma barra de progresso e slides mostrando recursos do Ubuntu.</p>
+
+<p><strong>Tempo de espera:</strong> 15-30 minutos (varia conforme a velocidade do computador)</p>
+
+<p>☕ Este é um bom momento para um café!</p>
+
+<h3 id="passo-29-concluir-a-instalação">Passo 29: Concluir a instalação</h3>
+
+<p>Quando a instalação terminar, você verá uma mensagem “Instalação concluída”.</p>
+
+<ol>
+  <li>Clique em “Reiniciar agora”</li>
+  <li>Quando aparecer “Please remove installation medium…”, <strong>retire o pendrive</strong></li>
+  <li>Pressione Enter</li>
+</ol>
+
+<p>O computador vai reiniciar.</p>
+
+<hr />
+
+<h2 id="parte-9-primeiro-boot-em-dual-boot">Parte 9: Primeiro Boot em Dual Boot</h2>
+
+<h3 id="passo-30-o-menu-do-grub">Passo 30: O menu do GRUB</h3>
+
+<p><strong>O que você deve ver:</strong> Uma tela preta/roxa com um menu escrito “GNU GRUB”.</p>
+
+<p><strong>Opções disponíveis:</strong></p>
+<ul>
+  <li>Ubuntu (será selecionado automaticamente)</li>
+  <li>Advanced options for Ubuntu</li>
+  <li>Windows Boot Manager</li>
+</ul>
+
+<p><strong>Para usar o Ubuntu:</strong> Apenas aguarde 10 segundos ou pressione Enter</p>
+
+<p><strong>Para usar o Windows:</strong> Use as setas para selecionar “Windows Boot Manager” e pressione Enter</p>
+
+<h3 id="passo-31-fazer-login-no-ubuntu">Passo 31: Fazer login no Ubuntu</h3>
+
+<ol>
+  <li>Clique no seu nome de usuário</li>
+  <li>Digite sua senha</li>
+  <li>Pressione Enter</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> A área de trabalho do Ubuntu!</p>
+
+<p>🎉 <strong>Parabéns! Você instalou o Ubuntu em dual boot com sucesso!</strong> ✓</p>
+
+<hr />
+
+<h2 id="parte-10-primeiras-configurações-no-ubuntu">Parte 10: Primeiras Configurações no Ubuntu</h2>
+
+<p>Agora que o Ubuntu está instalado, vamos fazer algumas configurações iniciais.</p>
+
+<h3 id="passo-32-conectar-ao-wi-fi-se-necessário">Passo 32: Conectar ao Wi-Fi (se necessário)</h3>
+
+<ol>
+  <li>Clique no ícone de rede no canto superior direito</li>
+  <li>Selecione sua rede Wi-Fi</li>
+  <li>Digite a senha</li>
+  <li>Clique em “Conectar”</li>
+</ol>
+
+<h3 id="passo-33-atualizar-o-sistema">Passo 33: Atualizar o sistema</h3>
+
+<p>Abra o Terminal pressionando <code class="language-plaintext highlighter-rouge">Ctrl + Alt + T</code> e digite:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt upgrade <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p>Digite sua senha quando solicitado.</p>
+
+<p><strong>O que está acontecendo:</strong> O Ubuntu está baixando e instalando as atualizações mais recentes.</p>
+
+<p><strong>Tempo de espera:</strong> 5-15 minutos na primeira vez.</p>
+
+<p>Quando terminar, digite:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reboot
+</code></pre></div></div>
+
+<p>O sistema vai reiniciar.</p>
+
+<h3 id="passo-34-instalar-atualizações-adicionais-se-houver">Passo 34: Instalar atualizações adicionais (se houver)</h3>
+
+<p>Após reiniciar e fazer login:</p>
+
+<ol>
+  <li>Se aparecer uma notificação sobre atualizações, clique nela</li>
+  <li>Clique em “Instalar agora”</li>
+  <li>Digite sua senha</li>
+  <li>Aguarde concluir</li>
+</ol>
+
+<h3 id="passo-35-explorar-o-ubuntu">Passo 35: Explorar o Ubuntu</h3>
+
+<p>Parabéns! Agora você pode:</p>
+
+<p><strong>Experimentar os aplicativos pré-instalados:</strong></p>
+<ul>
+  <li>Firefox (navegador)</li>
+  <li>LibreOffice (editor de textos, planilhas)</li>
+  <li>Arquivos (gerenciador de arquivos)</li>
+  <li>Ubuntu Software (loja de aplicativos)</li>
+</ul>
+
+<p><strong>Instalar novos programas:</strong></p>
+<ol>
+  <li>Abra “Ubuntu Software”</li>
+  <li>Procure por aplicativos</li>
+  <li>Clique em “Instalar”</li>
+</ol>
+
+<hr />
+
+<h2 id="-parabéns">🎉 Parabéns!</h2>
+
+<p>Você completou a instalação do Ubuntu em dual boot! Agora você tem:</p>
+
+<p>✓ Windows e Ubuntu no mesmo computador<br />
+✓ Capacidade de escolher qual sistema usar na inicialização<br />
+✓ Ubuntu totalmente configurado e atualizado<br />
+✓ Conhecimento básico sobre o processo de instalação</p>
+
+<hr />
+
+<h2 id="perguntas-frequentes">Perguntas Frequentes</h2>
+
+<h3 id="como-escolher-qual-sistema-usar">Como escolher qual sistema usar?</h3>
+
+<p>Toda vez que ligar o computador, o menu GRUB aparece. Use as setas para escolher e pressione Enter.</p>
+
+<h3 id="e-se-eu-quiser-que-o-windows-seja-o-padrão">E se eu quiser que o Windows seja o padrão?</h3>
+
+<p>Por padrão, o Ubuntu é selecionado automaticamente. Para mudar isso, você precisará editar as configurações do GRUB (um tutorial mais avançado).</p>
+
+<h3 id="como-acessar-meus-arquivos-do-windows-no-ubuntu">Como acessar meus arquivos do Windows no Ubuntu?</h3>
+
+<ol>
+  <li>Abra “Arquivos”</li>
+  <li>No painel esquerdo, você verá o disco do Windows</li>
+  <li>Clique nele para acessar seus arquivos</li>
+</ol>
+
+<h3 id="posso-desinstalar-o-ubuntu-depois">Posso desinstalar o Ubuntu depois?</h3>
+
+<p>Sim! Mas isso requer outro tutorial. Você precisará remover as partições do Ubuntu e restaurar o bootloader do Windows.</p>
+
+<h3 id="o-ubuntu-é-mais-rápido-que-o-windows">O Ubuntu é mais rápido que o Windows?</h3>
+
+<p>Geralmente sim, especialmente em computadores mais antigos. O Ubuntu usa menos recursos de memória e processamento.</p>
+
+<h3 id="preciso-de-antivírus-no-ubuntu">Preciso de antivírus no Ubuntu?</h3>
+
+<p>Não necessariamente. O Ubuntu é muito menos vulnerável a vírus que o Windows, especialmente se você instalar software apenas das fontes oficiais.</p>
+
+<hr />
+
+<h2 id="comandos-úteis-para-iniciantes">Comandos Úteis para Iniciantes</h2>
+
+<p>Aqui estão alguns comandos do Terminal que você vai usar frequentemente:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Atualizar lista de pacotes</span>
+<span class="nb">sudo </span>apt update
+
+<span class="c"># Atualizar o sistema</span>
+<span class="nb">sudo </span>apt upgrade
+
+<span class="c"># Instalar um programa</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>nome-do-programa
+
+<span class="c"># Remover um programa</span>
+<span class="nb">sudo </span>apt remove nome-do-programa
+
+<span class="c"># Limpar arquivos desnecessários</span>
+<span class="nb">sudo </span>apt autoremove
+
+<span class="c"># Ver informações do sistema</span>
+neofetch
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="próximos-passos">Próximos Passos</h2>
+
+<p>Agora que você tem o Ubuntu instalado, pode:</p>
+
+<ol>
+  <li><strong>Personalizar a aparência</strong> em Configurações → Aparência</li>
+  <li><strong>Instalar seus programas favoritos</strong> via Ubuntu Software</li>
+  <li><strong>Aprender comandos do Terminal</strong> (muito útil!)</li>
+  <li><strong>Explorar extensões</strong> para a interface GNOME</li>
+  <li><strong>Configurar atalhos de teclado</strong> personalizados</li>
+</ol>
+
+<h2 id="recursos-para-aprender-mais">Recursos para Aprender Mais</h2>
+
+<ul>
+  <li><a href="https://help.ubuntu.com">Documentação oficial do Ubuntu</a></li>
+  <li><a href="https://ubuntu-br.org">Ubuntu Brasil - Comunidade</a></li>
+  <li><a href="https://askubuntu.com">Ask Ubuntu - Fórum de perguntas</a></li>
+</ul>
+
+<hr />
+
+<p><strong>Bem-vindo ao mundo do código aberto!</strong> Você deu um grande passo ao instalar Linux. Com o tempo, você vai descobrir um mundo novo de possibilidades e aprender muito sobre como os computadores realmente funcionam.</p>
+
+<p>Continue explorando, experimentando e, acima de tudo, divirta-se! 🚀</p>
+
+  </div>
+
+  <div class="lecture-footer">
+    <a href="/materials/" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar aos Materiais</a>
+  </div>
+</div>
+
+<style>
+.lecture-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.lecture-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #FF8E53 0%, #FF6B6B 100%);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.lecture-hero-content {
+  flex: 1;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.lecture-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+}
+
+.lecture-tldr {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.lecture-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.lecture-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lecture-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.lecture-link-btn:hover {
+  background: rgba(255,255,255,0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.lecture-thumbnail {
+  flex-shrink: 0;
+}
+
+.lecture-thumbnail img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.lecture-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e1e1e1;
+  line-height: 1.7;
+  color: #333;
+}
+
+.lecture-content h1,
+.lecture-content h2,
+.lecture-content h3,
+.lecture-content h4 {
+  color: #1f1f1f;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.lecture-content h1:first-child,
+.lecture-content h2:first-child {
+  margin-top: 0;
+}
+
+.lecture-content h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #FF6B6B;
+}
+
+.lecture-content h3 {
+  font-size: 1.25rem;
+  color: #FF6B6B;
+}
+
+.lecture-content p {
+  margin-bottom: 1rem;
+}
+
+.lecture-content ul,
+.lecture-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.lecture-content li {
+  margin-bottom: 0.5rem;
+}
+
+.lecture-content pre {
+  background: #1f1f1f;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.lecture-content code {
+  background: #f5f5f5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #FF6B6B;
+}
+
+.lecture-content pre code {
+  background: transparent;
+  padding: 0;
+  color: #f8f8f2;
+}
+
+.lecture-content a {
+  color: #FF6B6B;
+  text-decoration: none;
+}
+
+.lecture-content a:hover {
+  text-decoration: underline;
+}
+
+.lecture-content hr {
+  border: none;
+  border-top: 2px solid #e1e1e1;
+  margin: 2rem 0;
+}
+
+.lecture-content blockquote {
+  border-left: 4px solid #FF6B6B;
+  margin: 1rem 0;
+  padding: 1rem 1.5rem;
+  background: #fff5f5;
+  border-radius: 0 8px 8px 0;
+}
+
+.lecture-content strong {
+  color: #1f1f1f;
+}
+
+.lecture-footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e1e1e1;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #FF6B6B;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background: #ff5252;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .lecture-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .lecture-title {
+    font-size: 1.5rem;
+  }
+  
+  .lecture-tldr {
+    font-size: 1rem;
+  }
+  
+  .lecture-meta {
+    justify-content: center;
+  }
+  
+  .lecture-thumbnail img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .lecture-content {
+    padding: 1.5rem;
+  }
+  
+  .lecture-content h2 {
+    font-size: 1.3rem;
+  }
+}
+</style>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      
+      <!-- Navigation Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-sitemap"></i> Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="/"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="/planoensino/"><i class="fas fa-file-alt"></i> Plano de Ensino</a></li>
+          <li><a href="/materials/"><i class="fas fa-book"></i> Materiais</a></li>
+          <li><a href="/slides/"><i class="fas fa-chalkboard-teacher"></i> Slides</a></li>
+          <li><a href="/posts/"><i class="fas fa-folder-open"></i> Projetos</a></li>
+        </ul>
+      </div>
+      
+      <!-- Resources Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-link"></i> Recursos</h3>
+        <ul class="footer-links">
+          <li><a href="https://github.com/unb-mds" target="_blank"><i class="fab fa-github"></i> GitHub MDS</a></li>
+          <li><a href="https://t.me/c/2677031160/1" target="_blank"><i class="fab fa-telegram"></i> Telegram</a></li>
+          <li><a href="https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw/videos" target="_blank"><i class="fab fa-youtube"></i> Canal YouTube</a></li>
+          <li><a href="https://scrumguides.org" target="_blank"><i class="fas fa-book-open"></i> Scrum Guide</a></li>
+          <li><a href="https://engsoftmoderna.info" target="_blank"><i class="fas fa-graduation-cap"></i> Eng. Software Moderna</a></li>
+        </ul>
+      </div>
+      
+      <!-- Academic Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-university"></i> Acadêmico</h3>
+        <ul class="footer-links">
+          <li><a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Critérios de Avaliação</a></li>
+          <li><a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md" target="_blank"><i class="fas fa-tasks"></i> Roteiro de Entregas</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing" target="_blank"><i class="fas fa-users"></i> Grupos e Temas</a></li>
+          <li><a href="http://www.carlarocha.org" target="_blank"><i class="fas fa-user"></i> Profa. Carla Rocha</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact & Social Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-envelope"></i> Contato</h3>
+        <div class="footer-links">
+          <p class="contact-info"><i class="fas fa-envelope"></i> caguiar@unb.br</p>
+          <p class="contact-info"><i class="fas fa-map-marker-alt"></i> UnB - FCTE - Lab Livre</p>
+          <p class="contact-info"><a href="https://lablivre.unb.br/" target="_blank"><i class="fas fa-globe"></i> lablivre.unb.br</a></p>
+          <p class="contact-info"><a href="https://carlarocha.org" target="_blank"><i class="fas fa-user"></i> carlarocha.org</a></p>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://github.com/unb-mds" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/lab.livre/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://t.me/c/2677031160/1" target="_blank" title="Telegram">
+            <i class="fab fa-telegram"></i>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p><strong>Métodos de Desenvolvimento de Software - UnB/FCTE</strong></p>
+      <p>© 2025 Lab Livre - Laboratório de Competência em Software Livre</p>
+      <p>Desenvolvido com ❤️ para a comunidade acadêmica</p>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Tutorial Inicial de GitHub - MDS / 4 semestre </title>
+  <meta name="description" content="Tutorial: Git e GitHub no Ubuntu - Sua Primeira JornadaBem-vindo! Neste tutorial, você vai configurar sua máquina Ubuntu para trabalhar com Git e GitHub, e c...">
+  
+  <link rel="stylesheet" href="/_css/main.css?v=1767119684">
+  <link rel="canonical" href="http://0.0.0.0:4000/lectures/Lec5/">
+  <link rel="alternate" type="application/rss+xml" title="MDS / 4 semestre - UnB" href="http://0.0.0.0:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">UnB</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="MDS / 4 semestre - UnB"><b>MDS</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">4 semestre</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/aulas/">
+                <i class="fas fa-chalkboard-teacher"></i> Aulas
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Projetos
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="https://github.com/unb-mds">
+                <i class="fab fa-github"></i> Repositórios
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="lecture-page">
+  <div class="lecture-hero">
+    <div class="lecture-hero-content">
+      <a href="/materials/" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Materiais</a>
+      <h1 class="lecture-title">Tutorial Inicial de GitHub</h1>
+      <p class="lecture-tldr">Guia completo passo a passo para configurar Git e GitHub no Ubuntu.</p>
+      <div class="lecture-meta">
+        
+        <span class="meta-item"><i class="fas fa-calendar"></i> 10/08/2025</span>
+        
+        
+        <div class="lecture-links">
+          
+          <a href="https://docs.github.com/pt/get-started" target="_blank" class="lecture-link-btn">
+            <i class="fas fa-external-link-alt"></i> Documentação Oficial
+          </a>
+          
+          <a href="https://git-scm.com/book/pt-br/v2" target="_blank" class="lecture-link-btn">
+            <i class="fas fa-external-link-alt"></i> Pro Git Book
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="lecture-thumbnail">
+      <img src="/static_files/presentations/gpp_mds.png" alt="Tutorial Inicial de GitHub">
+    </div>
+    
+  </div>
+
+  <div class="lecture-content">
+    <h1 id="tutorial-git-e-github-no-ubuntu---sua-primeira-jornada">Tutorial: Git e GitHub no Ubuntu - Sua Primeira Jornada</h1>
+
+<p>Bem-vindo! Neste tutorial, você vai configurar sua máquina Ubuntu para trabalhar com Git e GitHub, e criar seu primeiro projeto versionado. Ao final, você terá um repositório funcionando e saberá usar os comandos essenciais do Git.</p>
+
+<p><strong>O que você vai criar:</strong> Um projeto simples chamado “meu-primeiro-repo” que você vai versionar localmente e enviar para o GitHub.</p>
+
+<p><strong>Tempo estimado:</strong> 30-40 minutos</p>
+
+<hr />
+
+<h2 id="parte-1-preparando-seu-ambiente-ubuntu">Parte 1: Preparando Seu Ambiente Ubuntu</h2>
+
+<h3 id="passo-1-verificar-se-o-git-está-instalado">Passo 1: Verificar se o Git está instalado</h3>
+
+<p>Abra o terminal (pressione <code class="language-plaintext highlighter-rouge">Ctrl + Alt + T</code>) e digite:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Algo como <code class="language-plaintext highlighter-rouge">git version 2.34.1</code> (o número pode variar).</p>
+
+<p>Se aparecer uma mensagem de erro dizendo que o comando não foi encontrado, vamos instalar o Git no próximo passo.</p>
+
+<h3 id="passo-2-instalar-o-git-se-necessário">Passo 2: Instalar o Git (se necessário)</h3>
+
+<p>Se o Git não estiver instalado, execute estes comandos:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>git <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p>Digite sua senha quando solicitado. Aguarde a instalação concluir.</p>
+
+<p><strong>Verifique novamente:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>Agora você deve ver a versão do Git instalada. ✓</p>
+
+<hr />
+
+<h2 id="parte-2-configurando-sua-identidade-no-git">Parte 2: Configurando Sua Identidade no Git</h2>
+
+<p>Antes de usar o Git, precisamos dizer quem você é. Isso é importante porque cada modificação que você fizer ficará registrada com seu nome.</p>
+
+<h3 id="passo-3-configurar-seu-nome">Passo 3: Configurar seu nome</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.name <span class="s2">"Seu Nome Completo"</span>
+</code></pre></div></div>
+
+<p><em>Substitua “Seu Nome Completo” pelo seu nome real, mantendo as aspas.</em></p>
+
+<h3 id="passo-4-configurar-seu-email">Passo 4: Configurar seu email</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.email <span class="s2">"seu.email@exemplo.com"</span>
+</code></pre></div></div>
+
+<p><em>Use o mesmo email que você vai usar no GitHub.</em></p>
+
+<h3 id="passo-5-ativar-cores-no-terminal">Passo 5: Ativar cores no terminal</h3>
+
+<p>Isso deixa os comandos Git mais fáceis de ler:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> color.ui auto
+</code></pre></div></div>
+
+<h3 id="passo-6-verificar-suas-configurações">Passo 6: Verificar suas configurações</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--list</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Uma lista com suas configurações, incluindo seu nome e email.</p>
+
+<hr />
+
+<h2 id="parte-3-criando-sua-conta-no-github">Parte 3: Criando Sua Conta no GitHub</h2>
+
+<h3 id="passo-7-criar-conta-no-github">Passo 7: Criar conta no GitHub</h3>
+
+<ol>
+  <li>Abra seu navegador e vá para <a href="https://github.com">github.com</a></li>
+  <li>Clique em “Sign up” (Criar conta)</li>
+  <li>Siga as instruções usando o <strong>mesmo email</strong> que você configurou no Git</li>
+  <li>Verifique seu email e confirme a conta</li>
+</ol>
+
+<h3 id="passo-8-configurar-autenticação-ssh-recomendado">Passo 8: Configurar autenticação SSH (recomendado)</h3>
+
+<p>A autenticação SSH é mais segura e prática. Vamos criar uma chave SSH:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> ed25519 <span class="nt">-C</span> <span class="s2">"seu.email@exemplo.com"</span>
+</code></pre></div></div>
+
+<p><strong>O que vai acontecer:</strong> O terminal vai perguntar onde salvar a chave. Apenas pressione <code class="language-plaintext highlighter-rouge">Enter</code> para aceitar o local padrão.</p>
+
+<p>Quando pedir uma senha (passphrase), você pode:</p>
+<ul>
+  <li>Pressionar <code class="language-plaintext highlighter-rouge">Enter</code> duas vezes para não usar senha (mais fácil)</li>
+  <li>Ou criar uma senha para mais segurança</li>
+</ul>
+
+<h3 id="passo-9-copiar-sua-chave-ssh-pública">Passo 9: Copiar sua chave SSH pública</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> ~/.ssh/id_ed25519.pub
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Uma linha longa começando com <code class="language-plaintext highlighter-rouge">ssh-ed25519</code>. Selecione TODO o texto e copie (Ctrl+Shift+C).</p>
+
+<h3 id="passo-10-adicionar-a-chave-no-github">Passo 10: Adicionar a chave no GitHub</h3>
+
+<ol>
+  <li>No GitHub, clique na sua foto de perfil (canto superior direito) → Settings</li>
+  <li>No menu lateral, clique em “SSH and GPG keys”</li>
+  <li>Clique no botão verde “New SSH key”</li>
+  <li>Em “Title”, escreva algo como “Meu Ubuntu”</li>
+  <li>Em “Key”, cole a chave que você copiou</li>
+  <li>Clique em “Add SSH key”</li>
+</ol>
+
+<h3 id="passo-11-testar-a-conexão">Passo 11: Testar a conexão</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-T</span> git@github.com
+</code></pre></div></div>
+
+<p>Digite <code class="language-plaintext highlighter-rouge">yes</code> quando perguntar se quer continuar conectando.</p>
+
+<p><strong>O que você deve ver:</strong> Uma mensagem como “Hi seu-usuario! You’ve successfully authenticated…”</p>
+
+<p>Parabéns! Você está conectado ao GitHub. ✓</p>
+
+<hr />
+
+<h2 id="parte-4-criando-seu-primeiro-repositório-local">Parte 4: Criando Seu Primeiro Repositório Local</h2>
+
+<p>Agora vamos criar um projeto e usar o Git para versioná-lo.</p>
+
+<h3 id="passo-12-criar-um-diretório-para-seu-projeto">Passo 12: Criar um diretório para seu projeto</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> ~/meu-primeiro-repo
+<span class="nb">cd</span> ~/meu-primeiro-repo
+</code></pre></div></div>
+
+<p>Você acabou de criar uma pasta e entrou nela.</p>
+
+<h3 id="passo-13-inicializar-o-repositório-git">Passo 13: Inicializar o repositório Git</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> “Initialized empty Git repository…”</p>
+
+<p>Isso transforma sua pasta em um repositório Git. ✓</p>
+
+<h3 id="passo-14-criar-seu-primeiro-arquivo">Passo 14: Criar seu primeiro arquivo</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"# Meu Primeiro Repositório"</span> <span class="o">&gt;</span> README.md
+</code></pre></div></div>
+
+<p>Você acabou de criar um arquivo chamado README.md com um título.</p>
+
+<h3 id="passo-15-ver-o-status-do-repositório">Passo 15: Ver o status do repositório</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> O arquivo README.md aparece em vermelho como “Untracked files” (arquivos não rastreados).</p>
+
+<p>Isso significa que o Git vê o arquivo, mas ainda não está acompanhando as mudanças dele.</p>
+
+<hr />
+
+<h2 id="parte-5-fazendo-seu-primeiro-commit">Parte 5: Fazendo Seu Primeiro Commit</h2>
+
+<p>Um “commit” é como tirar uma foto do estado atual do seu projeto. É um ponto na história que você pode voltar depois.</p>
+
+<h3 id="passo-16-adicionar-o-arquivo-ao-stage">Passo 16: Adicionar o arquivo ao stage</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add README.md
+</code></pre></div></div>
+
+<p>Agora o arquivo está “preparado” (staged) para ser commitado.</p>
+
+<h3 id="passo-17-verificar-novamente-o-status">Passo 17: Verificar novamente o status</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p><strong>O que mudou:</strong> Agora o arquivo aparece em verde como “Changes to be committed”.</p>
+
+<h3 id="passo-18-fazer-o-commit">Passo 18: Fazer o commit</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Adiciona README inicial"</span>
+</code></pre></div></div>
+
+<p>A mensagem entre aspas descreve o que você fez. Seja sempre descritivo!</p>
+
+<p><strong>O que você deve ver:</strong> Algo como “1 file changed, 1 insertion(+)”.</p>
+
+<h3 id="passo-19-ver-o-histórico">Passo 19: Ver o histórico</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Seu commit aparece com seu nome, email, data e mensagem.</p>
+
+<p>Pressione <code class="language-plaintext highlighter-rouge">q</code> para sair da visualização do log.</p>
+
+<hr />
+
+<h2 id="parte-6-fazendo-mais-mudanças">Parte 6: Fazendo Mais Mudanças</h2>
+
+<p>Vamos praticar o ciclo completo: modificar → adicionar → commitar.</p>
+
+<h3 id="passo-20-adicionar-mais-conteúdo-ao-readme">Passo 20: Adicionar mais conteúdo ao README</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"Este é meu primeiro projeto com Git!"</span> <span class="o">&gt;&gt;</span> README.md
+<span class="nb">echo</span> <span class="s2">"Estou aprendendo controle de versão."</span> <span class="o">&gt;&gt;</span> README.md
+</code></pre></div></div>
+
+<h3 id="passo-21-ver-as-diferenças">Passo 21: Ver as diferenças</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> As linhas que você adicionou aparecem em verde com um <code class="language-plaintext highlighter-rouge">+</code> na frente.</p>
+
+<p>Pressione <code class="language-plaintext highlighter-rouge">q</code> para sair.</p>
+
+<h3 id="passo-22-adicionar-e-commitar-de-uma-vez">Passo 22: Adicionar e commitar de uma vez</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add README.md
+git commit <span class="nt">-m</span> <span class="s2">"Adiciona descrição ao README"</span>
+</code></pre></div></div>
+
+<h3 id="passo-23-ver-o-histórico-novamente">Passo 23: Ver o histórico novamente</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log
+</code></pre></div></div>
+
+<p>Agora você tem 2 commits! Veja como sua história está crescendo. ✓</p>
+
+<hr />
+
+<h2 id="parte-7-enviando-para-o-github">Parte 7: Enviando para o GitHub</h2>
+
+<p>Agora vamos colocar seu projeto na nuvem, no GitHub.</p>
+
+<h3 id="passo-24-criar-um-repositório-no-github">Passo 24: Criar um repositório no GitHub</h3>
+
+<ol>
+  <li>Vá para <a href="https://github.com">github.com</a> e faça login</li>
+  <li>Clique no botão <code class="language-plaintext highlighter-rouge">+</code> (canto superior direito) → “New repository”</li>
+  <li>Nome do repositório: <code class="language-plaintext highlighter-rouge">meu-primeiro-repo</code></li>
+  <li>Deixe como <strong>Public</strong></li>
+  <li><strong>NÃO</strong> marque “Initialize this repository with a README”</li>
+  <li>Clique em “Create repository”</li>
+</ol>
+
+<h3 id="passo-25-conectar-seu-repositório-local-ao-github">Passo 25: Conectar seu repositório local ao GitHub</h3>
+
+<p>O GitHub vai mostrar alguns comandos. Você precisa do comando que começa com <code class="language-plaintext highlighter-rouge">git remote add origin</code>. Copie sua versão, que terá seu nome de usuário, e execute:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin git@github.com:SEU-USUARIO/meu-primeiro-repo.git
+</code></pre></div></div>
+
+<p><em>Substitua SEU-USUARIO pelo seu nome de usuário do GitHub.</em></p>
+
+<h3 id="passo-26-enviar-seus-commits-para-o-github">Passo 26: Enviar seus commits para o GitHub</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push <span class="nt">-u</span> origin main
+</code></pre></div></div>
+
+<p>ou, se seu branch se chamar master:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push <span class="nt">-u</span> origin master
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Uma barra de progresso e mensagem de sucesso.</p>
+
+<h3 id="passo-27-verificar-no-navegador">Passo 27: Verificar no navegador</h3>
+
+<p>Atualize a página do seu repositório no GitHub. Você deve ver seu README.md e todo o conteúdo lá!</p>
+
+<p>Parabéns! Seu código está na nuvem. ✓</p>
+
+<hr />
+
+<h2 id="parte-8-trabalhando-com-branches">Parte 8: Trabalhando com Branches</h2>
+
+<p>Branches (ramificações) permitem trabalhar em novas funcionalidades sem afetar o código principal.</p>
+
+<h3 id="passo-28-criar-uma-nova-branch">Passo 28: Criar uma nova branch</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch nova-funcionalidade
+</code></pre></div></div>
+
+<h3 id="passo-29-ver-todas-as-branches">Passo 29: Ver todas as branches</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Duas branches, com um <code class="language-plaintext highlighter-rouge">*</code> ao lado da branch atual (main ou master).</p>
+
+<h3 id="passo-30-mudar-para-a-nova-branch">Passo 30: Mudar para a nova branch</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout nova-funcionalidade
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> “Switched to branch ‘nova-funcionalidade’”.</p>
+
+<h3 id="passo-31-fazer-mudanças-na-nova-branch">Passo 31: Fazer mudanças na nova branch</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"## Nova Funcionalidade"</span> <span class="o">&gt;&gt;</span> README.md
+<span class="nb">echo</span> <span class="s2">"Trabalhando em algo novo!"</span> <span class="o">&gt;&gt;</span> README.md
+</code></pre></div></div>
+
+<h3 id="passo-32-commitar-as-mudanças">Passo 32: Commitar as mudanças</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add README.md
+git commit <span class="nt">-m</span> <span class="s2">"Adiciona seção de nova funcionalidade"</span>
+</code></pre></div></div>
+
+<h3 id="passo-33-voltar-para-a-branch-principal">Passo 33: Voltar para a branch principal</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout main
+</code></pre></div></div>
+
+<p>ou:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
+</code></pre></div></div>
+
+<h3 id="passo-34-ver-o-conteúdo-do-readme">Passo 34: Ver o conteúdo do README</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>README.md
+</code></pre></div></div>
+
+<p><strong>O que você deve notar:</strong> As linhas sobre “Nova Funcionalidade” NÃO aparecem! Isso porque elas só existem na outra branch.</p>
+
+<h3 id="passo-35-fazer-merge-da-nova-funcionalidade">Passo 35: Fazer merge da nova funcionalidade</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git merge nova-funcionalidade
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> “Updating…” e uma mensagem de sucesso.</p>
+
+<h3 id="passo-36-verificar-o-readme-novamente">Passo 36: Verificar o README novamente</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>README.md
+</code></pre></div></div>
+
+<p>Agora as linhas da nova funcionalidade aparecem! O merge trouxe as mudanças. ✓</p>
+
+<h3 id="passo-37-enviar-as-atualizações-para-o-github">Passo 37: Enviar as atualizações para o GitHub</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin main
+</code></pre></div></div>
+
+<p>ou:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin master
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="parte-9-comandos-essenciais-para-o-dia-a-dia">Parte 9: Comandos Essenciais para o Dia a Dia</h2>
+
+<p>Agora que você fez o ciclo completo, aqui estão os comandos que você vai usar constantemente:</p>
+
+<h3 id="ver-o-que-mudou">Ver o que mudou</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>Use sempre que quiser saber o estado do seu repositório.</p>
+
+<h3 id="adicionar-arquivos-específicos">Adicionar arquivos específicos</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add arquivo.txt
+</code></pre></div></div>
+
+<h3 id="adicionar-todos-os-arquivos-modificados">Adicionar todos os arquivos modificados</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+</code></pre></div></div>
+
+<h3 id="ver-diferenças-antes-de-commitar">Ver diferenças antes de commitar</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff
+</code></pre></div></div>
+
+<p>Ver diferenças do que já está no stage:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="nt">--staged</span>
+</code></pre></div></div>
+
+<h3 id="remover-arquivo-do-stage-desfazer-git-add">Remover arquivo do stage (desfazer git add)</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset arquivo.txt
+</code></pre></div></div>
+
+<p>O arquivo volta para o estado “modified” mas não perde as mudanças.</p>
+
+<h3 id="ver-histórico-resumido">Ver histórico resumido</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log <span class="nt">--oneline</span>
+</code></pre></div></div>
+
+<h3 id="baixar-atualizações-do-github">Baixar atualizações do GitHub</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin main
+</code></pre></div></div>
+
+<p>Isso busca e mescla mudanças que possam ter sido feitas no GitHub.</p>
+
+<hr />
+
+<h2 id="parte-10-praticando-o-fluxo-completo">Parte 10: Praticando o Fluxo Completo</h2>
+
+<p>Vamos repetir o ciclo completo uma vez para fixar:</p>
+
+<h3 id="passo-38-criar-um-novo-arquivo">Passo 38: Criar um novo arquivo</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"print('Olá, Git!')"</span> <span class="o">&gt;</span> ola.py
+</code></pre></div></div>
+
+<h3 id="passo-39-ver-o-status">Passo 39: Ver o status</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>O arquivo aparece como untracked.</p>
+
+<h3 id="passo-40-adicionar-ao-stage">Passo 40: Adicionar ao stage</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add ola.py
+</code></pre></div></div>
+
+<h3 id="passo-41-ver-o-status-novamente">Passo 41: Ver o status novamente</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>Agora está pronto para commit.</p>
+
+<h3 id="passo-42-fazer-o-commit">Passo 42: Fazer o commit</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Adiciona script Python de saudação"</span>
+</code></pre></div></div>
+
+<h3 id="passo-43-enviar-para-o-github">Passo 43: Enviar para o GitHub</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin main
+</code></pre></div></div>
+
+<h3 id="passo-44-verificar-no-github">Passo 44: Verificar no GitHub</h3>
+
+<p>Abra seu repositório no navegador e veja o novo arquivo lá!</p>
+
+<hr />
+
+<h2 id="-parabéns">🎉 Parabéns!</h2>
+
+<p>Você completou seu primeiro tutorial de Git e GitHub! Agora você sabe:</p>
+
+<p>✓ Instalar e configurar o Git no Ubuntu<br />
+✓ Conectar sua máquina ao GitHub via SSH<br />
+✓ Criar repositórios locais e remotos<br />
+✓ Fazer commits e acompanhar mudanças<br />
+✓ Trabalhar com branches<br />
+✓ Fazer merge de código<br />
+✓ Enviar e receber código do GitHub</p>
+
+<h2 id="próximos-passos">Próximos Passos</h2>
+
+<p>Agora que você domina o básico, pode:</p>
+
+<ol>
+  <li><strong>Criar mais repositórios</strong> para seus projetos pessoais</li>
+  <li><strong>Explorar repositórios públicos</strong> no GitHub para ver código de outros desenvolvedores</li>
+  <li><strong>Praticar o fluxo diário</strong>: modificar → adicionar → commitar → enviar</li>
+  <li><strong>Aprender sobre .gitignore</strong> para ignorar arquivos que não devem ser versionados</li>
+  <li><strong>Explorar o GitHub Desktop</strong> se preferir uma interface gráfica</li>
+</ol>
+
+<h2 id="comandos-de-referência-rápida">Comandos de Referência Rápida</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ver status</span>
+git status
+
+<span class="c"># Adicionar arquivo</span>
+git add arquivo.txt
+
+<span class="c"># Adicionar todos</span>
+git add <span class="nb">.</span>
+
+<span class="c"># Commitar</span>
+git commit <span class="nt">-m</span> <span class="s2">"mensagem descritiva"</span>
+
+<span class="c"># Enviar para GitHub</span>
+git push origin main
+
+<span class="c"># Receber do GitHub</span>
+git pull origin main
+
+<span class="c"># Ver histórico</span>
+git log
+
+<span class="c"># Criar branch</span>
+git branch nome-branch
+
+<span class="c"># Mudar de branch</span>
+git checkout nome-branch
+
+<span class="c"># Fazer merge</span>
+git merge nome-branch
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>Dúvidas?</strong> Isso é normal! O Git tem muitos comandos, mas com a prática você vai memorizando os mais usados. Continue praticando criando novos projetos e fazendo commits regularmente.</p>
+
+  </div>
+
+  <div class="lecture-footer">
+    <a href="/materials/" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar aos Materiais</a>
+  </div>
+</div>
+
+<style>
+.lecture-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.lecture-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #FF8E53 0%, #FF6B6B 100%);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.lecture-hero-content {
+  flex: 1;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.lecture-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+}
+
+.lecture-tldr {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.lecture-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.lecture-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lecture-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.lecture-link-btn:hover {
+  background: rgba(255,255,255,0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.lecture-thumbnail {
+  flex-shrink: 0;
+}
+
+.lecture-thumbnail img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.lecture-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e1e1e1;
+  line-height: 1.7;
+  color: #333;
+}
+
+.lecture-content h1,
+.lecture-content h2,
+.lecture-content h3,
+.lecture-content h4 {
+  color: #1f1f1f;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.lecture-content h1:first-child,
+.lecture-content h2:first-child {
+  margin-top: 0;
+}
+
+.lecture-content h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #FF6B6B;
+}
+
+.lecture-content h3 {
+  font-size: 1.25rem;
+  color: #FF6B6B;
+}
+
+.lecture-content p {
+  margin-bottom: 1rem;
+}
+
+.lecture-content ul,
+.lecture-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.lecture-content li {
+  margin-bottom: 0.5rem;
+}
+
+.lecture-content pre {
+  background: #1f1f1f;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.lecture-content code {
+  background: #f5f5f5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #FF6B6B;
+}
+
+.lecture-content pre code {
+  background: transparent;
+  padding: 0;
+  color: #f8f8f2;
+}
+
+.lecture-content a {
+  color: #FF6B6B;
+  text-decoration: none;
+}
+
+.lecture-content a:hover {
+  text-decoration: underline;
+}
+
+.lecture-content hr {
+  border: none;
+  border-top: 2px solid #e1e1e1;
+  margin: 2rem 0;
+}
+
+.lecture-content blockquote {
+  border-left: 4px solid #FF6B6B;
+  margin: 1rem 0;
+  padding: 1rem 1.5rem;
+  background: #fff5f5;
+  border-radius: 0 8px 8px 0;
+}
+
+.lecture-content strong {
+  color: #1f1f1f;
+}
+
+.lecture-footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e1e1e1;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #FF6B6B;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background: #ff5252;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .lecture-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .lecture-title {
+    font-size: 1.5rem;
+  }
+  
+  .lecture-tldr {
+    font-size: 1rem;
+  }
+  
+  .lecture-meta {
+    justify-content: center;
+  }
+  
+  .lecture-thumbnail img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .lecture-content {
+    padding: 1.5rem;
+  }
+  
+  .lecture-content h2 {
+    font-size: 1.3rem;
+  }
+}
+</style>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      
+      <!-- Navigation Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-sitemap"></i> Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="/"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="/planoensino/"><i class="fas fa-file-alt"></i> Plano de Ensino</a></li>
+          <li><a href="/materials/"><i class="fas fa-book"></i> Materiais</a></li>
+          <li><a href="/slides/"><i class="fas fa-chalkboard-teacher"></i> Slides</a></li>
+          <li><a href="/posts/"><i class="fas fa-folder-open"></i> Projetos</a></li>
+        </ul>
+      </div>
+      
+      <!-- Resources Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-link"></i> Recursos</h3>
+        <ul class="footer-links">
+          <li><a href="https://github.com/unb-mds" target="_blank"><i class="fab fa-github"></i> GitHub MDS</a></li>
+          <li><a href="https://t.me/c/2677031160/1" target="_blank"><i class="fab fa-telegram"></i> Telegram</a></li>
+          <li><a href="https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw/videos" target="_blank"><i class="fab fa-youtube"></i> Canal YouTube</a></li>
+          <li><a href="https://scrumguides.org" target="_blank"><i class="fas fa-book-open"></i> Scrum Guide</a></li>
+          <li><a href="https://engsoftmoderna.info" target="_blank"><i class="fas fa-graduation-cap"></i> Eng. Software Moderna</a></li>
+        </ul>
+      </div>
+      
+      <!-- Academic Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-university"></i> Acadêmico</h3>
+        <ul class="footer-links">
+          <li><a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Critérios de Avaliação</a></li>
+          <li><a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md" target="_blank"><i class="fas fa-tasks"></i> Roteiro de Entregas</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing" target="_blank"><i class="fas fa-users"></i> Grupos e Temas</a></li>
+          <li><a href="http://www.carlarocha.org" target="_blank"><i class="fas fa-user"></i> Profa. Carla Rocha</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact & Social Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-envelope"></i> Contato</h3>
+        <div class="footer-links">
+          <p class="contact-info"><i class="fas fa-envelope"></i> caguiar@unb.br</p>
+          <p class="contact-info"><i class="fas fa-map-marker-alt"></i> UnB - FCTE - Lab Livre</p>
+          <p class="contact-info"><a href="https://lablivre.unb.br/" target="_blank"><i class="fas fa-globe"></i> lablivre.unb.br</a></p>
+          <p class="contact-info"><a href="https://carlarocha.org" target="_blank"><i class="fas fa-user"></i> carlarocha.org</a></p>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://github.com/unb-mds" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/lab.livre/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://t.me/c/2677031160/1" target="_blank" title="Telegram">
+            <i class="fab fa-telegram"></i>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p><strong>Métodos de Desenvolvimento de Software - UnB/FCTE</strong></p>
+      <p>© 2025 Lab Livre - Laboratório de Competência em Software Livre</p>
+      <p>Desenvolvido com ❤️ para a comunidade acadêmica</p>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

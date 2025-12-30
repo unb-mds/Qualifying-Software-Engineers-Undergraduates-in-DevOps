@@ -62,7 +62,7 @@
   <title> Aulas - MDS / 4 semestre </title>
   <meta name="description" content="Aulas - MDS / 4 semestre">
   
-  <link rel="stylesheet" href="/_css/main.css?v=1767118100">
+  <link rel="stylesheet" href="/_css/main.css?v=1767119684">
   <link rel="canonical" href="http://0.0.0.0:4000/slides/">
   <link rel="alternate" type="application/rss+xml" title="MDS / 4 semestre - UnB" href="http://0.0.0.0:4000/feed.xml" />
   <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
@@ -182,7 +182,7 @@
     <div class="content">
         <span style="font-weight: bold;">Métodos de Desenvolvimento de Software - MDS</span><br>
 
-        <strong><i>Summary:</i></strong> Métodos de Desenvolvimento de Software - MDS
+        <strong><i>Summary:</i></strong> Visão geral da disciplina MDS, objetivos, metodologia e estrutura do curso.
         <br/>
         <strong>
         
@@ -220,7 +220,7 @@
     <div class="content">
         <span style="font-weight: bold;">Visão Geral de Métodos de Desenvolvimento de Software</span><br>
 
-        <strong><i>Summary:</i></strong> Visão Geral de Métodos de Desenvolvimento de Software
+        <strong><i>Summary:</i></strong> Introdução aos principais métodos de desenvolvimento, ciclos de vida e processos de software.
         <br/>
         <strong>
         
@@ -256,9 +256,9 @@
     </div>
     
     <div class="content">
-        <span style="font-weight: bold;">Metodos Ágeis</span><br>
+        <span style="font-weight: bold;">Métodos Ágeis</span><br>
 
-        <strong><i>Summary:</i></strong> Metodos Ágeis
+        <strong><i>Summary:</i></strong> Princípios do Manifesto Ágil, Scrum, XP e Kanban aplicados ao desenvolvimento de software.
         <br/>
         <strong>
         
@@ -288,6 +288,570 @@
 <div class="lecture-container">
     
     <div class="thumbnail">
+      <div class="center-cropped" style="margin-top:5px;margin-bottom:5px;background-image: url('/static_files/presentations/gpp_mds.png');">
+        <img src="/static_files/presentations/gpp_mds.png"/>
+      </div>
+    </div>
+    
+    <div class="content">
+        <span style="font-weight: bold;">Tutorial Inicial de GitHub</span><br>
+
+        <strong><i>Summary:</i></strong> Guia completo passo a passo para configurar Git e GitHub no Ubuntu.
+        <br/>
+        <strong>
+        
+    
+    
+    [<a title="Download Documentação Oficial" href="
+    
+      https://docs.github.com/pt/get-started 
+    ">Documentação Oficial</a>]
+    
+    [<a title="Download Pro Git Book" href="
+    
+      https://git-scm.com/book/pt-br/v2 
+    ">Pro Git Book</a>]
+    
+    
+
+        </strong>
+
+        
+        <br/>
+        <div class="markdown-content" style="margin-top: 3px;">
+        <h1 id="tutorial-git-e-github-no-ubuntu---sua-primeira-jornada">Tutorial: Git e GitHub no Ubuntu - Sua Primeira Jornada</h1>
+
+<p>Bem-vindo! Neste tutorial, você vai configurar sua máquina Ubuntu para trabalhar com Git e GitHub, e criar seu primeiro projeto versionado. Ao final, você terá um repositório funcionando e saberá usar os comandos essenciais do Git.</p>
+
+<p><strong>O que você vai criar:</strong> Um projeto simples chamado “meu-primeiro-repo” que você vai versionar localmente e enviar para o GitHub.</p>
+
+<p><strong>Tempo estimado:</strong> 30-40 minutos</p>
+
+<hr />
+
+<h2 id="parte-1-preparando-seu-ambiente-ubuntu">Parte 1: Preparando Seu Ambiente Ubuntu</h2>
+
+<h3 id="passo-1-verificar-se-o-git-está-instalado">Passo 1: Verificar se o Git está instalado</h3>
+
+<p>Abra o terminal (pressione <code class="language-plaintext highlighter-rouge">Ctrl + Alt + T</code>) e digite:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Algo como <code class="language-plaintext highlighter-rouge">git version 2.34.1</code> (o número pode variar).</p>
+
+<p>Se aparecer uma mensagem de erro dizendo que o comando não foi encontrado, vamos instalar o Git no próximo passo.</p>
+
+<h3 id="passo-2-instalar-o-git-se-necessário">Passo 2: Instalar o Git (se necessário)</h3>
+
+<p>Se o Git não estiver instalado, execute estes comandos:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>git <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p>Digite sua senha quando solicitado. Aguarde a instalação concluir.</p>
+
+<p><strong>Verifique novamente:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>Agora você deve ver a versão do Git instalada. ✓</p>
+
+<hr />
+
+<h2 id="parte-2-configurando-sua-identidade-no-git">Parte 2: Configurando Sua Identidade no Git</h2>
+
+<p>Antes de usar o Git, precisamos dizer quem você é. Isso é importante porque cada modificação que você fizer ficará registrada com seu nome.</p>
+
+<h3 id="passo-3-configurar-seu-nome">Passo 3: Configurar seu nome</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.name <span class="s2">"Seu Nome Completo"</span>
+</code></pre></div></div>
+
+<p><em>Substitua “Seu Nome Completo” pelo seu nome real, mantendo as aspas.</em></p>
+
+<h3 id="passo-4-configurar-seu-email">Passo 4: Configurar seu email</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.email <span class="s2">"seu.email@exemplo.com"</span>
+</code></pre></div></div>
+
+<p><em>Use o mesmo email que você vai usar no GitHub.</em></p>
+
+<h3 id="passo-5-ativar-cores-no-terminal">Passo 5: Ativar cores no terminal</h3>
+
+<p>Isso deixa os comandos Git mais fáceis de ler:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> color.ui auto
+</code></pre></div></div>
+
+<h3 id="passo-6-verificar-suas-configurações">Passo 6: Verificar suas configurações</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--list</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Uma lista com suas configurações, incluindo seu nome e email.</p>
+
+<hr />
+
+<h2 id="parte-3-criando-sua-conta-no-github">Parte 3: Criando Sua Conta no GitHub</h2>
+
+<h3 id="passo-7-criar-conta-no-github">Passo 7: Criar conta no GitHub</h3>
+
+<ol>
+  <li>Abra seu navegador e vá para <a href="https://github.com">github.com</a></li>
+  <li>Clique em “Sign up” (Criar conta)</li>
+  <li>Siga as instruções usando o <strong>mesmo email</strong> que você configurou no Git</li>
+  <li>Verifique seu email e confirme a conta</li>
+</ol>
+
+<h3 id="passo-8-configurar-autenticação-ssh-recomendado">Passo 8: Configurar autenticação SSH (recomendado)</h3>
+
+<p>A autenticação SSH é mais segura e prática. Vamos criar uma chave SSH:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> ed25519 <span class="nt">-C</span> <span class="s2">"seu.email@exemplo.com"</span>
+</code></pre></div></div>
+
+<p><strong>O que vai acontecer:</strong> O terminal vai perguntar onde salvar a chave. Apenas pressione <code class="language-plaintext highlighter-rouge">Enter</code> para aceitar o local padrão.</p>
+
+<p>Quando pedir uma senha (passphrase), você pode:</p>
+<ul>
+  <li>Pressionar <code class="language-plaintext highlighter-rouge">Enter</code> duas vezes para não usar senha (mais fácil)</li>
+  <li>Ou criar uma senha para mais segurança</li>
+</ul>
+
+<h3 id="passo-9-copiar-sua-chave-ssh-pública">Passo 9: Copiar sua chave SSH pública</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> ~/.ssh/id_ed25519.pub
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Uma linha longa começando com <code class="language-plaintext highlighter-rouge">ssh-ed25519</code>. Selecione TODO o texto e copie (Ctrl+Shift+C).</p>
+
+<h3 id="passo-10-adicionar-a-chave-no-github">Passo 10: Adicionar a chave no GitHub</h3>
+
+<ol>
+  <li>No GitHub, clique na sua foto de perfil (canto superior direito) → Settings</li>
+  <li>No menu lateral, clique em “SSH and GPG keys”</li>
+  <li>Clique no botão verde “New SSH key”</li>
+  <li>Em “Title”, escreva algo como “Meu Ubuntu”</li>
+  <li>Em “Key”, cole a chave que você copiou</li>
+  <li>Clique em “Add SSH key”</li>
+</ol>
+
+<h3 id="passo-11-testar-a-conexão">Passo 11: Testar a conexão</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-T</span> git@github.com
+</code></pre></div></div>
+
+<p>Digite <code class="language-plaintext highlighter-rouge">yes</code> quando perguntar se quer continuar conectando.</p>
+
+<p><strong>O que você deve ver:</strong> Uma mensagem como “Hi seu-usuario! You’ve successfully authenticated…”</p>
+
+<p>Parabéns! Você está conectado ao GitHub. ✓</p>
+
+<hr />
+
+<h2 id="parte-4-criando-seu-primeiro-repositório-local">Parte 4: Criando Seu Primeiro Repositório Local</h2>
+
+<p>Agora vamos criar um projeto e usar o Git para versioná-lo.</p>
+
+<h3 id="passo-12-criar-um-diretório-para-seu-projeto">Passo 12: Criar um diretório para seu projeto</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> ~/meu-primeiro-repo
+<span class="nb">cd</span> ~/meu-primeiro-repo
+</code></pre></div></div>
+
+<p>Você acabou de criar uma pasta e entrou nela.</p>
+
+<h3 id="passo-13-inicializar-o-repositório-git">Passo 13: Inicializar o repositório Git</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> “Initialized empty Git repository…”</p>
+
+<p>Isso transforma sua pasta em um repositório Git. ✓</p>
+
+<h3 id="passo-14-criar-seu-primeiro-arquivo">Passo 14: Criar seu primeiro arquivo</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"# Meu Primeiro Repositório"</span> <span class="o">&gt;</span> README.md
+</code></pre></div></div>
+
+<p>Você acabou de criar um arquivo chamado README.md com um título.</p>
+
+<h3 id="passo-15-ver-o-status-do-repositório">Passo 15: Ver o status do repositório</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> O arquivo README.md aparece em vermelho como “Untracked files” (arquivos não rastreados).</p>
+
+<p>Isso significa que o Git vê o arquivo, mas ainda não está acompanhando as mudanças dele.</p>
+
+<hr />
+
+<h2 id="parte-5-fazendo-seu-primeiro-commit">Parte 5: Fazendo Seu Primeiro Commit</h2>
+
+<p>Um “commit” é como tirar uma foto do estado atual do seu projeto. É um ponto na história que você pode voltar depois.</p>
+
+<h3 id="passo-16-adicionar-o-arquivo-ao-stage">Passo 16: Adicionar o arquivo ao stage</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add README.md
+</code></pre></div></div>
+
+<p>Agora o arquivo está “preparado” (staged) para ser commitado.</p>
+
+<h3 id="passo-17-verificar-novamente-o-status">Passo 17: Verificar novamente o status</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p><strong>O que mudou:</strong> Agora o arquivo aparece em verde como “Changes to be committed”.</p>
+
+<h3 id="passo-18-fazer-o-commit">Passo 18: Fazer o commit</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Adiciona README inicial"</span>
+</code></pre></div></div>
+
+<p>A mensagem entre aspas descreve o que você fez. Seja sempre descritivo!</p>
+
+<p><strong>O que você deve ver:</strong> Algo como “1 file changed, 1 insertion(+)”.</p>
+
+<h3 id="passo-19-ver-o-histórico">Passo 19: Ver o histórico</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Seu commit aparece com seu nome, email, data e mensagem.</p>
+
+<p>Pressione <code class="language-plaintext highlighter-rouge">q</code> para sair da visualização do log.</p>
+
+<hr />
+
+<h2 id="parte-6-fazendo-mais-mudanças">Parte 6: Fazendo Mais Mudanças</h2>
+
+<p>Vamos praticar o ciclo completo: modificar → adicionar → commitar.</p>
+
+<h3 id="passo-20-adicionar-mais-conteúdo-ao-readme">Passo 20: Adicionar mais conteúdo ao README</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"Este é meu primeiro projeto com Git!"</span> <span class="o">&gt;&gt;</span> README.md
+<span class="nb">echo</span> <span class="s2">"Estou aprendendo controle de versão."</span> <span class="o">&gt;&gt;</span> README.md
+</code></pre></div></div>
+
+<h3 id="passo-21-ver-as-diferenças">Passo 21: Ver as diferenças</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> As linhas que você adicionou aparecem em verde com um <code class="language-plaintext highlighter-rouge">+</code> na frente.</p>
+
+<p>Pressione <code class="language-plaintext highlighter-rouge">q</code> para sair.</p>
+
+<h3 id="passo-22-adicionar-e-commitar-de-uma-vez">Passo 22: Adicionar e commitar de uma vez</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add README.md
+git commit <span class="nt">-m</span> <span class="s2">"Adiciona descrição ao README"</span>
+</code></pre></div></div>
+
+<h3 id="passo-23-ver-o-histórico-novamente">Passo 23: Ver o histórico novamente</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log
+</code></pre></div></div>
+
+<p>Agora você tem 2 commits! Veja como sua história está crescendo. ✓</p>
+
+<hr />
+
+<h2 id="parte-7-enviando-para-o-github">Parte 7: Enviando para o GitHub</h2>
+
+<p>Agora vamos colocar seu projeto na nuvem, no GitHub.</p>
+
+<h3 id="passo-24-criar-um-repositório-no-github">Passo 24: Criar um repositório no GitHub</h3>
+
+<ol>
+  <li>Vá para <a href="https://github.com">github.com</a> e faça login</li>
+  <li>Clique no botão <code class="language-plaintext highlighter-rouge">+</code> (canto superior direito) → “New repository”</li>
+  <li>Nome do repositório: <code class="language-plaintext highlighter-rouge">meu-primeiro-repo</code></li>
+  <li>Deixe como <strong>Public</strong></li>
+  <li><strong>NÃO</strong> marque “Initialize this repository with a README”</li>
+  <li>Clique em “Create repository”</li>
+</ol>
+
+<h3 id="passo-25-conectar-seu-repositório-local-ao-github">Passo 25: Conectar seu repositório local ao GitHub</h3>
+
+<p>O GitHub vai mostrar alguns comandos. Você precisa do comando que começa com <code class="language-plaintext highlighter-rouge">git remote add origin</code>. Copie sua versão, que terá seu nome de usuário, e execute:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin git@github.com:SEU-USUARIO/meu-primeiro-repo.git
+</code></pre></div></div>
+
+<p><em>Substitua SEU-USUARIO pelo seu nome de usuário do GitHub.</em></p>
+
+<h3 id="passo-26-enviar-seus-commits-para-o-github">Passo 26: Enviar seus commits para o GitHub</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push <span class="nt">-u</span> origin main
+</code></pre></div></div>
+
+<p>ou, se seu branch se chamar master:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push <span class="nt">-u</span> origin master
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Uma barra de progresso e mensagem de sucesso.</p>
+
+<h3 id="passo-27-verificar-no-navegador">Passo 27: Verificar no navegador</h3>
+
+<p>Atualize a página do seu repositório no GitHub. Você deve ver seu README.md e todo o conteúdo lá!</p>
+
+<p>Parabéns! Seu código está na nuvem. ✓</p>
+
+<hr />
+
+<h2 id="parte-8-trabalhando-com-branches">Parte 8: Trabalhando com Branches</h2>
+
+<p>Branches (ramificações) permitem trabalhar em novas funcionalidades sem afetar o código principal.</p>
+
+<h3 id="passo-28-criar-uma-nova-branch">Passo 28: Criar uma nova branch</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch nova-funcionalidade
+</code></pre></div></div>
+
+<h3 id="passo-29-ver-todas-as-branches">Passo 29: Ver todas as branches</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Duas branches, com um <code class="language-plaintext highlighter-rouge">*</code> ao lado da branch atual (main ou master).</p>
+
+<h3 id="passo-30-mudar-para-a-nova-branch">Passo 30: Mudar para a nova branch</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout nova-funcionalidade
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> “Switched to branch ‘nova-funcionalidade’”.</p>
+
+<h3 id="passo-31-fazer-mudanças-na-nova-branch">Passo 31: Fazer mudanças na nova branch</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"## Nova Funcionalidade"</span> <span class="o">&gt;&gt;</span> README.md
+<span class="nb">echo</span> <span class="s2">"Trabalhando em algo novo!"</span> <span class="o">&gt;&gt;</span> README.md
+</code></pre></div></div>
+
+<h3 id="passo-32-commitar-as-mudanças">Passo 32: Commitar as mudanças</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add README.md
+git commit <span class="nt">-m</span> <span class="s2">"Adiciona seção de nova funcionalidade"</span>
+</code></pre></div></div>
+
+<h3 id="passo-33-voltar-para-a-branch-principal">Passo 33: Voltar para a branch principal</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout main
+</code></pre></div></div>
+
+<p>ou:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
+</code></pre></div></div>
+
+<h3 id="passo-34-ver-o-conteúdo-do-readme">Passo 34: Ver o conteúdo do README</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>README.md
+</code></pre></div></div>
+
+<p><strong>O que você deve notar:</strong> As linhas sobre “Nova Funcionalidade” NÃO aparecem! Isso porque elas só existem na outra branch.</p>
+
+<h3 id="passo-35-fazer-merge-da-nova-funcionalidade">Passo 35: Fazer merge da nova funcionalidade</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git merge nova-funcionalidade
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> “Updating…” e uma mensagem de sucesso.</p>
+
+<h3 id="passo-36-verificar-o-readme-novamente">Passo 36: Verificar o README novamente</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>README.md
+</code></pre></div></div>
+
+<p>Agora as linhas da nova funcionalidade aparecem! O merge trouxe as mudanças. ✓</p>
+
+<h3 id="passo-37-enviar-as-atualizações-para-o-github">Passo 37: Enviar as atualizações para o GitHub</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin main
+</code></pre></div></div>
+
+<p>ou:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin master
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="parte-9-comandos-essenciais-para-o-dia-a-dia">Parte 9: Comandos Essenciais para o Dia a Dia</h2>
+
+<p>Agora que você fez o ciclo completo, aqui estão os comandos que você vai usar constantemente:</p>
+
+<h3 id="ver-o-que-mudou">Ver o que mudou</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>Use sempre que quiser saber o estado do seu repositório.</p>
+
+<h3 id="adicionar-arquivos-específicos">Adicionar arquivos específicos</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add arquivo.txt
+</code></pre></div></div>
+
+<h3 id="adicionar-todos-os-arquivos-modificados">Adicionar todos os arquivos modificados</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+</code></pre></div></div>
+
+<h3 id="ver-diferenças-antes-de-commitar">Ver diferenças antes de commitar</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff
+</code></pre></div></div>
+
+<p>Ver diferenças do que já está no stage:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff <span class="nt">--staged</span>
+</code></pre></div></div>
+
+<h3 id="remover-arquivo-do-stage-desfazer-git-add">Remover arquivo do stage (desfazer git add)</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset arquivo.txt
+</code></pre></div></div>
+
+<p>O arquivo volta para o estado “modified” mas não perde as mudanças.</p>
+
+<h3 id="ver-histórico-resumido">Ver histórico resumido</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log <span class="nt">--oneline</span>
+</code></pre></div></div>
+
+<h3 id="baixar-atualizações-do-github">Baixar atualizações do GitHub</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin main
+</code></pre></div></div>
+
+<p>Isso busca e mescla mudanças que possam ter sido feitas no GitHub.</p>
+
+<hr />
+
+<h2 id="parte-10-praticando-o-fluxo-completo">Parte 10: Praticando o Fluxo Completo</h2>
+
+<p>Vamos repetir o ciclo completo uma vez para fixar:</p>
+
+<h3 id="passo-38-criar-um-novo-arquivo">Passo 38: Criar um novo arquivo</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"print('Olá, Git!')"</span> <span class="o">&gt;</span> ola.py
+</code></pre></div></div>
+
+<h3 id="passo-39-ver-o-status">Passo 39: Ver o status</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>O arquivo aparece como untracked.</p>
+
+<h3 id="passo-40-adicionar-ao-stage">Passo 40: Adicionar ao stage</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add ola.py
+</code></pre></div></div>
+
+<h3 id="passo-41-ver-o-status-novamente">Passo 41: Ver o status novamente</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>Agora está pronto para commit.</p>
+
+<h3 id="passo-42-fazer-o-commit">Passo 42: Fazer o commit</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Adiciona script Python de saudação"</span>
+</code></pre></div></div>
+
+<h3 id="passo-43-enviar-para-o-github">Passo 43: Enviar para o GitHub</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin main
+</code></pre></div></div>
+
+<h3 id="passo-44-verificar-no-github">Passo 44: Verificar no GitHub</h3>
+
+<p>Abra seu repositório no navegador e veja o novo arquivo lá!</p>
+
+<hr />
+
+<h2 id="-parabéns">🎉 Parabéns!</h2>
+
+<p>Você completou seu primeiro tutorial de Git e GitHub! Agora você sabe:</p>
+
+<p>✓ Instalar e configurar o Git no Ubuntu<br />
+✓ Conectar sua máquina ao GitHub via SSH<br />
+✓ Criar repositórios locais e remotos<br />
+✓ Fazer commits e acompanhar mudanças<br />
+✓ Trabalhar com branches<br />
+✓ Fazer merge de código<br />
+✓ Enviar e receber código do GitHub</p>
+
+<h2 id="próximos-passos">Próximos Passos</h2>
+
+<p>Agora que você domina o básico, pode:</p>
+
+<ol>
+  <li><strong>Criar mais repositórios</strong> para seus projetos pessoais</li>
+  <li><strong>Explorar repositórios públicos</strong> no GitHub para ver código de outros desenvolvedores</li>
+  <li><strong>Praticar o fluxo diário</strong>: modificar → adicionar → commitar → enviar</li>
+  <li><strong>Aprender sobre .gitignore</strong> para ignorar arquivos que não devem ser versionados</li>
+  <li><strong>Explorar o GitHub Desktop</strong> se preferir uma interface gráfica</li>
+</ol>
+
+<h2 id="comandos-de-referência-rápida">Comandos de Referência Rápida</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ver status</span>
+git status
+
+<span class="c"># Adicionar arquivo</span>
+git add arquivo.txt
+
+<span class="c"># Adicionar todos</span>
+git add <span class="nb">.</span>
+
+<span class="c"># Commitar</span>
+git commit <span class="nt">-m</span> <span class="s2">"mensagem descritiva"</span>
+
+<span class="c"># Enviar para GitHub</span>
+git push origin main
+
+<span class="c"># Receber do GitHub</span>
+git pull origin main
+
+<span class="c"># Ver histórico</span>
+git log
+
+<span class="c"># Criar branch</span>
+git branch nome-branch
+
+<span class="c"># Mudar de branch</span>
+git checkout nome-branch
+
+<span class="c"># Fazer merge</span>
+git merge nome-branch
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>Dúvidas?</strong> Isso é normal! O Git tem muitos comandos, mas com a prática você vai memorizando os mais usados. Continue praticando criando novos projetos e fazendo commits regularmente.</p>
+
+        </div>
+        
+    </div>
+</div>
+</li>
+
+<li class="archiveposturl" style="background: transparent">
+<div class="lecture-container">
+    
+    <div class="thumbnail">
       <div class="center-cropped" style="margin-top:5px;margin-bottom:5px;background-image: url('/static_files/presentations/requisitos.jpg');">
         <img src="/static_files/presentations/requisitos.jpg"/>
       </div>
@@ -296,7 +860,7 @@
     <div class="content">
         <span style="font-weight: bold;">Engenharia de Requisitos</span><br>
 
-        <strong><i>Summary:</i></strong> Engenharia de Requisitos
+        <strong><i>Summary:</i></strong> Técnicas de elicitação, documentação e gerenciamento de requisitos em projetos ágeis.
         <br/>
         <strong>
         
@@ -315,6 +879,1634 @@
         <br/>
         <div class="markdown-content" style="margin-top: 3px;">
         
+
+        </div>
+        
+    </div>
+</div>
+</li>
+
+<li class="archiveposturl" style="background: transparent">
+<div class="lecture-container">
+    
+    <div class="thumbnail">
+      <div class="center-cropped" style="margin-top:5px;margin-bottom:5px;background-image: url('/static_files/presentations/gpp_mds.png');">
+        <img src="/static_files/presentations/gpp_mds.png"/>
+      </div>
+    </div>
+    
+    <div class="content">
+        <span style="font-weight: bold;">Instalação do Ubuntu</span><br>
+
+        <strong><i>Summary:</i></strong> Guia completo para instalar Ubuntu no seu computador, dual boot ou máquina virtual.
+        <br/>
+        <strong>
+        
+    
+    
+    [<a title="Download Download Ubuntu" href="
+    
+      https://ubuntu.com/download/desktop 
+    ">Download Ubuntu</a>]
+    
+    [<a title="Download Tutorial Oficial" href="
+    
+      https://ubuntu.com/tutorials/install-ubuntu-desktop 
+    ">Tutorial Oficial</a>]
+    
+    
+
+        </strong>
+
+        
+        <br/>
+        <div class="markdown-content" style="margin-top: 3px;">
+        <h1 id="guia-de-instalação-do-ubuntu">Guia de Instalação do Ubuntu</h1>
+
+<p>Este tutorial vai te guiar pelo processo de instalação do Ubuntu, seja em dual boot com Windows ou em uma máquina virtual.</p>
+
+<p><strong>Tempo estimado:</strong> 30-60 minutos</p>
+
+<hr />
+
+<h2 id="opção-1-máquina-virtual-recomendado-para-iniciantes">Opção 1: Máquina Virtual (Recomendado para iniciantes)</h2>
+
+<p>A máquina virtual permite rodar o Ubuntu dentro do seu sistema atual, sem risco de perder dados.</p>
+
+<h3 id="passo-1-baixar-o-virtualbox">Passo 1: Baixar o VirtualBox</h3>
+
+<ol>
+  <li>Acesse <a href="https://www.virtualbox.org/wiki/Downloads">virtualbox.org</a></li>
+  <li>Baixe a versão para seu sistema operacional (Windows, macOS ou Linux)</li>
+  <li>Execute o instalador e siga as instruções</li>
+</ol>
+
+<h3 id="passo-2-baixar-a-iso-do-ubuntu">Passo 2: Baixar a ISO do Ubuntu</h3>
+
+<ol>
+  <li>Acesse <a href="https://ubuntu.com/download/desktop">ubuntu.com/download/desktop</a></li>
+  <li>Baixe a versão LTS mais recente (ex: Ubuntu 24.04 LTS)</li>
+  <li>Aguarde o download do arquivo <code class="language-plaintext highlighter-rouge">.iso</code> (~5GB)</li>
+</ol>
+
+<h3 id="passo-3-criar-a-máquina-virtual">Passo 3: Criar a Máquina Virtual</h3>
+
+<ol>
+  <li>Abra o VirtualBox</li>
+  <li>Clique em <strong>“Novo”</strong></li>
+  <li>Configure:
+    <ul>
+      <li><strong>Nome:</strong> Ubuntu</li>
+      <li><strong>Tipo:</strong> Linux</li>
+      <li><strong>Versão:</strong> Ubuntu (64-bit)</li>
+    </ul>
+  </li>
+  <li>Clique em <strong>Próximo</strong></li>
+</ol>
+
+<h3 id="passo-4-configurar-memória-ram">Passo 4: Configurar Memória RAM</h3>
+
+<ul>
+  <li><strong>Mínimo recomendado:</strong> 4096 MB (4GB)</li>
+  <li><strong>Ideal:</strong> 8192 MB (8GB) se você tiver 16GB+ de RAM total</li>
+</ul>
+
+<h3 id="passo-5-criar-disco-virtual">Passo 5: Criar Disco Virtual</h3>
+
+<ol>
+  <li>Selecione <strong>“Criar um disco rígido virtual agora”</strong></li>
+  <li>Escolha <strong>VDI (VirtualBox Disk Image)</strong></li>
+  <li>Selecione <strong>“Dinamicamente alocado”</strong></li>
+  <li>Defina o tamanho: <strong>mínimo 25GB</strong>, recomendado <strong>50GB</strong></li>
+</ol>
+
+<h3 id="passo-6-configurar-a-máquina-virtual">Passo 6: Configurar a Máquina Virtual</h3>
+
+<p>Antes de iniciar, ajuste algumas configurações:</p>
+
+<ol>
+  <li>Selecione a VM criada e clique em <strong>“Configurações”</strong></li>
+  <li><strong>Sistema &gt; Processador:</strong> Aumente para 2-4 CPUs</li>
+  <li><strong>Vídeo &gt; Tela:</strong> Aumente memória de vídeo para 128MB</li>
+  <li><strong>Armazenamento:</strong> Clique no ícone de CD vazio, depois no ícone de CD à direita e selecione a ISO do Ubuntu</li>
+</ol>
+
+<h3 id="passo-7-instalar-o-ubuntu">Passo 7: Instalar o Ubuntu</h3>
+
+<ol>
+  <li>Clique em <strong>“Iniciar”</strong> para ligar a VM</li>
+  <li>Selecione <strong>“Try or Install Ubuntu”</strong></li>
+  <li>Escolha o idioma <strong>Português do Brasil</strong></li>
+  <li>Clique em <strong>“Instalar Ubuntu”</strong></li>
+  <li>Selecione o layout de teclado</li>
+  <li>Escolha <strong>“Instalação normal”</strong></li>
+  <li>Selecione <strong>“Apagar disco e instalar Ubuntu”</strong> (é seguro, só afeta o disco virtual!)</li>
+  <li>Configure seu fuso horário</li>
+  <li>Crie seu usuário e senha</li>
+  <li>Aguarde a instalação (~15-20 minutos)</li>
+  <li>Reinicie quando solicitado</li>
+</ol>
+
+<h3 id="passo-8-instalar-guest-additions-opcional-mas-recomendado">Passo 8: Instalar Guest Additions (Opcional mas recomendado)</h3>
+
+<p>Após iniciar o Ubuntu instalado:</p>
+
+<ol>
+  <li>No menu do VirtualBox: <strong>Dispositivos &gt; Inserir imagem de CD dos Adicionais para Convidado</strong></li>
+  <li>Abra o terminal no Ubuntu (<code class="language-plaintext highlighter-rouge">Ctrl + Alt + T</code>)</li>
+  <li>Execute:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>build-essential dkms linux-headers-<span class="si">$(</span><span class="nb">uname</span> <span class="nt">-r</span><span class="si">)</span>
+<span class="nb">sudo</span> /media/<span class="nv">$USER</span>/VBox_GAs_<span class="k">*</span>/VBoxLinuxAdditions.run
+</code></pre></div></div>
+
+<ol>
+  <li>Reinicie a VM</li>
+</ol>
+
+<p>Agora você terá tela redimensionável e área de transferência compartilhada!</p>
+
+<hr />
+
+<h2 id="opção-2-instalando-ubuntu-em-dual-boot-com-windows">Opção 2: Instalando Ubuntu em Dual Boot com Windows</h2>
+
+<p>Bem-vindo! Neste tutorial, você vai aprender a instalar o Ubuntu no seu computador mantendo o Windows. Ao final, você terá os dois sistemas operacionais funcionando e poderá escolher qual usar cada vez que ligar o computador.</p>
+
+<p><strong>O que você vai conseguir:</strong> Um computador com Windows e Ubuntu instalados, podendo escolher qual sistema usar na inicialização.</p>
+
+<p><strong>Tempo estimado:</strong> 1-2 horas</p>
+
+<p><strong>O que você vai precisar:</strong></p>
+<ul>
+  <li>Um computador com Windows 10 ou 11</li>
+  <li>Um pendrive vazio de pelo menos 8GB</li>
+  <li>Conexão com a internet</li>
+  <li>Paciência e atenção aos detalhes</li>
+</ul>
+
+<hr />
+
+<h2 id="️-importante-leia-antes-de-começar">⚠️ IMPORTANTE: Leia Antes de Começar</h2>
+
+<p><strong>Faça backup dos seus dados importantes!</strong> Embora a instalação em dual boot seja segura quando feita corretamente, sempre existe um pequeno risco. Copie seus documentos, fotos e arquivos importantes para um HD externo ou nuvem.</p>
+
+<p><strong>Este tutorial é para computadores com BIOS UEFI</strong> (a maioria dos computadores modernos). Se seu computador for muito antigo (anterior a 2011), o processo pode ser diferente.</p>
+
+<hr />
+
+<h2 id="parte-1-preparando-o-espaço-no-disco">Parte 1: Preparando o Espaço no Disco</h2>
+
+<p>Antes de instalar o Ubuntu, precisamos criar espaço livre no disco rígido.</p>
+
+<h3 id="passo-1-abrir-o-gerenciamento-de-disco-do-windows">Passo 1: Abrir o Gerenciamento de Disco do Windows</h3>
+
+<ol>
+  <li>Pressione <code class="language-plaintext highlighter-rouge">Windows + X</code> no teclado</li>
+  <li>Clique em “Gerenciamento de Disco”</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> Uma janela mostrando todos os discos e partições do seu computador.</p>
+
+<h3 id="passo-2-identificar-a-partição-principal">Passo 2: Identificar a partição principal</h3>
+
+<p>Procure a maior partição, geralmente chamada “C:” ou com o rótulo “Windows”.</p>
+
+<p><strong>O que você deve ver:</strong> Uma barra azul mostrando quanto espaço está usado e quanto está livre.</p>
+
+<h3 id="passo-3-reduzir-o-volume-do-windows">Passo 3: Reduzir o volume do Windows</h3>
+
+<ol>
+  <li>Clique com o botão direito na partição C:</li>
+  <li>Selecione “Reduzir Volume”</li>
+  <li>Aguarde enquanto o Windows calcula o espaço disponível</li>
+</ol>
+
+<h3 id="passo-4-definir-quanto-espaço-alocar-para-o-ubuntu">Passo 4: Definir quanto espaço alocar para o Ubuntu</h3>
+
+<p>Quando a janela aparecer, você verá “Quantidade de espaço a ser reduzida em MB”.</p>
+
+<p><strong>Quanto espaço reservar?</strong></p>
+<ul>
+  <li>Mínimo: 30.000 MB (30 GB) - básico</li>
+  <li>Recomendado: 50.000 MB (50 GB) - confortável</li>
+  <li>Ideal: 100.000 MB (100 GB) - para quem vai usar bastante</li>
+</ul>
+
+<p>Digite o valor escolhido e clique em “Reduzir”.</p>
+
+<p><strong>O que você deve ver:</strong> Um espaço preto com o rótulo “Não Alocado” aparece no gráfico.</p>
+
+<p>Perfeito! Você criou espaço para o Ubuntu. ✓</p>
+
+<hr />
+
+<h2 id="parte-2-baixando-o-ubuntu">Parte 2: Baixando o Ubuntu</h2>
+
+<h3 id="passo-5-acessar-o-site-oficial-do-ubuntu">Passo 5: Acessar o site oficial do Ubuntu</h3>
+
+<ol>
+  <li>Abra seu navegador</li>
+  <li>Vá para: <a href="https://ubuntu.com/download/desktop">ubuntu.com/download/desktop</a></li>
+</ol>
+
+<h3 id="passo-6-baixar-a-versão-lts">Passo 6: Baixar a versão LTS</h3>
+
+<ol>
+  <li>Clique no botão verde “Download Ubuntu” (versão LTS)</li>
+  <li>O download começará automaticamente (arquivo de cerca de 4-5 GB)</li>
+  <li>Aguarde o download completar</li>
+</ol>
+
+<p><strong>Observação:</strong> A versão LTS (Long Term Support) é a mais estável e recomendada para iniciantes.</p>
+
+<p><strong>O que você baixou:</strong> Um arquivo .iso, que é uma imagem do sistema operacional.</p>
+
+<hr />
+
+<h2 id="parte-3-criando-o-pendrive-de-instalação">Parte 3: Criando o Pendrive de Instalação</h2>
+
+<h3 id="passo-7-baixar-o-rufus">Passo 7: Baixar o Rufus</h3>
+
+<ol>
+  <li>Vá para: <a href="https://rufus.ie">rufus.ie</a></li>
+  <li>Role a página até “Download”</li>
+  <li>Clique em “Rufus 4.x” (versão portátil está ok)</li>
+  <li>Salve o arquivo</li>
+</ol>
+
+<h3 id="passo-8-inserir-o-pendrive">Passo 8: Inserir o pendrive</h3>
+
+<ol>
+  <li>Conecte seu pendrive USB no computador</li>
+  <li><strong>IMPORTANTE:</strong> Certifique-se de que não há nada importante nele, pois será apagado</li>
+</ol>
+
+<h3 id="passo-9-executar-o-rufus">Passo 9: Executar o Rufus</h3>
+
+<ol>
+  <li>Abra o arquivo do Rufus que você baixou</li>
+  <li>Clique em “Sim” se o Windows pedir permissão</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> Uma janela pequena com várias opções.</p>
+
+<h3 id="passo-10-configurar-o-rufus">Passo 10: Configurar o Rufus</h3>
+
+<ol>
+  <li><strong>Dispositivo:</strong> Deve mostrar seu pendrive automaticamente</li>
+  <li><strong>Seleção de boot:</strong> Clique em “SELECIONAR” e escolha o arquivo .iso do Ubuntu que você baixou</li>
+  <li><strong>Esquema de partição:</strong> Deixe em “GPT”</li>
+  <li><strong>Sistema de destino:</strong> Deixe em “UEFI (não CSM)”</li>
+</ol>
+
+<p><strong>Deixe todas as outras opções como estão.</strong></p>
+
+<h3 id="passo-11-criar-o-pendrive-bootável">Passo 11: Criar o pendrive bootável</h3>
+
+<ol>
+  <li>Clique no botão “INICIAR”</li>
+  <li>Se aparecer uma janela sobre “modo de escrita de imagem”, deixe como “Escrever no modo Imagem ISO” e clique OK</li>
+  <li>Uma mensagem avisará que todos os dados do pendrive serão destruídos - clique OK</li>
+  <li>Aguarde o processo completar (5-10 minutos)</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> Uma barra de progresso que vai até 100%, depois uma mensagem “PRONTO” em verde.</p>
+
+<p>Clique em “FECHAR”. Seu pendrive está pronto! ✓</p>
+
+<hr />
+
+<h2 id="parte-4-desativando-o-fast-boot-e-secure-boot">Parte 4: Desativando o Fast Boot e Secure Boot</h2>
+
+<p>Para instalar o Ubuntu, precisamos ajustar algumas configurações do Windows.</p>
+
+<h3 id="passo-12-desativar-o-fast-boot-inicialização-rápida">Passo 12: Desativar o Fast Boot (Inicialização Rápida)</h3>
+
+<ol>
+  <li>Pressione <code class="language-plaintext highlighter-rouge">Windows + X</code></li>
+  <li>Clique em “Opções de Energia”</li>
+  <li>Clique em “Configurações de energia adicionais” (lado direito)</li>
+  <li>Clique em “Escolher a função dos botões de energia” (lado esquerdo)</li>
+  <li>Clique em “Alterar configurações não disponíveis no momento”</li>
+  <li><strong>Desmarque</strong> a caixa “Ativar inicialização rápida”</li>
+  <li>Clique em “Salvar alterações”</li>
+</ol>
+
+<h3 id="passo-13-acessar-a-biosuefi">Passo 13: Acessar a BIOS/UEFI</h3>
+
+<p>Agora vamos reiniciar o computador e entrar na BIOS. O método varia por fabricante:</p>
+
+<p><strong>Como entrar na BIOS:</strong></p>
+<ol>
+  <li>Clique em Iniciar → Energia → Reiniciar</li>
+  <li><strong>Durante a reinicialização</strong>, pressione repetidamente uma destas teclas (depende do fabricante):
+    <ul>
+      <li><strong>Dell:</strong> F2 ou F12</li>
+      <li><strong>HP:</strong> F10 ou Esc</li>
+      <li><strong>Lenovo:</strong> F2 ou F1</li>
+      <li><strong>Asus:</strong> F2 ou Delete</li>
+      <li><strong>Acer:</strong> F2 ou Delete</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Dica:</strong> Se não conseguir, pesquise no Google: “como entrar na BIOS [marca do seu computador]”</p>
+
+<h3 id="passo-14-desativar-o-secure-boot">Passo 14: Desativar o Secure Boot</h3>
+
+<p><strong>IMPORTANTE:</strong> A aparência da BIOS varia muito entre fabricantes. Procure por estas opções:</p>
+
+<ol>
+  <li>Procure uma aba ou menu chamado “Security” ou “Boot”</li>
+  <li>Encontre a opção “Secure Boot”</li>
+  <li>Mude de “Enabled” para “Disabled”</li>
+  <li>Pressione F10 para salvar e sair (ou procure a opção “Save and Exit”)</li>
+  <li>O computador vai reiniciar normalmente</li>
+</ol>
+
+<p><strong>O que você fez:</strong> Permitiu que o computador inicialize com outros sistemas operacionais além do Windows. ✓</p>
+
+<hr />
+
+<h2 id="parte-5-iniciando-pelo-pendrive">Parte 5: Iniciando pelo Pendrive</h2>
+
+<h3 id="passo-15-reiniciar-e-acessar-o-menu-de-boot">Passo 15: Reiniciar e acessar o menu de boot</h3>
+
+<ol>
+  <li>Com o pendrive ainda conectado, reinicie o computador</li>
+  <li>Durante a inicialização, pressione a tecla de Boot Menu:
+    <ul>
+      <li><strong>Dell:</strong> F12</li>
+      <li><strong>HP:</strong> F9 ou Esc</li>
+      <li><strong>Lenovo:</strong> F12</li>
+      <li><strong>Asus:</strong> F8 ou Esc</li>
+      <li><strong>Acer:</strong> F12</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> Um menu com opções de dispositivos para inicializar.</p>
+
+<h3 id="passo-16-selecionar-o-pendrive">Passo 16: Selecionar o pendrive</h3>
+
+<ol>
+  <li>Use as setas do teclado para selecionar seu pendrive USB</li>
+  <li>Pressione Enter</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> O logo do Ubuntu e uma tela de carregamento.</p>
+
+<p>Aguarde cerca de 1-2 minutos. Seja paciente, é normal demorar um pouco.</p>
+
+<hr />
+
+<h2 id="parte-6-experimentando-o-ubuntu-modo-live">Parte 6: Experimentando o Ubuntu (Modo Live)</h2>
+
+<h3 id="passo-17-escolher-o-idioma">Passo 17: Escolher o idioma</h3>
+
+<p><strong>O que você deve ver:</strong> Uma tela perguntando “Try Ubuntu” ou “Install Ubuntu”.</p>
+
+<ol>
+  <li>No lado esquerdo, selecione “Português do Brasil”</li>
+  <li>Clique em “Experimentar o Ubuntu”</li>
+</ol>
+
+<p><strong>O que acontece:</strong> O Ubuntu vai carregar sem instalar nada. Você pode testá-lo sem medo!</p>
+
+<h3 id="passo-18-explorar-o-ubuntu-opcional-mas-recomendado">Passo 18: Explorar o Ubuntu (opcional mas recomendado)</h3>
+
+<p>Parabéns! Você está usando o Ubuntu sem ter instalado nada. Aproveite para:</p>
+<ul>
+  <li>Abrir o navegador Firefox</li>
+  <li>Testar se o Wi-Fi funciona</li>
+  <li>Verificar se o som funciona</li>
+  <li>Explorar a interface</li>
+</ul>
+
+<p><strong>Tudo funcionando bem?</strong> Ótimo! Vamos prosseguir com a instalação.</p>
+
+<hr />
+
+<h2 id="parte-7-instalando-o-ubuntu">Parte 7: Instalando o Ubuntu</h2>
+
+<h3 id="passo-19-iniciar-o-instalador">Passo 19: Iniciar o instalador</h3>
+
+<p>Na área de trabalho do Ubuntu, clique duas vezes no ícone “Instalar Ubuntu”.</p>
+
+<h3 id="passo-20-selecionar-o-idioma">Passo 20: Selecionar o idioma</h3>
+
+<ol>
+  <li>Confirme “Português do Brasil”</li>
+  <li>Clique em “Continuar”</li>
+</ol>
+
+<h3 id="passo-21-escolher-o-layout-do-teclado">Passo 21: Escolher o layout do teclado</h3>
+
+<ol>
+  <li>Selecione “Portuguese (Brazil)”</li>
+  <li>Teste digitando na caixa de texto: <code class="language-plaintext highlighter-rouge">ç á ã é</code></li>
+  <li>Clique em “Continuar”</li>
+</ol>
+
+<h3 id="passo-22-configurar-atualizações-e-software">Passo 22: Configurar atualizações e software</h3>
+
+<p><strong>O que você deve ver:</strong> Duas opções de instalação.</p>
+
+<p>Recomendado para iniciantes:</p>
+<ul>
+  <li>Selecione “Instalação normal”</li>
+  <li><strong>Marque</strong> as caixas:
+    <ul>
+      <li>✓ Baixar atualizações enquanto instala</li>
+      <li>✓ Instalar software de terceiros (drivers Wi-Fi, placas gráficas)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Clique em “Continuar”.</p>
+
+<h3 id="passo-23-tipo-de-instalação-passo-crítico-️">Passo 23: Tipo de instalação (PASSO CRÍTICO ⚠️)</h3>
+
+<p><strong>Esta é a parte mais importante do tutorial. Leia com atenção!</strong></p>
+
+<p><strong>O que você deve ver:</strong> Opções sobre como instalar o Ubuntu.</p>
+
+<p><strong>ESCOLHA:</strong> “Instalar o Ubuntu ao lado do Windows Boot Manager”</p>
+
+<p><strong>NÃO ESCOLHA:</strong></p>
+<ul>
+  <li>❌ “Apagar disco e instalar o Ubuntu” (isso apaga o Windows!)</li>
+  <li>❌ “Outra opção” (apenas para usuários avançados)</li>
+</ul>
+
+<p><strong>O que você deve ver:</strong> Um gráfico mostrando Windows e um espaço para o Ubuntu.</p>
+
+<h3 id="passo-24-ajustar-o-tamanho-das-partições">Passo 24: Ajustar o tamanho das partições</h3>
+
+<ol>
+  <li>Você verá uma divisória que pode arrastar</li>
+  <li>Arraste para definir quanto espaço quer dar para cada sistema</li>
+  <li>O espaço que você liberou na Parte 1 deve estar disponível</li>
+</ol>
+
+<p>Clique em “Instalar Agora”.</p>
+
+<h3 id="passo-25-confirmar-as-alterações">Passo 25: Confirmar as alterações</h3>
+
+<p><strong>O que você deve ver:</strong> Uma janela mostrando as mudanças que serão feitas no disco.</p>
+
+<p>Revise cuidadosamente. Deve mostrar:</p>
+<ul>
+  <li>Partições do Windows intactas</li>
+  <li>Novas partições sendo criadas para o Ubuntu</li>
+</ul>
+
+<p>Clique em “Continuar”.</p>
+
+<hr />
+
+<h2 id="parte-8-configurações-finais">Parte 8: Configurações Finais</h2>
+
+<h3 id="passo-26-selecionar-fuso-horário">Passo 26: Selecionar fuso horário</h3>
+
+<ol>
+  <li>Clique no mapa próximo à sua localização ou digite “Sao Paulo”</li>
+  <li>Clique em “Continuar”</li>
+</ol>
+
+<h3 id="passo-27-criar-sua-conta">Passo 27: Criar sua conta</h3>
+
+<p>Preencha os campos:</p>
+
+<ol>
+  <li><strong>Seu nome:</strong> Digite seu nome completo</li>
+  <li><strong>Nome do computador:</strong> Um nome para identificar seu PC (ex: ubuntu-seunome)</li>
+  <li><strong>Nome de usuário:</strong> Seu login (ex: joao)</li>
+  <li><strong>Senha:</strong> Crie uma senha forte</li>
+  <li><strong>Confirmar senha:</strong> Digite a senha novamente</li>
+</ol>
+
+<p><strong>Escolha:</strong> “Solicitar minha senha para entrar”</p>
+
+<p>Clique em “Continuar”.</p>
+
+<h3 id="passo-28-aguardar-a-instalação">Passo 28: Aguardar a instalação</h3>
+
+<p><strong>O que você deve ver:</strong> Uma barra de progresso e slides mostrando recursos do Ubuntu.</p>
+
+<p><strong>Tempo de espera:</strong> 15-30 minutos (varia conforme a velocidade do computador)</p>
+
+<p>☕ Este é um bom momento para um café!</p>
+
+<h3 id="passo-29-concluir-a-instalação">Passo 29: Concluir a instalação</h3>
+
+<p>Quando a instalação terminar, você verá uma mensagem “Instalação concluída”.</p>
+
+<ol>
+  <li>Clique em “Reiniciar agora”</li>
+  <li>Quando aparecer “Please remove installation medium…”, <strong>retire o pendrive</strong></li>
+  <li>Pressione Enter</li>
+</ol>
+
+<p>O computador vai reiniciar.</p>
+
+<hr />
+
+<h2 id="parte-9-primeiro-boot-em-dual-boot">Parte 9: Primeiro Boot em Dual Boot</h2>
+
+<h3 id="passo-30-o-menu-do-grub">Passo 30: O menu do GRUB</h3>
+
+<p><strong>O que você deve ver:</strong> Uma tela preta/roxa com um menu escrito “GNU GRUB”.</p>
+
+<p><strong>Opções disponíveis:</strong></p>
+<ul>
+  <li>Ubuntu (será selecionado automaticamente)</li>
+  <li>Advanced options for Ubuntu</li>
+  <li>Windows Boot Manager</li>
+</ul>
+
+<p><strong>Para usar o Ubuntu:</strong> Apenas aguarde 10 segundos ou pressione Enter</p>
+
+<p><strong>Para usar o Windows:</strong> Use as setas para selecionar “Windows Boot Manager” e pressione Enter</p>
+
+<h3 id="passo-31-fazer-login-no-ubuntu">Passo 31: Fazer login no Ubuntu</h3>
+
+<ol>
+  <li>Clique no seu nome de usuário</li>
+  <li>Digite sua senha</li>
+  <li>Pressione Enter</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> A área de trabalho do Ubuntu!</p>
+
+<p>🎉 <strong>Parabéns! Você instalou o Ubuntu em dual boot com sucesso!</strong> ✓</p>
+
+<hr />
+
+<h2 id="parte-10-primeiras-configurações-no-ubuntu">Parte 10: Primeiras Configurações no Ubuntu</h2>
+
+<p>Agora que o Ubuntu está instalado, vamos fazer algumas configurações iniciais.</p>
+
+<h3 id="passo-32-conectar-ao-wi-fi-se-necessário">Passo 32: Conectar ao Wi-Fi (se necessário)</h3>
+
+<ol>
+  <li>Clique no ícone de rede no canto superior direito</li>
+  <li>Selecione sua rede Wi-Fi</li>
+  <li>Digite a senha</li>
+  <li>Clique em “Conectar”</li>
+</ol>
+
+<h3 id="passo-33-atualizar-o-sistema">Passo 33: Atualizar o sistema</h3>
+
+<p>Abra o Terminal pressionando <code class="language-plaintext highlighter-rouge">Ctrl + Alt + T</code> e digite:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt upgrade <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p>Digite sua senha quando solicitado.</p>
+
+<p><strong>O que está acontecendo:</strong> O Ubuntu está baixando e instalando as atualizações mais recentes.</p>
+
+<p><strong>Tempo de espera:</strong> 5-15 minutos na primeira vez.</p>
+
+<p>Quando terminar, digite:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reboot
+</code></pre></div></div>
+
+<p>O sistema vai reiniciar.</p>
+
+<h3 id="passo-34-instalar-atualizações-adicionais-se-houver">Passo 34: Instalar atualizações adicionais (se houver)</h3>
+
+<p>Após reiniciar e fazer login:</p>
+
+<ol>
+  <li>Se aparecer uma notificação sobre atualizações, clique nela</li>
+  <li>Clique em “Instalar agora”</li>
+  <li>Digite sua senha</li>
+  <li>Aguarde concluir</li>
+</ol>
+
+<h3 id="passo-35-explorar-o-ubuntu">Passo 35: Explorar o Ubuntu</h3>
+
+<p>Parabéns! Agora você pode:</p>
+
+<p><strong>Experimentar os aplicativos pré-instalados:</strong></p>
+<ul>
+  <li>Firefox (navegador)</li>
+  <li>LibreOffice (editor de textos, planilhas)</li>
+  <li>Arquivos (gerenciador de arquivos)</li>
+  <li>Ubuntu Software (loja de aplicativos)</li>
+</ul>
+
+<p><strong>Instalar novos programas:</strong></p>
+<ol>
+  <li>Abra “Ubuntu Software”</li>
+  <li>Procure por aplicativos</li>
+  <li>Clique em “Instalar”</li>
+</ol>
+
+<hr />
+
+<h2 id="-parabéns">🎉 Parabéns!</h2>
+
+<p>Você completou a instalação do Ubuntu em dual boot! Agora você tem:</p>
+
+<p>✓ Windows e Ubuntu no mesmo computador<br />
+✓ Capacidade de escolher qual sistema usar na inicialização<br />
+✓ Ubuntu totalmente configurado e atualizado<br />
+✓ Conhecimento básico sobre o processo de instalação</p>
+
+<hr />
+
+<h2 id="perguntas-frequentes">Perguntas Frequentes</h2>
+
+<h3 id="como-escolher-qual-sistema-usar">Como escolher qual sistema usar?</h3>
+
+<p>Toda vez que ligar o computador, o menu GRUB aparece. Use as setas para escolher e pressione Enter.</p>
+
+<h3 id="e-se-eu-quiser-que-o-windows-seja-o-padrão">E se eu quiser que o Windows seja o padrão?</h3>
+
+<p>Por padrão, o Ubuntu é selecionado automaticamente. Para mudar isso, você precisará editar as configurações do GRUB (um tutorial mais avançado).</p>
+
+<h3 id="como-acessar-meus-arquivos-do-windows-no-ubuntu">Como acessar meus arquivos do Windows no Ubuntu?</h3>
+
+<ol>
+  <li>Abra “Arquivos”</li>
+  <li>No painel esquerdo, você verá o disco do Windows</li>
+  <li>Clique nele para acessar seus arquivos</li>
+</ol>
+
+<h3 id="posso-desinstalar-o-ubuntu-depois">Posso desinstalar o Ubuntu depois?</h3>
+
+<p>Sim! Mas isso requer outro tutorial. Você precisará remover as partições do Ubuntu e restaurar o bootloader do Windows.</p>
+
+<h3 id="o-ubuntu-é-mais-rápido-que-o-windows">O Ubuntu é mais rápido que o Windows?</h3>
+
+<p>Geralmente sim, especialmente em computadores mais antigos. O Ubuntu usa menos recursos de memória e processamento.</p>
+
+<h3 id="preciso-de-antivírus-no-ubuntu">Preciso de antivírus no Ubuntu?</h3>
+
+<p>Não necessariamente. O Ubuntu é muito menos vulnerável a vírus que o Windows, especialmente se você instalar software apenas das fontes oficiais.</p>
+
+<hr />
+
+<h2 id="comandos-úteis-para-iniciantes">Comandos Úteis para Iniciantes</h2>
+
+<p>Aqui estão alguns comandos do Terminal que você vai usar frequentemente:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Atualizar lista de pacotes</span>
+<span class="nb">sudo </span>apt update
+
+<span class="c"># Atualizar o sistema</span>
+<span class="nb">sudo </span>apt upgrade
+
+<span class="c"># Instalar um programa</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>nome-do-programa
+
+<span class="c"># Remover um programa</span>
+<span class="nb">sudo </span>apt remove nome-do-programa
+
+<span class="c"># Limpar arquivos desnecessários</span>
+<span class="nb">sudo </span>apt autoremove
+
+<span class="c"># Ver informações do sistema</span>
+neofetch
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="próximos-passos">Próximos Passos</h2>
+
+<p>Agora que você tem o Ubuntu instalado, pode:</p>
+
+<ol>
+  <li><strong>Personalizar a aparência</strong> em Configurações → Aparência</li>
+  <li><strong>Instalar seus programas favoritos</strong> via Ubuntu Software</li>
+  <li><strong>Aprender comandos do Terminal</strong> (muito útil!)</li>
+  <li><strong>Explorar extensões</strong> para a interface GNOME</li>
+  <li><strong>Configurar atalhos de teclado</strong> personalizados</li>
+</ol>
+
+<h2 id="recursos-para-aprender-mais">Recursos para Aprender Mais</h2>
+
+<ul>
+  <li><a href="https://help.ubuntu.com">Documentação oficial do Ubuntu</a></li>
+  <li><a href="https://ubuntu-br.org">Ubuntu Brasil - Comunidade</a></li>
+  <li><a href="https://askubuntu.com">Ask Ubuntu - Fórum de perguntas</a></li>
+</ul>
+
+<hr />
+
+<p><strong>Bem-vindo ao mundo do código aberto!</strong> Você deu um grande passo ao instalar Linux. Com o tempo, você vai descobrir um mundo novo de possibilidades e aprender muito sobre como os computadores realmente funcionam.</p>
+
+<p>Continue explorando, experimentando e, acima de tudo, divirta-se! 🚀</p>
+
+        </div>
+        
+    </div>
+</div>
+</li>
+
+<li class="archiveposturl" style="background: transparent">
+<div class="lecture-container">
+    
+    <div class="thumbnail">
+      <div class="center-cropped" style="margin-top:5px;margin-bottom:5px;background-image: url('/static_files/presentations/gpp_mds.png');">
+        <img src="/static_files/presentations/gpp_mds.png"/>
+      </div>
+    </div>
+    
+    <div class="content">
+        <span style="font-weight: bold;">Configurando Ambiente a partir de um Projeto GitHub</span><br>
+
+        <strong><i>Summary:</i></strong> Como clonar um repositório e configurar todo o ambiente de desenvolvimento do projeto.
+        <br/>
+        <strong>
+        
+    
+    
+    [<a title="Download Documentação Git Clone" href="
+    
+      https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository 
+    ">Documentação Git Clone</a>]
+    
+    [<a title="Download VS Code Docs" href="
+    
+      https://code.visualstudio.com/docs 
+    ">VS Code Docs</a>]
+    
+    
+
+        </strong>
+
+        
+        <br/>
+        <div class="markdown-content" style="margin-top: 3px;">
+        <h1 id="tutorial-instalando-e-executando-projetos-do-github">Tutorial: Instalando e Executando Projetos do GitHub</h1>
+
+<p>Bem-vindo! Neste tutorial, você vai aprender a baixar (clonar) projetos do GitHub para seu computador e executá-los localmente. Ao final, você saberá como pegar qualquer projeto público do GitHub e fazê-lo funcionar na sua máquina.</p>
+
+<p><strong>O que você vai conseguir:</strong> Baixar um projeto real do GitHub e executá-lo no seu computador.</p>
+
+<p><strong>Tempo estimado:</strong> 30-45 minutos</p>
+
+<p><strong>Pré-requisitos:</strong></p>
+<ul>
+  <li>Git instalado e configurado (veja o tutorial anterior)</li>
+  <li>Ubuntu instalado</li>
+  <li>Conexão com a internet</li>
+</ul>
+
+<hr />
+
+<h2 id="parte-1-entendendo-a-estrutura-de-um-projeto">Parte 1: Entendendo a Estrutura de um Projeto</h2>
+
+<p>Antes de clonar projetos, vamos entender o que procurar.</p>
+
+<h3 id="passo-1-acessar-um-projeto-exemplo-no-github">Passo 1: Acessar um projeto exemplo no GitHub</h3>
+
+<p>Abra seu navegador e vá para: <a href="https://github.com/microsoft/Web-Dev-For-Beginners">github.com/microsoft/Web-Dev-For-Beginners</a></p>
+
+<p>Este é um projeto de exemplo que vamos usar para aprender.</p>
+
+<h3 id="passo-2-identificar-arquivos-importantes">Passo 2: Identificar arquivos importantes</h3>
+
+<p><strong>O que você deve ver:</strong> A página principal do repositório com vários arquivos e pastas.</p>
+
+<p>Procure por estes arquivos importantes (nem todo projeto tem todos):</p>
+
+<ul>
+  <li><strong>README.md</strong> - Explicações sobre o projeto (SEMPRE leia primeiro!)</li>
+  <li><strong>LICENSE</strong> - Licença do projeto</li>
+  <li><strong>package.json</strong> - Projeto Node.js/JavaScript</li>
+  <li><strong>requirements.txt</strong> - Projeto Python</li>
+  <li><strong>pom.xml</strong> ou <strong>build.gradle</strong> - Projeto Java</li>
+  <li><strong>.gitignore</strong> - Arquivos que o Git ignora</li>
+  <li><strong>Dockerfile</strong> - Configuração Docker</li>
+</ul>
+
+<h3 id="passo-3-ler-o-readme">Passo 3: Ler o README</h3>
+
+<ol>
+  <li>Role a página para baixo</li>
+  <li>Leia o README.md que aparece automaticamente</li>
+</ol>
+
+<p><strong>O que procurar no README:</strong></p>
+<ul>
+  <li>Descrição do projeto</li>
+  <li>Pré-requisitos necessários</li>
+  <li>Instruções de instalação</li>
+  <li>Como executar o projeto</li>
+  <li>Exemplos de uso</li>
+</ul>
+
+<p><strong>Regra de ouro:</strong> SEMPRE leia o README antes de tentar executar qualquer projeto!</p>
+
+<hr />
+
+<h2 id="parte-2-clonando-seu-primeiro-projeto">Parte 2: Clonando Seu Primeiro Projeto</h2>
+
+<p>Vamos praticar clonando um projeto simples de página web.</p>
+
+<h3 id="passo-4-encontrar-a-url-do-repositório">Passo 4: Encontrar a URL do repositório</h3>
+
+<ol>
+  <li>No repositório do GitHub, procure o botão verde “Code”</li>
+  <li>Clique nele</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> Um menu com opções HTTPS, SSH e GitHub CLI.</p>
+
+<h3 id="passo-5-copiar-a-url">Passo 5: Copiar a URL</h3>
+
+<p>Escolha uma das opções:</p>
+
+<p><strong>Opção A - HTTPS (mais fácil):</strong></p>
+<ol>
+  <li>Certifique-se que “HTTPS” está selecionado</li>
+  <li>Clique no ícone de copiar ao lado da URL</li>
+</ol>
+
+<p><strong>Opção B - SSH (se você configurou SSH):</strong></p>
+<ol>
+  <li>Clique em “SSH”</li>
+  <li>Clique no ícone de copiar</li>
+</ol>
+
+<p>A URL será algo como:</p>
+<ul>
+  <li>HTTPS: <code class="language-plaintext highlighter-rouge">https://github.com/usuario/projeto.git</code></li>
+  <li>SSH: <code class="language-plaintext highlighter-rouge">git@github.com:usuario/projeto.git</code></li>
+</ul>
+
+<h3 id="passo-6-criar-uma-pasta-para-seus-projetos">Passo 6: Criar uma pasta para seus projetos</h3>
+
+<p>Abra o terminal (<code class="language-plaintext highlighter-rouge">Ctrl + Alt + T</code>) e digite:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> ~/projetos
+<span class="nb">cd</span> ~/projetos
+</code></pre></div></div>
+
+<p><strong>O que você fez:</strong> Criou uma pasta chamada “projetos” na sua home e entrou nela.</p>
+
+<h3 id="passo-7-clonar-o-repositório">Passo 7: Clonar o repositório</h3>
+
+<p>Cole a URL que você copiou no comando:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/microsoft/Web-Dev-For-Beginners.git
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong></p>
+<ul>
+  <li>Mensagens de progresso</li>
+  <li>“Cloning into ‘Web-Dev-For-Beginners’…”</li>
+  <li>Uma barra de progresso</li>
+  <li>“done.”</li>
+</ul>
+
+<p><strong>Tempo de espera:</strong> Varia conforme o tamanho do projeto (10 segundos a alguns minutos).</p>
+
+<h3 id="passo-8-entrar-na-pasta-do-projeto">Passo 8: Entrar na pasta do projeto</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>Web-Dev-For-Beginners
+</code></pre></div></div>
+
+<h3 id="passo-9-listar-os-arquivos">Passo 9: Listar os arquivos</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-la</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Todos os arquivos e pastas do projeto, incluindo a pasta oculta <code class="language-plaintext highlighter-rouge">.git</code>.</p>
+
+<p>Parabéns! Você clonou seu primeiro projeto! ✓</p>
+
+<hr />
+
+<h2 id="parte-3-executando-um-projeto-htmlcssjavascript-simples">Parte 3: Executando um Projeto HTML/CSS/JavaScript Simples</h2>
+
+<p>Vamos criar e executar um projeto web básico para praticar.</p>
+
+<h3 id="passo-10-criar-um-projeto-de-teste-simples">Passo 10: Criar um projeto de teste simples</h3>
+
+<p>Vamos criar nosso próprio projeto simples:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/projetos
+<span class="nb">mkdir </span>meu-site-teste
+<span class="nb">cd </span>meu-site-teste
+</code></pre></div></div>
+
+<h3 id="passo-11-criar-um-arquivo-html">Passo 11: Criar um arquivo HTML</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> index.html <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Meu Primeiro Site&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Olá, GitHub!&lt;/h1&gt;
+        &lt;p&gt;Este é meu primeiro projeto clonado e executado.&lt;/p&gt;
+        &lt;button onclick="mudaCor()"&gt;Clique aqui&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-12-criar-um-arquivo-css">Passo 12: Criar um arquivo CSS</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> style.css <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #764ba2;
+}
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-13-criar-um-arquivo-javascript">Passo 13: Criar um arquivo JavaScript</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> script.js <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+function mudaCor() {
+    const cores = ['#667eea', '#f093fb', '#4facfe', '#43e97b', '#fa709a'];
+    const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+    document.body.style.background = corAleatoria;
+    alert('Cor mudada!');
+}
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-14-abrir-o-projeto-no-navegador">Passo 14: Abrir o projeto no navegador</h3>
+
+<p>Para projetos HTML simples, você pode abrir diretamente:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firefox index.html
+</code></pre></div></div>
+
+<p>ou</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>google-chrome index.html
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Uma página bonita com um botão. Clique no botão para ver a mágica! ✓</p>
+
+<hr />
+
+<h2 id="parte-4-executando-um-projeto-python">Parte 4: Executando um Projeto Python</h2>
+
+<p>Agora vamos aprender a executar projetos Python.</p>
+
+<h3 id="passo-15-verificar-se-python-está-instalado">Passo 15: Verificar se Python está instalado</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Algo como “Python 3.10.12”</p>
+
+<p>Se não estiver instalado:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip <span class="nt">-y</span>
+</code></pre></div></div>
+
+<h3 id="passo-16-criar-um-projeto-python-de-exemplo">Passo 16: Criar um projeto Python de exemplo</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/projetos
+<span class="nb">mkdir </span>calculadora-python
+<span class="nb">cd </span>calculadora-python
+</code></pre></div></div>
+
+<h3 id="passo-17-criar-o-arquivo-python">Passo 17: Criar o arquivo Python</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> calculadora.py <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+def somar(a, b):
+    return a + b
+
+def subtrair(a, b):
+    return a - b
+
+def multiplicar(a, b):
+    return a * b
+
+def dividir(a, b):
+    if b == 0:
+        return "Erro: divisão por zero!"
+    return a / b
+
+def main():
+    print("=== Calculadora Simples ===")
+    print("1. Somar")
+    print("2. Subtrair")
+    print("3. Multiplicar")
+    print("4. Dividir")
+    
+    escolha = input("</span><span class="se">\n</span><span class="sh">Escolha uma operação (1-4): ")
+    
+    num1 = float(input("Digite o primeiro número: "))
+    num2 = float(input("Digite o segundo número: "))
+    
+    if escolha == '1':
+        print(f"</span><span class="se">\n</span><span class="sh">Resultado: {somar(num1, num2)}")
+    elif escolha == '2':
+        print(f"</span><span class="se">\n</span><span class="sh">Resultado: {subtrair(num1, num2)}")
+    elif escolha == '3':
+        print(f"</span><span class="se">\n</span><span class="sh">Resultado: {multiplicar(num1, num2)}")
+    elif escolha == '4':
+        print(f"</span><span class="se">\n</span><span class="sh">Resultado: {dividir(num1, num2)}")
+    else:
+        print("Opção inválida!")
+
+if __name__ == "__main__":
+    main()
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-18-executar-o-programa-python">Passo 18: Executar o programa Python</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 calculadora.py
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Um menu interativo. Teste fazendo algumas operações!</p>
+
+<p>Para sair, apenas conclua uma operação ou pressione <code class="language-plaintext highlighter-rouge">Ctrl + C</code>.</p>
+
+<p>Você executou seu primeiro programa Python! ✓</p>
+
+<h3 id="passo-19-criar-um-arquivo-requirementstxt">Passo 19: Criar um arquivo requirements.txt</h3>
+
+<p>Projetos Python maiores usam bibliotecas externas. Vamos ver como funcionam:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> requirements.txt <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+requests==2.31.0
+colorama==0.4.6
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-20-instalar-dependências-python">Passo 20: Instalar dependências Python</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Mensagens de instalação das bibliotecas.</p>
+
+<p><strong>O que você fez:</strong> Instalou as dependências que o projeto precisa. ✓</p>
+
+<hr />
+
+<h2 id="parte-5-executando-um-projeto-nodejs">Parte 5: Executando um Projeto Node.js</h2>
+
+<p>Projetos JavaScript modernos usam Node.js. Vamos aprender a executá-los.</p>
+
+<h3 id="passo-21-instalar-nodejs-e-npm">Passo 21: Instalar Node.js e npm</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>nodejs npm <span class="nt">-y</span>
+</code></pre></div></div>
+
+<h3 id="passo-22-verificar-a-instalação">Passo 22: Verificar a instalação</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node <span class="nt">--version</span>
+npm <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Números de versão para ambos.</p>
+
+<h3 id="passo-23-criar-um-projeto-nodejs-de-exemplo">Passo 23: Criar um projeto Node.js de exemplo</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/projetos
+<span class="nb">mkdir </span>app-node
+<span class="nb">cd </span>app-node
+</code></pre></div></div>
+
+<h3 id="passo-24-inicializar-um-projeto-nodejs">Passo 24: Inicializar um projeto Node.js</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Um arquivo <code class="language-plaintext highlighter-rouge">package.json</code> foi criado.</p>
+
+<h3 id="passo-25-instalar-uma-dependência">Passo 25: Instalar uma dependência</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>express
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong></p>
+<ul>
+  <li>Uma pasta <code class="language-plaintext highlighter-rouge">node_modules</code> sendo criada</li>
+  <li>Um arquivo <code class="language-plaintext highlighter-rouge">package-lock.json</code> sendo criado</li>
+  <li>Mensagens de instalação</li>
+</ul>
+
+<p><strong>O que aconteceu:</strong> O npm baixou a biblioteca Express e todas as suas dependências.</p>
+
+<h3 id="passo-26-criar-um-servidor-web-simples">Passo 26: Criar um servidor web simples</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> server.js <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.get('/', (req, res) =&gt; {
+    res.send(`
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Servidor Node.js&lt;/title&gt;
+                &lt;style&gt;
+                    body {
+                        font-family: Arial;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        margin: 0;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    }
+                    .card {
+                        background: white;
+                        padding: 40px;
+                        border-radius: 10px;
+                        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div class="card"&gt;
+                    &lt;h1&gt;🚀 Servidor Node.js Funcionando!&lt;/h1&gt;
+                    &lt;p&gt;Você está executando um projeto do GitHub!&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    `);
+});
+
+app.listen(PORT, () =&gt; {
+    console.log(`✅ Servidor rodando em http://localhost:</span><span class="k">${</span><span class="nv">PORT</span><span class="k">}</span><span class="sh">`);
+    console.log('Pressione Ctrl+C para parar');
+});
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-27-executar-o-servidor">Passo 27: Executar o servidor</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node server.js
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> “✅ Servidor rodando em http://localhost:3000”</p>
+
+<h3 id="passo-28-acessar-no-navegador">Passo 28: Acessar no navegador</h3>
+
+<p>Abra seu navegador e vá para: <code class="language-plaintext highlighter-rouge">http://localhost:3000</code></p>
+
+<p><strong>O que você deve ver:</strong> Uma página bonita confirmando que o servidor está funcionando!</p>
+
+<p>Para parar o servidor, volte ao terminal e pressione <code class="language-plaintext highlighter-rouge">Ctrl + C</code>.</p>
+
+<p>Você executou um servidor Node.js! ✓</p>
+
+<hr />
+
+<h2 id="parte-6-clonando-e-executando-um-projeto-real-do-github">Parte 6: Clonando e Executando um Projeto Real do GitHub</h2>
+
+<p>Agora vamos aplicar tudo que aprendemos em um projeto real.</p>
+
+<h3 id="passo-29-escolher-um-projeto-para-clonar">Passo 29: Escolher um projeto para clonar</h3>
+
+<p>Vamos clonar um projeto de lista de tarefas (To-Do List) simples:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/projetos
+git clone https://github.com/docker/getting-started-app.git
+<span class="nb">cd </span>getting-started-app
+</code></pre></div></div>
+
+<h3 id="passo-30-ler-o-readme">Passo 30: Ler o README</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>README.md
+</code></pre></div></div>
+
+<p>ou</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>less README.md
+</code></pre></div></div>
+
+<p>(Pressione <code class="language-plaintext highlighter-rouge">q</code> para sair do less)</p>
+
+<p><strong>O que procurar:</strong></p>
+<ul>
+  <li>Seção “Prerequisites” (pré-requisitos)</li>
+  <li>Seção “Getting Started” ou “Installation”</li>
+  <li>Seção “Running” ou “Usage”</li>
+</ul>
+
+<h3 id="passo-31-verificar-o-tipo-de-projeto">Passo 31: Verificar o tipo de projeto</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-la</span>
+</code></pre></div></div>
+
+<p><strong>Identifique o tipo:</strong></p>
+<ul>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">package.json</code> → Projeto Node.js</li>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">requirements.txt</code> → Projeto Python</li>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">index.html</code> → Projeto web estático</li>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">Dockerfile</code> → Projeto Docker</li>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">pom.xml</code> → Projeto Java</li>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">Gemfile</code> → Projeto Ruby</li>
+</ul>
+
+<h3 id="passo-32-instalar-dependências-exemplo-nodejs">Passo 32: Instalar dependências (exemplo Node.js)</h3>
+
+<p>Para este projeto específico:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Instalação de várias dependências.</p>
+
+<h3 id="passo-33-executar-o-projeto">Passo 33: Executar o projeto</h3>
+
+<p>Procure no <code class="language-plaintext highlighter-rouge">package.json</code> por scripts disponíveis:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>package.json | <span class="nb">grep</span> <span class="nt">-A</span> 5 <span class="s2">"scripts"</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Scripts como “start”, “dev”, “build”, etc.</p>
+
+<p>Para executar:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
+</code></pre></div></div>
+
+<p>ou</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run dev
+</code></pre></div></div>
+
+<p>(Depende do projeto)</p>
+
+<h3 id="passo-34-acessar-a-aplicação">Passo 34: Acessar a aplicação</h3>
+
+<p>Se o projeto iniciar um servidor, você verá algo como:</p>
+<ul>
+  <li>“Server running on port 3000”</li>
+  <li>“Listening on http://localhost:3000”</li>
+</ul>
+
+<p>Abra o navegador e acesse a URL indicada.</p>
+
+<hr />
+
+<h2 id="parte-7-resolvendo-problemas-comuns">Parte 7: Resolvendo Problemas Comuns</h2>
+
+<h3 id="problema-1-comando-não-encontrado">Problema 1: “comando não encontrado”</h3>
+
+<p><strong>Erro:</strong> <code class="language-plaintext highlighter-rouge">bash: node: command not found</code></p>
+
+<p><strong>Solução:</strong> Instale a ferramenta necessária:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Para Node.js</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>nodejs npm
+
+<span class="c"># Para Python</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip
+
+<span class="c"># Para Git</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>git
+</code></pre></div></div>
+
+<h3 id="problema-2-permissão-negada">Problema 2: “permissão negada”</h3>
+
+<p><strong>Erro:</strong> <code class="language-plaintext highlighter-rouge">Permission denied</code></p>
+
+<p><strong>Solução:</strong> Adicione <code class="language-plaintext highlighter-rouge">sudo</code> antes do comando (apenas se for realmente necessário):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>comando-aqui
+</code></pre></div></div>
+
+<h3 id="problema-3-porta-já-em-uso">Problema 3: “porta já em uso”</h3>
+
+<p><strong>Erro:</strong> <code class="language-plaintext highlighter-rouge">Port 3000 is already in use</code></p>
+
+<p><strong>Solução:</strong> Mate o processo que está usando a porta:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Encontrar o processo</span>
+<span class="nb">sudo </span>lsof <span class="nt">-i</span> :3000
+
+<span class="c"># Matar o processo (substitua PID pelo número que apareceu)</span>
+<span class="nb">kill</span> <span class="nt">-9</span> PID
+</code></pre></div></div>
+
+<p>Ou use outra porta no arquivo de configuração.</p>
+
+<h3 id="problema-4-dependências-faltando">Problema 4: Dependências faltando</h3>
+
+<p><strong>Erro:</strong> <code class="language-plaintext highlighter-rouge">Cannot find module 'express'</code></p>
+
+<p><strong>Solução:</strong> Instale as dependências:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Node.js</span>
+npm <span class="nb">install</span>
+
+<span class="c"># Python</span>
+pip3 <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<h3 id="problema-5-versão-incompatível">Problema 5: Versão incompatível</h3>
+
+<p><strong>Erro:</strong> <code class="language-plaintext highlighter-rouge">Requires Node.js version 16 or higher</code></p>
+
+<p><strong>Solução:</strong> Atualize a ferramenta ou use um gerenciador de versões:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Para Node.js (usando nvm)</span>
+curl <span class="nt">-o-</span> https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+<span class="nb">source</span> ~/.bashrc
+nvm <span class="nb">install </span>18
+nvm use 18
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="parte-8-boas-práticas-ao-executar-projetos">Parte 8: Boas Práticas ao Executar Projetos</h2>
+
+<h3 id="passo-35-sempre-criar-ambientes-virtuais-python">Passo 35: Sempre criar ambientes virtuais (Python)</h3>
+
+<p>Para projetos Python, use ambientes virtuais:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Criar ambiente virtual</span>
+python3 <span class="nt">-m</span> venv venv
+
+<span class="c"># Ativar (Linux/Ubuntu)</span>
+<span class="nb">source </span>venv/bin/activate
+
+<span class="c"># Agora instalar dependências</span>
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+
+<span class="c"># Desativar quando terminar</span>
+deactivate
+</code></pre></div></div>
+
+<p><strong>Por quê?</strong> Mantém as dependências isoladas e evita conflitos.</p>
+
+<h3 id="passo-36-verificar-o-arquivo-gitignore">Passo 36: Verificar o arquivo .gitignore</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> .gitignore
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Lista de arquivos/pastas que o Git ignora.</p>
+
+<p>Itens comuns:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">node_modules/</code> - dependências Node.js (não deve ser commitado)</li>
+  <li><code class="language-plaintext highlighter-rouge">venv/</code> - ambiente virtual Python</li>
+  <li><code class="language-plaintext highlighter-rouge">.env</code> - variáveis de ambiente (senhas, chaves)</li>
+  <li><code class="language-plaintext highlighter-rouge">dist/</code> - arquivos compilados</li>
+</ul>
+
+<p><strong>Importante:</strong> Nunca commite pastas como <code class="language-plaintext highlighter-rouge">node_modules</code> ou <code class="language-plaintext highlighter-rouge">venv</code>!</p>
+
+<h3 id="passo-37-procurar-por-arquivos-de-configuração">Passo 37: Procurar por arquivos de configuração</h3>
+
+<p>Projetos podem precisar de configuração:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Procurar por exemplos de configuração</span>
+<span class="nb">ls</span> <span class="nt">-la</span> | <span class="nb">grep </span>example
+<span class="nb">ls</span> <span class="nt">-la</span> | <span class="nb">grep </span>sample
+</code></pre></div></div>
+
+<p>Comum encontrar:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.env.example</code> → copie para <code class="language-plaintext highlighter-rouge">.env</code> e edite</li>
+  <li><code class="language-plaintext highlighter-rouge">config.sample.json</code> → copie para <code class="language-plaintext highlighter-rouge">config.json</code> e edite</li>
+</ul>
+
+<p>Exemplo:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> .env.example .env
+nano .env  <span class="c"># Edite as configurações</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-parabéns">🎉 Parabéns!</h2>
+
+<p>Você completou o tutorial de instalação e execução de projetos do GitHub! Agora você sabe:</p>
+
+<p>✓ Clonar repositórios do GitHub<br />
+✓ Identificar o tipo de projeto<br />
+✓ Ler e seguir instruções do README<br />
+✓ Instalar dependências de diferentes linguagens<br />
+✓ Executar projetos HTML/CSS/JS, Python e Node.js<br />
+✓ Resolver problemas comuns<br />
+✓ Aplicar boas práticas</p>
+
+<hr />
+
+<h2 id="checklist-executando-qualquer-projeto-do-github">Checklist: Executando Qualquer Projeto do GitHub</h2>
+
+<p>Use esta lista sempre que for executar um projeto novo:</p>
+
+<p><strong>□ Passo 1:</strong> Clone o repositório</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone URL_DO_REPO
+<span class="nb">cd </span>nome-do-projeto
+</code></pre></div></div>
+
+<p><strong>□ Passo 2:</strong> Leia o README</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>README.md
+</code></pre></div></div>
+
+<p><strong>□ Passo 3:</strong> Identifique o tipo de projeto</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-la</span>
+</code></pre></div></div>
+
+<p><strong>□ Passo 4:</strong> Verifique pré-requisitos</p>
+<ul>
+  <li>Node.js instalado? <code class="language-plaintext highlighter-rouge">node --version</code></li>
+  <li>Python instalado? <code class="language-plaintext highlighter-rouge">python3 --version</code></li>
+  <li>Outras ferramentas necessárias?</li>
+</ul>
+
+<p><strong>□ Passo 5:</strong> Instale dependências</p>
+
+<p><em>Para Node.js:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p><em>Para Python:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv venv
+<span class="nb">source </span>venv/bin/activate
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<p><strong>□ Passo 6:</strong> Configure variáveis de ambiente (se necessário)</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> .env.example .env
+nano .env
+</code></pre></div></div>
+
+<p><strong>□ Passo 7:</strong> Execute o projeto</p>
+
+<p><em>Para Node.js:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
+<span class="c"># ou</span>
+npm run dev
+</code></pre></div></div>
+
+<p><em>Para Python:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 app.py
+<span class="c"># ou</span>
+python3 main.py
+</code></pre></div></div>
+
+<p><em>Para HTML estático:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firefox index.html
+</code></pre></div></div>
+
+<p><strong>□ Passo 8:</strong> Acesse no navegador (se aplicável)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:PORTA
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="comandos-de-referência-rápida">Comandos de Referência Rápida</h2>
+
+<h3 id="git">Git</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clonar repositório</span>
+git clone URL
+
+<span class="c"># Ver status</span>
+git status
+
+<span class="c"># Atualizar repositório</span>
+git pull
+</code></pre></div></div>
+
+<h3 id="nodejs">Node.js</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Instalar dependências</span>
+npm <span class="nb">install</span>
+
+<span class="c"># Executar scripts</span>
+npm start
+npm run dev
+npm run build
+
+<span class="c"># Instalar pacote específico</span>
+npm <span class="nb">install </span>nome-pacote
+</code></pre></div></div>
+
+<h3 id="python">Python</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Criar ambiente virtual</span>
+python3 <span class="nt">-m</span> venv venv
+
+<span class="c"># Ativar ambiente virtual</span>
+<span class="nb">source </span>venv/bin/activate
+
+<span class="c"># Instalar dependências</span>
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+
+<span class="c"># Executar script</span>
+python3 arquivo.py
+
+<span class="c"># Desativar ambiente virtual</span>
+deactivate
+</code></pre></div></div>
+
+<h3 id="úteis">Úteis</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ver processos na porta</span>
+<span class="nb">sudo </span>lsof <span class="nt">-i</span> :3000
+
+<span class="c"># Matar processo</span>
+<span class="nb">kill</span> <span class="nt">-9</span> PID
+
+<span class="c"># Ver versão de ferramentas</span>
+node <span class="nt">--version</span>
+python3 <span class="nt">--version</span>
+git <span class="nt">--version</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="projetos-recomendados-para-praticar">Projetos Recomendados para Praticar</h2>
+
+<p>Aqui estão alguns projetos iniciantes para você clonar e executar:</p>
+
+<h3 id="htmlcssjavascript">HTML/CSS/JavaScript</h3>
+<ol>
+  <li><strong>Calculator</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/calculator</code></li>
+  <li><strong>To-Do List</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/todo-list</code></li>
+  <li><strong>Weather App</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/weather-app</code></li>
+</ol>
+
+<h3 id="python-1">Python</h3>
+<ol>
+  <li><strong>Snake Game</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/snake-game</code></li>
+  <li><strong>Quiz App</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/quiz-app</code></li>
+  <li><strong>Password Generator</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/password-generator</code></li>
+</ol>
+
+<h3 id="nodejs-1">Node.js</h3>
+<ol>
+  <li><strong>Chat App</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/chat-application</code></li>
+  <li><strong>Blog</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/blog</code></li>
+  <li><strong>API REST</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/rest-api</code></li>
+</ol>
+
+<p><strong>Dica:</strong> No GitHub, use a busca com filtros:</p>
+<ul>
+  <li>Linguagem: JavaScript, Python, etc.</li>
+  <li>Stars: &gt;100 (projetos populares)</li>
+  <li>Topics: iniciante, tutorial</li>
+</ul>
+
+<hr />
+
+<h2 id="próximos-passos">Próximos Passos</h2>
+
+<p>Agora que você domina a execução de projetos, pode:</p>
+
+<ol>
+  <li><strong>Contribuir para projetos open source</strong> fazendo forks e pull requests</li>
+  <li><strong>Modificar projetos existentes</strong> para aprender como funcionam</li>
+  <li><strong>Criar seus próprios projetos</strong> e publicar no GitHub</li>
+  <li><strong>Explorar Docker</strong> para executar projetos em containers</li>
+  <li><strong>Aprender CI/CD</strong> para automatizar deploys</li>
+</ol>
+
+<p>Continue praticando! Cada projeto que você executa ensina algo novo. 🚀</p>
 
         </div>
         

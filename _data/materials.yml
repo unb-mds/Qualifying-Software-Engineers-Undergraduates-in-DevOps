@@ -1,4 +1,19 @@
 items:
+- curse_name: Configurando Ambiente de Projeto
+  url: /lectures/Lec7/
+  description: Como clonar um repositório GitHub e configurar todo o ambiente de desenvolvimento - Node.js, Python, Docker, banco de dados e VS Code.
+  author: https://github.com/unb-mds.png
+
+- curse_name: Instalação do Ubuntu
+  url: /lectures/Lec6/
+  description: Guia completo para instalar Ubuntu - máquina virtual (VirtualBox), dual boot com Windows ou WSL. Inclui configuração de ambiente de desenvolvimento.
+  author: https://github.com/unb-mds.png
+
+- curse_name: Tutorial Git e GitHub | Ubuntu
+  url: /lectures/Lec5/
+  description: Guia completo passo a passo para configurar Git e GitHub no Ubuntu. Inclui instalação, configuração SSH, comandos essenciais, branches e fluxo de trabalho completo.
+  author: https://github.com/unb-mds.png
+
 - curse_name: Roteiro de Entregas | Release 1 e 2
   url: /roteiro/
   description: Guia completo para as entregas das Releases 1 e 2, incluindo checklist de documentação, roteiro de apresentação e critérios de avaliação do projeto.

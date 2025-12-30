@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <script>
+    // Store scroll
+    const debounce = (fn) => {
+      let frame;
+
+      return (...params) => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        frame = requestAnimationFrame(() => {
+          fn(...params);
+        });
+      };
+    };
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+      if (window.scrollY < 0) document.documentElement.dataset.scroll = 0;
+    };
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    storeScroll();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interBubble = document.querySelector('.interactive');
+      let curX = 0;
+      let curY = 0;
+      let tgX = 0;
+      let tgY = 0;
+
+      function move() {
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
+          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+          requestAnimationFrame(() => {
+              move();
+          });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+          tgX = event.clientX;
+          tgY = event.clientY;
+          if (interBubble) {
+            move();
+          }
+      });
+    });
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Configurando Ambiente a partir de um Projeto GitHub - MDS / 4 semestre </title>
+  <meta name="description" content="Tutorial: Instalando e Executando Projetos do GitHubBem-vindo! Neste tutorial, você vai aprender a baixar (clonar) projetos do GitHub para seu computador e e...">
+  
+  <link rel="stylesheet" href="/_css/main.css?v=1767119684">
+  <link rel="canonical" href="http://0.0.0.0:4000/lectures/Lec7/">
+  <link rel="alternate" type="application/rss+xml" title="MDS / 4 semestre - UnB" href="http://0.0.0.0:4000/feed.xml" />
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+  <body>
+
+    
+
+<header class="site-header">
+
+  <div class="wrapper">
+      <!-- <table><tr>
+          <td><img width="170" src="/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:20px;"><a class="schoolname" style="font-size: 25px;" class="site-title" href="">UnB</a>
+          <br/>
+          <span style="margin-top: -10px;margin-bottom: -5px;" class="site-title"><a href="/" style="font-size: 47px;" title="MDS / 4 semestre - UnB"><b>MDS</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 20px;font-weight: bold;margin-top: 10px;display: block;">4 semestre</span>
+          </td>
+        </tr></table> -->
+
+    <nav class="site-nav">
+
+      <!-- <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1> -->
+      <a href="/">
+        <img width="100" src="/_images/logo.png">
+      </a>
+      <ul class="menu">
+    
+        <li>
+            <a class="page-link" href="/">
+                <i class="fa fa-home fa-lg"></i> Página Inicial
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/planoensino/">
+                <i class="fas fa-list-alt"></i> Plano de ensino
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/materials/">
+                <i class="fas fa-book"></i> Materiais
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/aulas/">
+                <i class="fas fa-chalkboard-teacher"></i> Aulas
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="/posts/">
+                <i class="fas fa-user-graduate"></i> Projetos
+            </a>
+        </li>
+    
+        <li>
+            <a class="page-link" href="https://github.com/unb-mds">
+                <i class="fab fa-github"></i> Repositórios
+            </a>
+        </li>
+    
+</ul>
+
+     <!-- </div>   -->
+    </nav>
+
+  </div>
+
+  <!-- <div class="header-texture" /> -->
+  
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="lecture-page">
+  <div class="lecture-hero">
+    <div class="lecture-hero-content">
+      <a href="/materials/" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Materiais</a>
+      <h1 class="lecture-title">Configurando Ambiente a partir de um Projeto GitHub</h1>
+      <p class="lecture-tldr">Como clonar um repositório e configurar todo o ambiente de desenvolvimento do projeto.</p>
+      <div class="lecture-meta">
+        
+        <span class="meta-item"><i class="fas fa-calendar"></i> 13/08/2025</span>
+        
+        
+        <div class="lecture-links">
+          
+          <a href="https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository" target="_blank" class="lecture-link-btn">
+            <i class="fas fa-external-link-alt"></i> Documentação Git Clone
+          </a>
+          
+          <a href="https://code.visualstudio.com/docs" target="_blank" class="lecture-link-btn">
+            <i class="fas fa-external-link-alt"></i> VS Code Docs
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="lecture-thumbnail">
+      <img src="/static_files/presentations/gpp_mds.png" alt="Configurando Ambiente a partir de um Projeto GitHub">
+    </div>
+    
+  </div>
+
+  <div class="lecture-content">
+    <h1 id="tutorial-instalando-e-executando-projetos-do-github">Tutorial: Instalando e Executando Projetos do GitHub</h1>
+
+<p>Bem-vindo! Neste tutorial, você vai aprender a baixar (clonar) projetos do GitHub para seu computador e executá-los localmente. Ao final, você saberá como pegar qualquer projeto público do GitHub e fazê-lo funcionar na sua máquina.</p>
+
+<p><strong>O que você vai conseguir:</strong> Baixar um projeto real do GitHub e executá-lo no seu computador.</p>
+
+<p><strong>Tempo estimado:</strong> 30-45 minutos</p>
+
+<p><strong>Pré-requisitos:</strong></p>
+<ul>
+  <li>Git instalado e configurado (veja o tutorial anterior)</li>
+  <li>Ubuntu instalado</li>
+  <li>Conexão com a internet</li>
+</ul>
+
+<hr />
+
+<h2 id="parte-1-entendendo-a-estrutura-de-um-projeto">Parte 1: Entendendo a Estrutura de um Projeto</h2>
+
+<p>Antes de clonar projetos, vamos entender o que procurar.</p>
+
+<h3 id="passo-1-acessar-um-projeto-exemplo-no-github">Passo 1: Acessar um projeto exemplo no GitHub</h3>
+
+<p>Abra seu navegador e vá para: <a href="https://github.com/microsoft/Web-Dev-For-Beginners">github.com/microsoft/Web-Dev-For-Beginners</a></p>
+
+<p>Este é um projeto de exemplo que vamos usar para aprender.</p>
+
+<h3 id="passo-2-identificar-arquivos-importantes">Passo 2: Identificar arquivos importantes</h3>
+
+<p><strong>O que você deve ver:</strong> A página principal do repositório com vários arquivos e pastas.</p>
+
+<p>Procure por estes arquivos importantes (nem todo projeto tem todos):</p>
+
+<ul>
+  <li><strong>README.md</strong> - Explicações sobre o projeto (SEMPRE leia primeiro!)</li>
+  <li><strong>LICENSE</strong> - Licença do projeto</li>
+  <li><strong>package.json</strong> - Projeto Node.js/JavaScript</li>
+  <li><strong>requirements.txt</strong> - Projeto Python</li>
+  <li><strong>pom.xml</strong> ou <strong>build.gradle</strong> - Projeto Java</li>
+  <li><strong>.gitignore</strong> - Arquivos que o Git ignora</li>
+  <li><strong>Dockerfile</strong> - Configuração Docker</li>
+</ul>
+
+<h3 id="passo-3-ler-o-readme">Passo 3: Ler o README</h3>
+
+<ol>
+  <li>Role a página para baixo</li>
+  <li>Leia o README.md que aparece automaticamente</li>
+</ol>
+
+<p><strong>O que procurar no README:</strong></p>
+<ul>
+  <li>Descrição do projeto</li>
+  <li>Pré-requisitos necessários</li>
+  <li>Instruções de instalação</li>
+  <li>Como executar o projeto</li>
+  <li>Exemplos de uso</li>
+</ul>
+
+<p><strong>Regra de ouro:</strong> SEMPRE leia o README antes de tentar executar qualquer projeto!</p>
+
+<hr />
+
+<h2 id="parte-2-clonando-seu-primeiro-projeto">Parte 2: Clonando Seu Primeiro Projeto</h2>
+
+<p>Vamos praticar clonando um projeto simples de página web.</p>
+
+<h3 id="passo-4-encontrar-a-url-do-repositório">Passo 4: Encontrar a URL do repositório</h3>
+
+<ol>
+  <li>No repositório do GitHub, procure o botão verde “Code”</li>
+  <li>Clique nele</li>
+</ol>
+
+<p><strong>O que você deve ver:</strong> Um menu com opções HTTPS, SSH e GitHub CLI.</p>
+
+<h3 id="passo-5-copiar-a-url">Passo 5: Copiar a URL</h3>
+
+<p>Escolha uma das opções:</p>
+
+<p><strong>Opção A - HTTPS (mais fácil):</strong></p>
+<ol>
+  <li>Certifique-se que “HTTPS” está selecionado</li>
+  <li>Clique no ícone de copiar ao lado da URL</li>
+</ol>
+
+<p><strong>Opção B - SSH (se você configurou SSH):</strong></p>
+<ol>
+  <li>Clique em “SSH”</li>
+  <li>Clique no ícone de copiar</li>
+</ol>
+
+<p>A URL será algo como:</p>
+<ul>
+  <li>HTTPS: <code class="language-plaintext highlighter-rouge">https://github.com/usuario/projeto.git</code></li>
+  <li>SSH: <code class="language-plaintext highlighter-rouge">git@github.com:usuario/projeto.git</code></li>
+</ul>
+
+<h3 id="passo-6-criar-uma-pasta-para-seus-projetos">Passo 6: Criar uma pasta para seus projetos</h3>
+
+<p>Abra o terminal (<code class="language-plaintext highlighter-rouge">Ctrl + Alt + T</code>) e digite:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> ~/projetos
+<span class="nb">cd</span> ~/projetos
+</code></pre></div></div>
+
+<p><strong>O que você fez:</strong> Criou uma pasta chamada “projetos” na sua home e entrou nela.</p>
+
+<h3 id="passo-7-clonar-o-repositório">Passo 7: Clonar o repositório</h3>
+
+<p>Cole a URL que você copiou no comando:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/microsoft/Web-Dev-For-Beginners.git
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong></p>
+<ul>
+  <li>Mensagens de progresso</li>
+  <li>“Cloning into ‘Web-Dev-For-Beginners’…”</li>
+  <li>Uma barra de progresso</li>
+  <li>“done.”</li>
+</ul>
+
+<p><strong>Tempo de espera:</strong> Varia conforme o tamanho do projeto (10 segundos a alguns minutos).</p>
+
+<h3 id="passo-8-entrar-na-pasta-do-projeto">Passo 8: Entrar na pasta do projeto</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>Web-Dev-For-Beginners
+</code></pre></div></div>
+
+<h3 id="passo-9-listar-os-arquivos">Passo 9: Listar os arquivos</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-la</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Todos os arquivos e pastas do projeto, incluindo a pasta oculta <code class="language-plaintext highlighter-rouge">.git</code>.</p>
+
+<p>Parabéns! Você clonou seu primeiro projeto! ✓</p>
+
+<hr />
+
+<h2 id="parte-3-executando-um-projeto-htmlcssjavascript-simples">Parte 3: Executando um Projeto HTML/CSS/JavaScript Simples</h2>
+
+<p>Vamos criar e executar um projeto web básico para praticar.</p>
+
+<h3 id="passo-10-criar-um-projeto-de-teste-simples">Passo 10: Criar um projeto de teste simples</h3>
+
+<p>Vamos criar nosso próprio projeto simples:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/projetos
+<span class="nb">mkdir </span>meu-site-teste
+<span class="nb">cd </span>meu-site-teste
+</code></pre></div></div>
+
+<h3 id="passo-11-criar-um-arquivo-html">Passo 11: Criar um arquivo HTML</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> index.html <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Meu Primeiro Site&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Olá, GitHub!&lt;/h1&gt;
+        &lt;p&gt;Este é meu primeiro projeto clonado e executado.&lt;/p&gt;
+        &lt;button onclick="mudaCor()"&gt;Clique aqui&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-12-criar-um-arquivo-css">Passo 12: Criar um arquivo CSS</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> style.css <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #764ba2;
+}
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-13-criar-um-arquivo-javascript">Passo 13: Criar um arquivo JavaScript</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> script.js <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+function mudaCor() {
+    const cores = ['#667eea', '#f093fb', '#4facfe', '#43e97b', '#fa709a'];
+    const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+    document.body.style.background = corAleatoria;
+    alert('Cor mudada!');
+}
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-14-abrir-o-projeto-no-navegador">Passo 14: Abrir o projeto no navegador</h3>
+
+<p>Para projetos HTML simples, você pode abrir diretamente:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firefox index.html
+</code></pre></div></div>
+
+<p>ou</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>google-chrome index.html
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Uma página bonita com um botão. Clique no botão para ver a mágica! ✓</p>
+
+<hr />
+
+<h2 id="parte-4-executando-um-projeto-python">Parte 4: Executando um Projeto Python</h2>
+
+<p>Agora vamos aprender a executar projetos Python.</p>
+
+<h3 id="passo-15-verificar-se-python-está-instalado">Passo 15: Verificar se Python está instalado</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Algo como “Python 3.10.12”</p>
+
+<p>Se não estiver instalado:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip <span class="nt">-y</span>
+</code></pre></div></div>
+
+<h3 id="passo-16-criar-um-projeto-python-de-exemplo">Passo 16: Criar um projeto Python de exemplo</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/projetos
+<span class="nb">mkdir </span>calculadora-python
+<span class="nb">cd </span>calculadora-python
+</code></pre></div></div>
+
+<h3 id="passo-17-criar-o-arquivo-python">Passo 17: Criar o arquivo Python</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> calculadora.py <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+def somar(a, b):
+    return a + b
+
+def subtrair(a, b):
+    return a - b
+
+def multiplicar(a, b):
+    return a * b
+
+def dividir(a, b):
+    if b == 0:
+        return "Erro: divisão por zero!"
+    return a / b
+
+def main():
+    print("=== Calculadora Simples ===")
+    print("1. Somar")
+    print("2. Subtrair")
+    print("3. Multiplicar")
+    print("4. Dividir")
+    
+    escolha = input("</span><span class="se">\n</span><span class="sh">Escolha uma operação (1-4): ")
+    
+    num1 = float(input("Digite o primeiro número: "))
+    num2 = float(input("Digite o segundo número: "))
+    
+    if escolha == '1':
+        print(f"</span><span class="se">\n</span><span class="sh">Resultado: {somar(num1, num2)}")
+    elif escolha == '2':
+        print(f"</span><span class="se">\n</span><span class="sh">Resultado: {subtrair(num1, num2)}")
+    elif escolha == '3':
+        print(f"</span><span class="se">\n</span><span class="sh">Resultado: {multiplicar(num1, num2)}")
+    elif escolha == '4':
+        print(f"</span><span class="se">\n</span><span class="sh">Resultado: {dividir(num1, num2)}")
+    else:
+        print("Opção inválida!")
+
+if __name__ == "__main__":
+    main()
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-18-executar-o-programa-python">Passo 18: Executar o programa Python</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 calculadora.py
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Um menu interativo. Teste fazendo algumas operações!</p>
+
+<p>Para sair, apenas conclua uma operação ou pressione <code class="language-plaintext highlighter-rouge">Ctrl + C</code>.</p>
+
+<p>Você executou seu primeiro programa Python! ✓</p>
+
+<h3 id="passo-19-criar-um-arquivo-requirementstxt">Passo 19: Criar um arquivo requirements.txt</h3>
+
+<p>Projetos Python maiores usam bibliotecas externas. Vamos ver como funcionam:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> requirements.txt <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+requests==2.31.0
+colorama==0.4.6
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-20-instalar-dependências-python">Passo 20: Instalar dependências Python</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Mensagens de instalação das bibliotecas.</p>
+
+<p><strong>O que você fez:</strong> Instalou as dependências que o projeto precisa. ✓</p>
+
+<hr />
+
+<h2 id="parte-5-executando-um-projeto-nodejs">Parte 5: Executando um Projeto Node.js</h2>
+
+<p>Projetos JavaScript modernos usam Node.js. Vamos aprender a executá-los.</p>
+
+<h3 id="passo-21-instalar-nodejs-e-npm">Passo 21: Instalar Node.js e npm</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>nodejs npm <span class="nt">-y</span>
+</code></pre></div></div>
+
+<h3 id="passo-22-verificar-a-instalação">Passo 22: Verificar a instalação</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node <span class="nt">--version</span>
+npm <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Números de versão para ambos.</p>
+
+<h3 id="passo-23-criar-um-projeto-nodejs-de-exemplo">Passo 23: Criar um projeto Node.js de exemplo</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/projetos
+<span class="nb">mkdir </span>app-node
+<span class="nb">cd </span>app-node
+</code></pre></div></div>
+
+<h3 id="passo-24-inicializar-um-projeto-nodejs">Passo 24: Inicializar um projeto Node.js</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Um arquivo <code class="language-plaintext highlighter-rouge">package.json</code> foi criado.</p>
+
+<h3 id="passo-25-instalar-uma-dependência">Passo 25: Instalar uma dependência</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>express
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong></p>
+<ul>
+  <li>Uma pasta <code class="language-plaintext highlighter-rouge">node_modules</code> sendo criada</li>
+  <li>Um arquivo <code class="language-plaintext highlighter-rouge">package-lock.json</code> sendo criado</li>
+  <li>Mensagens de instalação</li>
+</ul>
+
+<p><strong>O que aconteceu:</strong> O npm baixou a biblioteca Express e todas as suas dependências.</p>
+
+<h3 id="passo-26-criar-um-servidor-web-simples">Passo 26: Criar um servidor web simples</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> server.js <span class="o">&lt;&lt;</span> <span class="sh">'</span><span class="no">EOF</span><span class="sh">'
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.get('/', (req, res) =&gt; {
+    res.send(`
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Servidor Node.js&lt;/title&gt;
+                &lt;style&gt;
+                    body {
+                        font-family: Arial;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        margin: 0;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    }
+                    .card {
+                        background: white;
+                        padding: 40px;
+                        border-radius: 10px;
+                        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div class="card"&gt;
+                    &lt;h1&gt;🚀 Servidor Node.js Funcionando!&lt;/h1&gt;
+                    &lt;p&gt;Você está executando um projeto do GitHub!&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    `);
+});
+
+app.listen(PORT, () =&gt; {
+    console.log(`✅ Servidor rodando em http://localhost:</span><span class="k">${</span><span class="nv">PORT</span><span class="k">}</span><span class="sh">`);
+    console.log('Pressione Ctrl+C para parar');
+});
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<h3 id="passo-27-executar-o-servidor">Passo 27: Executar o servidor</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node server.js
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> “✅ Servidor rodando em http://localhost:3000”</p>
+
+<h3 id="passo-28-acessar-no-navegador">Passo 28: Acessar no navegador</h3>
+
+<p>Abra seu navegador e vá para: <code class="language-plaintext highlighter-rouge">http://localhost:3000</code></p>
+
+<p><strong>O que você deve ver:</strong> Uma página bonita confirmando que o servidor está funcionando!</p>
+
+<p>Para parar o servidor, volte ao terminal e pressione <code class="language-plaintext highlighter-rouge">Ctrl + C</code>.</p>
+
+<p>Você executou um servidor Node.js! ✓</p>
+
+<hr />
+
+<h2 id="parte-6-clonando-e-executando-um-projeto-real-do-github">Parte 6: Clonando e Executando um Projeto Real do GitHub</h2>
+
+<p>Agora vamos aplicar tudo que aprendemos em um projeto real.</p>
+
+<h3 id="passo-29-escolher-um-projeto-para-clonar">Passo 29: Escolher um projeto para clonar</h3>
+
+<p>Vamos clonar um projeto de lista de tarefas (To-Do List) simples:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/projetos
+git clone https://github.com/docker/getting-started-app.git
+<span class="nb">cd </span>getting-started-app
+</code></pre></div></div>
+
+<h3 id="passo-30-ler-o-readme">Passo 30: Ler o README</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>README.md
+</code></pre></div></div>
+
+<p>ou</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>less README.md
+</code></pre></div></div>
+
+<p>(Pressione <code class="language-plaintext highlighter-rouge">q</code> para sair do less)</p>
+
+<p><strong>O que procurar:</strong></p>
+<ul>
+  <li>Seção “Prerequisites” (pré-requisitos)</li>
+  <li>Seção “Getting Started” ou “Installation”</li>
+  <li>Seção “Running” ou “Usage”</li>
+</ul>
+
+<h3 id="passo-31-verificar-o-tipo-de-projeto">Passo 31: Verificar o tipo de projeto</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-la</span>
+</code></pre></div></div>
+
+<p><strong>Identifique o tipo:</strong></p>
+<ul>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">package.json</code> → Projeto Node.js</li>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">requirements.txt</code> → Projeto Python</li>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">index.html</code> → Projeto web estático</li>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">Dockerfile</code> → Projeto Docker</li>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">pom.xml</code> → Projeto Java</li>
+  <li>Se tem <code class="language-plaintext highlighter-rouge">Gemfile</code> → Projeto Ruby</li>
+</ul>
+
+<h3 id="passo-32-instalar-dependências-exemplo-nodejs">Passo 32: Instalar dependências (exemplo Node.js)</h3>
+
+<p>Para este projeto específico:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Instalação de várias dependências.</p>
+
+<h3 id="passo-33-executar-o-projeto">Passo 33: Executar o projeto</h3>
+
+<p>Procure no <code class="language-plaintext highlighter-rouge">package.json</code> por scripts disponíveis:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>package.json | <span class="nb">grep</span> <span class="nt">-A</span> 5 <span class="s2">"scripts"</span>
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Scripts como “start”, “dev”, “build”, etc.</p>
+
+<p>Para executar:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
+</code></pre></div></div>
+
+<p>ou</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run dev
+</code></pre></div></div>
+
+<p>(Depende do projeto)</p>
+
+<h3 id="passo-34-acessar-a-aplicação">Passo 34: Acessar a aplicação</h3>
+
+<p>Se o projeto iniciar um servidor, você verá algo como:</p>
+<ul>
+  <li>“Server running on port 3000”</li>
+  <li>“Listening on http://localhost:3000”</li>
+</ul>
+
+<p>Abra o navegador e acesse a URL indicada.</p>
+
+<hr />
+
+<h2 id="parte-7-resolvendo-problemas-comuns">Parte 7: Resolvendo Problemas Comuns</h2>
+
+<h3 id="problema-1-comando-não-encontrado">Problema 1: “comando não encontrado”</h3>
+
+<p><strong>Erro:</strong> <code class="language-plaintext highlighter-rouge">bash: node: command not found</code></p>
+
+<p><strong>Solução:</strong> Instale a ferramenta necessária:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Para Node.js</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>nodejs npm
+
+<span class="c"># Para Python</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip
+
+<span class="c"># Para Git</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>git
+</code></pre></div></div>
+
+<h3 id="problema-2-permissão-negada">Problema 2: “permissão negada”</h3>
+
+<p><strong>Erro:</strong> <code class="language-plaintext highlighter-rouge">Permission denied</code></p>
+
+<p><strong>Solução:</strong> Adicione <code class="language-plaintext highlighter-rouge">sudo</code> antes do comando (apenas se for realmente necessário):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>comando-aqui
+</code></pre></div></div>
+
+<h3 id="problema-3-porta-já-em-uso">Problema 3: “porta já em uso”</h3>
+
+<p><strong>Erro:</strong> <code class="language-plaintext highlighter-rouge">Port 3000 is already in use</code></p>
+
+<p><strong>Solução:</strong> Mate o processo que está usando a porta:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Encontrar o processo</span>
+<span class="nb">sudo </span>lsof <span class="nt">-i</span> :3000
+
+<span class="c"># Matar o processo (substitua PID pelo número que apareceu)</span>
+<span class="nb">kill</span> <span class="nt">-9</span> PID
+</code></pre></div></div>
+
+<p>Ou use outra porta no arquivo de configuração.</p>
+
+<h3 id="problema-4-dependências-faltando">Problema 4: Dependências faltando</h3>
+
+<p><strong>Erro:</strong> <code class="language-plaintext highlighter-rouge">Cannot find module 'express'</code></p>
+
+<p><strong>Solução:</strong> Instale as dependências:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Node.js</span>
+npm <span class="nb">install</span>
+
+<span class="c"># Python</span>
+pip3 <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<h3 id="problema-5-versão-incompatível">Problema 5: Versão incompatível</h3>
+
+<p><strong>Erro:</strong> <code class="language-plaintext highlighter-rouge">Requires Node.js version 16 or higher</code></p>
+
+<p><strong>Solução:</strong> Atualize a ferramenta ou use um gerenciador de versões:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Para Node.js (usando nvm)</span>
+curl <span class="nt">-o-</span> https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+<span class="nb">source</span> ~/.bashrc
+nvm <span class="nb">install </span>18
+nvm use 18
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="parte-8-boas-práticas-ao-executar-projetos">Parte 8: Boas Práticas ao Executar Projetos</h2>
+
+<h3 id="passo-35-sempre-criar-ambientes-virtuais-python">Passo 35: Sempre criar ambientes virtuais (Python)</h3>
+
+<p>Para projetos Python, use ambientes virtuais:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Criar ambiente virtual</span>
+python3 <span class="nt">-m</span> venv venv
+
+<span class="c"># Ativar (Linux/Ubuntu)</span>
+<span class="nb">source </span>venv/bin/activate
+
+<span class="c"># Agora instalar dependências</span>
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+
+<span class="c"># Desativar quando terminar</span>
+deactivate
+</code></pre></div></div>
+
+<p><strong>Por quê?</strong> Mantém as dependências isoladas e evita conflitos.</p>
+
+<h3 id="passo-36-verificar-o-arquivo-gitignore">Passo 36: Verificar o arquivo .gitignore</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> .gitignore
+</code></pre></div></div>
+
+<p><strong>O que você deve ver:</strong> Lista de arquivos/pastas que o Git ignora.</p>
+
+<p>Itens comuns:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">node_modules/</code> - dependências Node.js (não deve ser commitado)</li>
+  <li><code class="language-plaintext highlighter-rouge">venv/</code> - ambiente virtual Python</li>
+  <li><code class="language-plaintext highlighter-rouge">.env</code> - variáveis de ambiente (senhas, chaves)</li>
+  <li><code class="language-plaintext highlighter-rouge">dist/</code> - arquivos compilados</li>
+</ul>
+
+<p><strong>Importante:</strong> Nunca commite pastas como <code class="language-plaintext highlighter-rouge">node_modules</code> ou <code class="language-plaintext highlighter-rouge">venv</code>!</p>
+
+<h3 id="passo-37-procurar-por-arquivos-de-configuração">Passo 37: Procurar por arquivos de configuração</h3>
+
+<p>Projetos podem precisar de configuração:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Procurar por exemplos de configuração</span>
+<span class="nb">ls</span> <span class="nt">-la</span> | <span class="nb">grep </span>example
+<span class="nb">ls</span> <span class="nt">-la</span> | <span class="nb">grep </span>sample
+</code></pre></div></div>
+
+<p>Comum encontrar:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.env.example</code> → copie para <code class="language-plaintext highlighter-rouge">.env</code> e edite</li>
+  <li><code class="language-plaintext highlighter-rouge">config.sample.json</code> → copie para <code class="language-plaintext highlighter-rouge">config.json</code> e edite</li>
+</ul>
+
+<p>Exemplo:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> .env.example .env
+nano .env  <span class="c"># Edite as configurações</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-parabéns">🎉 Parabéns!</h2>
+
+<p>Você completou o tutorial de instalação e execução de projetos do GitHub! Agora você sabe:</p>
+
+<p>✓ Clonar repositórios do GitHub<br />
+✓ Identificar o tipo de projeto<br />
+✓ Ler e seguir instruções do README<br />
+✓ Instalar dependências de diferentes linguagens<br />
+✓ Executar projetos HTML/CSS/JS, Python e Node.js<br />
+✓ Resolver problemas comuns<br />
+✓ Aplicar boas práticas</p>
+
+<hr />
+
+<h2 id="checklist-executando-qualquer-projeto-do-github">Checklist: Executando Qualquer Projeto do GitHub</h2>
+
+<p>Use esta lista sempre que for executar um projeto novo:</p>
+
+<p><strong>□ Passo 1:</strong> Clone o repositório</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone URL_DO_REPO
+<span class="nb">cd </span>nome-do-projeto
+</code></pre></div></div>
+
+<p><strong>□ Passo 2:</strong> Leia o README</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>README.md
+</code></pre></div></div>
+
+<p><strong>□ Passo 3:</strong> Identifique o tipo de projeto</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-la</span>
+</code></pre></div></div>
+
+<p><strong>□ Passo 4:</strong> Verifique pré-requisitos</p>
+<ul>
+  <li>Node.js instalado? <code class="language-plaintext highlighter-rouge">node --version</code></li>
+  <li>Python instalado? <code class="language-plaintext highlighter-rouge">python3 --version</code></li>
+  <li>Outras ferramentas necessárias?</li>
+</ul>
+
+<p><strong>□ Passo 5:</strong> Instale dependências</p>
+
+<p><em>Para Node.js:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p><em>Para Python:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv venv
+<span class="nb">source </span>venv/bin/activate
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<p><strong>□ Passo 6:</strong> Configure variáveis de ambiente (se necessário)</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> .env.example .env
+nano .env
+</code></pre></div></div>
+
+<p><strong>□ Passo 7:</strong> Execute o projeto</p>
+
+<p><em>Para Node.js:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
+<span class="c"># ou</span>
+npm run dev
+</code></pre></div></div>
+
+<p><em>Para Python:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 app.py
+<span class="c"># ou</span>
+python3 main.py
+</code></pre></div></div>
+
+<p><em>Para HTML estático:</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firefox index.html
+</code></pre></div></div>
+
+<p><strong>□ Passo 8:</strong> Acesse no navegador (se aplicável)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:PORTA
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="comandos-de-referência-rápida">Comandos de Referência Rápida</h2>
+
+<h3 id="git">Git</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clonar repositório</span>
+git clone URL
+
+<span class="c"># Ver status</span>
+git status
+
+<span class="c"># Atualizar repositório</span>
+git pull
+</code></pre></div></div>
+
+<h3 id="nodejs">Node.js</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Instalar dependências</span>
+npm <span class="nb">install</span>
+
+<span class="c"># Executar scripts</span>
+npm start
+npm run dev
+npm run build
+
+<span class="c"># Instalar pacote específico</span>
+npm <span class="nb">install </span>nome-pacote
+</code></pre></div></div>
+
+<h3 id="python">Python</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Criar ambiente virtual</span>
+python3 <span class="nt">-m</span> venv venv
+
+<span class="c"># Ativar ambiente virtual</span>
+<span class="nb">source </span>venv/bin/activate
+
+<span class="c"># Instalar dependências</span>
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+
+<span class="c"># Executar script</span>
+python3 arquivo.py
+
+<span class="c"># Desativar ambiente virtual</span>
+deactivate
+</code></pre></div></div>
+
+<h3 id="úteis">Úteis</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ver processos na porta</span>
+<span class="nb">sudo </span>lsof <span class="nt">-i</span> :3000
+
+<span class="c"># Matar processo</span>
+<span class="nb">kill</span> <span class="nt">-9</span> PID
+
+<span class="c"># Ver versão de ferramentas</span>
+node <span class="nt">--version</span>
+python3 <span class="nt">--version</span>
+git <span class="nt">--version</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="projetos-recomendados-para-praticar">Projetos Recomendados para Praticar</h2>
+
+<p>Aqui estão alguns projetos iniciantes para você clonar e executar:</p>
+
+<h3 id="htmlcssjavascript">HTML/CSS/JavaScript</h3>
+<ol>
+  <li><strong>Calculator</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/calculator</code></li>
+  <li><strong>To-Do List</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/todo-list</code></li>
+  <li><strong>Weather App</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/weather-app</code></li>
+</ol>
+
+<h3 id="python-1">Python</h3>
+<ol>
+  <li><strong>Snake Game</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/snake-game</code></li>
+  <li><strong>Quiz App</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/quiz-app</code></li>
+  <li><strong>Password Generator</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/password-generator</code></li>
+</ol>
+
+<h3 id="nodejs-1">Node.js</h3>
+<ol>
+  <li><strong>Chat App</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/chat-application</code></li>
+  <li><strong>Blog</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/blog</code></li>
+  <li><strong>API REST</strong> - <code class="language-plaintext highlighter-rouge">github.com/topics/rest-api</code></li>
+</ol>
+
+<p><strong>Dica:</strong> No GitHub, use a busca com filtros:</p>
+<ul>
+  <li>Linguagem: JavaScript, Python, etc.</li>
+  <li>Stars: &gt;100 (projetos populares)</li>
+  <li>Topics: iniciante, tutorial</li>
+</ul>
+
+<hr />
+
+<h2 id="próximos-passos">Próximos Passos</h2>
+
+<p>Agora que você domina a execução de projetos, pode:</p>
+
+<ol>
+  <li><strong>Contribuir para projetos open source</strong> fazendo forks e pull requests</li>
+  <li><strong>Modificar projetos existentes</strong> para aprender como funcionam</li>
+  <li><strong>Criar seus próprios projetos</strong> e publicar no GitHub</li>
+  <li><strong>Explorar Docker</strong> para executar projetos em containers</li>
+  <li><strong>Aprender CI/CD</strong> para automatizar deploys</li>
+</ol>
+
+<p>Continue praticando! Cada projeto que você executa ensina algo novo. 🚀</p>
+
+  </div>
+
+  <div class="lecture-footer">
+    <a href="/materials/" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar aos Materiais</a>
+  </div>
+</div>
+
+<style>
+.lecture-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.lecture-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #FF8E53 0%, #FF6B6B 100%);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.lecture-hero-content {
+  flex: 1;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.lecture-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+}
+
+.lecture-tldr {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.lecture-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.lecture-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lecture-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.lecture-link-btn:hover {
+  background: rgba(255,255,255,0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.lecture-thumbnail {
+  flex-shrink: 0;
+}
+
+.lecture-thumbnail img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.lecture-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e1e1e1;
+  line-height: 1.7;
+  color: #333;
+}
+
+.lecture-content h1,
+.lecture-content h2,
+.lecture-content h3,
+.lecture-content h4 {
+  color: #1f1f1f;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.lecture-content h1:first-child,
+.lecture-content h2:first-child {
+  margin-top: 0;
+}
+
+.lecture-content h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #FF6B6B;
+}
+
+.lecture-content h3 {
+  font-size: 1.25rem;
+  color: #FF6B6B;
+}
+
+.lecture-content p {
+  margin-bottom: 1rem;
+}
+
+.lecture-content ul,
+.lecture-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.lecture-content li {
+  margin-bottom: 0.5rem;
+}
+
+.lecture-content pre {
+  background: #1f1f1f;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.lecture-content code {
+  background: #f5f5f5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #FF6B6B;
+}
+
+.lecture-content pre code {
+  background: transparent;
+  padding: 0;
+  color: #f8f8f2;
+}
+
+.lecture-content a {
+  color: #FF6B6B;
+  text-decoration: none;
+}
+
+.lecture-content a:hover {
+  text-decoration: underline;
+}
+
+.lecture-content hr {
+  border: none;
+  border-top: 2px solid #e1e1e1;
+  margin: 2rem 0;
+}
+
+.lecture-content blockquote {
+  border-left: 4px solid #FF6B6B;
+  margin: 1rem 0;
+  padding: 1rem 1.5rem;
+  background: #fff5f5;
+  border-radius: 0 8px 8px 0;
+}
+
+.lecture-content strong {
+  color: #1f1f1f;
+}
+
+.lecture-footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e1e1e1;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #FF6B6B;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background: #ff5252;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .lecture-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .lecture-title {
+    font-size: 1.5rem;
+  }
+  
+  .lecture-tldr {
+    font-size: 1rem;
+  }
+  
+  .lecture-meta {
+    justify-content: center;
+  }
+  
+  .lecture-thumbnail img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .lecture-content {
+    padding: 1.5rem;
+  }
+  
+  .lecture-content h2 {
+    font-size: 1.3rem;
+  }
+}
+</style>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      
+      <!-- Navigation Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-sitemap"></i> Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="/"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="/planoensino/"><i class="fas fa-file-alt"></i> Plano de Ensino</a></li>
+          <li><a href="/materials/"><i class="fas fa-book"></i> Materiais</a></li>
+          <li><a href="/slides/"><i class="fas fa-chalkboard-teacher"></i> Slides</a></li>
+          <li><a href="/posts/"><i class="fas fa-folder-open"></i> Projetos</a></li>
+        </ul>
+      </div>
+      
+      <!-- Resources Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-link"></i> Recursos</h3>
+        <ul class="footer-links">
+          <li><a href="https://github.com/unb-mds" target="_blank"><i class="fab fa-github"></i> GitHub MDS</a></li>
+          <li><a href="https://t.me/c/2677031160/1" target="_blank"><i class="fab fa-telegram"></i> Telegram</a></li>
+          <li><a href="https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw/videos" target="_blank"><i class="fab fa-youtube"></i> Canal YouTube</a></li>
+          <li><a href="https://scrumguides.org" target="_blank"><i class="fas fa-book-open"></i> Scrum Guide</a></li>
+          <li><a href="https://engsoftmoderna.info" target="_blank"><i class="fas fa-graduation-cap"></i> Eng. Software Moderna</a></li>
+        </ul>
+      </div>
+      
+      <!-- Academic Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-university"></i> Acadêmico</h3>
+        <ul class="footer-links">
+          <li><a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Critérios de Avaliação</a></li>
+          <li><a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md" target="_blank"><i class="fas fa-tasks"></i> Roteiro de Entregas</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1vxJOSIyCZ3s0dIjUF1dY0oib2Jlb7Q86vU95ZM0VfC4/edit?usp=sharing" target="_blank"><i class="fas fa-users"></i> Grupos e Temas</a></li>
+          <li><a href="http://www.carlarocha.org" target="_blank"><i class="fas fa-user"></i> Profa. Carla Rocha</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact & Social Section -->
+      <div class="footer-section">
+        <h3><i class="fas fa-envelope"></i> Contato</h3>
+        <div class="footer-links">
+          <p class="contact-info"><i class="fas fa-envelope"></i> caguiar@unb.br</p>
+          <p class="contact-info"><i class="fas fa-map-marker-alt"></i> UnB - FCTE - Lab Livre</p>
+          <p class="contact-info"><a href="https://lablivre.unb.br/" target="_blank"><i class="fas fa-globe"></i> lablivre.unb.br</a></p>
+          <p class="contact-info"><a href="https://carlarocha.org" target="_blank"><i class="fas fa-user"></i> carlarocha.org</a></p>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://github.com/unb-mds" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/lab.livre/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UC_VXpS5GIL8NdJNkwNeAorw" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://t.me/c/2677031160/1" target="_blank" title="Telegram">
+            <i class="fab fa-telegram"></i>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p><strong>Métodos de Desenvolvimento de Software - UnB/FCTE</strong></p>
+      <p>© 2025 Lab Livre - Laboratório de Competência em Software Livre</p>
+      <p>Desenvolvido com ❤️ para a comunidade acadêmica</p>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

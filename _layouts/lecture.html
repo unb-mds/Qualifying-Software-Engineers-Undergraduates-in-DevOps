@@ -1,0 +1,302 @@
+---
+layout: default
+---
+<div class="lecture-page">
+  <div class="lecture-hero">
+    <div class="lecture-hero-content">
+      <a href="/materials/" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Materiais</a>
+      <h1 class="lecture-title">{{ page.title }}</h1>
+      <p class="lecture-tldr">{{ page.tldr }}</p>
+      <div class="lecture-meta">
+        {% if page.date %}
+        <span class="meta-item"><i class="fas fa-calendar"></i> {{ page.date | date: "%d/%m/%Y" }}</span>
+        {% endif %}
+        {% if page.links %}
+        <div class="lecture-links">
+          {% for link in page.links %}
+          <a href="{{ link.url }}" target="_blank" class="lecture-link-btn">
+            <i class="fas fa-external-link-alt"></i> {{ link.name }}
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% if page.thumbnail %}
+    <div class="lecture-thumbnail">
+      <img src="{{ page.thumbnail | prepend: site.baseurl }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="lecture-content">
+    {{ content }}
+  </div>
+
+  <div class="lecture-footer">
+    <a href="/materials/" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar aos Materiais</a>
+  </div>
+</div>
+
+<style>
+.lecture-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.lecture-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #FF8E53 0%, #FF6B6B 100%);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.lecture-hero-content {
+  flex: 1;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.lecture-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+}
+
+.lecture-tldr {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.lecture-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.lecture-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lecture-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.lecture-link-btn:hover {
+  background: rgba(255,255,255,0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.lecture-thumbnail {
+  flex-shrink: 0;
+}
+
+.lecture-thumbnail img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.lecture-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e1e1e1;
+  line-height: 1.7;
+  color: #333;
+}
+
+.lecture-content h1,
+.lecture-content h2,
+.lecture-content h3,
+.lecture-content h4 {
+  color: #1f1f1f;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.lecture-content h1:first-child,
+.lecture-content h2:first-child {
+  margin-top: 0;
+}
+
+.lecture-content h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #FF6B6B;
+}
+
+.lecture-content h3 {
+  font-size: 1.25rem;
+  color: #FF6B6B;
+}
+
+.lecture-content p {
+  margin-bottom: 1rem;
+}
+
+.lecture-content ul,
+.lecture-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.lecture-content li {
+  margin-bottom: 0.5rem;
+}
+
+.lecture-content pre {
+  background: #1f1f1f;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.lecture-content code {
+  background: #f5f5f5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #FF6B6B;
+}
+
+.lecture-content pre code {
+  background: transparent;
+  padding: 0;
+  color: #f8f8f2;
+}
+
+.lecture-content a {
+  color: #FF6B6B;
+  text-decoration: none;
+}
+
+.lecture-content a:hover {
+  text-decoration: underline;
+}
+
+.lecture-content hr {
+  border: none;
+  border-top: 2px solid #e1e1e1;
+  margin: 2rem 0;
+}
+
+.lecture-content blockquote {
+  border-left: 4px solid #FF6B6B;
+  margin: 1rem 0;
+  padding: 1rem 1.5rem;
+  background: #fff5f5;
+  border-radius: 0 8px 8px 0;
+}
+
+.lecture-content strong {
+  color: #1f1f1f;
+}
+
+.lecture-footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e1e1e1;
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #FF6B6B;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background: #ff5252;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .lecture-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .lecture-title {
+    font-size: 1.5rem;
+  }
+  
+  .lecture-tldr {
+    font-size: 1rem;
+  }
+  
+  .lecture-meta {
+    justify-content: center;
+  }
+  
+  .lecture-thumbnail img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .lecture-content {
+    padding: 1.5rem;
+  }
+  
+  .lecture-content h2 {
+    font-size: 1.3rem;
+  }
+}
+</style>
