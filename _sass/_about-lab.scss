@@ -57,6 +57,16 @@
         text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         color: white;
         text-align: left;
+
+        a {
+            color: #FFE066;
+            text-decoration: underline;
+            font-weight: 600;
+            
+            &:hover {
+                color: #FFF59D;
+            }
+        }
     }
 
     h1 {

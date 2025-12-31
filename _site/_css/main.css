@@ -445,6 +445,8 @@ ul#archive li span a:hover { border-bottom: #bdbdbd 1px solid;
 .about-content { width: 90%; display: flex; flex-direction: column; justify-content: center; padding: 0px 30px; }
 .about-content h1 { color: #FFEAA7; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
 .about-content .about-text { font-size: 14px; color: #FFEAA7; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); color: white; text-align: left; }
+.about-content .about-text a { color: #FFE066; text-decoration: underline; font-weight: 600; }
+.about-content .about-text a:hover { color: #FFF59D; }
 .about-content h1 { color: white; margin: 0; margin-bottom: 60px; font-size: 40px; font-weight: 600; }
 
 @media screen and (max-width: 800px) { .site-nav .menu { display: none; }
