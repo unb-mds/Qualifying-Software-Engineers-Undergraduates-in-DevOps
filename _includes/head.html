@@ -67,6 +67,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %} {{ page.title }} - {{ site.course_name }} / {{ site.course_semester }} {% else %}{{ site.course_name }} / {{ site.course_semester }} - {{ site.schoolname }}{% endif %}</title>
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/_images/unb.png">
+  <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/_images/unb.png">
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ page.title }} - {{ site.course_name }} / {{ site.course_semester }}{% endif %}">
   
   <link rel="stylesheet" href="{{ "/_css/main.css" | prepend: site.baseurl }}?v={{ site.time | date: '%s' }}">
