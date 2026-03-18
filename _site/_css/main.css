@@ -554,6 +554,9 @@ ul#archive li span a:hover { border-bottom: #bdbdbd 1px solid;
 @media screen and (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .social-links { justify-content: center; }
   .site-footer { padding: 30px 0 24px; } }
+.plano-ensino-page { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 768px) { .plano-ensino-page { padding: 0 20px; } }
+
 .plano-ensino-header { text-align: center; margin-bottom: 3rem; padding: 2rem 0; background: linear-gradient(135deg, #FF8E53 0%, #FF6B6B 100%); color: white; border-radius: 12px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); }
 .plano-ensino-header .course-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
 @media (max-width: 768px) { .plano-ensino-header .course-title { font-size: 2rem; } }

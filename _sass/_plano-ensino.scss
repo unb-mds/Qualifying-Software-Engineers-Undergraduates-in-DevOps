@@ -1,5 +1,15 @@
 // Plano de Ensino Page Styles
 
+.plano-ensino-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
 .plano-ensino-header {
   text-align: center;
   margin-bottom: 3rem;
