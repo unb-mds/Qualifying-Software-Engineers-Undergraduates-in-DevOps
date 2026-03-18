@@ -258,7 +258,7 @@ permalink: /planoensino/
   <h2 class="section-title">Canais de Comunicação</h2>
   <div class="section-content">
     <div class="info-grid-coursera">
-      <a href="https://t.me/c/2677031160/1" class="info-item" target="_blank" style="text-decoration: none;">
+      <a href="https://t.me/+63JjjPwXCyxhNDgx" class="info-item" target="_blank" style="text-decoration: none;">
         <div class="info-icon">
           <i class="fab fa-telegram"></i>
         </div>
