@@ -342,8 +342,8 @@ permalink: /planoensino/
   <div class="section-content">
     <p>Entregáveis R1 e R2 disponíveis nos <a href="https://mds.lappis.rocks/static_files/presentations/MDS.pdf">slides</a>.</p>
     <ul>
-      <li><strong>Release 1 (major)</strong> - A definir</li>
-      <li><strong>Release 2 (major)</strong> - A definir</li>
+      <li><strong>Release 1 (major)</strong> - 27/05/2026</li>
+      <li><strong>Release 2 (major)</strong> - 01/07/2026</li>
     </ul>
     <p>Detalhes sobre o roteiro das apresentações: <a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md">Guias para as entregas</a></p>
   </div>

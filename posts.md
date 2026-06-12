@@ -13,34 +13,24 @@ permalink: /posts/
   <div class="projects-highlight">
     <h2 class="section-title"><i class="fas fa-fire"></i> Projetos Destacados</h2>
     <div class="projects-grid">
-      <a href="https://github.com/unb-mds/2024-2-AcheiUnB" target="_blank" class="project-card featured">
-        <div class="project-info">
-          <h3>AcheiUnB</h3>
-          <p>2024.2</p>
-        </div>
-        <div class="project-stats">
-          <span><i class="fas fa-star"></i> 46</span>
-          <span><i class="fas fa-code-branch"></i> 7</span>
-        </div>
-      </a>
       <a href="https://github.com/unb-mds/2023-2-SuaGradeUnB" target="_blank" class="project-card featured">
         <div class="project-info">
           <h3>SuaGradeUnB</h3>
           <p>2023.2</p>
         </div>
         <div class="project-stats">
-          <span><i class="fas fa-star"></i> 45</span>
-          <span><i class="fas fa-code-branch"></i> 15</span>
+          <span><i class="fas fa-star"></i> 47</span>
+          <span><i class="fas fa-code-branch"></i> 24</span>
         </div>
       </a>
-      <a href="https://github.com/unb-mds/LicitaBSB-24.1" target="_blank" class="project-card featured">
+      <a href="https://github.com/unb-mds/2024-2-AcheiUnB" target="_blank" class="project-card featured">
         <div class="project-info">
-          <h3>LicitaBSB</h3>
-          <p>2024.1</p>
+          <h3>AcheiUnB</h3>
+          <p>2024.2</p>
         </div>
         <div class="project-stats">
-          <span><i class="fas fa-star"></i> 13</span>
-          <span><i class="fas fa-code-branch"></i> 3</span>
+          <span><i class="fas fa-star"></i> 44</span>
+          <span><i class="fas fa-code-branch"></i> 11</span>
         </div>
       </a>
       <a href="https://github.com/unb-mds/2025-1-NoFluxoUNB" target="_blank" class="project-card featured">
@@ -49,9 +39,77 @@ permalink: /posts/
           <p>2025.1</p>
         </div>
         <div class="project-stats">
-          <span><i class="fas fa-star"></i> 9</span>
-          <span><i class="fas fa-code-branch"></i> 1</span>
+          <span><i class="fas fa-star"></i> 15</span>
+          <span><i class="fas fa-code-branch"></i> 6</span>
         </div>
+      </a>
+      <a href="https://github.com/unb-mds/LicitaBSB-24.1" target="_blank" class="project-card featured">
+        <div class="project-info">
+          <h3>LicitaBSB</h3>
+          <p>2024.1</p>
+        </div>
+        <div class="project-stats">
+          <span><i class="fas fa-star"></i> 12</span>
+          <span><i class="fas fa-code-branch"></i> 4</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="semester-section">
+    <h2 class="section-title"><i class="fas fa-calendar"></i> 2026.1</h2>
+    <div class="projects-list">
+      <a href="https://github.com/unb-mds/2026-1-Squad07" target="_blank" class="project-item">
+        <span class="project-name">Squad 07</span>
+        <span class="project-star"><i class="fas fa-star"></i> 6</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-2-VeritasIA" target="_blank" class="project-item">
+        <span class="project-name">VeritasIA</span>
+        <span class="project-star"><i class="fas fa-star"></i> 4</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-1-Mapa_L.I.L.A.S" target="_blank" class="project-item">
+        <span class="project-name">Mapa L.I.L.A.S</span>
+        <span class="project-star"><i class="fas fa-star"></i> 4</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-1-SafeStreets" target="_blank" class="project-item">
+        <span class="project-name">SafeStreets</span>
+        <span class="project-star"><i class="fas fa-star"></i> 4</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-1-Squad13" target="_blank" class="project-item">
+        <span class="project-name">Squad 13</span>
+        <span class="project-star"><i class="fas fa-star"></i> 3</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-1-Squad4-Dito_e_Feito" target="_blank" class="project-item">
+        <span class="project-name">Dito e Feito</span>
+        <span class="project-star"><i class="fas fa-star"></i> 3</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-1-P.R.I.S.M.A" target="_blank" class="project-item">
+        <span class="project-name">P.R.I.S.M.A</span>
+        <span class="project-star"><i class="fas fa-star"></i> 2</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-1-ProtectKids" target="_blank" class="project-item">
+        <span class="project-name">ProtectKids</span>
+        <span class="project-star"><i class="fas fa-star"></i> 2</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026.1-ContraDito" target="_blank" class="project-item">
+        <span class="project-name">ContraDito</span>
+        <span class="project-star"><i class="fas fa-star"></i> 2</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-1-Guard.IA" target="_blank" class="project-item">
+        <span class="project-name">Guard.IA</span>
+        <span class="project-star"><i class="fas fa-star"></i> 2</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-1-Squad14" target="_blank" class="project-item">
+        <span class="project-name">Squad 14</span>
+        <span class="project-star"><i class="fas fa-star"></i> 0</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-1-squad0x" target="_blank" class="project-item">
+        <span class="project-name">Squad 0x</span>
+        <span class="project-star"><i class="fas fa-star"></i> 0</span>
+      </a>
+      <a href="https://github.com/unb-mds/2026-1-LegisKids" target="_blank" class="project-item">
+        <span class="project-name">LegisKids</span>
+        <span class="project-star"><i class="fas fa-star"></i> 0</span>
       </a>
     </div>
   </div>
@@ -61,15 +119,15 @@ permalink: /posts/
     <div class="projects-list">
       <a href="https://github.com/unb-mds/2025-2-Mural-UnB" target="_blank" class="project-item">
         <span class="project-name">Mural UnB</span>
+        <span class="project-star"><i class="fas fa-star"></i> 8</span>
+      </a>
+      <a href="https://github.com/unb-mds/2025-2-GuiaDev" target="_blank" class="project-item">
+        <span class="project-name">GuiaDev</span>
         <span class="project-star"><i class="fas fa-star"></i> 7</span>
       </a>
       <a href="https://github.com/unb-mds/2025-2-Integralizei_UnB" target="_blank" class="project-item">
         <span class="project-name">Integralizei UnB</span>
-        <span class="project-star"><i class="fas fa-star"></i> 5</span>
-      </a>
-      <a href="https://github.com/unb-mds/2025-2-GuiaDev" target="_blank" class="project-item">
-        <span class="project-name">GuiaDev</span>
-        <span class="project-star"><i class="fas fa-star"></i> 5</span>
+        <span class="project-star"><i class="fas fa-star"></i> 6</span>
       </a>
       <a href="https://github.com/unb-mds/2025-2-OncoMap" target="_blank" class="project-item">
         <span class="project-name">OncoMap</span>
@@ -85,7 +143,7 @@ permalink: /posts/
       </a>
       <a href="https://github.com/unb-mds/2025-2-Lumina" target="_blank" class="project-item">
         <span class="project-name">Lumina</span>
-        <span class="project-star"><i class="fas fa-star"></i> 3</span>
+        <span class="project-star"><i class="fas fa-star"></i> 4</span>
       </a>
       <a href="https://github.com/unb-mds/2025-2-Portal-dos-Professores" target="_blank" class="project-item">
         <span class="project-name">Portal dos Professores</span>
@@ -95,12 +153,12 @@ permalink: /posts/
         <span class="project-name">InfoSchool</span>
         <span class="project-star"><i class="fas fa-star"></i> 2</span>
       </a>
-      <a href="https://github.com/unb-mds/2025-2-SeLiga" target="_blank" class="project-item">
-        <span class="project-name">SeLiga</span>
-        <span class="project-star"><i class="fas fa-star"></i> 1</span>
-      </a>
       <a href="https://github.com/unb-mds/2025-2-Squad-01" target="_blank" class="project-item">
         <span class="project-name">Squad 01</span>
+        <span class="project-star"><i class="fas fa-star"></i> 2</span>
+      </a>
+      <a href="https://github.com/unb-mds/2025-2-SeLiga" target="_blank" class="project-item">
+        <span class="project-name">SeLiga</span>
         <span class="project-star"><i class="fas fa-star"></i> 1</span>
       </a>
       <a href="https://github.com/unb-mds/2025-2-Squad12" target="_blank" class="project-item">
@@ -115,22 +173,22 @@ permalink: /posts/
     <div class="projects-list">
       <a href="https://github.com/unb-mds/2025-1-NoFluxoUNB" target="_blank" class="project-item">
         <span class="project-name">NoFluxoUNB</span>
-        <span class="project-star"><i class="fas fa-star"></i> 10</span>
+        <span class="project-star"><i class="fas fa-star"></i> 15</span>
       </a>
       <a href="https://github.com/unb-mds/Sonorus-2025.1" target="_blank" class="project-item">
         <span class="project-name">Sonorus</span>
-        <span class="project-star"><i class="fas fa-star"></i> 5</span>
+        <span class="project-star"><i class="fas fa-star"></i> 6</span>
       </a>
       <a href="https://github.com/unb-mds/2025-1-Eletta" target="_blank" class="project-item">
         <span class="project-name">Eletta</span>
         <span class="project-star"><i class="fas fa-star"></i> 4</span>
       </a>
-      <a href="https://github.com/unb-mds/2025-1-GovInsights" target="_blank" class="project-item">
-        <span class="project-name">GovInsights</span>
-        <span class="project-star"><i class="fas fa-star"></i> 3</span>
-      </a>
       <a href="https://github.com/unb-mds/VIDAProject" target="_blank" class="project-item">
         <span class="project-name">VIDAProject</span>
+        <span class="project-star"><i class="fas fa-star"></i> 4</span>
+      </a>
+      <a href="https://github.com/unb-mds/2025-1-GovInsights" target="_blank" class="project-item">
+        <span class="project-name">GovInsights</span>
         <span class="project-star"><i class="fas fa-star"></i> 3</span>
       </a>
     </div>
@@ -141,7 +199,7 @@ permalink: /posts/
     <div class="projects-list">
       <a href="https://github.com/unb-mds/2024-2-AcheiUnB" target="_blank" class="project-item">
         <span class="project-name">AcheiUnB</span>
-        <span class="project-star"><i class="fas fa-star"></i> 47</span>
+        <span class="project-star"><i class="fas fa-star"></i> 44</span>
       </a>
       <a href="https://github.com/unb-mds/2024-2-ChamaControl" target="_blank" class="project-item">
         <span class="project-name">ChamaControl</span>
@@ -153,7 +211,7 @@ permalink: /posts/
       </a>
       <a href="https://github.com/unb-mds/2024-2-Datazonia" target="_blank" class="project-item">
         <span class="project-name">Datazonia</span>
-        <span class="project-star"><i class="fas fa-star"></i> 5</span>
+        <span class="project-star"><i class="fas fa-star"></i> 4</span>
       </a>
       <a href="https://github.com/unb-mds/2024-2-Squad06" target="_blank" class="project-item">
         <span class="project-name">Squad06 - Gastos Públicos</span>
@@ -185,21 +243,21 @@ permalink: /posts/
   <div class="semester-section">
     <h2 class="section-title"><i class="fas fa-calendar"></i> 2024.1</h2>
     <div class="projects-list">
-      <a href="https://github.com/unb-mds/2024-1-forUnB" target="_blank" class="project-item">
-        <span class="project-name">forUnB</span>
-        <span class="project-star"><i class="fas fa-star"></i> 7</span>
-      </a>
       <a href="https://github.com/unb-mds/2024-1-EducaMinas-frontend" target="_blank" class="project-item">
         <span class="project-name">EducaMinas</span>
         <span class="project-star"><i class="fas fa-star"></i> 6</span>
       </a>
-      <a href="https://github.com/unb-mds/2024-1-Squad02-CulturaTransparente" target="_blank" class="project-item">
-        <span class="project-name">CulturaTransparente</span>
+      <a href="https://github.com/unb-mds/2024-1-forUnB" target="_blank" class="project-item">
+        <span class="project-name">forUnB</span>
         <span class="project-star"><i class="fas fa-star"></i> 5</span>
       </a>
       <a href="https://github.com/unb-mds/2024-1-squad04" target="_blank" class="project-item">
         <span class="project-name">Squad04</span>
         <span class="project-star"><i class="fas fa-star"></i> 5</span>
+      </a>
+      <a href="https://github.com/unb-mds/2024-1-Squad02-CulturaTransparente" target="_blank" class="project-item">
+        <span class="project-name">CulturaTransparente</span>
+        <span class="project-star"><i class="fas fa-star"></i> 4</span>
       </a>
       <a href="https://github.com/unb-mds/2024-1-Squad-10" target="_blank" class="project-item">
         <span class="project-name">Squad10</span>
@@ -217,7 +275,7 @@ permalink: /posts/
     <div class="projects-list">
       <a href="https://github.com/unb-mds/2023-2-SuaGradeUnB" target="_blank" class="project-item">
         <span class="project-name">SuaGradeUnB</span>
-        <span class="project-star"><i class="fas fa-star"></i> 45</span>
+        <span class="project-star"><i class="fas fa-star"></i> 47</span>
       </a>
       <a href="https://github.com/unb-mds/2023.2_DeOlhoRS" target="_blank" class="project-item">
         <span class="project-name">DeOlhoRS</span>
@@ -245,7 +303,7 @@ permalink: /posts/
       </a>
       <a href="https://github.com/unb-mds/2023.2_Licitaiba" target="_blank" class="project-item">
         <span class="project-name">Licitaíba</span>
-        <span class="project-star"><i class="fas fa-star"></i> 3</span>
+        <span class="project-star"><i class="fas fa-star"></i> 4</span>
       </a>
       <a href="https://github.com/unb-mds/2023-2-Squad02-Desmatazonia" target="_blank" class="project-item">
         <span class="project-name">Desmatazonia</span>
@@ -260,7 +318,7 @@ permalink: /posts/
 
   <div class="cta-section">
     <a href="https://github.com/orgs/unb-mds/repositories" target="_blank" class="cta-button">
-      <i class="fab fa-github"></i> Ver todos os 56 repositórios no GitHub
+      <i class="fab fa-github"></i> Ver todos os 86 repositórios no GitHub
     </a>
   </div>
 </div>
