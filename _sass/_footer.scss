@@ -1,12 +1,13 @@
 /**
- * Site footer
+ * Site footer — identidade visual institucional UnB (marca.unb.br)
+ * Rodapé em Verde UnB com colunas de links, ao estilo do portal unb.br.
  */
 .site-footer {
-    background: darken($background-color, 8%);
-    color: $text-color;
-    padding: $spacing-unit * 1.5 0 $spacing-unit;
-    margin-top: $spacing-unit * 1.5;
-    border-top: 2px solid $primary-color;
+    background-color: $unb-verde;
+    color: #ffffff;
+    margin-top: $spacing-unit * 2;
+    padding: 0;
+    border-top: 0;
     font-family: $base-font-family;
 }
 
@@ -18,18 +19,43 @@
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1.4fr repeat(4, 1fr);
     gap: $spacing-unit;
-    margin-bottom: $spacing-unit;
+    padding: ($spacing-unit * 1.5) 0;
+}
+
+/* Coluna da marca */
+.footer-brand {
+    .footer-logo {
+        width: 56px;
+        height: auto;
+        background: #ffffff;
+        padding: 6px;
+        border-radius: 6px;
+        margin-bottom: 12px;
+    }
+    .footer-brand-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 0 4px;
+    }
+    .footer-brand-sub {
+        font-size: 12.5px;
+        line-height: 1.5;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.85);
+    }
 }
 
 .footer-section h3 {
-    color: $primary-color;
-    font-size: $base-font-size * 1.25;
-    margin-bottom: $spacing-unit / 2;
-    font-weight: 600;
-    border-bottom: 2px solid $primary-color;
-    padding-bottom: $spacing-unit / 4;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
     font-family: $base-font-family;
 }
 
@@ -37,86 +63,51 @@
     list-style: none;
     padding: 0;
     margin: 0;
-}
 
-.footer-links li {
-    margin-bottom: $spacing-unit / 4;
-}
+    li { margin-bottom: 8px; }
 
-.footer-links a {
-    color: $grey-color-dark;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-    font-size: $base-font-size * 0.95;
-    
-    &:hover {
-        color: $primary-color;
+    a {
+        color: rgba(255, 255, 255, 0.9);
         text-decoration: none;
+        font-size: 13.5px;
+        transition: color .2s ease;
+        &:hover { color: $unb-amarelo; text-decoration: none; }
     }
-}
-
-.footer-links i {
-    margin-right: $spacing-unit / 4;
-    width: 16px;
-    color: $primary-color;
 }
 
 .social-links {
     display: flex;
-    gap: $spacing-unit / 2;
-    margin-top: $spacing-unit / 2;
-}
+    gap: 14px;
+    margin-top: 14px;
 
-.social-links a {
-    color: $grey-color-dark;
-    font-size: $base-font-size * 1.5;
-    transition: all 0.3s ease;
-    
-    &:hover {
-        color: $primary-color;
-        transform: translateY(-2px);
+    a {
+        color: #ffffff;
+        font-size: 20px;
+        transition: color .2s ease, transform .2s ease;
+        &:hover { color: $unb-amarelo; transform: translateY(-2px); }
     }
 }
 
+/* Barra inferior — Verde Escuro */
 .footer-bottom {
-    border-top: 1px solid $grey-color-light;
-    padding-top: $spacing-unit / 1.5;
+    background-color: $unb-verde-escuro;
+    color: rgba(255, 255, 255, 0.9);
     text-align: center;
-    color: $grey-color;
-    font-size: $small-font-size;
+    padding: $spacing-unit / 1.5 0;
+    font-size: 12.5px;
+
+    p { margin: 3px 0; }
 }
 
-.footer-bottom p {
-    margin: $spacing-unit / 6 0;
-    font-family: $base-font-family;
-}
-
-.footer-bottom strong {
-    color: $primary-color;
-    font-weight: 600;
-}
-
-.contact-info {
-    color: $grey-color-dark;
-    margin-bottom: $spacing-unit / 2;
-    font-size: $base-font-size * 0.95;
-    line-height: $base-line-height;
-}
-
-// Responsive design
-@media screen and (max-width: $on-palm) {
+@media screen and (max-width: 900px) {
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: $spacing-unit * 0.8;
     }
-    
-    .social-links {
-        justify-content: center;
-    }
-    
-    .site-footer {
-        padding: $spacing-unit 0 $spacing-unit * 0.8;
-    }
+    .footer-brand { grid-column: 1 / -1; }
+}
+
+@media screen and (max-width: 560px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .social-links { justify-content: flex-start; }
 }

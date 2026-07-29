@@ -1,25 +1,10 @@
 @media screen and (max-width: 800px) {
     //temporrio
 
-    .site-nav .menu { 
+    // Navegação permanece visível no mobile (menu com quebra de linha,
+    // definido em _header.scss). O mecanismo de sidebar foi desativado.
+    .site-nav .sidebar-content {
         display: none;
-    }
-
-    .site-nav .sidebar-content { 
-        display: flex;
-        justify-content: flex-end;
-        
-        
-        height: 100vh;
-        bottom: 0px;
-
-        position: fixed;
-
-        .sidebar {
-            height: 100vh;
-
-            background-color: white;
-        }
     }
 
     .last-editions-wrapper {

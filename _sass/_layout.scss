@@ -145,7 +145,8 @@
  */
 .page-content {
     padding: $spacing-unit 0;
-    padding-top: 100px;
+    /* Compensa o cabeçalho fixo (barra superior + cabeçalho principal) */
+    padding-top: 118px;
 }
 
 .page-heading {
