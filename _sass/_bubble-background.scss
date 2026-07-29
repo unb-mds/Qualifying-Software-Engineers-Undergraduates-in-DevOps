@@ -36,12 +36,12 @@
 
 
 // Fundo animado da página inicial — único lugar com gradiente.
-// Paleta arco-íris (vermelho, laranja, amarelo, verde, azul, anil, violeta).
+// Paleta lilás, roxo e rosa.
 .gradient-bg {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #FF0000 0%, #FF7F00 16%, #FFE000 33%, #00C800 50%, #00A0FF 66%, #4B0082 83%, #9400D3 100%);
+  background: linear-gradient(135deg, #FF6EC7 0%, #C850C0 22%, #8E2DE2 50%, #A64BF4 74%, #C9A0FF 100%);
   top: 0;
   left: 0;
 
@@ -58,7 +58,7 @@
 
   .g1 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.7) 0, rgba(255, 0, 0, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(255, 110, 199, 0.7) 0, rgba(255, 110, 199, 0) 50%) no-repeat;
     mix-blend-mode: screen;
 
     width: $circle-size;
@@ -74,7 +74,7 @@
 
   .g2 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(255, 127, 0, 0.6) 0, rgba(255, 127, 0, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(200, 80, 192, 0.6) 0, rgba(200, 80, 192, 0) 50%) no-repeat;
     mix-blend-mode: screen;
 
     width: $circle-size;
@@ -90,7 +90,7 @@
 
   .g3 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(255, 224, 0, 0.8) 0, rgba(255, 224, 0, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(201, 160, 255, 0.8) 0, rgba(201, 160, 255, 0) 50%) no-repeat;
     mix-blend-mode: screen;
 
     width: $circle-size;
@@ -106,7 +106,7 @@
 
   .g4 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(0, 200, 0, 0.7) 0, rgba(0, 200, 0, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(142, 45, 226, 0.8) 0, rgba(142, 45, 226, 0) 50%) no-repeat;
     mix-blend-mode: screen;
 
     width: $circle-size;
@@ -122,7 +122,7 @@
 
   .g5 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(0, 120, 255, 0.8) 0, rgba(0, 120, 255, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(166, 75, 244, 0.8) 0, rgba(166, 75, 244, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
 
     width: $circle-size * 2;
@@ -138,7 +138,7 @@
 
   .interactive {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(148, 0, 211, 0.8) 0, rgba(148, 0, 211, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(255, 95, 162, 0.8) 0, rgba(255, 95, 162, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
     transform: 0;
 
