@@ -70,12 +70,13 @@ permalink: /aulas/
   text-align: center;
   margin-bottom: 2rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #FF8E53 0%, #FF6B6B 100%);
+  background: #003366;
   color: white;
   border-radius: 12px;
 }
 
 .aulas-header h1 {
+  color: #fff;
   margin: 0 0 0.5rem 0;
   font-size: 2rem;
 }
@@ -99,7 +100,7 @@ permalink: /aulas/
   border: 1px solid #e1e1e1;
   border-radius: 8px;
   transition: all 0.2s ease;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #003366;
 }
 
 .aula-card:hover {
@@ -108,19 +109,19 @@ permalink: /aulas/
 }
 
 .aula-card.lecture {
-  border-left-color: #FF8E53;
+  border-left-color: #003366;
 }
 
 .aula-card.review {
-  border-left-color: #4ECDC4;
+  border-left-color: #006633;
 }
 
 .aula-card.release {
-  border-left-color: #e74c3c;
+  border-left-color: #FDCA00;
 }
 
 .aula-card.other {
-  border-left-color: #95a5a6;
+  border-left-color: #7E7E65;
 }
 
 .aula-date {
@@ -137,7 +138,7 @@ permalink: /aulas/
 .aula-date .day {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1f1f1f;
+  color: #1D1D1D;
   line-height: 1;
 }
 
@@ -155,7 +156,7 @@ permalink: /aulas/
   margin: 0 0 0.5rem 0;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1f1f1f;
+  color: #1D1D1D;
 }
 
 .aula-description {
@@ -192,16 +193,16 @@ permalink: /aulas/
   align-items: center;
   gap: 0.35rem;
   font-size: 0.85rem;
-  color: #FF6B6B;
+  color: #003366;
   text-decoration: none;
   padding: 0.35rem 0.75rem;
-  background: rgba(255, 107, 107, 0.1);
+  background: rgba(0, 51, 102, 0.08);
   border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .aula-link:hover {
-  background: #FF6B6B;
+  background: #003366;
   color: white;
   text-decoration: none;
 }

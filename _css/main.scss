@@ -7,14 +7,20 @@ $header-background-invert: 0%;
 @import "user_vars";
 
 // Our variables
-$base-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+// Tipografia institucional UnB: Liberation Sans é a fonte aberta
+// adotada pelo manual da UnB (substituta métrica da Arial, otimizada
+// para leitura em tela). Liberation Serif/Mono cobrem serifa e mono.
+$base-font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+$heading-font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+$mono-font-family: "Liberation Mono", "Courier New", monospace;
+$serif-font-family: "Liberation Serif", Georgia, "Times New Roman", serif;
 $base-font-size:   .95em;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
+$text-color:       #1D1D1D;
 $background-color: #fdfdfd;
 $brand-color:      $primary-color;
 // $gameday-sky: #109dc0;
@@ -33,15 +39,15 @@ $content-width:    1020px;
 $on-palm:          600px;
 $on-laptop:        950px;
 
-// $color-bg1: rgb(177, 192, 255);
+// Fundo animado — círculos em tons institucionais UnB sobre base branca
 $color-bg1: rgb(255, 255, 255);
 $color-bg2: rgb(255, 255, 255);
-$color1: 184, 242, 230;
-$color2: 204, 213, 255;
-$color3: 0, 232, 252;
-$color4: 231, 187, 227;
-$color5: 10, 129, 209;
-$color-interactive: 49, 133, 252;
+$color1: 0, 102, 51;     // Verde UnB
+$color2: 0, 51, 102;     // Azul UnB
+$color3: 0, 166, 235;    // Ciano Puro
+$color4: 152, 192, 0;    // Verde Médio
+$color5: 0, 104, 180;    // Azul Médio
+$color-interactive: 0, 104, 180;
 $circle-size: 60%;
 $blending: hard-light;
 

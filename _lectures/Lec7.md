@@ -187,7 +187,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #003366;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -203,7 +203,7 @@ body {
 }
 
 button {
-    background: #667eea;
+    background: #003366;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -214,7 +214,7 @@ button {
 }
 
 button:hover {
-    background: #764ba2;
+    background: #006633;
 }
 EOF
 ```
@@ -224,7 +224,7 @@ EOF
 ```bash
 cat > script.js << 'EOF'
 function mudaCor() {
-    const cores = ['#667eea', '#f093fb', '#4facfe', '#43e97b', '#fa709a'];
+    const cores = ['#003366', '#f093fb', '#4facfe', '#43e97b', '#fa709a'];
     const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
     document.body.style.background = corAleatoria;
     alert('Cor mudada!');
@@ -428,7 +428,7 @@ app.get('/', (req, res) => {
                         align-items: center;
                         height: 100vh;
                         margin: 0;
-                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        background: #003366;
                     }
                     .card {
                         background: white;

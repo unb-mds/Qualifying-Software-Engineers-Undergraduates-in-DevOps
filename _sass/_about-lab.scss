@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
 
-    background: linear-gradient(135deg, $tropical-ocean 0%, $tropical-coral 50%, $tropical-sunset 100%);
+    background: $primary-color;
 }
 
 .imagens-grid-wrapper {
@@ -59,12 +59,12 @@
         text-align: left;
 
         a {
-            color: #FFE066;
+            color: #FDCA00;
             text-decoration: underline;
             font-weight: 600;
             
             &:hover {
-                color: #FFF59D;
+                color: #FFE9A6;
             }
         }
     }

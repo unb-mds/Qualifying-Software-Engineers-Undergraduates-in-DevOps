@@ -14,12 +14,13 @@
   text-align: center;
   margin-bottom: 3rem;
   padding: 2rem 0;
-  background: linear-gradient(135deg, $tropical-sunset 0%, $tropical-coral 100%);
+  background: $primary-color;
   color: white;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 
   .course-title {
+    color: #ffffff;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -59,13 +60,13 @@
     }
 
     h3 {
-      color: #2c3e50;
+      color: #003366;
       font-size: 1rem;
       margin-bottom: 0.5rem;
       font-weight: 600;
       
       i {
-        color: #667eea;
+        color: #003366;
         margin-right: 0.5rem;
       }
     }
@@ -74,7 +75,7 @@
       margin: 0;
       font-size: 1.1rem;
       font-weight: 500;
-      color: #34495e;
+      color: #1D3A5F;
     }
   }
 }
@@ -93,12 +94,12 @@
   }
 
   &.highlight-section {
-    border-left: 4px solid #667eea;
-    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    border-left: 4px solid #003366;
+    background: #f4f7fb;
   }
 
   h2 {
-    color: #2c3e50;
+    color: #003366;
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -106,19 +107,19 @@
     padding-bottom: 0.5rem;
 
     i {
-      color: #667eea;
+      color: #003366;
       margin-right: 0.75rem;
     }
   }
 
   h3 {
-    color: #34495e;
+    color: #1D3A5F;
     font-size: 1.3rem;
     margin-bottom: 1rem;
     font-weight: 600;
 
     i {
-      color: #667eea;
+      color: #003366;
       margin-right: 0.5rem;
     }
   }
@@ -153,12 +154,12 @@
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 1.5rem;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #003366;
 
   p {
     margin: 0;
     font-size: 1.1rem;
-    color: #2c3e50;
+    color: #003366;
     line-height: 1.6;
   }
 }
@@ -169,7 +170,7 @@
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 2rem;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #003366;
 
     p {
       margin: 0;
@@ -193,20 +194,20 @@
       transition: all 0.3s ease;
 
       &:hover {
-        border-color: #667eea;
+        border-color: #003366;
         transform: translateY(-2px);
       }
 
       i {
         font-size: 2rem;
-        color: #667eea;
+        color: #003366;
         margin-bottom: 0.75rem;
         display: block;
       }
 
       span {
         font-weight: 500;
-        color: #2c3e50;
+        color: #003366;
         font-size: 0.95rem;
         line-height: 1.4;
       }
@@ -226,17 +227,17 @@
       display: inline-flex;
       align-items: center;
       padding: 1rem 2rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #003366;
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-weight: 600;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 8px 25px rgba(0, 51, 102, 0.4);
         text-decoration: none;
         color: white;
       }
@@ -254,7 +255,7 @@
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 2rem;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #003366;
 
     p {
       margin: 0;
@@ -268,16 +269,16 @@
       display: flex;
       align-items: center;
       padding: 1.5rem;
-      background: linear-gradient(135deg, #0088cc 0%, #0066aa 100%);
+      background: #0068B4;
       color: white;
       text-decoration: none;
       border-radius: 8px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 104, 180, 0.3);
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+        box-shadow: 0 8px 25px rgba(0, 104, 180, 0.4);
         text-decoration: none;
         color: white;
       }
@@ -311,19 +312,19 @@
     display: inline-flex;
     align-items: center;
     padding: 1.25rem 2rem;
-    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    background: #006633;
     color: white;
     text-decoration: none;
     border-radius: 12px;
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 102, 51, 0.3);
     border: 2px solid transparent;
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 102, 51, 0.4);
       text-decoration: none;
       color: white;
       border-color: rgba(255, 255, 255, 0.2);

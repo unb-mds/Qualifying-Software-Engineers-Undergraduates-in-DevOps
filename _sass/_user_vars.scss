@@ -1,114 +1,59 @@
-// Tropical Splash Color Palette
-$tropical-coral: #FF6B6B;      // Bright coral red
-$tropical-turquoise: #4ECDC4;  // Vibrant turquoise
-$tropical-sunshine: #FFE66D;   // Sunny yellow
-$tropical-mint: #95E1D3;       // Fresh mint green
-$tropical-ocean: #3D5A80;      // Deep ocean blue
-$tropical-sunset: #FF8E53;     // Warm sunset orange
-$tropical-white: #FFEAA7;      // Warm white with yellow tint
-$my-black: #2D3436;            // Softer black
-$my-gray: #5A5A5A;             // Legacy gray for compatibility
+// =============================================================
+// Identidade visual institucional — Universidade de Brasília (UnB)
+// Cores conforme o Manual de Identidade Visual da UnB
+// (marca.unb.br). Verde UnB: Pantone 348 · Azul UnB: Pantone 654.
+// =============================================================
 
-$primary-color: $tropical-coral; 
-$accent-color: $tropical-turquoise;
-$title-color: $tropical-ocean; 
-$header-text-color: $my-black;
-$header-title-color: $tropical-coral;
-$header-color: $tropical-white; 
-$header-background-opacity: .4;
+// --- Cores institucionais principais (RGB web safe do manual) ---
+$unb-azul:          #003366;   // Azul UnB  (Pantone 654 · C100 M65 Y0 K35)
+$unb-verde:         #006633;   // Verde UnB (Pantone 348 · C100 M0 Y100 K20)
 
+// --- Cores institucionais principais (RGB pleno do manual) ---
+$unb-azul-rich:     #003A7A;   // Azul UnB  (RGB 0/58/122)
+$unb-verde-rich:    #00822E;   // Verde UnB (RGB 0/130/46)
 
+// --- Paleta de cores auxiliares (código cromático do manual) ---
+$unb-verde-escuro:  #005A1C;   // Verde Escuro
+$unb-verde-medio:   #98C000;   // Verde Médio
+$unb-verde-claro:   #BAD266;   // Verde Claro
+$unb-azul-medio:    #0068B4;   // Azul Médio
+$unb-ciano:         #00A6EB;   // Ciano Puro
+$unb-amarelo:       #FDCA00;   // Amarelo Médio
+$unb-amarelo-puro:  #FFED00;   // Amarelo Puro
+$unb-concreto1:     #7E7E65;   // Concreto 1
+$unb-concreto3:     #D9D9CE;   // Concreto 3
+$unb-preto:         #1D1D1D;   // Preto
+$unb-preto75:       #5D5D5D;   // Preto 75%
+$unb-preto25:       #D0D0D0;   // Preto 25%
+$unb-preto10:       #EEEEEE;   // Preto 10%
 
+// -------------------------------------------------------------
+// Aliases de compatibilidade — os parciais herdados referenciam
+// nomes "$tropical-*"; aqui eles apontam para a paleta da UnB.
+// -------------------------------------------------------------
+$tropical-coral:      $unb-azul;          // acento principal (links, ícones)
+$tropical-turquoise:  $unb-azul-medio;    // acento secundário
+$tropical-sunshine:   $unb-amarelo;       // destaque quente
+$tropical-mint:       $unb-verde-medio;   // verde de apoio
+$tropical-ocean:      $unb-azul;          // títulos / tom profundo
+$tropical-sunset:     $unb-verde;         // par de gradiente (azul→verde)
+$tropical-white:      $unb-preto10;       // texto claro sobre fundo escuro
+$my-black:            $unb-preto;         // preto institucional
+$my-gray:             $unb-preto75;       // cinza institucional
 
-// Background gradient colors for tropical theme
-$color-bg1: linear-gradient(135deg, $tropical-sunshine 0%, $tropical-coral 100%);
-$color-bg2: linear-gradient(135deg, $tropical-turquoise 0%, $tropical-mint 100%);
+// -------------------------------------------------------------
+// Variáveis de tema consumidas pelo restante da folha de estilo
+// -------------------------------------------------------------
+$primary-color:       $unb-azul;
+$accent-color:        $unb-verde;
+$title-color:         $unb-azul;
+$header-text-color:   #ffffff;
+$header-title-color:  #ffffff;
+$header-color:        $unb-azul;
+$header-background-opacity: .5;
+
+// Fundo animado (bubble background) em tons institucionais
+$color-bg1: $unb-azul;
+$color-bg2: $unb-azul-medio;
 $blending: multiply;
 $circle-size: 80vw;
-
-// // theme #2 - Original
-// $primary-color:  #c3073f;
-// $accent-color: #c3073f;
-// $title-color: #6f2232;
-// $header-text-color: #fff;
-// $header-color: #1a1a1d;
-// $header-background-opacity: 0.5;
-
-// // theme #3
-// $primary-color:  #05386b;
-// $accent-color: #5cdb95;
-// $title-color: #379683;
-// $header-color: #05386b;
-// $header-text-color: #fff;
-// $header-background-opacity: 0.5;
-
-// // theme #4
-// $primary-color:  #2236b4;
-// $accent-color: #f64c72;
-// $title-color: #553d67;
-// $header-color: #2236b4;
-// $header-text-color: #fff;
-// $header-background-opacity: 0.5;
-
-// // theme #5
-// $primary-color:  #9a1750;
-// $accent-color: #ee4c7c;
-// $title-color: #5d001e;
-// $header-color: #e3e2df;
-// $header-text-color: #9a1750;
-// $header-background-opacity: 0.35;
-// $header-background-invert: 100%;
-
-// // theme #6
-// $primary-color:  #116466;
-// $accent-color: #ffcb9a;
-// $title-color: #2c3531;
-// $header-color: #116466;
-// $header-text-color: #fff;
-// $header-background-opacity: 0.5;
-// $header-background-invert: 0%;
-
-// // theme #7
-// $primary-color:  #994c5f;
-// $accent-color: #da7b93;
-// $title-color: #1c3334;
-// $header-color: #2f4454;
-// $header-text-color: #fff;
-// $header-background-opacity: 0.6;
-// $header-background-invert: 0%;
-
-// // theme #8
-// $primary-color:  #668d8c;
-// $accent-color: #254e58;
-// $title-color: #1c3334;
-// $header-color: #88bdbc;
-// $header-text-color: #112d32;
-// $header-background-opacity: 0.6;
-// $header-background-invert: 100%;
-
-// // theme #9
-// $primary-color:  #29648a;
-// $accent-color: #2e9cca;
-// $title-color: #464866;
-// $header-color: #25274d;
-// $header-text-color: #dbdcec;
-// $header-background-opacity: 0.4;
-// $header-background-invert: 0%;
-
-// // theme #10
-// $primary-color:  #374785;
-// $accent-color: #f76c6c;
-// $title-color: #b95050;
-// $header-color: #a8d0e6;
-// $header-text-color: #24305e;
-// $header-background-opacity: 0.4;
-// $header-background-invert: 100%;
-
-// // theme #11
-// $primary-color:  #9e5a63;
-// $accent-color: #314455;
-// $title-color: #644e5b;
-// $header-color: #c96567;
-// $header-text-color: #fff;
-// $header-background-opacity: 0.4;
-// $header-background-invert: 100%;

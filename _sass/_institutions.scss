@@ -2,7 +2,7 @@ $n:6;
 
 .institutions-wrapper {
     padding: 30px 12%;
-    background: linear-gradient(135deg, $tropical-coral 0%, $tropical-sunset 50%, $tropical-sunshine 100%);
+    background: $primary-color;
 
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@ $n:6;
     margin-right: 40px;
 
     .section-title {
-        color: $tropical-ocean;
+        color: #ffffff;
         margin: 0;
         font-size: 35px;
         font-weight: 600;

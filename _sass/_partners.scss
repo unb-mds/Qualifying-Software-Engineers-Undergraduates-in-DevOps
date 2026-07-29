@@ -1,5 +1,5 @@
 .partners-content {
-    background: linear-gradient(135deg, $tropical-mint 0%, $tropical-turquoise 50%, $tropical-sunshine 100%);
+    background: $accent-color;
     padding: 50px 0;  
     display: flex;
 }
@@ -33,7 +33,7 @@
 }
 
 .icons-wrapper {
-    background: linear-gradient(135deg, $tropical-white 0%, #fff 100%);
+    background: #fff;
     border: 3px solid $tropical-coral;
     border-radius: 50%;
     width: 60px;
@@ -100,7 +100,7 @@
     button {
         cursor: pointer;
     
-        background-color: rgba(0, 193, 252, 0.8);
+        background-color: rgba(0, 104, 180, 0.8);
         color: white;
         opacity: 100%;
         

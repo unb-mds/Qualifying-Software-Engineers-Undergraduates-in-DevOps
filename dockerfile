@@ -3,6 +3,9 @@ FROM ruby:3.1.4-slim
 
 
 
+# Use HTTPS Debian mirrors (some networks intercept the default HTTP mirror)
+RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources || true
+
 # Install required packages
 RUN apt-get update -qq && apt-get install -y \
   build-essential \

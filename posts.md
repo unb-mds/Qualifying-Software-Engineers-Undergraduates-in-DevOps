@@ -334,7 +334,7 @@ permalink: /posts/
   text-align: center;
   margin-bottom: 2rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #FF8E53 0%, #FF6B6B 100%);
+  background: #003366;
   color: white;
   border-radius: 12px;
 }
@@ -352,7 +352,7 @@ permalink: /posts/
 .section-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1f1f1f;
+  color: #1D1D1D;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -360,7 +360,7 @@ permalink: /posts/
 }
 
 .section-title i {
-  color: #FF6B6B;
+  color: #003366;
 }
 
 .projects-highlight {
@@ -387,19 +387,19 @@ permalink: /posts/
 
 .project-card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-color: #FF6B6B;
+  border-color: #003366;
   transform: translateY(-2px);
 }
 
 .project-card.featured {
-  border-left: 4px solid #FF6B6B;
+  border-left: 4px solid #003366;
 }
 
 .project-info h3 {
   margin: 0 0 0.25rem 0;
   font-size: 1rem;
   font-weight: 600;
-  color: #1f1f1f;
+  color: #1D1D1D;
 }
 
 .project-info p {
@@ -417,7 +417,7 @@ permalink: /posts/
 }
 
 .project-stats i {
-  color: #FF6B6B;
+  color: #003366;
 }
 
 .semester-section {
@@ -445,7 +445,7 @@ permalink: /posts/
 }
 
 .project-item:hover {
-  background: #FF6B6B;
+  background: #003366;
 }
 
 .project-item:hover .project-name,
@@ -455,7 +455,7 @@ permalink: /posts/
 
 .project-name {
   font-weight: 500;
-  color: #1f1f1f;
+  color: #1D1D1D;
 }
 
 .project-star {
@@ -464,7 +464,7 @@ permalink: /posts/
 }
 
 .project-star i {
-  color: #FF6B6B;
+  color: #003366;
 }
 
 .project-item:hover .project-star i {
@@ -481,7 +481,7 @@ permalink: /posts/
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #FF8E53 0%, #FF6B6B 100%);
+  background: #003366;
   color: white;
   text-decoration: none;
   border-radius: 8px;

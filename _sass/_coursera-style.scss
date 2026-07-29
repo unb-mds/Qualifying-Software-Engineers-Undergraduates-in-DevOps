@@ -31,7 +31,7 @@
 }
 
 // Variables
-$coursera-blue: #0056D2;
+$coursera-blue: #003366;
 $coursera-dark: #1F1F1F;
 $coursera-gray: #636363;
 $coursera-light-gray: #F5F5F5;
@@ -40,7 +40,7 @@ $coursera-success: #1E8E3E;
 
 // Hero Section
 .course-hero {
-  background: linear-gradient(135deg, $tropical-sunset 0%, $tropical-coral 100%);
+  background: $primary-color;
   color: white;
   padding: 3rem 2rem;
   border-radius: 0;
@@ -66,6 +66,7 @@ $coursera-success: #1E8E3E;
   }
 
   .course-hero-title {
+    color: #ffffff;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -278,7 +279,7 @@ $coursera-success: #1E8E3E;
       .module-number {
         width: 36px;
         height: 36px;
-        background: linear-gradient(135deg, $tropical-sunset 0%, $tropical-coral 100%);
+        background: $primary-color;
         color: white;
         border-radius: 50%;
         display: flex;
@@ -380,7 +381,7 @@ $coursera-success: #1E8E3E;
     .detail-icon {
       width: 48px;
       height: 48px;
-      background: linear-gradient(135deg, rgba($tropical-sunset, 0.1) 0%, rgba($tropical-coral, 0.1) 100%);
+      background: rgba($primary-color, 0.1);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -454,7 +455,7 @@ $coursera-success: #1E8E3E;
 
 // CTA Section
 .cta-section {
-  background: linear-gradient(135deg, $tropical-sunset 0%, $tropical-coral 100%);
+  background: $primary-color;
   color: white;
   padding: 2rem;
   border-radius: 12px;
@@ -584,7 +585,7 @@ $coursera-success: #1E8E3E;
 // Projects Section
 .projects-section {
   .project-theme {
-    background: linear-gradient(135deg, $tropical-sunset 0%, $tropical-coral 100%);
+    background: $primary-color;
     color: white;
     padding: 1.5rem;
     border-radius: 8px;
