@@ -7,7 +7,7 @@ permalink: /aulas/
 <div class="aulas-page">
   <div class="aulas-header">
     <h1><i class="fas fa-chalkboard-teacher"></i> Cronograma de Aulas</h1>
-    <p>Confira abaixo o cronograma completo das aulas e eventos da disciplina MDS 2026/1.</p>
+    <p>Confira abaixo o cronograma completo das aulas e eventos da disciplina MDS 2026/2.</p>
   </div>
 
   <div class="aulas-list">

@@ -20,7 +20,7 @@ permalink: /planoensino/
       </div>
       <div class="meta-item">
         <i class="fas fa-calendar"></i>
-        <span>Semestre <strong>2026/1</strong></span>
+        <span>Semestre <strong>2026/2</strong></span>
       </div>
     </div>
   </div>
@@ -340,7 +340,7 @@ permalink: /planoensino/
         <tr><th>Componente</th><th>Peso</th><th>O que é</th></tr>
       </thead>
       <tbody>
-        <tr><td>Arguições individuais</td><td>30%</td><td>Três arguições presenciais de 10–15 min (semanas 8, 14 e 18), sobre o próprio código, a própria spec e as decisões da equipe. 10% cada. Sem IA.</td></tr>
+        <tr><td>Arguições individuais</td><td>30%</td><td>Três arguições presenciais de 10–15 min (uma intermediária e as outras duas junto às Releases 1 e 2), sobre o próprio código, a própria spec e as decisões da equipe. 10% cada. Sem IA.</td></tr>
         <tr><td>Desempenho individual no processo</td><td>15%</td><td>Contribuição rastreável (commits, PRs, revisões), pareamento, participação em rituais e avaliação por pares.</td></tr>
         <tr><td>Especificação viva e registro de IA</td><td>10%</td><td>Qualidade e manutenção de /specs, ADRs, rastreabilidade spec → issue → PR → teste e o AI-USAGE.md. Avaliado em R1 e R2.</td></tr>
         <tr><td>Release 1</td><td>15%</td><td>Incremento funcionando e implantado, pipeline verde, apresentação.</td></tr>
@@ -383,8 +383,8 @@ permalink: /planoensino/
   <div class="section-content">
     <p>Detalhes sobre o roteiro das apresentações: <a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md">Guias para as entregas</a>.</p>
     <ul>
-      <li><strong>Release 1</strong> - semana 14 (apresentação e Arguição Individual 2)</li>
-      <li><strong>Release 2</strong> - semana 18 (apresentação final e Arguição Individual 3)</li>
+      <li><strong>Release 1</strong> — 28/09/2026 · semana 7 (apresentação e Arguição Individual)</li>
+      <li><strong>Release 2</strong> — 25/11/2026 · semana 15 (apresentação final e Arguição Individual)</li>
     </ul>
   </div>
 </div>
