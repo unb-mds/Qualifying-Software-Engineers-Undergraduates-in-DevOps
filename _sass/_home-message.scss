@@ -14,12 +14,19 @@
 }
 
 .home-message .title {
-    color: #003366;
+    color: #ffffff;
     cursor: default;
     font-weight: 900;
     font-size: 50px;
     margin: 20px 30px;
     text-align: center;
+    // Contorno preto para contraste sobre o fundo arco-íris
+    -webkit-text-stroke: 1px #000;
+    paint-order: stroke fill;
+    text-shadow:
+        -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000,
+        -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000,
+        0 3px 12px rgba(0, 0, 0, 0.5);
 }
 
 .home-message .subtitle {
@@ -27,6 +34,12 @@
     max-width: 700px;
     text-align: center;
     margin: 0px 30px;
+    color: #ffffff;
+    font-weight: 600;
+    // Contorno preto mais fino para o texto menor
+    text-shadow:
+        -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+        0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .water-mark-content {

@@ -35,13 +35,13 @@
 }
 
 
-// Fundo animado da página inicial — único lugar com gradiente,
-// em tons institucionais da UnB (azul, verde e auxiliares).
+// Fundo animado da página inicial — único lugar com gradiente.
+// Paleta arco-íris (vermelho, laranja, amarelo, verde, azul, anil, violeta).
 .gradient-bg {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #003366 0%, #006633 25%, #0068B4 50%, #98C000 75%, #FDCA00 100%);
+  background: linear-gradient(135deg, #FF0000 0%, #FF7F00 16%, #FFE000 33%, #00C800 50%, #00A0FF 66%, #4B0082 83%, #9400D3 100%);
   top: 0;
   left: 0;
 
@@ -58,7 +58,7 @@
 
   .g1 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(0, 51, 102, 0.7) 0, rgba(0, 51, 102, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.7) 0, rgba(255, 0, 0, 0) 50%) no-repeat;
     mix-blend-mode: screen;
 
     width: $circle-size;
@@ -74,7 +74,7 @@
 
   .g2 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(0, 104, 180, 0.6) 0, rgba(0, 104, 180, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(255, 127, 0, 0.6) 0, rgba(255, 127, 0, 0) 50%) no-repeat;
     mix-blend-mode: screen;
 
     width: $circle-size;
@@ -90,7 +90,7 @@
 
   .g3 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(253, 202, 0, 0.8) 0, rgba(253, 202, 0, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(255, 224, 0, 0.8) 0, rgba(255, 224, 0, 0) 50%) no-repeat;
     mix-blend-mode: screen;
 
     width: $circle-size;
@@ -106,7 +106,7 @@
 
   .g4 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(152, 192, 0, 0.7) 0, rgba(152, 192, 0, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(0, 200, 0, 0.7) 0, rgba(0, 200, 0, 0) 50%) no-repeat;
     mix-blend-mode: screen;
 
     width: $circle-size;
@@ -117,12 +117,12 @@
     transform-origin: calc(50% - 200px);
     animation: moveHorizontal 40s ease infinite;
 
-    opacity: 0.7;
+    opacity: 0.8;
   }
 
   .g5 {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(0, 102, 51, 0.8) 0, rgba(0, 104, 180, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(0, 120, 255, 0.8) 0, rgba(0, 120, 255, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
 
     width: $circle-size * 2;
@@ -138,7 +138,7 @@
 
   .interactive {
     position: absolute;
-    background: radial-gradient(circle at center, rgba(0, 51, 102, 0.8) 0, rgba(0, 104, 180, 0) 50%) no-repeat;
+    background: radial-gradient(circle at center, rgba(148, 0, 211, 0.8) 0, rgba(148, 0, 211, 0) 50%) no-repeat;
     mix-blend-mode: $blending;
     transform: 0;
 
@@ -147,6 +147,6 @@
     top: -50%;
     left: -50%;
 
-    opacity: 0.7;
+    opacity: 0.8;
   }
 }
