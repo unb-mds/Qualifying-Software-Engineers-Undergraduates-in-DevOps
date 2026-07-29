@@ -6,9 +6,9 @@ permalink: /planoensino/
 
 <div class="course-hero">
   <div class="course-hero-content">
-    <span class="course-badge"><i class="fas fa-university"></i> UnB - Universidade de Brasília</span>
+    <span class="course-badge"><i class="fas fa-university"></i> UnB - FCTE - Lab Livre</span>
     <h1 class="course-hero-title">Métodos de Desenvolvimento de Software</h1>
-    <p class="course-hero-subtitle">Domine metodologias ágeis, Scrum, XP e DevOps através de projetos práticos. Aprenda a desenvolver software de qualidade trabalhando em equipes ágeis.</p>
+    <p class="course-hero-subtitle">Especificar, delegar, verificar: engenharia de software em equipes com agentes. A disciplina continua sendo sobre método — ciclo de vida, processo, ritmo, qualidade e entrega. O que muda é que o time deixa de ser só humano, e o gargalo se desloca da produção de código para a especificação do que deve ser feito e a verificação do que foi feito.</p>
     <div class="course-meta">
       <div class="meta-item">
         <i class="fas fa-user-tie"></i>
@@ -28,20 +28,20 @@ permalink: /planoensino/
 
 <div class="course-stats">
   <div class="stat-item">
-    <span class="stat-value">5</span>
+    <span class="stat-value">6</span>
     <span class="stat-label">Módulos</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">9</span>
+    <span class="stat-label">Sprints de 2 semanas</span>
   </div>
   <div class="stat-item">
     <span class="stat-value">2</span>
     <span class="stat-label">Releases</span>
   </div>
   <div class="stat-item">
-    <span class="stat-value">6</span>
+    <span class="stat-value">5-6</span>
     <span class="stat-label">Membros por equipe</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-value">90%</span>
-    <span class="stat-label">Cobertura de código</span>
   </div>
 </div>
 
@@ -50,27 +50,27 @@ permalink: /planoensino/
   <div class="learn-grid">
     <div class="learn-item">
       <i class="fas fa-check"></i>
-      <span>Dominar os princípios fundamentais do Agile, Scrum, Extreme Programming (XP) e Kanban</span>
+      <span>Especificar um incremento de software de forma que uma pessoa ou um agente possa implementá-lo sem consultar o autor, com critérios de aceitação verificáveis</span>
     </div>
     <div class="learn-item">
       <i class="fas fa-check"></i>
-      <span>Criar e priorizar Product Backlogs, elaborar histórias de usuário e estimar story points</span>
+      <span>Decidir e registrar decisões arquiteturais em ADRs, incluindo alternativas descartadas e consequências assumidas</span>
     </div>
     <div class="learn-item">
       <i class="fas fa-check"></i>
-      <span>Aplicar programação em pares, TDD, integração contínua e entrega contínua</span>
+      <span>Planejar e conduzir iterações com backlog priorizado, fatiamento vertical e métricas de fluxo</span>
     </div>
     <div class="learn-item">
       <i class="fas fa-check"></i>
-      <span>Executar todas as fases do ciclo de vida: Requisitos, Arquitetura, Desenvolvimento, Testes e Deploy</span>
+      <span>Delegar tarefas de implementação a agentes de código com contexto adequado — e reconhecer quando delegar é a decisão errada</span>
     </div>
     <div class="learn-item">
       <i class="fas fa-check"></i>
-      <span>Conteinerizar aplicações com Docker e configurar pipelines de CI/CD automatizados</span>
+      <span>Verificar criticamente saídas de IA: teste sem asserção real, dependência inventada, vulnerabilidade introduzida, decisão arquitetural implícita</span>
     </div>
     <div class="learn-item">
       <i class="fas fa-check"></i>
-      <span>Desenvolver uma Prova de Conceito completa trabalhando em equipe ágil</span>
+      <span>Operar entrega contínua com containers, pipeline de CI/CD, análise estática e software implantado — e defender oralmente qualquer artefato que assinar</span>
     </div>
   </div>
 </div>
@@ -78,12 +78,13 @@ permalink: /planoensino/
 <div class="content-section">
   <h2 class="section-title"><i class="fas fa-list-ul"></i> Ementa do Programa</h2>
   <div class="section-content">
+    <p>A ementa oficial permanece inalterada; a proposta reancora seus dois últimos itens em desenvolvimento orientado a especificação (SDD) e engenharia de software assistida por agentes.</p>
     <ul>
-      <li>Modelos de ciclo de vida e de processos</li>
-      <li>Processo Unificado</li>
-      <li>Métodos Ágeis de desenvolvimento de software</li>
-      <li>Outras abordagens de desenvolvimento de software</li>
-      <li>Ferramentas</li>
+      <li>Modelos de ciclo de vida e de processos <em>— Módulo 0</em></li>
+      <li>Processo Unificado <em>— Módulo 0</em></li>
+      <li>Métodos Ágeis de desenvolvimento de software <em>— Módulos 0, 2 e 4</em></li>
+      <li>Outras abordagens de desenvolvimento de software <em>— Módulo 1 (spec-driven development) e Módulo 3 (desenvolvimento assistido por agentes)</em></li>
+      <li>Ferramentas <em>— Módulos 3, 4 e 5 (Git, agentes, MCP, SAST, CI/CD, containers)</em></li>
     </ul>
   </div>
 </div>
@@ -91,48 +92,72 @@ permalink: /planoensino/
 <div class="skills-section">
   <h3 class="section-title">Habilidades que você vai desenvolver</h3>
   <div class="skills-grid">
+    <span class="skill-tag">Spec-Driven Development</span>
+    <span class="skill-tag">Engenharia com Agentes</span>
+    <span class="skill-tag">AGENTS.md</span>
+    <span class="skill-tag">MCP</span>
     <span class="skill-tag">Scrum</span>
     <span class="skill-tag">Kanban</span>
     <span class="skill-tag">Extreme Programming</span>
-    <span class="skill-tag">User Stories</span>
-    <span class="skill-tag">Sprint Planning</span>
+    <span class="skill-tag">ADR & Arquitetura</span>
     <span class="skill-tag">Git & GitHub</span>
+    <span class="skill-tag">TDD & BDD</span>
+    <span class="skill-tag">Teste de Mutação</span>
+    <span class="skill-tag">Segurança de Código (SAST)</span>
     <span class="skill-tag">Docker</span>
     <span class="skill-tag">CI/CD</span>
-    <span class="skill-tag">TDD</span>
+    <span class="skill-tag">Métricas DORA</span>
     <span class="skill-tag">Code Review</span>
-    <span class="skill-tag">Pair Programming</span>
-    <span class="skill-tag">DevOps</span>
   </div>
 </div>
 
 <div class="modules-section">
   <div class="section-header">
     <h2 class="section-title">Conteúdo do Curso</h2>
-    <span class="modules-count">5 módulos</span>
+    <span class="modules-count">6 módulos · 36 aulas</span>
   </div>
-  
+
   <div class="module-intro">
-    Inicie sua jornada no desenvolvimento ágil e no framework Scrum e XP! Ao concluir este curso, você estará preparado para desenvolver projetos de Software aplicando os princípios fundamentais do Agile, incluindo planejamento adaptativo, desenvolvimento iterativo e melhoria contínua.
+    O uso de assistentes e agentes de IA nesta disciplina é <strong>esperado, não tolerado</strong>. Você será avaliado pela qualidade das suas decisões sobre o que pedir, o que aceitar, o que rejeitar e o que verificar. Ao longo de 9 sprints de 2 semanas, cada equipe conduz um projeto de impacto real do início à entrega, com a especificação e a verificação no centro do método.
   </div>
 
   <div class="module-card expanded">
     <div class="module-header">
-      <span class="module-number">1</span>
+      <span class="module-number">0</span>
       <div class="module-info">
-        <div class="module-title">Ciclo de Vida de Software e Scrum</div>
-        <div class="module-duration">Fundamentos do Agile e framework Scrum</div>
+        <div class="module-title">Ciclo de vida, processos e o novo mapa</div>
+        <div class="module-duration">S0 · semanas 1–2</div>
       </div>
       <i class="fas fa-chevron-down module-toggle"></i>
     </div>
     <div class="module-content">
-      <p>Conheça a filosofia e as características fundamentais do Agile. Aprenda sobre diferentes metodologias de desenvolvimento de software, incluindo Waterfall, Extreme Programming (XP) e Kanban.</p>
+      <p>O que a engenharia de software se tornou em 2026 e por que três pilares clássicos de avaliação deixaram de ser evidência de aprendizagem. Modelos de processo e o que do Scrum permanece quando parte do time é um agente.</p>
       <ul class="module-topics">
-        <li><i class="fas fa-play-circle"></i> Princípios do Manifesto Ágil</li>
-        <li><i class="fas fa-play-circle"></i> Papéis, eventos e artefatos do Scrum</li>
-        <li><i class="fas fa-play-circle"></i> Engenharia de Requisitos</li>
-        <li><i class="fas fa-play-circle"></i> Arquitetura de Software</li>
-        <li><i class="fas fa-play-circle"></i> Desenvolvimento, Testes e Implantação</li>
+        <li><i class="fas fa-play-circle"></i> Apresentação e contrato pedagógico</li>
+        <li><i class="fas fa-play-circle"></i> O que mudou na engenharia de software (IA como amplificador)</li>
+        <li><i class="fas fa-play-circle"></i> Modelos de ciclo de vida e de processo</li>
+        <li><i class="fas fa-play-circle"></i> Processo Unificado e o Manifesto Ágil</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="module-card">
+    <div class="module-header">
+      <span class="module-number">1</span>
+      <div class="module-info">
+        <div class="module-title">Especificação executável</div>
+        <div class="module-duration">S1–S2 · semanas 3–5</div>
+      </div>
+      <i class="fas fa-chevron-down module-toggle"></i>
+    </div>
+    <div class="module-content">
+      <p>A especificação promovida a artefato executável de primeira classe. Do requisito ágil ao ciclo specify → plan → tasks → implement, com arquitetura registrada em ADR e backlog priorizado.</p>
+      <ul class="module-topics">
+        <li><i class="fas fa-play-circle"></i> Git como artefato de engenharia</li>
+        <li><i class="fas fa-play-circle"></i> Requisitos ágeis: da conversa ao critério</li>
+        <li><i class="fas fa-play-circle"></i> Spec-driven development I e II (oficina de spec)</li>
+        <li><i class="fas fa-play-circle"></i> Do spec ao plano: arquitetura e ADR</li>
+        <li><i class="fas fa-play-circle"></i> Backlog, visão de produto e priorização</li>
       </ul>
     </div>
   </div>
@@ -141,19 +166,18 @@ permalink: /planoensino/
     <div class="module-header">
       <span class="module-number">2</span>
       <div class="module-info">
-        <div class="module-title">Planejamento Ágil</div>
-        <div class="module-duration">User Stories, Story Points e Sprint Planning</div>
+        <div class="module-title">Planejamento, fluxo e métricas</div>
+        <div class="module-duration">S3 · semanas 6–7</div>
       </div>
       <i class="fas fa-chevron-down module-toggle"></i>
     </div>
     <div class="module-content">
-      <p>Aprofunde seus conhecimentos sobre o planejamento iterativo no Agile. Aprenda a criar histórias de usuário eficazes, estimar e atribuir story points, construir e refinar o Product Backlog.</p>
+      <p>Planejar iterações e medir fluxo quando gerar código fica barato e verificar fica caro. As quatro métricas DORA e os antipadrões — incluindo o tokenmaxxing.</p>
       <ul class="module-topics">
-        <li><i class="fas fa-play-circle"></i> Criação de User Stories eficazes</li>
-        <li><i class="fas fa-play-circle"></i> Estimativa com Story Points</li>
-        <li><i class="fas fa-play-circle"></i> Product Backlog e refinamento</li>
-        <li><i class="fas fa-play-circle"></i> Sprint Planning com GitHub Projects</li>
-        <li><i class="fas fa-play-circle"></i> Práticas de comunidades Open Source</li>
+        <li><i class="fas fa-play-circle"></i> Planejamento de sprint e estimativa</li>
+        <li><i class="fas fa-play-circle"></i> Kanban, WIP e fluxo</li>
+        <li><i class="fas fa-play-circle"></i> Métricas de entrega e antipadrões</li>
+        <li><i class="fas fa-play-circle"></i> Scrum Master, rituais e gestão de risco</li>
       </ul>
     </div>
   </div>
@@ -162,19 +186,20 @@ permalink: /planoensino/
     <div class="module-header">
       <span class="module-number">3</span>
       <div class="module-info">
-        <div class="module-title">Produtividade Ágil</div>
-        <div class="module-duration">Métricas, Dailies e gestão de riscos</div>
+        <div class="module-title">Engenharia com agentes</div>
+        <div class="module-duration">S4 · semanas 8–10</div>
       </div>
       <i class="fas fa-chevron-down module-toggle"></i>
     </div>
     <div class="module-content">
-      <p>Aprenda a monitorar a produtividade da equipe, identificar gargalos, organizar sprints viáveis e compreender o papel do Scrum Master e das dailies na gestão de riscos.</p>
+      <p>Como um agente de código funciona por dentro, como dar-lhe contexto sem encarecer o resultado, e como integrar ferramentas com o Model Context Protocol. Pareamento humano–agente e rastreabilidade.</p>
       <ul class="module-topics">
-        <li><i class="fas fa-play-circle"></i> Métricas ágeis e burndown charts</li>
-        <li><i class="fas fa-play-circle"></i> Papel do Scrum Master</li>
-        <li><i class="fas fa-play-circle"></i> Daily Standups eficientes</li>
-        <li><i class="fas fa-play-circle"></i> Gestão de riscos em sprints</li>
-        <li><i class="fas fa-play-circle"></i> Timeboxing e roadmap</li>
+        <li><i class="fas fa-play-circle"></i> Como funciona um agente de código</li>
+        <li><i class="fas fa-play-circle"></i> Context engineering: AGENTS.md</li>
+        <li><i class="fas fa-play-circle"></i> MCP e integração de ferramentas</li>
+        <li><i class="fas fa-play-circle"></i> Pareamento humano–agente e revisão</li>
+        <li><i class="fas fa-play-circle"></i> Fluxo no repositório com múltiplos agentes</li>
+        <li><i class="fas fa-play-circle"></i> Rastreabilidade spec → PR → teste</li>
       </ul>
     </div>
   </div>
@@ -183,19 +208,20 @@ permalink: /planoensino/
     <div class="module-header">
       <span class="module-number">4</span>
       <div class="module-info">
-        <div class="module-title">Programação Extrema (XP)</div>
-        <div class="module-duration">Pair Programming, TDD e qualidade de código</div>
+        <div class="module-title">Qualidade e verificação</div>
+        <div class="module-duration">S5–S6 · semanas 11–13</div>
       </div>
       <i class="fas fa-chevron-down module-toggle"></i>
     </div>
     <div class="module-content">
-      <p>Aprenda sobre as práticas de Extreme Programming (XP). A filosofia do XP consiste em identificar boas práticas que geram produtividade e levá-las ao extremo.</p>
+      <p>As práticas de XP que sobreviveram, TDD/BDD, e por que cobertura de código deixou de provar qualidade. Teste de mutação, teste de sabotagem e segurança de código gerado por IA.</p>
       <ul class="module-topics">
-        <li><i class="fas fa-play-circle"></i> Programação em Pares</li>
-        <li><i class="fas fa-play-circle"></i> Test-Driven Development (TDD)</li>
-        <li><i class="fas fa-play-circle"></i> Integração Contínua</li>
-        <li><i class="fas fa-play-circle"></i> Qualidade estática de código</li>
-        <li><i class="fas fa-play-circle"></i> Documentação técnica</li>
+        <li><i class="fas fa-play-circle"></i> XP: as práticas que sobreviveram</li>
+        <li><i class="fas fa-play-circle"></i> TDD e BDD</li>
+        <li><i class="fas fa-play-circle"></i> Testes gerados por IA e falsa confiança</li>
+        <li><i class="fas fa-play-circle"></i> Qualidade de teste: mutação e propriedades</li>
+        <li><i class="fas fa-play-circle"></i> Clean code, análise estática e legibilidade</li>
+        <li><i class="fas fa-play-circle"></i> Segurança de código gerado por IA</li>
       </ul>
     </div>
   </div>
@@ -204,19 +230,19 @@ permalink: /planoensino/
     <div class="module-header">
       <span class="module-number">5</span>
       <div class="module-info">
-        <div class="module-title">DevOps</div>
-        <div class="module-duration">Docker, CI/CD e Deploy automatizado</div>
+        <div class="module-title">Evolução, entrega e operação</div>
+        <div class="module-duration">S7–S8 · semanas 15–17</div>
       </div>
       <i class="fas fa-chevron-down module-toggle"></i>
     </div>
     <div class="module-content">
-      <p>Aprenda sobre automação de processos de desenvolvimento e operações. Módulo técnico-prático desde conteinerização até automação completa de pipelines de CI/CD.</p>
+      <p>Uma mudança de requisitos é injetada no meio do projeto para exercitar manutenção e evolução. Dívida técnica, containers, integração e entrega contínuas, observabilidade e ética do software com IA.</p>
       <ul class="module-topics">
-        <li><i class="fas fa-play-circle"></i> Conteinerização com Docker</li>
-        <li><i class="fas fa-play-circle"></i> Dockerfiles e Docker Hub</li>
-        <li><i class="fas fa-play-circle"></i> Pipelines de CI/CD automatizados</li>
-        <li><i class="fas fa-play-circle"></i> Deploy contínuo</li>
-        <li><i class="fas fa-play-circle"></i> Monitoramento e rollback</li>
+        <li><i class="fas fa-play-circle"></i> A mudança de requisitos</li>
+        <li><i class="fas fa-play-circle"></i> Dívida técnica e refatoração assistida</li>
+        <li><i class="fas fa-play-circle"></i> Containers e ambientes reprodutíveis</li>
+        <li><i class="fas fa-play-circle"></i> Integração e entrega contínuas, deploy e observabilidade</li>
+        <li><i class="fas fa-play-circle"></i> Licenças, open source e ética do software com IA</li>
       </ul>
     </div>
   </div>
@@ -228,21 +254,33 @@ permalink: /planoensino/
       <i class="fas fa-chalkboard-teacher"></i>
     </div>
     <div class="detail-title">Formato</div>
-    <div class="detail-value">Presencial + Material assíncrono</div>
+    <div class="detail-value">Presencial, 2 encontros/semana, 18 semanas + material assíncrono</div>
   </div>
   <div class="detail-card">
     <div class="detail-icon">
       <i class="fas fa-users"></i>
     </div>
     <div class="detail-title">Equipes</div>
-    <div class="detail-value">Até 6 membros por time</div>
+    <div class="detail-value">5 a 6 membros, com papéis rotativos</div>
   </div>
   <div class="detail-card">
     <div class="detail-icon">
       <i class="fas fa-project-diagram"></i>
     </div>
     <div class="detail-title">Metodologia</div>
-    <div class="detail-value">Aprendizagem por projetos</div>
+    <div class="detail-value">Aprendizagem por projeto de impacto real</div>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2 class="section-title"><i class="fas fa-robot"></i> Política de Uso de IA</h2>
+  <div class="section-content">
+    <p>O uso de assistentes e agentes de IA nesta disciplina é <strong>esperado, não tolerado</strong>. O princípio é transparência, não proibição: não há penalidade por usar; há penalidade por não declarar e por não entender.</p>
+    <ul>
+      <li><strong>Onde é esperado e deve ser registrado:</strong> implementação, testes, documentação, exploração de bibliotecas e refatoração. O registro vive no <code>AI-USAGE.md</code> do repositório.</li>
+      <li><strong>Onde não é permitido:</strong> arguições individuais presenciais, quizzes, avaliação por pares e o ensaio de reflexão crítica — todos avaliam o que você entende.</li>
+      <li><strong>O que constitui infração:</strong> usar IA nos instrumentos individuais; omitir ou falsificar o registro de uso; entregar artefato que você não sabe explicar; apresentar trabalho de colega como seu.</li>
+    </ul>
   </div>
 </div>
 
@@ -292,72 +330,88 @@ permalink: /planoensino/
 <div class="content-section">
   <h2 class="section-title">Avaliação</h2>
   <div class="section-content">
-    <p>A avaliação será feita por meio da avaliação individual do desempenho do aluno no ciclo de projeto, simulando uma situação real de desenvolvimento.</p>
-    
-    <p><strong>Fórmula da Nota Final:</strong></p>
-    <p><code>Nota Final = (Provas) × 0,20 + (Avaliação Individual) × 0,40 + (Release 1) × 0,20 + (Release 2) × 0,20</code></p>
-    
-    <p><strong>Critérios de Aprovação:</strong></p>
-    <ul>
-      <li>Média Final (MF) ≥ 5,0</li>
-      <li>Frequência ≥ 75% das aulas</li>
-    </ul>
+    <p>A avaliação separa o desempenho individual do trabalho de equipe e desloca o peso da prova escrita para a defesa do próprio trabalho. Individual: 50% (arguições + processo + ensaio) · Coletivo: 50% (spec + R1 + R2).</p>
 
-    <div style="margin: 1.5rem 0;">
-      <a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/Criterios.pdf" class="cta-button" target="_blank" style="background: #e74c3c;">
-        <i class="fas fa-file-pdf"></i> Critérios de Avaliação (PDF)
-      </a>
-    </div>
+    <p><strong>Fórmula da Nota Final:</strong></p>
+    <p><code>Nota Final = 0,30 × Arguições Individuais + 0,15 × Desempenho Individual no Processo + 0,10 × Especificação Viva e Registro de IA + 0,15 × Release 1 + 0,25 × Release 2 + 0,05 × Ensaio de Reflexão Crítica</code></p>
+
+    <table>
+      <thead>
+        <tr><th>Componente</th><th>Peso</th><th>O que é</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Arguições individuais</td><td>30%</td><td>Três arguições presenciais de 10–15 min (semanas 8, 14 e 18), sobre o próprio código, a própria spec e as decisões da equipe. 10% cada. Sem IA.</td></tr>
+        <tr><td>Desempenho individual no processo</td><td>15%</td><td>Contribuição rastreável (commits, PRs, revisões), pareamento, participação em rituais e avaliação por pares.</td></tr>
+        <tr><td>Especificação viva e registro de IA</td><td>10%</td><td>Qualidade e manutenção de /specs, ADRs, rastreabilidade spec → issue → PR → teste e o AI-USAGE.md. Avaliado em R1 e R2.</td></tr>
+        <tr><td>Release 1</td><td>15%</td><td>Incremento funcionando e implantado, pipeline verde, apresentação.</td></tr>
+        <tr><td>Release 2</td><td>25%</td><td>Produto final implantado, com a mudança de requisitos absorvida, testes defensáveis e varredura de segurança tratada.</td></tr>
+        <tr><td>Ensaio de reflexão crítica</td><td>5%</td><td>800–1200 palavras, individual: onde a IA ajudou, onde atrapalhou e o que você aprendeu que a ferramenta não sabe. Sem IA.</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Condições de Aprovação:</strong></p>
+    <ul>
+      <li>Média Final ≥ 5,0</li>
+      <li>Frequência ≥ 75% das aulas</li>
+      <li>Comparecimento às três arguições individuais</li>
+      <li>Porta de qualidade nos releases: a nota só é lançada com software implantado e acessível, pipeline de CI verde no commit da entrega, e nenhuma vulnerabilidade crítica ou alta em aberto na varredura estática.</li>
+    </ul>
   </div>
 </div>
 
 <div class="content-section">
-  <h2 class="section-title">Critérios Avaliados no Projeto</h2>
+  <h2 class="section-title">No lugar da métrica de cobertura</h2>
   <div class="section-content">
-    <div class="skills-grid">
-      <span class="skill-tag">Código/Entrega</span>
-      <span class="skill-tag">Documentação</span>
-      <span class="skill-tag">Coerência Docs-Código</span>
-      <span class="skill-tag">Histórias e Planejamento</span>
-      <span class="skill-tag">Testes > 90%</span>
-      <span class="skill-tag">Tracking</span>
-      <span class="skill-tag">Wiki Atualizada</span>
-      <span class="skill-tag">Software Implantado</span>
-      <span class="skill-tag">Pareamento</span>
-      <span class="skill-tag">Sprint Planning</span>
-      <span class="skill-tag">Planning Poker</span>
-      <span class="skill-tag">Dailies</span>
-      <span class="skill-tag">Sprint Review</span>
-      <span class="skill-tag">Retrospectiva</span>
-      <span class="skill-tag">User Stories</span>
-      <span class="skill-tag">Código Padronizado</span>
-      <span class="skill-tag">Pull Requests</span>
-      <span class="skill-tag">Práticas Open Source</span>
-    </div>
+    <p>A meta de "90% de cobertura" sai. Cobertura continua útil como piso, não como prova de qualidade.</p>
+    <table>
+      <thead>
+        <tr><th>Métrica</th><th>Meta</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cobertura de linhas</td><td>≥ 70% no módulo de domínio</td></tr>
+        <tr><td>Escore de mutação</td><td>≥ 50% nos módulos críticos</td></tr>
+        <tr><td>Teste de sabotagem</td><td>100% dos módulos críticos (a suíte quebra quando um defeito proposital é introduzido)</td></tr>
+        <tr><td>Achados críticos/altos em SAST</td><td>0 em aberto</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Rubrica de qualidade de especificação</strong> (aplicada a /specs em R1 e R2, 0–4 por critério): verificabilidade, ausência de ambiguidade, delimitação de escopo, rastreabilidade, decisão registrada em ADR e vivacidade (a spec é atualizada quando o requisito muda).</p>
   </div>
 </div>
 
 <div class="content-section">
   <h2 class="section-title">Datas das Releases</h2>
   <div class="section-content">
-    <p>Entregáveis R1 e R2 disponíveis nos <a href="https://mds.lappis.rocks/static_files/presentations/MDS.pdf">slides</a>.</p>
+    <p>Detalhes sobre o roteiro das apresentações: <a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md">Guias para as entregas</a>.</p>
     <ul>
-      <li><strong>Release 1 (major)</strong> - 27/05/2026</li>
-      <li><strong>Release 2 (major)</strong> - 01/07/2026</li>
+      <li><strong>Release 1</strong> - semana 14 (apresentação e Arguição Individual 2)</li>
+      <li><strong>Release 2</strong> - semana 18 (apresentação final e Arguição Individual 3)</li>
     </ul>
-    <p>Detalhes sobre o roteiro das apresentações: <a href="https://github.com/unb-mds/Qualifying-Software-Engineers-Undergraduates-in-DevOps/blob/main/RoteiroEntrega.md">Guias para as entregas</a></p>
   </div>
 </div>
 
 <div class="content-section bibliography-section">
   <h2 class="section-title">Bibliografia</h2>
   <div class="section-content">
-    <div class="bib-item">Beck, K. <strong>Programação Extrema (XP) Explicada</strong>, 1st ed. Bookman, 2004</div>
-    <div class="bib-item">Ken Schwaber e Jeff Sutherland - <strong>O Guia Definitivo para o Scrum</strong> - <a href="https://scrumguides.org">scrumguides.org</a></div>
-    <div class="bib-item">Sommerville, I. <strong>Engenharia de Software</strong>. 8th ed., Pearson Addison Wesley, 2007</div>
-    <div class="bib-item"><a href="https://engsoftmoderna.info">Engenharia de Software Moderna</a></div>
-    <div class="bib-item">Alves, Isaque; Rocha, Carla. <strong>Qualifying Software Engineers Undergraduates in DevOps</strong> - <a href="http://arxiv.org/abs/2102.06662">arxiv.org</a></div>
-    <div class="bib-item"><a href="http://www.infoq.com/br/minibooks/scrum-xp-from-the-trenches">Scrum e XP direto das Trincheiras</a> (Open Access)</div>
+    <h3>Base</h3>
+    <div class="bib-item">Beck, K. <strong>Programação Extrema (XP) Explicada</strong>. Bookman, 2004.</div>
+    <div class="bib-item">Schwaber, K.; Sutherland, J. <strong>Guia do Scrum</strong> — <a href="https://scrumguides.org">scrumguides.org</a>.</div>
+    <div class="bib-item">Sommerville, I. <strong>Engenharia de Software</strong>. Pearson.</div>
+    <div class="bib-item">Valente, M. T. <strong>Engenharia de Software Moderna</strong> — <a href="https://engsoftmoderna.info">engsoftmoderna.info</a>.</div>
+    <div class="bib-item">Fox, A.; Patterson, D. <strong>Engineering Software as a Service</strong> — <a href="https://saasbook.info">saasbook.info</a>.</div>
+    <div class="bib-item">Kniberg, H. <strong>Scrum e XP direto das Trincheiras</strong> — <a href="http://www.infoq.com/br/minibooks/scrum-xp-from-the-trenches">InfoQ</a> (acesso aberto).</div>
+    <div class="bib-item">Alves, I.; Rocha, C. <strong>Qualifying Software Engineers Undergraduates in DevOps</strong> — <a href="http://arxiv.org/abs/2102.06662">arXiv:2102.06662</a>.</div>
+    <h3>Especificação e agentes</h3>
+    <div class="bib-item">GitHub. <strong>Spec Kit — Spec-Driven Development</strong> — <a href="https://github.com/github/spec-kit">github.com/github/spec-kit</a>.</div>
+    <div class="bib-item"><strong>AGENTS.md</strong> — convenção aberta de contexto para agentes — <a href="https://agents.md">agents.md</a>.</div>
+    <div class="bib-item">Anthropic. <strong>Model Context Protocol</strong> — especificação e guias de desenho de ferramentas — <a href="https://modelcontextprotocol.io">modelcontextprotocol.io</a>.</div>
+    <h3>Evidência empírica</h3>
+    <div class="bib-item">DORA / Google Cloud. <strong>State of AI-assisted Software Development</strong>, 2025 — <a href="https://dora.dev/dora-report-2025">dora.dev</a>.</div>
+    <div class="bib-item">DORA / Google Cloud. <strong>ROI of AI-assisted Software Development</strong>, 2026 — <a href="https://dora.dev/ai/roi">dora.dev/ai/roi</a>.</div>
+    <div class="bib-item">Gloaguen, T. et al. <strong>Evaluating AGENTS.md</strong>. ETH Zurich / LogicStar, 2026.</div>
+    <h3>Ensino e segurança</h3>
+    <div class="bib-item">ICSE-SEET '26. <strong>AI-Driven Software Development: A New Course Concept and Assessment Model for the Era of LLMs</strong> — DOI 10.1145/3786580.3786962.</div>
+    <div class="bib-item">Rausch, A. et al. <strong>Preparing Students for AI-Driven Agile Development</strong> — arXiv:2603.09599, 2026.</div>
+    <div class="bib-item"><strong>OWASP Top 10 for LLM Applications</strong> e OWASP Agentic Security Initiative — <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">owasp.org</a>.</div>
   </div>
 </div>
 
