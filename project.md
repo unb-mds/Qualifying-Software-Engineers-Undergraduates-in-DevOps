@@ -421,8 +421,11 @@ permalink: /planoensino/
   <h2 class="section-title">🚀 Projetos do Semestre</h2>
   <div class="section-content" style="text-align: center; padding: 30px;">
     <p style="font-size: 1.2rem; margin-bottom: 20px;">Confira a lista completa de projetos disponíveis para o semestre:</p>
-    <a href="/Temas2026-1" style="display: inline-block; background: #003366; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
-      📊 Ver Projetos 2026/1
+    <a href="/Temas2026-2" style="display: inline-block; background: #003366; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+      🌱 Ver Projetos 2026/2
     </a>
+    <p style="margin-top: 20px;">
+      <a href="/Temas2026-1" style="color: #003366; text-decoration: none; font-weight: 500;">📊 Projetos 2026/1 (semestre anterior)</a>
+    </p>
   </div>
 </div>
