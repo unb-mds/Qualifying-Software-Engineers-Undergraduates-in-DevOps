@@ -2,7 +2,12 @@
 **/.DS_Store
 ._*
 Thumbs.db
-.DS_Store
-**/.DS_Store
-._*
-Thumbs.db
+
+# Artefatos de build e dependências — nunca versionar.
+# O GitHub Pages clássico sempre reconstrói do zero a partir do código-fonte,
+# então _site/ e vendor/ commitados não têm nenhum efeito no deploy.
+_site/
+vendor/
+.bundle/
+.jekyll-cache/
+.jekyll-metadata
