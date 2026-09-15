@@ -33,7 +33,7 @@ facebook_username: lappisunb5
 markdown: kramdown
 
 include: ['_images', '_css']
-exclude: ['develop', 'vendor', '_events/DEPRECATED']
+exclude: ['develop', 'vendor', '_events/DEPRECATED', 'archive']
 
 dateformat: "%d/%m/%Y"
 
