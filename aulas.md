@@ -41,7 +41,6 @@ permalink: /aulas/
           {% endfor %}
         </div>
         {% endif %}
-        {% if event.hide_from_anno498uncements != true %}
         <span class="aula-type">
           {% if event.type == 'lecture' %}
             <i class="fas fa-book"></i> Aula
@@ -53,7 +52,6 @@ permalink: /aulas/
             <i class="fas fa-calendar"></i> Evento
           {% endif %}
         </span>
-        {% endif %}
       </div>
     </div>
     {% endfor %}
